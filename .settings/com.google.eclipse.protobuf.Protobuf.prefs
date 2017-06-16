@@ -1,0 +1,5 @@
+compiler.compileProtoFiles=true
+compiler.enableProjectSettings=true
+compiler.javaCodeGenerationEnabled=true
+eclipse.preferences.version=1
+general.enableProjectSettings=true
