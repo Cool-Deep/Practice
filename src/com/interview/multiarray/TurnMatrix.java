@@ -1,5 +1,9 @@
 package com.interview.multiarray;
 
+/**
+ * @author malay
+ *
+ */
 public class TurnMatrix {
 
 	public void transpose() {
