@@ -5,8 +5,8 @@ package com.interview.array;
  * write a function to compute the researcher's h-index.
  * https://leetcode.com/problems/h-index/
  */
-public class HIndex {
-    public int hIndex(int[] citations) {
+class HIndex {
+    private int hIndex(int[] citations) {
         int[] count = new int[citations.length + 1];
         for (int c : citations) {
             if (c <= citations.length) {

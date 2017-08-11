@@ -13,9 +13,9 @@ package com.interview.recursion;
  * Idea is to store the index of values in used[] array. So just
  * like regular combination if used is set print it else print *
  */
-public class CombinationWithStar {
+class CombinationWithStar {
 
-    public void combine(char input[], int pos, boolean used[]){
+    private void combine(char input[], int pos, boolean used[]){
         printArray(input, used);
         for(int i= pos; i < input.length; i++){
             used[i] = true;

@@ -6,57 +6,65 @@ import java.util.Arrays;
 /**
  * Created by Davit on 27/06/16.
  */
-public class TournamentDay26 {
+class TournamentDay26 {
 
-    private static String wordAbbreviation2(String a) {
-        int sum = 0;
-        int power = 0;
-        int twoRaisedToPower = 1;
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < a.length(); i++) {
-            sum += 1 << (a.charAt(i) - 'a');
-        }
-        while (twoRaisedToPower * 2 <= sum) {
-            twoRaisedToPower *= 2;
-            power++;
-        }
-        while (sum > 0) {
-            if (twoRaisedToPower <= sum) {
-                sum -= twoRaisedToPower;
-                result.append((char) ('a' + power));
-            }
-            power--;
-            twoRaisedToPower /= 2;
-        }
-        return result.reverse().toString();
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String wordAbbreviation2(String a) {
+//        int sum = 0;
+//        int power = 0;
+//        int twoRaisedToPower = 1;
+//        StringBuilder result = new StringBuilder();
+//        for (int i = 0; i < a.length(); i++) {
+//            sum += 1 << (a.charAt(i) - 'a');
+//        }
+//        while (twoRaisedToPower * 2 <= sum) {
+//            twoRaisedToPower *= 2;
+//            power++;
+//        }
+//        while (sum > 0) {
+//            if (twoRaisedToPower <= sum) {
+//                sum -= twoRaisedToPower;
+//                result.append((char) ('a' + power));
+//            }
+//            power--;
+//            twoRaisedToPower /= 2;
+//        }
+//        return result.reverse().toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int segmentCover(int[] A, int L) {
-        Arrays.sort(A);
-        int tot = 1;
-        int piv = A[0];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int segmentCover(int[] A, int L) {
+//        Arrays.sort(A);
+//        int tot = 1;
+//        int piv = A[0];
+//
+//        for (int x = 1; x < A.length; x++) {
+//            if (A[x] - piv > L) {
+//                piv = A[x];
+//                tot++;
+//            }
+//        }
+//
+//        return tot;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int x = 1; x < A.length; x++) {
-            if (A[x] - piv > L) {
-                piv = A[x];
-                tot++;
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean whitespaceSearchRegExp(String input) {
+//
+//        return java.util.regex.Pattern.compile(" ").matcher(input).find();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return tot;
-    }
-
-    private static boolean whitespaceSearchRegExp(String input) {
-
-        return java.util.regex.Pattern.compile(" ").matcher(input).find();
-    }
-
-    private static int divideAsLongAsPossible(int n, int d) {
-        while (n % d == 0) {
-            n /= d;
-        }
-        return n;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int divideAsLongAsPossible(int n, int d) {
+//        while (n % d == 0) {
+//            n /= d;
+//        }
+//        return n;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int gcm(int a, int b) {
         return b == 0 ? a : gcm(b, a % b);
@@ -68,122 +76,135 @@ public class TournamentDay26 {
 
     }
 
-    private static int[] fractionMultiplication(int[] A, int[] B) {
-        return fractionReducing(new int[]{A[0] * B[0], A[1] * B[1]});
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] fractionMultiplication(int[] A, int[] B) {
+//        return fractionReducing(new int[]{A[0] * B[0], A[1] * B[1]});
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int evenNumbersBeforeFixed(int[] sequence, int fixedElement) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int evenNumbersBeforeFixed(int[] sequence, int fixedElement) {
+//
+//        int result = 0;
+//
+//        for (int i = 0; i < sequence.length; i++) {
+//            if (sequence[i] % 2 == 0 && sequence[i] != fixedElement) {
+//                result++;
+//            }
+//            if (sequence[i] == fixedElement) {
+//                return result;
+//            }
+//        }
+//
+//        return -1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int result = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean noAdjacentBits(int a) {
+//
+//        int lastBit = 0,
+//                idx = 0;
+//        while ((1 << idx) <= a) {
+//            int curBit = (a >> idx) & 1;
+//            if (lastBit == 1 && curBit == 1) {
+//                return false;
+//            }
+//            lastBit = curBit;
+//            idx++;
+//        }
+//
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < sequence.length; i++) {
-            if (sequence[i] % 2 == 0 && sequence[i] != fixedElement) {
-                result++;
-            }
-            if (sequence[i] == fixedElement) {
-                return result;
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isLuckyNumber(int n) {
+//        while (n > 0) {
+//            int digit = n % 10;
+//            if (digit != 4 && digit != 7)
+//                return false;
+//            n /= 10;
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return -1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int validRoute(int[] travelTimes, int[] readyTimes, int[] cancelTimes) {
+//
+//        int earliestStartTime = 0;
+//        int latestStartTime = 24 * 60 * 60;
+//        int totalWorkTime = 0;
+//        for (int i = 0; i < readyTimes.length; i++) {
+//            if (earliestStartTime + totalWorkTime > cancelTimes[i]) {
+//                return -1;
+//            }
+//            latestStartTime = Math.min(latestStartTime,
+//                    cancelTimes[i] - totalWorkTime);
+//            if (latestStartTime + totalWorkTime < readyTimes[i]) {
+//                totalWorkTime = readyTimes[i] - latestStartTime;
+//            }
+//            earliestStartTime = Math.max(earliestStartTime,
+//                    readyTimes[i] - totalWorkTime);
+//
+//            totalWorkTime += travelTimes[i];
+//        }
+//
+//        return totalWorkTime;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static boolean noAdjacentBits(int a) {
-
-        int lastBit = 0,
-                idx = 0;
-        while ((1 << idx) <= a) {
-            int curBit = (a >> idx) & 1;
-            if (lastBit == 1 && curBit == 1) {
-                return false;
-            }
-            lastBit = curBit;
-            idx++;
-        }
-
-        return true;
-    }
-
-    private static boolean isLuckyNumber(int n) {
-        while (n > 0) {
-            int digit = n % 10;
-            if (digit != 4 && digit != 7)
-                return false;
-            n /= 10;
-        }
-        return true;
-    }
-
-    private static int validRoute(int[] travelTimes, int[] readyTimes, int[] cancelTimes) {
-
-        int earliestStartTime = 0;
-        int latestStartTime = 24 * 60 * 60;
-        int totalWorkTime = 0;
-        for (int i = 0; i < readyTimes.length; i++) {
-            if (earliestStartTime + totalWorkTime > cancelTimes[i]) {
-                return -1;
-            }
-            latestStartTime = Math.min(latestStartTime,
-                    cancelTimes[i] - totalWorkTime);
-            if (latestStartTime + totalWorkTime < readyTimes[i]) {
-                totalWorkTime = readyTimes[i] - latestStartTime;
-            }
-            earliestStartTime = Math.max(earliestStartTime,
-                    readyTimes[i] - totalWorkTime);
-
-            totalWorkTime += travelTimes[i];
-        }
-
-        return totalWorkTime;
-    }
-
-    private static int uberPool(int[] A, int[] B, int[] C, int[] X, int[] Y) {
-
-        class Helper {
-            private int distance(int[] P, int[] Q) {
-                return Math.abs(P[1] - Q[1]) + Math.abs(P[0] - Q[0]);
-            }
-        }
-        Helper h = new Helper();
-
-        int initialDist = h.distance(A, B);
-        int travelledDist = h.distance(A, C);
-        int[][] D = new int[][]{X, Y};
-        int[] remainingDist = new int[2];
-        for (int i = 0; i < 2; i++) {
-            remainingDist[i] = h.distance(C, D[i]) + h.distance(D[i], B);
-        }
-
-        int best = 1;
-        if (remainingDist[0] > remainingDist[1]) {
-            best = 2;
-        }
-
-        if (travelledDist + remainingDist[best - 1] > 2 * initialDist) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int uberPool(int[] A, int[] B, int[] C, int[] X, int[] Y) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            private int distance(int[] P, int[] Q) {
+////                return Math.abs(P[1] - Q[1]) + Math.abs(P[0] - Q[0]);
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        int initialDist = h.distance(A, B);
+//        int travelledDist = h.distance(A, C);
+//        int[][] D = new int[][]{X, Y};
+//        int[] remainingDist = new int[2];
+//        for (int i = 0; i < 2; i++) {
+//            remainingDist[i] = h.distance(C, D[i]) + h.distance(D[i], B);
+//        }
+//
+//        int best = 1;
+//        if (remainingDist[0] > remainingDist[1]) {
+//            best = 2;
+//        }
+//
+//        if (travelledDist + remainingDist[best - 1] > 2 * initialDist) {
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
             best = -1;
         }
 
         return best;
     }
 
-    private static boolean regularBracketSequence1(String sequence) {
-
-        int balance = 0;
-        for (int i = 0; i < sequence.length(); i++) {
-            if (sequence.charAt(i) == '(') {
-                balance++;
-            } else {
-                balance--;
-            }
-            if (balance < 0) {
-                return false;
-            }
-        }
-        if (balance != 0) {
-            return false;
-        }
-        return true;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean regularBracketSequence1(String sequence) {
+//
+//        int balance = 0;
+//        for (int i = 0; i < sequence.length(); i++) {
+//            if (sequence.charAt(i) == '(') {
+//                balance++;
+//            } else {
+//                balance--;
+//            }
+//            if (balance < 0) {
+//                return false;
+//            }
+//        }
+//        return balance == 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static String[] fileNaming(String[] names) {
         ArrayList<String> res = new ArrayList<>(names.length);

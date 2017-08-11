@@ -1,9 +1,9 @@
 package coreJava;
 
-public class NumberCloseToZero {
+class NumberCloseToZero {
 	public static void main(String[] args) {
 		int myNumber = 0;
-		int[] numbers = { -10, 10, 9, 8, -12, -12, -2, -2, 01 };
+		int[] numbers = { -10, 10, 9, 8, -12, -12, -2, -2, 1};
 		System.out.println("close2Zero "+closest1(0,numbers));
 		int distance = Math.abs(numbers[0] - myNumber);
 		int idx = 0;
@@ -19,7 +19,7 @@ public class NumberCloseToZero {
 	}
 	
 	
-	public static int closest1(int find, int[] values) {
+	private static int closest1(int find, int[] values) {
 	    int closest = values[0];
 	    for(int value: values)
 	       if(Math.abs(closest - find) > Math.abs(value - find))

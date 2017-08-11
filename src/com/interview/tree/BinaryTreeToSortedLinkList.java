@@ -5,9 +5,9 @@ package com.interview.tree;
  * Test cases:
  * 0,1 or more nodes in the tree
  */
-public class BinaryTreeToSortedLinkList {
+class BinaryTreeToSortedLinkList {
 
-    public Node toSortedLinkList(Node root){
+    private Node toSortedLinkList(Node root){
         if(root == null){
             return null;
         }

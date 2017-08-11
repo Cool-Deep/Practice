@@ -7,9 +7,9 @@ package com.interview.number;
  * anything from 5 to 9 because they are basically 4 to 8 in base 9 system. So subtract them 
  * by 1 when doing multiplications.
  */
-public class NotIncluding4 {
+class NotIncluding4 {
 
-    public int number(int chinaNumber){
+    private int number(int chinaNumber){
         
         int result = 0;
         int mul = 1;

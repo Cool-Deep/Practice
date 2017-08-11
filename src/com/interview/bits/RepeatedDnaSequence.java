@@ -13,12 +13,12 @@ import java.util.*;
  *
  * https://leetcode.com/problems/repeated-dna-sequences/
  */
-public class RepeatedDnaSequence {
+class RepeatedDnaSequence {
     private static final int mask = 0xFFFFF;
     private static final int mask1 = 3;
 
 
-    public List<String> findRepeatedDnaSequences(String s) {
+    private List<String> findRepeatedDnaSequences(String s) {
 
         if (s.length() < 10) {
             return Collections.emptyList();
@@ -49,7 +49,7 @@ public class RepeatedDnaSequence {
     }
 
     private String createString(int input) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 9; i >= 0; i--) {
             sb.append(getChar(input>>(i*2) & mask1));
         }

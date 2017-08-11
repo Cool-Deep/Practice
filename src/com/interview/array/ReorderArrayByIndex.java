@@ -14,8 +14,8 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/reorder-a-array-according-to-given-indexes/
  */
-public class ReorderArrayByIndex {
-    public void reorder(int input[], int index[]) {
+class ReorderArrayByIndex {
+    private void reorder(int input[], int index[]) {
         if(index.length != input.length) {
             throw new IllegalArgumentException();
         }

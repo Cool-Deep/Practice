@@ -9,9 +9,9 @@ package com.interview.array;
  * Check that there exists a path after kadane wrap responds
  * Check that there is at least one positive difference before you call kadane
  */
-public class GasStationCircle {
+class GasStationCircle {
 
-    public int startTour(int gasAvailable[],int gasRequired[]){
+    private int startTour(int gasAvailable[], int gasRequired[]){
         int start = -1;
         int end = 0;
         int currentGas = 0;
@@ -21,9 +21,9 @@ public class GasStationCircle {
             if(start == -1){
                 start = end;
             }
-            if(end == gasAvailable.length-1 && visitedOnce == false){
+            if(end == gasAvailable.length-1 && !visitedOnce){
                 visitedOnce = true;
-            }else if(end == gasAvailable.length-1 && visitedOnce == true){
+            }else if(end == gasAvailable.length-1 && visitedOnce){
                 return -1;
             }
             if(currentGas < 0){
@@ -41,15 +41,15 @@ public class GasStationCircle {
      * result of kadanewrap make an actual trip to see if value is positive
      * @return -1 if no solution exists otherwise returns gas station at which to start.
      */
-    public int startTour1(int gasAvailable[], int gasRequired[]){
+    private int startTour1(int gasAvailable[], int gasRequired[]){
         int diff[] = new int[gasAvailable.length];
         for(int i=0; i < diff.length; i++){
             diff[i] = gasAvailable[i] - gasRequired[i];
         }
 
         boolean allNegative = true;
-        for (int i = 0; i < diff.length; i++) {
-            if (diff[i] >= 0) {
+        for (int aDiff : diff) {
+            if (aDiff >= 0) {
                 allNegative = false;
                 break;
             }

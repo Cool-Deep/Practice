@@ -19,9 +19,9 @@ import java.util.Map;
  * very slowly growing function. For most cases f(n) <= 4 so effectively
  * total time will be O(m). Proof in Coreman book.
  */
-public class DisjointSet {
+class DisjointSet {
 
-    private Map<Long, Node> map = new HashMap<>();
+    private final Map<Long, Node> map = new HashMap<>();
 
     class Node {
         long data;

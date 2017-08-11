@@ -16,9 +16,9 @@ import java.util.LinkedList;
  * https://leetcode.com/problems/verify-preorder-sequence-in-binary-search-tree/
  * Reference - http://www.geeksforgeeks.org/check-if-a-given-array-can-represent-preorder-traversal-of-binary-search-tree/
  */
-public class IsPreOrderArrayBST {
+class IsPreOrderArrayBST {
 
-    public boolean verifyPreorder(int pre[]) {
+    private boolean verifyPreorder(int pre[]) {
         Deque<Integer> deque = new LinkedList<>();
         int minAcceptable = Integer.MIN_VALUE;
         deque.addFirst(pre[0]);
@@ -34,7 +34,7 @@ public class IsPreOrderArrayBST {
         return true;
     }
 
-    public boolean verifyPreorderConstantSpace(int[] preorder) {
+    private boolean verifyPreorderConstantSpace(int[] preorder) {
         int start = 0;
         int min = Integer.MIN_VALUE;
         for (int i = 1; i < preorder.length; i++) {
@@ -50,7 +50,7 @@ public class IsPreOrderArrayBST {
         return true;
     }
 
-    int binarySearch(int[] preorder, int start, int end, int val) {
+    private int binarySearch(int[] preorder, int start, int end, int val) {
         int s = start;
         int e = end;
         while (s <= e) {

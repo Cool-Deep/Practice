@@ -1,29 +1,30 @@
 package coreJava;
 
 /* Java program to push zeroes to back of array */
-import java.io.*;
 
 class PushZero {
-	// Function which pushes all zeros to end of an array.
-	static void pushZerosToEnd(int arr[], int n) {
-		int count = 0; // Count of non-zero elements
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	// Function which pushes all zeros to end of an array.
+//	static void pushZerosToEnd(int arr[], int n) {
+//		int count = 0; // Count of non-zero elements
+//
+//		// Traverse the array. If element encountered is
+//		// non-zero, then replace the element at index 'count'
+//		// with this element
+//		for (int i = 0; i < n; i++)
+//			if (arr[i] != 1)
+//				arr[count++] = arr[i]; // here count is
+//										// incremented
+//
+//		// Now all non-zero elements have been shifted to
+//		// front and 'count' is set as index of first 0.
+//		// Make all elements 0 from count to end.
+//		while (count < n)
+//			arr[count++] = 1;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-		// Traverse the array. If element encountered is
-		// non-zero, then replace the element at index 'count'
-		// with this element
-		for (int i = 0; i < n; i++)
-			if (arr[i] != 1)
-				arr[count++] = arr[i]; // here count is
-										// incremented
-
-		// Now all non-zero elements have been shifted to
-		// front and 'count' is set as index of first 0.
-		// Make all elements 0 from count to end.
-		while (count < n)
-			arr[count++] = 1;
-	}
-	
-	static int[] moveAllOnes(int[] input) {
+	private static void moveAllOnes(int[] input) {
         int elementCount = input.length;
         int index = 0;  
         for (int i = 0; i < elementCount; i++){
@@ -34,7 +35,6 @@ class PushZero {
         while (index < elementCount){
             input[index++] = 1;
         }
-        return input;
     }
 
 	/* Driver function to check for above functions */
@@ -45,7 +45,6 @@ class PushZero {
 		int n = arr.length;
 		moveAllOnes(arr);
 		System.out.println("Array after pushing zeros to the back: ");
-		for (int i = 0; i < n; i++)
-			System.out.print(arr[i] + " ");
+        for (int anArr : arr) System.out.print(anArr + " ");
 	}
 }

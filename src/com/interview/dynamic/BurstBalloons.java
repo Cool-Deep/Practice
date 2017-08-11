@@ -16,12 +16,12 @@ package com.interview.dynamic;
  * Reference
  * https://leetcode.com/problems/burst-balloons/
  */
-public class BurstBalloons {
+class BurstBalloons {
 
     /**
      * Dynamic programming solution.
      */
-    public int maxCoinsBottomUpDp(int[] nums) {
+    private int maxCoinsBottomUpDp(int[] nums) {
 
         int T[][] = new int[nums.length][nums.length];
 
@@ -60,18 +60,20 @@ public class BurstBalloons {
         return T[0][nums.length - 1];
     }
 
-    /**
-     * Recursive solution.
-     */
-    public int maxCoinsRec(int nums[]) {
-        int[] nums1 = new int[nums.length + 2];
-        nums1[0] = 1;
-        nums1[nums1.length - 1] = 1;
-        for (int i = 0; i < nums.length; i++) {
-            nums1[i+1] = nums[i];
-        }
-        return maxCoinsRecUtil(nums1);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Recursive solution.
+//     */
+//    public int maxCoinsRec(int nums[]) {
+//        int[] nums1 = new int[nums.length + 2];
+//        nums1[0] = 1;
+//        nums1[nums1.length - 1] = 1;
+//        for (int i = 0; i < nums.length; i++) {
+//            nums1[i+1] = nums[i];
+//        }
+//        return maxCoinsRecUtil(nums1);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private int maxCoinsRecUtil(int[] nums) {
         if (nums.length == 2) {

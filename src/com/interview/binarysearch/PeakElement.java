@@ -1,8 +1,8 @@
 package com.interview.binarysearch;
 
-public class PeakElement {
+class PeakElement {
 
-    public int peakElement(int arr[]){
+    private int peakElement(int arr[]){
         int low = 0;
         int high = arr.length-1;
         while(low < high){
@@ -19,7 +19,6 @@ public class PeakElement {
             }
             if(arr[mid] < arr[mid+1]){
                 low = mid+1;
-                continue;
             }
         }
         return arr[low];

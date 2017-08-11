@@ -7,91 +7,100 @@ import java.util.HashSet;
 /**
  * Created by Davit on 04/07/16.
  */
-public class TournamentDay29 {
+class TournamentDay29 {
 
-    private static int toAndFroNaive(int a, int b, int t) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int toAndFroNaive(int a, int b, int t) {
+//
+//        int position = a,
+//                dx;
+//
+//        if (a < b) {
+//            dx = 1;
+//        } else {
+//            dx = -1;
+//        }
+//
+//        for (int i = 0; i < t; i++) {
+//            position += dx;
+//            if (position == a || position == b) {
+//                dx = -1 * dx;
+//            }
+//        }
+//
+//        return position;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int position = a,
-                dx;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isSum(int value) {
+//        long calc_num = 8 * value + 1;
+//        long t = (long) Math.sqrt(calc_num);
+//        return t * t == calc_num;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        if (a < b) {
-            dx = 1;
-        } else {
-            dx = -1;
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int electionsWinners(int[] votes, int k) {
+//        int ma = 0;
+//        for (int i = 0; i < votes.length; i++)
+//            ma = Math.max(ma, votes[i]);
+//        int cnt = 0;
+//        for (int i = 0; i < votes.length; i++)
+//            if (votes[i] + k > ma)
+//                cnt++;
+//        if (cnt == 0) {
+//            for (int i = 0; i < votes.length; i++)
+//                if (votes[i] == ma)
+//                    cnt++;
+//            if (cnt > 1)
+//                cnt = 0;
+//        }
+//        return cnt;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < t; i++) {
-            position += dx;
-            if (position == a || position == b) {
-                dx = -1 * dx;
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int arraySumAdjacentDifference(int[] inputArray) {
+//
+//        int answer = 0;
+//        for (int i = 1; i < inputArray.length - 1; i++) {
+//            answer += Math.abs(inputArray[i] - inputArray[i - 1]);
+//        }
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return position;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String[] allLongestStrings(String[] inputArray) {
+//
+//        ArrayList<String> answer = new ArrayList<>(Arrays.asList(inputArray[0]));
+//        for (int i = 1; i < inputArray.length; i++) {
+//            if (inputArray[i].length() == answer.get(0).length()) {
+//                answer.add(inputArray[i]);
+//            }
+//            if (inputArray[i].length() > answer.get(0).length()) {
+//                answer = new ArrayList<>(Arrays.asList(inputArray[i]));
+//            }
+//        }
+//        return answer.toArray(new String[0]);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static boolean isSum(int value) {
-        long calc_num = 8 * value + 1;
-        long t = (long) Math.sqrt(calc_num);
-        if (t * t == calc_num) {
-            return true;
-        }
-        return false;
-    }
-
-    private static int electionsWinners(int[] votes, int k) {
-        int ma = 0;
-        for (int i = 0; i < votes.length; i++)
-            ma = Math.max(ma, votes[i]);
-        int cnt = 0;
-        for (int i = 0; i < votes.length; i++)
-            if (votes[i] + k > ma)
-                cnt++;
-        if (cnt == 0) {
-            for (int i = 0; i < votes.length; i++)
-                if (votes[i] == ma)
-                    cnt++;
-            if (cnt > 1)
-                cnt = 0;
-        }
-        return cnt;
-    }
-
-    private static int arraySumAdjacentDifference(int[] inputArray) {
-
-        int answer = 0;
-        for (int i = 1; i < inputArray.length - 1; i++) {
-            answer += Math.abs(inputArray[i] - inputArray[i - 1]);
-        }
-        return answer;
-    }
-
-    private static String[] allLongestStrings(String[] inputArray) {
-
-        ArrayList<String> answer = new ArrayList<>(Arrays.asList(inputArray[0]));
-        for (int i = 1; i < inputArray.length; i++) {
-            if (inputArray[i].length() == answer.get(0).length()) {
-                answer.add(inputArray[i]);
-            }
-            if (inputArray[i].length() > answer.get(0).length()) {
-                answer = new ArrayList<>(Arrays.asList(inputArray[i]));
-            }
-        }
-        return answer.toArray(new String[0]);
-    }
-
-    private static int sumUpDigits(String inputString) {
-
-        int answer = 0;
-
-        for (int i = 0; i < inputString.length(); i++) {
-            if (inputString.charAt(i) >= '0' && inputString.charAt(i) <= '9') {
-                answer += inputString.charAt(i) - '0';
-            }
-        }
-
-        return answer;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int sumUpDigits(String inputString) {
+//
+//        int answer = 0;
+//
+//        for (int i = 0; i < inputString.length(); i++) {
+//            if (inputString.charAt(i) >= '0' && inputString.charAt(i) <= '9') {
+//                answer += inputString.charAt(i) - '0';
+//            }
+//        }
+//
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int makeArrayConsecutive2(int[] sequence) {
         Arrays.sort(sequence);

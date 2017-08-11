@@ -25,23 +25,23 @@ import com.interview.stackqueue.MaximumHistogram;
  * References:
  * http://www.careercup.com/question?id=6299074475065344
  */
-public class MaximumRectangularSubmatrixOf1s {
+class MaximumRectangularSubmatrixOf1s {
 
-    public int maximum(int input[][]){
+    private int maximum(int input[][]){
         int temp[] = new int[input[0].length];
         MaximumHistogram mh = new MaximumHistogram();
         int maxArea = 0;
         int area = 0;
-        for(int i=0; i < input.length; i++){
-            for(int j=0; j < temp.length; j++){
-                if(input[i][j] == 0){
+        for (int[] anInput : input) {
+            for (int j = 0; j < temp.length; j++) {
+                if (anInput[j] == 0) {
                     temp[j] = 0;
-                }else{
-                    temp[j] += input[i][j];
+                } else {
+                    temp[j] += anInput[j];
                 }
             }
             area = mh.maxHistogram(temp);
-            if(area > maxArea){
+            if (area > maxArea) {
                 maxArea = area;
             }
         }

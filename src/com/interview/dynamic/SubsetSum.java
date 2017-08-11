@@ -12,9 +12,9 @@ package com.interview.dynamic;
  *
  * Youtube video - https://youtu.be/s6FhG--P7z0
  */
-public class SubsetSum {
+class SubsetSum {
 
-    public boolean subsetSum(int input[], int total) {
+    private boolean subsetSum(int input[], int total) {
 
         boolean T[][] = new boolean[input.length + 1][total + 1];
         for (int i = 0; i <= input.length; i++) {
@@ -34,10 +34,10 @@ public class SubsetSum {
 
     }
 
-    public boolean partition(int arr[]) {
+    private boolean partition(int arr[]) {
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int anArr : arr) {
+            sum += anArr;
         }
 
         if (sum % 2 != 0) {

@@ -8,17 +8,17 @@ import java.util.Set;
 /**
  http://www.geeksforgeeks.org/bridge-in-a-graph/
  */
-public class Bridge<T> {
+class Bridge<T> {
 
     private int time;
     
-    public Set<Edge<T>> getBridge(Graph<T> graph){
+    Set<Edge<T>> getBridge(Graph<T> graph){
         
-        Set<Edge<T>> result = new HashSet<Edge<T>>();
-        Map<Vertex<T>,Integer> discovery = new HashMap<Vertex<T>,Integer>();
-        Map<Vertex<T>,Integer> low = new HashMap<Vertex<T>,Integer>();
-        Map<Vertex<T>,Vertex<T>> parent = new HashMap<Vertex<T>,Vertex<T>>();
-        Map<Vertex<T>,Boolean> visited = new HashMap<Vertex<T>,Boolean>();
+        Set<Edge<T>> result = new HashSet<>();
+        Map<Vertex<T>,Integer> discovery = new HashMap<>();
+        Map<Vertex<T>,Integer> low = new HashMap<>();
+        Map<Vertex<T>,Vertex<T>> parent = new HashMap<>();
+        Map<Vertex<T>,Boolean> visited = new HashMap<>();
         
         for(Vertex<T> vertex : graph.getAllVertex()){
             if(!visited.containsKey(vertex)){
@@ -40,7 +40,7 @@ public class Bridge<T> {
                 BridgeUtil(child,result,discovery,low,parent,visited);
                 
                 if(discovery.get(vertex) < low.get(child) ){
-                    result.add(new Edge<T>(vertex,child));
+                    result.add(new Edge<>(vertex, child));
                 }
                 low.put(vertex, Math.min(discovery.get(vertex), low.get(child)));
             }else{
@@ -53,13 +53,13 @@ public class Bridge<T> {
     
     public static void main(String args[]){
         
-        Graph<Integer> graph = new Graph<Integer>(false);
+        Graph<Integer> graph = new Graph<>(false);
         graph.addEdge(2, 1);
         graph.addEdge(3, 1);
         graph.addEdge(1, 4);
         graph.addEdge(4, 5);
         graph.addEdge(5, 1);
-        Bridge<Integer> ap = new Bridge<Integer>();
+        Bridge<Integer> ap = new Bridge<>();
         Set<Edge<Integer>> result = ap.getBridge(graph);
         System.out.print(result);
     }

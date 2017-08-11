@@ -14,9 +14,9 @@ package com.interview.array;
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
  */
-public class BuySellStockProfit {
+class BuySellStockProfit {
 
-    public int oneProfit(int arr[]){
+    private int oneProfit(int arr[]){
         int minPrice = arr[0];
         int maxProfit = 0;
         for(int i=1; i < arr.length; i++){
@@ -30,7 +30,7 @@ public class BuySellStockProfit {
         return maxProfit;
     }
     
-    public int allTimeProfit(int arr[]){
+    private int allTimeProfit(int arr[]){
         if (arr.length == 0) {
             return 0;
         }

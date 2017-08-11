@@ -6,9 +6,9 @@ package com.interview.linklist;
  * This result is stored in currentResult. Pass this currentResult and any previous result from multiplication
  * and add them
  */
-public class MultiplyTwoNumbersLinkList {
+class MultiplyTwoNumbersLinkList {
 
-    public Node multiply(Node head1, Node head2){
+    private Node multiply(Node head1, Node head2){
         LinkList ll = new LinkList();
         head1 = ll.reverse(head1);
         head2 = ll.reverse(head2);

@@ -10,8 +10,8 @@ package com.interview.array;
  * Reference
  * https://leetcode.com/problems/find-the-duplicate-number/
  */
-public class DuplicateNumberDetection {
-    public int findDuplicate(int[] nums) {
+class DuplicateNumberDetection {
+    private int findDuplicate(int[] nums) {
         if (nums.length == 0 || nums.length == 1) {
             return -1;
         }

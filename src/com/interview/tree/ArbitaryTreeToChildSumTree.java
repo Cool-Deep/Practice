@@ -8,9 +8,9 @@ package com.interview.tree;
  * Root less than children
  * Root equal to children
  */
-public class ArbitaryTreeToChildSumTree {
+class ArbitaryTreeToChildSumTree {
 
-    public void childSumTree(Node root){
+    private void childSumTree(Node root){
         toChildSumTree(root);
     }
     

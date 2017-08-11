@@ -1,23 +1,20 @@
 package com.interview.tree;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * http://www.geeksforgeeks.org/check-for-identical-bsts-without-building-the-trees/
  * Test cases
  * Both array should be same size and have exact same elements and first element should be same
  */
-public class IdenticalTrees {
+class IdenticalTrees {
 
     private class BigSmall{
         int big;
         int small;
     }
     
-    public boolean sameBST(int tree1[], int tree2[]){
+    private boolean sameBST(int tree1[], int tree2[]){
         return sameBST(tree1,tree2,Integer.MIN_VALUE,Integer.MAX_VALUE,0);
     }
     
@@ -37,7 +34,7 @@ public class IdenticalTrees {
         BigSmall bs2 = nextBigSmall(tree2,i,min,max);
         
         boolean r1=  tree1[bs1.big] == tree2[bs2.big] && tree1[bs1.small] == tree2[bs2.small] ;
-        if(r1 == false){
+        if(!r1){
             return false;
         }
         boolean r2 = true,r3 =true;
@@ -77,8 +74,8 @@ public class IdenticalTrees {
      * @param arr2
      * @return
      */
-    
-    public boolean sameBST1(int arr1[], int arr2[]){
+
+    private boolean sameBST1(int arr1[], int arr2[]){
         List<Integer> list1 = new ArrayList<>();
         for(int i : arr1){
             list1.add(i);
@@ -95,58 +92,53 @@ public class IdenticalTrees {
      * It might not work for duplicate elements in array. For that you have to store
      * both index and actual value to differentiate somehow.
      */
-    private boolean sameBST1(List<Integer> arr1, List<Integer> arr2){
-        if(arr1.size() == 0 && arr2.size() == 0){
+    private boolean sameBST1(List<Integer> arr1, List<Integer> arr2) {
+        if (arr1.size() == 0 && arr2.size() == 0) {
             return true;
         }
-        if(arr1.size() == 0 || arr2.size() == 0){
+        if (arr1.size() == 0 || arr2.size() == 0) {
             return false;
         }
-        
-        if(arr1.get(0) != arr2.get(0)){
+
+        if (!Objects.equals(arr1.get(0), arr2.get(0))) {
             return false;
         }
-        List<Integer> smaller1 = new ArrayList<Integer>();
-        List<Integer> larger1= new ArrayList<Integer>();
+        List<Integer> smaller1 = new ArrayList<>();
+        List<Integer> larger1 = new ArrayList<>();
         boolean first = true;
-        for(Integer i : arr1){
-            if(first){
-               first = false;
-               continue;
+        for (Integer i : arr1) {
+            if (first) {
+                first = false;
+                continue;
             }
-            if(i <= arr1.get(0)){
+            if (i <= arr1.get(0)) {
                 smaller1.add(i);
-            }else{
+            } else {
                 larger1.add(i);
             }
         }
         first = true;
-        List<Integer> smaller2 = new ArrayList<Integer>();
-        List<Integer> larger2= new ArrayList<Integer>();
-        for(Integer i : arr2){
-            if(first){
-               first = false;
-               continue;
+        List<Integer> smaller2 = new ArrayList<>();
+        List<Integer> larger2 = new ArrayList<>();
+        for (Integer i : arr2) {
+            if (first) {
+                first = false;
+                continue;
             }
-            if(i <= arr2.get(0)){
+            if (i <= arr2.get(0)) {
                 smaller2.add(i);
-            }else{
+            } else {
                 larger2.add(i);
             }
         }
         boolean r = compare(smaller1, smaller2) && compare(larger1, larger2);
-        if(!r){
-            return false;
-        }
-        return sameBST1(smaller1, smaller2) && sameBST1(larger1, larger2);
-        
+        return r && sameBST1(smaller1, smaller2) && sameBST1(larger1, larger2);
+
     }
     
     private boolean compare(List<Integer> l1, List<Integer> l2){
-        Set<Integer> s = new HashSet<Integer>();
-        for(Integer i : l1){
-            s.add(i);
-        }
+        Set<Integer> s = new HashSet<>();
+        s.addAll(l1);
         for(Integer i : l2){
             if(!s.contains(i)){
                 return false;

@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-15-longest-bitonic-subsequence/
  */
-public class BitonicSequence {
+class BitonicSequence {
 
-    public int longestSequence(int arr[]){
+    private int longestSequence(int arr[]){
         int lis[] = new int[arr.length];
         int lds[] = new int[arr.length];
         for(int i=0; i < arr.length; i++){

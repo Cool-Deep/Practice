@@ -3,9 +3,9 @@ package com.interview.number;
 /**
  * 150 qs 18.4
  */
-public class CountNoOf2s {
+class CountNoOf2s {
 
-    public int count2s(int n){
+    private int count2s(int n){
         if(n < 2){
             return 0;
         }else if(n <= 9){

@@ -15,9 +15,9 @@ import java.util.Map;
  * References
  * https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
  * CLRS book*/
-public class DijkstraShortestPath {
+class DijkstraShortestPath {
 
-    public Map<Vertex<Integer>,Integer> shortestPath(Graph<Integer> graph, Vertex<Integer> sourceVertex){
+    private Map<Vertex<Integer>,Integer> shortestPath(Graph<Integer> graph, Vertex<Integer> sourceVertex){
 
         //heap + map data structure
         BinaryMinHeap<Vertex<Integer>> minHeap = new BinaryMinHeap<>();

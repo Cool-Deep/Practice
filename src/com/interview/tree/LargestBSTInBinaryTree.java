@@ -21,9 +21,9 @@ package com.interview.tree;
  * http://www.geeksforgeeks.org/find-the-largest-subtree-in-a-tree-that-is-also-a-bst/
  * https://leetcode.com/problems/largest-bst-subtree/
  */
-public class LargestBSTInBinaryTree {
+class LargestBSTInBinaryTree {
 
-    public int largestBST(Node root){
+    private int largestBST(Node root){
         MinMax m = largest(root);
         return m.size;
     }
@@ -45,7 +45,7 @@ public class LargestBSTInBinaryTree {
         //of this node is not greater/equal than max of left and less than min of right
         //then subtree with this node as root will not be BST. 
         //Return false and max size of left and right subtree to parent
-        if(leftMinMax.isBST == false || rightMinMax.isBST == false || (leftMinMax.max > root.data || rightMinMax.min <= root.data)){
+        if(!leftMinMax.isBST || !rightMinMax.isBST || (leftMinMax.max > root.data || rightMinMax.min <= root.data)){
             m.isBST = false;
             m.size = Math.max(leftMinMax.size, rightMinMax.size);
             return m;

@@ -5,9 +5,9 @@ import java.util.*;
 /**
  * Created by Davit on 19/06/16.
  */
-public class TournamentDay19 {
+class TournamentDay19 {
 
-    static String[] sortByLength(String[] inputArray) {
+    private static String[] sortByLength(String[] inputArray) {
         HashMap<Integer, List<String>> inputMap = new HashMap<>();
         for (String str : inputArray) {
             if (inputMap.containsKey(str.length())) {
@@ -35,7 +35,7 @@ public class TournamentDay19 {
 
 
     public static void main(String[] args) {
-        System.out.println(sortByLength(new String[]{"abc", "", "aaa", "a", "zz"}));
+        System.out.println(Arrays.toString(sortByLength(new String[]{"abc", "", "aaa", "a", "zz"})));
     }
 
 }

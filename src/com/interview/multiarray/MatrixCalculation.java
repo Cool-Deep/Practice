@@ -1,10 +1,10 @@
 package com.interview.multiarray;
 
-public class MatrixCalculation {
+class MatrixCalculation {
 
     private int r = 0;
     
-    public String[][] crossMultiply(String[][] str){
+    private String[][] crossMultiply(String[][] str){
         
         int cols = 1;
         for(int i=1; i < str.length; i++){
@@ -41,9 +41,9 @@ public class MatrixCalculation {
         MatrixCalculation mc = new MatrixCalculation();
         String[][] str = {{"abc","def","gh"},{"l","m"},{"p","q","r"},{"x","y"}};
         String[][] result = mc.crossMultiply(str);
-        for(int i=0; i < result.length; i++){
-            for(int j=0; j < result[i].length; j++){
-                System.out.print(result[i][j] + " ");
+        for (String[] aResult : result) {
+            for (int j = 0; j < aResult.length; j++) {
+                System.out.print(aResult[j] + " ");
             }
             System.out.println();
         }

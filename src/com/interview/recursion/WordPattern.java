@@ -11,14 +11,14 @@ import java.util.Set;
  Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty substring in str.
  * https://leetcode.com/problems/word-pattern-ii/
  */
-public class WordPattern {
-    public boolean wordPatternMatch(String pattern, String str) {
+class WordPattern {
+    private boolean wordPatternMatch(String pattern, String str) {
         Map<Character, String> map = new HashMap<>();
         Set<String> set = new HashSet<>();
         return wordPatternMatch(pattern, str, 0, 0, map, set);
     }
 
-    public boolean wordPatternMatch(String pattern, String str, int pos1, int pos2, Map<Character, String> map, Set<String> set) {
+    private boolean wordPatternMatch(String pattern, String str, int pos1, int pos2, Map<Character, String> map, Set<String> set) {
         if (pos1 == pattern.length()) {
             return pos2 == str.length();
         }

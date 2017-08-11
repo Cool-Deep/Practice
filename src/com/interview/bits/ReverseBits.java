@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * http://www.geeksforgeeks.org/write-an-efficient-c-program-to-reverse-bits-of-a-number/
  */
-public class ReverseBits {
+class ReverseBits {
 
-    public int reverse(int num){
+    private int reverse(int num){
         //assuming int is 32 bits.
         int result = 0;
         int r1 = 1;

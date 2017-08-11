@@ -7,9 +7,9 @@ package com.interview.dynamic;
  * Number less than 7
  * Number greater than equal to 7
  */
-public class CountAs {
+class CountAs {
 
-    public int countAsRec(int n){
+    private int countAsRec(int n){
     
         if(n < 7){
             return n;
@@ -25,7 +25,7 @@ public class CountAs {
         return max;
     }
  
-    public int countAs(int n){
+    private int countAs(int n){
         if(n < 7){
             return n;
         }

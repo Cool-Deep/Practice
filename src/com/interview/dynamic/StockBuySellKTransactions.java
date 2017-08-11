@@ -15,7 +15,7 @@ import java.util.LinkedList;
  *
  * https://leetcode.com/discuss/15153/a-clean-dp-solution-which-generalizes-to-k-transactions
  */
-public class StockBuySellKTransactions {
+class StockBuySellKTransactions {
 
     /**
      * This is faster method which does optimization on slower method
@@ -25,7 +25,7 @@ public class StockBuySellKTransactions {
      * T[i][j] = max(T[i][j-1], prices[j] + maxDiff)
      * maxDiff = max(maxDiff, T[i-1][j] - prices[j])
      */
-    public int maxProfit(int prices[], int K) {
+    private int maxProfit(int prices[], int K) {
         if (K == 0 || prices.length == 0) {
             return 0;
         }
@@ -47,7 +47,7 @@ public class StockBuySellKTransactions {
      * Time complexity is O(k * number of days ^ 2)
      * T[i][j] = max(T[i][j-1], max(prices[j] - prices[m] + T[i-1][m])) where m is 0...j-1
      */
-    public int maxProfitSlowSolution(int prices[], int K) {
+    private int maxProfitSlowSolution(int prices[], int K) {
         if (K == 0 || prices.length == 0) {
             return 0;
         }
@@ -66,7 +66,7 @@ public class StockBuySellKTransactions {
         return T[K][prices.length - 1];
     }
 
-    public void printActualSolution(int T[][], int prices[]) {
+    private void printActualSolution(int T[][], int prices[]) {
         int i = T.length - 1;
         int j = T[0].length - 1;
 

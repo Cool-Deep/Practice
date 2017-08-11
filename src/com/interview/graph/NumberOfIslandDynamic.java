@@ -10,8 +10,8 @@ import java.util.*;
  * surrounded by water.
  * https://leetcode.com/problems/number-of-islands-ii/
  */
-public class NumberOfIslandDynamic {
-    public List<Integer> numIslands2(int n, int m, int[][] positions) {
+class NumberOfIslandDynamic {
+    private List<Integer> numIslands2(int n, int m, int[][] positions) {
         if (positions.length == 0 || positions[0].length == 0) {
             return Collections.emptyList();
         }

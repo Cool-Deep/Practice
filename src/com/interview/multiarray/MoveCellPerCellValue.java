@@ -6,17 +6,17 @@ package com.interview.multiarray;
  * Values in cell should be in range of 2D array.
  */
 class Cell{
-	int x;
-	int y;
+	final int x;
+	final int y;
 	Cell(int x,int y){
 		this.x = x;
 		this.y = y;
 	}
 }
 
-public class MoveCellPerCellValue {
+class MoveCellPerCellValue {
 
-	public boolean isAllCellTraversed(Cell grid[][]){
+	private boolean isAllCellTraversed(Cell grid[][]){
 		boolean[][] visited = new boolean[grid.length][grid[0].length];
 		
 		int total = grid.length * grid[0].length;
@@ -26,7 +26,7 @@ public class MoveCellPerCellValue {
 			if(grid[startx][starty] == null){
 				return false;
 			}
-			if(visited[startx][starty] == true){
+			if(visited[startx][starty]){
 				return false;
 			}
 			visited[startx][starty] = true;
@@ -35,11 +35,8 @@ public class MoveCellPerCellValue {
 			startx = x;
 			starty = y;
 		}
-		if(grid[startx][starty] == null){
-			return true;
-		}
-		return false;
-	}
+        return grid[startx][starty] == null;
+    }
 	
 	public static void main(String args[]){
 		Cell cell[][] = new Cell[3][2];

@@ -4,15 +4,13 @@ package com.interview.dynamic;
  * Paint House 2
  * https://leetcode.com/problems/paint-house-ii/
  */
-public class PaintHouse {
-    public int minCost(int[][] costs) {
+class PaintHouse {
+    private int minCost(int[][] costs) {
         if (costs.length == 0 || costs[0].length == 0) {
             return 0;
         }
         int[][] dp = new int[costs.length][costs[0].length];
-        for (int i = 0; i < costs[0].length; i++) {
-            dp[0][i] = costs[0][i];
-        }
+        System.arraycopy(costs[0], 0, dp[0], 0, costs[0].length);
 
         for (int i = 1; i < costs.length; i++) {
             Pair p = findMinSecondMin(dp[i - 1]);

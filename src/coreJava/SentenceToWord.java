@@ -1,10 +1,9 @@
 package coreJava;
 
-import java.lang.ref.WeakReference;
 import java.util.Scanner;
 
-public class SentenceToWord {
-	public static int getNumberOfWords(String sentence) {
+class SentenceToWord {
+	private static int getNumberOfWords(String sentence) {
 		int counter = 0;
 		for (int i = 0; i < sentence.length(); i++) {
 			if (sentence.charAt(i) == ' ')
@@ -13,7 +12,7 @@ public class SentenceToWord {
 		return counter + 1;
 	}
 
-	public static char[] getSubString(String sentence, int start, int end) {
+	private static char[] getSubString(String sentence, int start, int end) {
 		int counter = 0;
 		char[] charArrayToReturn = new char[end - start];
 		for (int i = start; i < end; i++) {
@@ -22,7 +21,7 @@ public class SentenceToWord {
 		return charArrayToReturn;
 	}
 
-	public static char[][] getWordsFromString(String sentence) {
+	private static char[][] getWordsFromString(String sentence) {
 		int wordsCounter = 0;
 		int spaceIndex = 0;
 		int length = sentence.length();

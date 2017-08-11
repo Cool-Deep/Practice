@@ -34,12 +34,12 @@ import java.util.Queue;
  * 
  * Time space complexity for all above algorithm is O(n).
  */
-public class TreeTraversalLevelByLevel {
+class TreeTraversalLevelByLevel {
 
     /**
      * Use two queue to print level by level
      */
-    public void levelByLevelTwoQueue(Node root) {
+    private void levelByLevelTwoQueue(Node root) {
         if (root == null) {
             return;
         }
@@ -75,11 +75,11 @@ public class TreeTraversalLevelByLevel {
     /**
      * Use one queue and delimiter to print level by level
      */
-    public void levelByLevelOneQueueUsingDelimiter(Node root) {
+    private void levelByLevelOneQueueUsingDelimiter(Node root) {
         if (root == null) {
             return;
         }
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<>();
         q.offer(root);
         q.offer(null);
         while (!q.isEmpty()) {
@@ -104,11 +104,11 @@ public class TreeTraversalLevelByLevel {
     /**
      * Use one queue and count to print level by level
      */
-    public void levelByLevelOneQueueUsingCount(Node root) {
+    private void levelByLevelOneQueueUsingCount(Node root) {
         if (root == null) {
             return;
         }
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node> q = new LinkedList<>();
         int levelCount = 1;
         int currentCount = 0;
         q.offer(root);

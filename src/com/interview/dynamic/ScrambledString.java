@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * Read question at https://leetcode.com/problems/scramble-string/
  */
-public class ScrambledString {
+class ScrambledString {
 
     /**
      * Index for memoization.
@@ -25,8 +25,7 @@ public class ScrambledString {
 
             if (start1 != index.start1) return false;
             if (end1 != index.end1) return false;
-            if (start2 != index.start2) return false;
-            return end2 == index.end2;
+            return start2 == index.start2 && end2 == index.end2;
 
         }
 
@@ -42,7 +41,7 @@ public class ScrambledString {
         int end2;
     }
 
-    boolean isScrambled(char input1[], char input2[], int start1, int end1, int start2, int end2, Map<Index, Boolean> memMap) {
+    private boolean isScrambled(char input1[], char input2[], int start1, int end1, int start2, int end2, Map<Index, Boolean> memMap) {
 
         //return false conditions
         if(start1 > end1 || start2 > end2) {

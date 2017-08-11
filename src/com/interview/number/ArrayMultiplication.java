@@ -2,9 +2,9 @@ package com.interview.number;
 
 import com.interview.array.ArrayAddition;
 
-public class ArrayMultiplication {
+class ArrayMultiplication {
 
-    public int[] multiplyDivideAndConquer(int arr1[],int arr2[],int low1,int high1,int low2,int high2){
+    private int[] multiplyDivideAndConquer(int arr1[], int arr2[], int low1, int high1, int low2, int high2){
         
         if(low1 == high1 || low2 == high2){
             return simpleMultiplication(arr1, arr2, low1, high1, low2, high2);
@@ -44,7 +44,7 @@ public class ArrayMultiplication {
         return result;
     }
     
-    public int[] simpleMultiplication(int arr1[],int arr2[],int low1,int high1,int low2,int high2){
+    private int[] simpleMultiplication(int arr1[], int arr2[], int low1, int high1, int low2, int high2){
         
         int[] result = new int[high1-low1 + high2 -low2 + 2];
         
@@ -84,7 +84,7 @@ public class ArrayMultiplication {
         }
     }
     
-    public int multiplicationImproved(int x, int y, int len){
+    private int multiplicationImproved(int x, int y, int len){
         if(len == 1){
             return x*y;
         }
@@ -109,8 +109,8 @@ public class ArrayMultiplication {
         int arr1[] = {9,9,5,7,4,2,1};
         ArrayMultiplication am = new ArrayMultiplication();
         int result[] = am.multiplyDivideAndConquer(arr1, arr2, 0, arr1.length-1, 0, arr2.length-1);
-        for(int i=0; i < result.length; i++){
-            System.out.print(" " + result[i]);
+        for (int aResult : result) {
+            System.out.print(" " + aResult);
         }
         
         System.out.print("\n" + am.multiplicationImproved(999, 168, 2));

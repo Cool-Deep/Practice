@@ -11,9 +11,9 @@ package com.interview.number;
  *
  * Reference https://learn.hackerearth.com/forum/182/lexicographically-smallest-permutation-given-a-signature/
  */
-public class GenerateSignature {
+class GenerateSignature {
 
-    public int[] generate(char[] input) {
+    private int[] generate(char[] input) {
         int n = input.length+1;
         int[] result = new int[n];
         int i;
@@ -53,8 +53,8 @@ public class GenerateSignature {
         String input = "IIIDIIDDDDIIDDD";
         GenerateSignature gs = new GenerateSignature();
         int result[] = gs.generate(input.toCharArray());
-        for(int i=0; i < result.length; i++){
-            System.out.print(result[i] + " ");
+        for (int aResult : result) {
+            System.out.print(aResult + " ");
         }
     }
 }

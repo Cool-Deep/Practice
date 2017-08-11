@@ -36,13 +36,13 @@ import java.util.LinkedList;
  * String with already balanced parenthesis
  *
  */
-public class RemoveExtraBrackets {
+class RemoveExtraBrackets {
 
-    public int remove(char input[]){
+    private int remove(char input[]){
         if(input == null){
             return 0;
         }
-        Deque<Integer> dq = new LinkedList<Integer>();
+        Deque<Integer> dq = new LinkedList<>();
         for(int i=0; i < input.length; i++){
             //skip non bracket characters
             if(input[i] != '(' && input[i] != ')'){
@@ -78,7 +78,7 @@ public class RemoveExtraBrackets {
     /**
      * This method does not uses stack and does inplace conversion
      */
-    public int removeWithoutExtraSpace(char input[]){
+    private int removeWithoutExtraSpace(char input[]){
         int openBrackets = 0;
         int closeBrackets = 0;
         
@@ -119,7 +119,7 @@ public class RemoveExtraBrackets {
         return index;
     }
     
-    public static void printArray(char input[], int size) {
+    private static void printArray(char input[], int size) {
         for(int i=0; i < size; i++){
             System.out.print(input[i] + " ");
         }

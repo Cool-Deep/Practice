@@ -1,6 +1,5 @@
 package com.interview.dynamic;
 
-import java.text.Format;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,13 +17,13 @@ import java.util.Map;
  * Topdown DP - https://youtu.be/Kf_M7RdHr1M
  * Bottom up DP - https://youtu.be/Y0ZqKpToTic
  */
-public class CoinChangingMinimumCoin {
+class CoinChangingMinimumCoin {
 
     /**
      * Top down dynamic programing. Using map to store intermediate results.
      * Returns Integer.MAX_VALUE if total cannot be formed with given coins
      */
-    public int minimumCoinTopDown(int total, int coins[], Map<Integer, Integer> map) {
+    private int minimumCoinTopDown(int total, int coins[], Map<Integer, Integer> map) {
 
         //if total is 0 then there is nothing to do. return 0.
         if ( total == 0 ) {
@@ -38,17 +37,17 @@ public class CoinChangingMinimumCoin {
 
         //iterate through all coins and see which one gives best result.
         int min = Integer.MAX_VALUE;
-        for ( int i=0; i < coins.length; i++ ) {
+        for (int coin : coins) {
             //if value of coin is greater than total we are looking for just continue.
-            if( coins[i] > total ) {
+            if (coin > total) {
                 continue;
             }
             //recurse with total - coins[i] as new total
-            int val = minimumCoinTopDown(total - coins[i], coins, map);
+            int val = minimumCoinTopDown(total - coin, coins, map);
 
             //if val we get from picking coins[i] as first coin for current total is less
             // than value found so far make it minimum.
-            if( val < min ) {
+            if (val < min) {
                 min = val;
             }
         }
@@ -67,7 +66,7 @@ public class CoinChangingMinimumCoin {
      * can be very low negative number
      * Returns Integer.MAX_VALUE - 1 if solution is not possible.
      */
-    public int minimumCoinBottomUp(int total, int coins[]){
+    private int minimumCoinBottomUp(int total, int coins[]){
         int T[] = new int[total + 1];
         int R[] = new int[total + 1];
         T[0] = 0;

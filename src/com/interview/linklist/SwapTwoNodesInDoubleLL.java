@@ -8,9 +8,9 @@ package com.interview.linklist;
  * A and B not neighbors of each other
  * A or B are start or end nodes
  */
-public class SwapTwoNodesInDoubleLL {
+class SwapTwoNodesInDoubleLL {
 
-    public void swap(Node nodeA, Node nodeB){
+    private void swap(Node nodeA, Node nodeB){
         if(nodeA == null || nodeB == null){
             throw new IllegalArgumentException();
         }

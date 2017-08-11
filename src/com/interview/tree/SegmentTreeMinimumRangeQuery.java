@@ -29,12 +29,12 @@ import com.interview.bits.NextPowerOf2;
  * http://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/
  * https://www.topcoder.com/community/data-science/data-science-tutorials/range-minimum-query-and-lowest-common-ancestor/
  */
-public class SegmentTreeMinimumRangeQuery {
+class SegmentTreeMinimumRangeQuery {
 
     /**
      * Creates a new segment tree based off input array.
      */
-    public int[] createSegmentTree(int input[]){
+    private int[] createSegmentTree(int input[]){
         NextPowerOf2 np2 = new NextPowerOf2();
         //if input len is pow of then size of 
         //segment tree is 2*len -1 otherwisze
@@ -53,7 +53,7 @@ public class SegmentTreeMinimumRangeQuery {
     /**
      * Updates segment tree for certain index by given delta
      */
-    public void updateSegmentTree(int input[], int segmentTree[], int index, int delta){
+    private void updateSegmentTree(int input[], int segmentTree[], int index, int delta){
         input[index] += delta;
         updateSegmentTree(segmentTree, index, delta, 0, input.length - 1, 0);
     }
@@ -61,7 +61,7 @@ public class SegmentTreeMinimumRangeQuery {
     /**
      * Updates segment tree for given range by given delta
      */
-    public void updateSegmentTreeRange(int input[], int segmentTree[], int startRange, int endRange, int delta) {
+    private void updateSegmentTreeRange(int input[], int segmentTree[], int startRange, int endRange, int delta) {
         for(int i = startRange; i <= endRange; i++) {
             input[i] += delta;
         }
@@ -71,21 +71,21 @@ public class SegmentTreeMinimumRangeQuery {
     /**
      * Queries given range for minimum value.
      */
-    public int rangeMinimumQuery(int []segmentTree,int qlow,int qhigh,int len){
+    private int rangeMinimumQuery(int[] segmentTree, int qlow, int qhigh, int len){
         return rangeMinimumQuery(segmentTree,0,len-1,qlow,qhigh,0);
     }
 
     /**
      * Updates given range by given delta lazily
      */
-    public void updateSegmentTreeRangeLazy(int input[], int segmentTree[], int lazy[], int startRange, int endRange, int delta) {
+    private void updateSegmentTreeRangeLazy(int input[], int segmentTree[], int lazy[], int startRange, int endRange, int delta) {
         updateSegmentTreeRangeLazy(segmentTree, lazy, startRange, endRange, delta, 0, input.length - 1, 0);
     }
 
     /**
      * Queries given range lazily
      */
-    public int rangeMinimumQueryLazy(int segmentTree[], int lazy[], int qlow, int qhigh, int len) {
+    private int rangeMinimumQueryLazy(int segmentTree[], int lazy[], int qlow, int qhigh, int len) {
         return rangeMinimumQueryLazy(segmentTree, lazy, qlow, qhigh, 0, len - 1, 0);
     }
 

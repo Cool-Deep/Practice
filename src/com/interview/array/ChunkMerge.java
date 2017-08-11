@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
  * One or more lists are empty
  * All elements in one list are smaller than all elements in another list
  */
-public class ChunkMerge {
+class ChunkMerge {
     
     class Triplet implements Comparable<Triplet>{
         int pos;
@@ -28,9 +28,9 @@ public class ChunkMerge {
         }
     }
     
-    public List<Integer> mergeUsingHeap(List<List<Integer>> chunks){
-        List<Integer> result = new ArrayList<Integer>();
-        PriorityQueue<Triplet> queue = new PriorityQueue<Triplet>();
+    private List<Integer> mergeUsingHeap(List<List<Integer>> chunks){
+        List<Integer> result = new ArrayList<>();
+        PriorityQueue<Triplet> queue = new PriorityQueue<>();
         //add first element of every chunk into queue
         for(int i=0; i < chunks.size(); i++){
             Triplet p = new Triplet();
@@ -52,8 +52,8 @@ public class ChunkMerge {
         return result;
     }
     
-    public List<Integer> mergeChunksOfDifferentSize(List<List<Integer>> chunks){
-        List<Integer> result = new ArrayList<Integer>();
+    private List<Integer> mergeChunksOfDifferentSize(List<List<Integer>> chunks){
+        List<Integer> result = new ArrayList<>();
 
         int sum[] = new int[chunks.size()+1];
         sum[0] = 0;
@@ -62,9 +62,7 @@ public class ChunkMerge {
         }
         
         for(List<Integer> chunk : chunks){
-            for(Integer i : chunk){
-                result.add(i);
-            }
+            result.addAll(chunk);
         }
         mergeSort(result,0,chunks.size()-1,sum);
         return result;
@@ -91,7 +89,7 @@ public class ChunkMerge {
         int mid = (start + end)/2; 
         int i = sum[start];
         int j = sum[mid+1];
-        List<Integer> temp = new ArrayList<Integer>();
+        List<Integer> temp = new ArrayList<>();
         while(i < sum[mid+1] && j < sum[end+1]){
             if(result.get(i) < result.get(j)){
                 temp.add(result.get(i));
@@ -133,7 +131,7 @@ public class ChunkMerge {
         List<Integer> list7 = Arrays.asList(arr7);
         
         
-        List<List<Integer>> chunks = new ArrayList<List<Integer>>();
+        List<List<Integer>> chunks = new ArrayList<>();
         chunks.add(list1);
         chunks.add(list2);
         chunks.add(list3);

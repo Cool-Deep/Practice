@@ -1,8 +1,8 @@
 package com.interview.array;
 
-public class MoveAllZerosToEnd {
+class MoveAllZerosToEnd {
 
-    public void moveZeros(int arr[]){
+    private void moveZeros(int arr[]){
         int slow =0;
         int fast =0;
         while(fast < arr.length){
@@ -23,8 +23,8 @@ public class MoveAllZerosToEnd {
         MoveAllZerosToEnd maz  = new MoveAllZerosToEnd();
         int arr[] = {0,0,1,2,0,5,6,7,0};
         maz.moveZeros(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i]);
+        for (int anArr : arr) {
+            System.out.print(anArr);
         }
     }
 }

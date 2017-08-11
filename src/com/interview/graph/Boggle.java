@@ -15,9 +15,9 @@ import java.util.Set;
  *
  * https://leetcode.com/problems/word-search-ii/
  */
-public class Boggle {
+class Boggle {
 
-    public List<String> findWords(char[][] board, String[] words) {
+    private List<String> findWords(char[][] board, String[] words) {
         Trie t = new Trie();
         for (String word : words) {
             t.insert(word);
@@ -66,14 +66,14 @@ public class Boggle {
     }
 
     class TrieNode {
-        TrieNode[] child = new TrieNode[26];
+        final TrieNode[] child = new TrieNode[26];
         boolean isWord;
         public TrieNode() {
         }
     }
 
     class Trie {
-        private TrieNode root;
+        private final TrieNode root;
 
         public Trie() {
             root = new TrieNode();
@@ -120,9 +120,11 @@ public class Boggle {
             return true;
         }
 
-        public void printTrie() {
-            printTrieUtil(root);
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//        public void printTrie() {
+//            printTrieUtil(root);
+//        }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
         private void printTrieUtil(TrieNode root) {
             if (root == null) {
@@ -142,6 +144,6 @@ public class Boggle {
         String[] words = {"oath","pea","eat","rain"};
         Boggle boggle = new Boggle();
         List<String> result = boggle.findWords(board, words);
-        result.stream().forEach(s -> System.out.println(s));
+        result.forEach(System.out::println);
     }
 }

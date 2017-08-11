@@ -1,8 +1,8 @@
 package com.interview.multiarray;
 
-public class TurnImageBy90 {
+class TurnImageBy90 {
 
-	public void turnImage(int [][]mat){
+	private void turnImage(int[][] mat){
 		
 		int length = mat.length-1;
 		int j=0;
@@ -21,12 +21,12 @@ public class TurnImageBy90 {
 	}
 	
 	private void print(int arr[][]){
-		for(int i=0; i < arr.length; i++){
-			for(int j=0; j < arr.length; j++){
-				System.out.print(arr[i][j] + " ");
-			}
-			System.out.print("\n");
-		}
+        for (int[] anArr : arr) {
+            for (int j = 0; j < arr.length; j++) {
+                System.out.print(anArr[j] + " ");
+            }
+            System.out.print("\n");
+        }
 	}
 	
 	public static void main(String args[]){

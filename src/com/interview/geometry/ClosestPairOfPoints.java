@@ -27,8 +27,8 @@ import java.util.List;
 
 
 class Point{
-    int x;
-    int y;
+    final int x;
+    final int y;
     Point(int x, int y){
         this.x = x;
         this.y = y;
@@ -57,10 +57,10 @@ class YCoordinatorSorter implements Comparator<Point>{
     }
 }
 
-public class ClosestPairOfPoints {
+class ClosestPairOfPoints {
 
     private static final int SIZE = 7;
-    public double closestPairOfPoints(Point[] points){
+    private double closestPairOfPoints(Point[] points){
         if(points.length < 2){
             throw new IllegalArgumentException();
         }
@@ -102,7 +102,7 @@ public class ClosestPairOfPoints {
         int d2 = closestPairOfPoints(px, pyRight, mid+1, end);
         int d = Math.min(d1, d2);
         
-        List<Point> deltaPoints = new ArrayList<Point>();
+        List<Point> deltaPoints = new ArrayList<>();
         for(Point p : px){
             if(Math.sqrt(distance(p,px[mid])) < Math.sqrt(d)){
                 deltaPoints.add(p);

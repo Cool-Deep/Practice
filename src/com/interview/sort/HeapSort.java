@@ -22,9 +22,9 @@ package com.interview.sort;
  * sorted array
  * reverse sorted array
  */
-public class HeapSort {
+class HeapSort {
 
-    public void sort(int arr[]){
+    private void sort(int arr[]){
         for(int i=1; i < arr.length; i++){
             heapAdd(arr, i);
         }

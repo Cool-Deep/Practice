@@ -11,9 +11,9 @@ package com.interview.linklist;
  *
  * https://leetcode.com/problems/linked-list-cycle/
  */
-public class LoopInLinkList {
+class LoopInLinkList {
 
-    public boolean hasCycle(Node head){
+    private boolean hasCycle(Node head){
         if (head == null) {
             return false;
         }

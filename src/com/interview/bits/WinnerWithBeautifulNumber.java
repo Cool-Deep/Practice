@@ -11,9 +11,9 @@ package com.interview.bits;
  * which player will win
  *     
  */
-public class WinnerWithBeautifulNumber {
+class WinnerWithBeautifulNumber {
 
-    public int winner(int n){
+    private int winner(int n){
         int sum = 0;
         int i =1;
         int result = 0;

@@ -12,9 +12,9 @@ package com.interview.number;
  * https://leetcode.com/problems/powx-n/
  * http://www.geeksforgeeks.org/write-a-c-program-to-calculate-powxn/
  */
-public class PowerFunction {
+class PowerFunction {
 
-    public int power(int n, int m){
+    private int power(int n, int m){
         if(m == 0){
             return 1;
         }
@@ -27,29 +27,31 @@ public class PowerFunction {
     }
 
 
-    public double powerUsingBit(double x, int n) {
-        if (n == 0) {
-            return 1;
-        }
-        long r = n;
-        if (r < 0) {
-            x = 1/x;
-            r = -r;
-        }
-        double power = x;
-        double result = x;
-        double result1 = 1;
-        while (r > 1) {
-            result *= result;
-            if ((r & 1) != 0) {
-                result1 = result1 * power;
-            }
-            r = r >> 1;
-            power = power * power;
-        }
-        return result * result1;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public double powerUsingBit(double x, int n) {
+//        if (n == 0) {
+//            return 1;
+//        }
+//        long r = n;
+//        if (r < 0) {
+//            x = 1/x;
+//            r = -r;
+//        }
+//        double power = x;
+//        double result = x;
+//        double result1 = 1;
+//        while (r > 1) {
+//            result *= result;
+//            if ((r & 1) != 0) {
+//                result1 = result1 * power;
+//            }
+//            r = r >> 1;
+//            power = power * power;
+//        }
+//        return result * result1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     public static void main(String args[]){
         PowerFunction pf = new PowerFunction();
         long pow = pf.power(3, 5);

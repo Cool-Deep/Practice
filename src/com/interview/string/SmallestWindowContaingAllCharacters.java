@@ -8,9 +8,9 @@ package com.interview.string;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SmallestWindowContaingAllCharacters {
+class SmallestWindowContaingAllCharacters {
 
-    public String minWindow(String s, String t) {
+    private String minWindow(String s, String t) {
         Map<Character, Integer> countMap = new HashMap<>();
         for (char s1 : t.toCharArray()) {
             countMap.compute(s1, (key, val) -> {

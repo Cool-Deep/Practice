@@ -15,9 +15,9 @@ import java.util.Map;
  *
  * http://www.geeksforgeeks.org/longest-span-sum-two-binary-arrays/
  */
-public class LongestSameSumSpan {
+class LongestSameSumSpan {
 
-    public int longestSpan(int input1[], int input2[]) {
+    private int longestSpan(int input1[], int input2[]) {
         if (input1.length != input2.length) {
             throw new IllegalArgumentException("Not same length input");
         }

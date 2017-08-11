@@ -11,14 +11,14 @@ import java.util.*;
  * Reference - https://ecommons.cornell.edu/handle/1813/5941
  * https://github.com/jgrapht/jgrapht/tree/master/jgrapht-core/src/main/java/org/jgrapht/alg/cycle
  */
-public class AllCyclesInDirectedGraphTarjan {
+class AllCyclesInDirectedGraphTarjan {
 
     private Set<Vertex<Integer>> visited;
     private Deque<Vertex<Integer>> pointStack;
     private Deque<Vertex<Integer>> markedStack;
     private Set<Vertex<Integer>> markedSet;
 
-    public AllCyclesInDirectedGraphTarjan() {
+    private AllCyclesInDirectedGraphTarjan() {
         reset();
     }
 
@@ -29,7 +29,7 @@ public class AllCyclesInDirectedGraphTarjan {
         markedSet = new HashSet<>();
     }
 
-    public List<List<Vertex<Integer>>> findAllSimpleCycles(Graph<Integer> graph) {
+    private List<List<Vertex<Integer>>> findAllSimpleCycles(Graph<Integer> graph) {
         reset();
         List<List<Vertex<Integer>>> result = new ArrayList<>();
         for(Vertex<Integer> vertex : graph.getAllVertex()) {
@@ -50,7 +50,6 @@ public class AllCyclesInDirectedGraphTarjan {
 
         for (Vertex<Integer> w : current.getAdjacentVertexes()) {
             if (visited.contains(w)) {
-                continue;
             } else if (w.equals(start)) {
                 hasCycle = true;
                 pointStack.offerFirst(w);

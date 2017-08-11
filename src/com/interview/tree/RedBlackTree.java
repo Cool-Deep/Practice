@@ -67,14 +67,14 @@ public class RedBlackTree {
     /**
      * Main insert method of red black tree.
      */
-    public Node insert(Node root, int data) {
+    private Node insert(Node root, int data) {
         return insert(null, root, data);
     }
 
     /**
      * Main delete method of red black tree.
      */
-    public Node delete(Node root, int data) {
+    private Node delete(Node root, int data) {
         AtomicReference<Node> rootReference = new AtomicReference<>();
         delete(root, data, rootReference);
         if(rootReference.get() == null) {
@@ -87,14 +87,14 @@ public class RedBlackTree {
     /**
      * Main print method of red black tree.
      */
-    public void printRedBlackTree(Node root) {
+    private void printRedBlackTree(Node root) {
         printRedBlackTree(root, 0);
     }
 
     /**
      * Main validate method of red black tree.
      */
-    public boolean validateRedBlackTree(Node root) {
+    private boolean validateRedBlackTree(Node root) {
 
         if(root == null) {
             return true;
@@ -167,11 +167,7 @@ public class RedBlackTree {
 
     private boolean isLeftChild(Node root) {
         Node parent = root.parent;
-        if(parent.left == root) {
-            return true;
-        } else {
-            return false;
-        }
+        return parent.left == root;
     }
 
     private Node insert(Node parent, Node root, int data) {
@@ -405,7 +401,6 @@ public class RedBlackTree {
         && siblingNode.right.color == Color.BLACK) {
             siblingNode.color = Color.RED;
             doubleBlackNode.parent.color = Color.BLACK;
-            return;
         } else {
             deleteCase5(doubleBlackNode, rootReference);
         }
@@ -477,14 +472,11 @@ public class RedBlackTree {
     }
 
     private boolean noRedRedParentChild(Node root, Color parentColor) {
-        if(root == null) {
+        if (root == null) {
             return true;
         }
-        if(root.color == Color.RED && parentColor == Color.RED) {
-            return false;
-        }
+        return root.color != Color.RED || parentColor != Color.RED && noRedRedParentChild(root.left, root.color) && noRedRedParentChild(root.right, root.color);
 
-        return noRedRedParentChild(root.left, root.color) && noRedRedParentChild(root.right, root.color);
     }
 
     private boolean checkBlackNodesCount(Node root, AtomicInteger blackCount, int currentCount) {

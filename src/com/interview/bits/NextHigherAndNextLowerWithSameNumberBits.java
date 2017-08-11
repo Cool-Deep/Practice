@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * Exercise 5.3 150 qs
  */
-public class NextHigherAndNextLowerWithSameNumberBits {
+class NextHigherAndNextLowerWithSameNumberBits {
 
-    public int nextHigher(int n){
+    private int nextHigher(int n){
         int i = 1;
         int first1 = 0;
         //go till you find first 1
@@ -29,7 +29,7 @@ public class NextHigherAndNextLowerWithSameNumberBits {
         return n;
     }
     
-    public int nextLower(int n){
+    private int nextLower(int n){
         if(n ==0){
             return 0;
         }

@@ -21,13 +21,15 @@ import java.util.List;
  * 0
  * null array
  */
-public class PrintArrayInAdjacentWay {
+class PrintArrayInAdjacentWay {
 
-    public void printArray(int len,int k){
-        List<Integer> result = new ArrayList<Integer>();
-        printArray(len,0,result,k);
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void printArray(int len,int k){
+//        List<Integer> result = new ArrayList<Integer>();
+//        printArray(len,0,result,k);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     private void printArray(int len, int pos,List<Integer> result,int k){
         if(pos > len){
             return;
@@ -47,7 +49,7 @@ public class PrintArrayInAdjacentWay {
         }
     }
     
-    public int numberOfWaysPossible(int input[],int pos){
+    private int numberOfWaysPossible(int input[], int pos){
         if(pos > input.length){
             return 0;
         }
@@ -73,7 +75,7 @@ public class PrintArrayInAdjacentWay {
      * @param input
      * @return
      */
-    public int numberOfWaysPossibleFaster(int input[]){
+    private int numberOfWaysPossibleFaster(int input[]){
         int a0 = 1;
         int a1 = 1;
         int c = 0;

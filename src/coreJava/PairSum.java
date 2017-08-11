@@ -1,24 +1,23 @@
 package coreJava;
 
 //Java implementation using Hashing
-import java.io.*;
 
 class PairSum {
 	private static final int MAX = 100000; // Max size of Hashmap
 
-	static void printpairs(int arr[], int sum) {
+	private static void printpairs(int arr[], int sum) {
 		// Declares and initializes the whole array as false
 		boolean[] binmap = new boolean[MAX];
 
-		for (int i = 0; i < arr.length; ++i) {
-			int temp = sum - arr[i];
+		for (int anArr : arr) {
+			int temp = sum - anArr;
 
 			// checking for condition
 			if (temp >= 0 && binmap[temp]) {
 				System.out.println("Pair with given sum " + sum + " is ("
-						+ arr[i] + ", " + temp + ")");
+						+ anArr + ", " + temp + ")");
 			}
-			binmap[arr[i]] = true;
+			binmap[anArr] = true;
 		}
 	}
 

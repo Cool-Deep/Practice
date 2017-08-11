@@ -15,9 +15,9 @@ import java.util.List;
  * World Game Go
  * World Game Home
  */
-public class WordCombination {
+class WordCombination {
 
-    public void printCombinations(List<List<String>> input) {
+    private void printCombinations(List<List<String>> input) {
         int[] result = new int[input.size()];
         print(input,result, 0);
     }

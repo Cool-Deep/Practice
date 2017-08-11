@@ -5,75 +5,82 @@ import java.util.*;
 /**
  * Created by Davit on 14/06/16.
  */
-public class TournamentDay15 {
+class TournamentDay15 {
 
-    static boolean isEarlier(int[] time1, int[] time2) {
-        if (time1[0] * 60 + time1[1] < time2[0] * 60 + time2[1]) {
-            return true;
-        }
-        return false;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean isEarlier(int[] time1, int[] time2) {
+//        return time1[0] * 60 + time1[1] < time2[0] * 60 + time2[1];
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int countSumOfTwoRepresentations2(int n, int l, int r) {
-        int result = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int countSumOfTwoRepresentations2(int n, int l, int r) {
+//        int result = 0;
+//
+//        for (int a = l; a <= r; a++) {
+//            int b = n - a;
+//            if (b >= l && b <= r && b >= a) {
+//                result++;
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int a = l; a <= r; a++) {
-            int b = n - a;
-            if (b >= l && b <= r && b >= a) {
-                result++;
-            }
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean isPangram(String sentence) {
+//        Set<Character> lettersRemaining = new HashSet<>();
+//        for (char ch = 'a'; ch <= 'z'; ch++) {
+//            lettersRemaining.add(ch);
+//        }
+//        sentence = sentence.toLowerCase();
+//        for (int i = 0; i < sentence.length(); i++) {
+//            lettersRemaining.remove(sentence.charAt(i));
+//        }
+//        return lettersRemaining.isEmpty();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static boolean isPangram(String sentence) {
-        Set<Character> lettersRemaining = new HashSet<>();
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-            lettersRemaining.add(ch);
-        }
-        sentence = sentence.toLowerCase();
-        for (int i = 0; i < sentence.length(); i++) {
-            lettersRemaining.remove(sentence.charAt(i));
-        }
-        return lettersRemaining.isEmpty();
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int nextPrime(int n) {
+//
+//        for (int i = n + 1; ; i++) {
+//            boolean isPrime = true;
+//            for (int divisor = 2; divisor * divisor <= i; divisor++) {
+//                if (i % divisor == 0) {
+//                    isPrime = false;
+//                    break;
+//                }
+//            }
+//            if (isPrime) {
+//                return i;
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int nextPrime(int n) {
-
-        for (int i = n + 1; ; i++) {
-            boolean isPrime = true;
-            for (int divisor = 2; divisor * divisor <= i; divisor++) {
-                if (i % divisor == 0) {
-                    isPrime = false;
-                    break;
-                }
-            }
-            if (isPrime) {
-                return i;
-            }
-        }
-    }
-
-    static int[] nextSecond(int[] currentTime) {
-
-        if (currentTime[2] == 59) {
-            currentTime[2] = 0;
-            if (currentTime[1] == 59) {
-                currentTime[1] = 0;
-                if (currentTime[0] == 23) {
-                    currentTime[0] = 0;
-                } else {
-                    currentTime[0]++;
-                }
-            } else {
-                currentTime[1]++;
-            }
-        } else {
-            currentTime[2]++;
-        }
-
-        return currentTime;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int[] nextSecond(int[] currentTime) {
+//
+//        if (currentTime[2] == 59) {
+//            currentTime[2] = 0;
+//            if (currentTime[1] == 59) {
+//                currentTime[1] = 0;
+//                if (currentTime[0] == 23) {
+//                    currentTime[0] = 0;
+//                } else {
+//                    currentTime[0]++;
+//                }
+//            } else {
+//                currentTime[1]++;
+//            }
+//        } else {
+//            currentTime[2]++;
+//        }
+//
+//        return currentTime;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /*static int maximumSum(int[] A, int[][] Q) {
         class Helper {
@@ -107,51 +114,55 @@ public class TournamentDay15 {
         return maxSum;
     }*/
 
-    static int maximumSum(int[] A, int[][] Q) {
-        ArrayList<Integer> inDice = new ArrayList<>();
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int maximumSum(int[] A, int[][] Q) {
+//        ArrayList<Integer> inDice = new ArrayList<>();
+//
+//        for (int i = 0; i < A.length; i++) {
+//            inDice.add(0);
+//        }
+//
+//        for (int[] e : Q) {
+//            for (int i = e[0]; i <= e[1]; i++) {
+//                inDice.set(i, inDice.get(i) + 1);
+//            }
+//        }
+//
+//        Collections.sort(inDice);
+//        Arrays.sort(A);
+//
+//        int sum = 0;
+//        for (int i = 0; i < A.length; i++) {
+//            sum += inDice.get(i) * A[i];
+//        }
+//
+//        return sum;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < A.length; i++) {
-            inDice.add(0);
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int depositProfit(int deposit, int rate, int threshold) {
+//
+//        int[] fraction = new int[2];
+//        fraction[0] = deposit;
+//        fraction[1] = 1;
+//        int year = 0;
+//
+//        while (fraction[0] < fraction[1] * threshold) {
+//            fraction[0] *= 100 + rate;
+//            fraction[1] *= 100;
+//            year++;
+//        }
+//
+//        return year;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int[] e : Q) {
-            for (int i = e[0]; i <= e[1]; i++) {
-                inDice.set(i, inDice.get(i) + 1);
-            }
-        }
-
-        Collections.sort(inDice);
-        Arrays.sort(A);
-
-        int sum = 0;
-        for (int i = 0; i < A.length; i++) {
-            sum += inDice.get(i) * A[i];
-        }
-
-        return sum;
-    }
-
-    static int depositProfit(int deposit, int rate, int threshold) {
-
-        int[] fraction = new int[2];
-        fraction[0] = deposit;
-        fraction[1] = 1;
-        int year = 0;
-
-        while (fraction[0] < fraction[1] * threshold) {
-            fraction[0] *= 100 + rate;
-            fraction[1] *= 100;
-            year++;
-        }
-
-        return year;
-    }
-
-    static int leastSignificantBit(int n) {
+    private static int leastSignificantBit() {
 
         int ans = 1;
-        while ((n & 1) == 0) {
-            n >>= 1;
+        while ((12 & 1) == 0) {
+            12 >>= 1;
             ans *= 2;
         }
 
@@ -168,7 +179,7 @@ public class TournamentDay15 {
         // System.out.println(maximumSum(new int[]{2, 1, 2}, new int[][]{{0, 1}}));
         // System.out.println(maximumSum(new int[]{4, 2, 1, 6, 5, 7, 2, 4}, new int[][]{{1, 6}, {2, 4}, {3, 6}, {0, 7}, {3, 6}, {4, 4}, {5, 6}, {5, 6}, {0, 1}, {3, 4}}));
         // System.out.println(depositProfit(100, 10, 130));
-        System.out.println(leastSignificantBit(12));
+        System.out.println(leastSignificantBit());
     }
 
 }

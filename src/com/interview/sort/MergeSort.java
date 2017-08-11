@@ -9,9 +9,9 @@ package com.interview.sort;
  * already sorted
  * reverse sorted
  */
-public class MergeSort {
+class MergeSort {
 
-    public void sort(int input[]){
+    private void sort(int input[]){
         sort(input, 0, input.length-1);
     }
     
@@ -52,7 +52,7 @@ public class MergeSort {
         }
     }
     
-    public void printArray(int input[]){
+    private void printArray(int input[]){
         for(int i : input){
             System.out.print(i + " ");
         }

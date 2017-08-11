@@ -10,9 +10,9 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/count-triplets-with-sum-smaller-that-a-given-value/
  */
-public class TripletSumLessThanTotal {
+class TripletSumLessThanTotal {
 
-    public int findAllTriplets(int input[], int total) {
+    private int findAllTriplets(int input[], int total) {
         Arrays.sort(input);
         int result = 0;
         for (int i = 0; i < input.length - 2; i++) {

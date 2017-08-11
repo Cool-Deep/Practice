@@ -13,7 +13,7 @@ import java.util.*;
  *
  * Reference - https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
  */
-public class TarjanStronglyConnectedComponent {
+class TarjanStronglyConnectedComponent {
 
     private Map<Vertex<Integer>, Integer> visitedTime;
     private Map<Vertex<Integer>, Integer> lowTime;
@@ -85,7 +85,7 @@ public class TarjanStronglyConnectedComponent {
         //if vertex low time is same as visited time then this is start vertex for strongly connected component.
         //keep popping vertices out of stack still you find current vertex. They are all part of one strongly
         //connected component.
-        if (visitedTime.get(vertex) == lowTime.get(vertex)) {
+        if (Objects.equals(visitedTime.get(vertex), lowTime.get(vertex))) {
             Set<Vertex<Integer>> stronglyConnectedComponenet = new HashSet<>();
             Vertex v;
             do {

@@ -1,7 +1,5 @@
 package com.interview.number;
 
-import com.interview.sort.QuickSort;
-
 /**
  * Date 02/17/2016
  * @author Tushar Roy
@@ -15,9 +13,9 @@ import com.interview.sort.QuickSort;
  * e.g 1 7 9 8 4 will transform to 1 8 4 7 9
  * or  4 2 6 4 3 will transform to 4 3 2 4 6
  */
-public class PermutationBiggerThanNumber {
+class PermutationBiggerThanNumber {
 
-    public void nextPermutation(int[] nums) {
+    private void nextPermutation(int[] nums) {
         int i;
         for (i = nums.length - 2; i >= 0 ; i--) {
             if (nums[i] < nums[i + 1]) {
@@ -62,8 +60,8 @@ public class PermutationBiggerThanNumber {
         PermutationBiggerThanNumber pb = new PermutationBiggerThanNumber();
         int arr[] = {1,7,9,8,4};
         pb.nextPermutation(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
     }
 }

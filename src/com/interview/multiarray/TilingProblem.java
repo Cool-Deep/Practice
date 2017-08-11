@@ -9,8 +9,8 @@ package com.interview.multiarray;
  */
 
 class Position{
-    int x;
-    int y;
+    final int x;
+    final int y;
     Position(int x, int y){
         this.x = x;
         this.y = y;
@@ -34,17 +34,15 @@ class Position{
         Position other = (Position) obj;
         if (x != other.x)
             return false;
-        if (y != other.y)
-            return false;
-        return true;
+        return y == other.y;
     }
     
 }
 
-public class TilingProblem {
+class TilingProblem {
 
-    char tileCount = 'a';
-    public char[][] fit(int size, Position missingPosition){
+    private char tileCount = 'a';
+    private char[][] fit(int size, Position missingPosition){
         char matrix[][] = new char[size][size];
         matrix[missingPosition.x][missingPosition.y] = 'X';
         fit(matrix, new Position(0,0), matrix.length, missingPosition);
@@ -99,9 +97,9 @@ public class TilingProblem {
         TilingProblem tp = new TilingProblem();
         Position p = new Position(5,6);
         char matrix[][] = tp.fit(8, p);
-        for(int i=0; i < matrix.length; i++){
-            for(int j=0; j < matrix[0].length ; j++){
-                System.out.print(matrix[i][j] + " ");
+        for (char[] aMatrix : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(aMatrix[j] + " ");
             }
             System.out.println();
         }

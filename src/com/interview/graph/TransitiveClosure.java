@@ -3,9 +3,9 @@ package com.interview.graph;
 /**
  * http://www.geeksforgeeks.org/transitive-closure-of-a-graph/
  */
-public class TransitiveClosure {
+class TransitiveClosure {
 
-    public boolean[][] getTransitiveClosure(int [][]graph){
+    private boolean[][] getTransitiveClosure(int[][] graph){
         int rows = graph.length;
         int cols = graph[0].length;
         boolean[][] result = new  boolean[rows][cols];
@@ -31,9 +31,9 @@ public class TransitiveClosure {
         TransitiveClosure closure = new TransitiveClosure();
         int[][] graph = {{0,2,2,4,100},{100,0,100,1,100},{100,100,0,3,100},{100,100,3,0,2},{100,3,100,100,0}};
         boolean result[][] = closure.getTransitiveClosure(graph);
-        for(int i=0; i < result.length; i++){
-            for(int j=0; j < result.length; j++){
-                System.out.print(result[i][j] + " ");
+        for (boolean[] aResult : result) {
+            for (int j = 0; j < result.length; j++) {
+                System.out.print(aResult[j] + " ");
             }
             System.out.println();
         }

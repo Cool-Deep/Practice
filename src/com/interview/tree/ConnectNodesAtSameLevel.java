@@ -11,9 +11,9 @@ package com.interview.tree;
  *
  * https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
  */
-public class ConnectNodesAtSameLevel {
+class ConnectNodesAtSameLevel {
 
-    public void connect(Node root) {
+    private void connect(Node root) {
         if (root == null) {
             return;
         }

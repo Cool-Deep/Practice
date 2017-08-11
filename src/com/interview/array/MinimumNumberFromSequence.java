@@ -12,9 +12,9 @@ import java.util.Arrays;
  * Reference
  * http://www.geeksforgeeks.org/form-minimum-number-from-given-sequence/
  */
-public class MinimumNumberFromSequence {
+class MinimumNumberFromSequence {
 
-    public int[] find(char[] input) {
+    private int[] find(char[] input) {
         int[] output = new int[input.length + 1];
         output[0] = 1;
         int low = 0;

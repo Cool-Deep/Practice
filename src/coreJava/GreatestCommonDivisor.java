@@ -2,7 +2,7 @@ package coreJava;
 
 import java.util.Scanner;
 
-public class GreatestCommonDivisor {
+class GreatestCommonDivisor {
 	/** Main method */
 	public static void main(String[] args) {
 		// Create a Scanner

@@ -4,9 +4,9 @@ package com.interview.multiarray;
  * http://www.geeksforgeeks.org/create-a-matrix-with-alternating-rectangles-of-0-and-x/
  * Test case : negative or 0 for n or m
  */
-public class MatrixOf0sAnd1s {
+class MatrixOf0sAnd1s {
 
-	public char[][] create(int n,int m){
+	private char[][] create(int n, int m){
 		char[][] matrix = new char[n][m];
 		
 		int r = 0;
@@ -47,11 +47,11 @@ public class MatrixOf0sAnd1s {
 	public static void main(String args[]){
 		MatrixOf0sAnd1s mos = new MatrixOf0sAnd1s();
 		char matrix[][] = mos.create(4, 7);
-		for(int i=0; i < matrix.length; i++){
-			for(int j=0; j < matrix[i].length; j++){
-				System.out.print(matrix[i][j] + " ");
-			}
-			System.out.println();
-		}
+        for (char[] aMatrix : matrix) {
+            for (int j = 0; j < aMatrix.length; j++) {
+                System.out.print(aMatrix[j] + " ");
+            }
+            System.out.println();
+        }
 	}
 }

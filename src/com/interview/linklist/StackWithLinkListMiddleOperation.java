@@ -7,12 +7,12 @@ package com.interview.linklist;
  * Pop with 1,2,3 elements
  * Delete or pop when empty stack
  */
-public class StackWithLinkListMiddleOperation {
+class StackWithLinkListMiddleOperation {
     
     private Node head = null;
     private Node middle = null;
     private int size = 0;
-    public void push(int data){
+    private void push(int data){
         if(head == null){
             head = Node.newNode(data);
             middle = head;
@@ -29,19 +29,19 @@ public class StackWithLinkListMiddleOperation {
         }
     }
     
-    public boolean hasMore(){
-        if(size > 0 ){
-            return true;
-        }else{
-            return false;
-        }
-    }
-    
-    public int size(){
-        return size;
-    }
-    
-    public int pop(){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public boolean hasMore(){
+//        return size > 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int size(){
+//        return size;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private void pop(){
         if(size == 0){
             throw new IllegalArgumentException();
         }
@@ -52,21 +52,20 @@ public class StackWithLinkListMiddleOperation {
         int data = head.data;
         head = head.next;
         head.before = null;
-        return data;
     }
-    public int top(){
+    private int top(){
         if(size == 0){
             throw new IllegalArgumentException();
         }
         return head.data;
     }
-    public int middle(){
+    private int middle(){
         if(size == 0){
             throw new IllegalArgumentException();
         }
         return middle.data;
     }
-    public int deleteMiddle(){
+    private void deleteMiddle(){
         if(size == 0){
             throw new IllegalArgumentException();
         }
@@ -78,7 +77,7 @@ public class StackWithLinkListMiddleOperation {
             if(head != null){
                 head.before = null;
             }
-            return data;
+            return;
         }
         
         if(size % 2 == 0){
@@ -89,7 +88,6 @@ public class StackWithLinkListMiddleOperation {
             if(next != null){
                 next.before = middle;
             }
-            return data;
         }
         else{
             int data = middle.data;
@@ -99,7 +97,6 @@ public class StackWithLinkListMiddleOperation {
             if(before != null){
                 before.next = middle;
             }
-            return data;
         }
     }
     

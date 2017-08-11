@@ -16,8 +16,8 @@ import java.util.List;
  *
  * https://leetcode.com/problems/text-justification/
  */
-public class GreedyTextJustification {
-    public List<String> fullJustify(String[] words, int maxWidth) {
+class GreedyTextJustification {
+    private List<String> fullJustify(String[] words, int maxWidth) {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < words.length; ) {
             int total = words[i].length();

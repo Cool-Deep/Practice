@@ -2,7 +2,7 @@ package coreJava;
 
 import java.util.*;
 
-public class StackDemo {
+class StackDemo {
 
 //   static void showpush(Stack st, int a) {
 //      st.push(new Integer(a));

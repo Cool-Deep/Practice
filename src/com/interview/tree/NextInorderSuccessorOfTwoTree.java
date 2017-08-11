@@ -8,28 +8,25 @@ import java.util.Stack;
  * Next inorder iterator of two trees.
  * Merging tree to print one result
  */
-public class NextInorderSuccessorOfTwoTree {
+class NextInorderSuccessorOfTwoTree {
 
     private Node root1 = null;
     private Node root2 = null;
-    Stack<Node> stack1 = new Stack<Node>();
-    Stack<Node> stack2 = new Stack<Node>();
-    Set<Node> visited = new HashSet<Node>();
+    private final Stack<Node> stack1 = new Stack<>();
+    private final Stack<Node> stack2 = new Stack<>();
+    // --Commented out by Inspection (8/10/17, 5:13 PM):Set<Node> visited = new HashSet<Node>();
 
-    NextInorderSuccessorOfTwoTree(Node root1, Node root2) {
+    private NextInorderSuccessorOfTwoTree(Node root1, Node root2) {
         this.root1 = root1;
         this.root2 = root2;
     }
 
-    public boolean hasNext() {
-        if (root1 != null || stack1.size() > 0 || root2 != null
-                || stack2.size() > 0) {
-            return true;
-        }
-        return false;
+    private boolean hasNext() {
+        return root1 != null || stack1.size() > 0 || root2 != null
+                || stack2.size() > 0;
     }
 
-    public Node next() {
+    private Node next() {
         Node node = null;
         while (root1 != null) {
             stack1.push(root1);

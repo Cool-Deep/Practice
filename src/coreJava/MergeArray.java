@@ -1,11 +1,11 @@
 package coreJava;
 
-public class MergeArray {
+class MergeArray {
 
-	public static int[] a= {8, 15, 18, 30, 40};
-	public static int[] b ={10, 11, 20,50,60,70};
+	private static final int[] a= {8, 15, 18, 30, 40};
+	private static final int[] b ={10, 11, 20,50,60,70};
 	
-	public static int[] merge(int[] a, int[] b) {
+	private static int[] merge(int[] a, int[] b) {
 	    int[] answer = new int[a.length + b.length];
 	    int i = a.length - 1, j = b.length - 1, k = answer.length;
 

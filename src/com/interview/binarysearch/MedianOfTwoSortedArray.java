@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * http://www.geeksforgeeks.org/median-of-two-sorted-arrays/
  */
-public class MedianOfTwoSortedArray {
+class MedianOfTwoSortedArray {
 
-    public double median(int arr1[],int arr2[]){
+    private double median(int arr1[], int arr2[]){
         int low1 = 0;
         int high1 = arr1.length-1;
         

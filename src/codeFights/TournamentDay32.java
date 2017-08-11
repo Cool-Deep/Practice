@@ -1,23 +1,23 @@
 package codeFights;
 
-import java.util.ArrayList;
-
 /**
  * Created by Davit on 07/07/16.
  */
-public class TournamentDay32 {
+class TournamentDay32 {
 
-    private static int numberOfSolutions(int n) {
-
-        int result = 0;
-        for (int a = 2; a < n * n; a++) {
-            if ((a * n) % (a + n) == 0) {
-                result++;
-            }
-        }
-
-        return result * 2 + 1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int numberOfSolutions(int n) {
+//
+//        int result = 0;
+//        for (int a = 2; a < n * n; a++) {
+//            if ((a * n) % (a + n) == 0) {
+//                result++;
+//            }
+//        }
+//
+//        return result * 2 + 1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /*private static int[] treeBottom(String tree) {
 
@@ -134,19 +134,23 @@ public class TournamentDay32 {
         return new int[]{0};
     }*/
 
-    private static int[] fractionDivision(int[] A, int[] B) {
-
-        class Helper {
-            int gcdEuclid(int a, int b) {
-                if (a == 0) {
-                    return b;
-                }
-                return gcdEuclid(b % a, a);
-            }
-        }
-        Helper h = new Helper();
-
-        int[] C = {A[0] * B[1], A[1] * B[0]};
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] fractionDivision(int[] A, int[] B) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            int gcdEuclid(int a, int b) {
+////                if (a == 0) {
+////                    return b;
+////                }
+////                return gcdEuclid(b % a, a);
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        int[] C = {A[0] * B[1], A[1] * B[0]};
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
         int gcd = h.gcdEuclid(C[0], C[1]);
 
         C[0] /= gcd;
@@ -155,9 +159,11 @@ public class TournamentDay32 {
         return C;
     }
 
-    private static boolean logicalNor(boolean a, boolean b) {
-        return !a && !b;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean logicalNor(boolean a, boolean b) {
+//        return !a && !b;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     //checks whether an int is prime or not.
     private static boolean isPrime(int n) {
@@ -171,18 +177,18 @@ public class TournamentDay32 {
         return true;
     }
 
-    private static int greatestCommonPrimeDivisor(int a, int b) {
+    private static int greatestCommonPrimeDivisor(int b) {
         int ans = -1;
-        int min = Math.min(a, b);
+        int min = Math.min(12, b);
 
         for (int i = 2; i <= min / 2; i++) {
-            if (a % i == 0 && b % i == 0) {
+            if (12 % i == 0 && b % i == 0) {
                 if (isPrime(i) && i > ans)
                     ans = i;
             }
         }
 
-        if (a % min == 0 && b % min == 0) {
+        if (12 % min == 0 && b % min == 0) {
             if (isPrime(min) && ans > min)
                 ans = min;
         }
@@ -198,8 +204,8 @@ public class TournamentDay32 {
         // System.out.println(Arrays.toString(treeBottom("(2 (7 (2 () ()) (6 (5 () ()) (11 () ()))) (5 () (9 (4 () ()) ())))")));
         // System.out.println(Arrays.toString(fractionDivision(new int[]{2, 3}, new int[]{5, 6})));
         // System.out.println(logicalNor(true, false));
-        System.out.println(greatestCommonPrimeDivisor(12, 18));
-        System.out.println(greatestCommonPrimeDivisor(12, 13));
+        System.out.println(greatestCommonPrimeDivisor(18));
+        System.out.println(greatestCommonPrimeDivisor(13));
     }
 
 }

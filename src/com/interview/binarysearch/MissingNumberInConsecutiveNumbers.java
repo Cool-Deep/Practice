@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * Find missing number in consecutive numbers.
  */
-public class MissingNumberInConsecutiveNumbers {
+class MissingNumberInConsecutiveNumbers {
 
-    public Integer findMissing(int arr[]){
+    private Integer findMissing(int arr[]){
     
         int lowNum = arr[0];
         int low = 0;

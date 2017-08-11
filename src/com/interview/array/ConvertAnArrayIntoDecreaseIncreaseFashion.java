@@ -7,9 +7,9 @@ import java.util.Arrays;
  * Convert an unsorted array into an array such that
  * a < b > c < d > e < f and so on
  */
-public class ConvertAnArrayIntoDecreaseIncreaseFashion {
+class ConvertAnArrayIntoDecreaseIncreaseFashion {
 
-    public void convert(int arr[]){
+    private void convert(int arr[]){
         int k = 0;
         if(arr.length % 2 ==0){
             k = arr.length/2 ;
@@ -34,7 +34,7 @@ public class ConvertAnArrayIntoDecreaseIncreaseFashion {
      * Then swap every adjacent element to get final result
      * @param arr
      */
-    public void convert1(int arr[]){
+    private void convert1(int arr[]){
         Arrays.sort(arr);
         for(int i=1; i < arr.length; i+=2){
             if(i+1 < arr.length){
@@ -53,14 +53,14 @@ public class ConvertAnArrayIntoDecreaseIncreaseFashion {
         ConvertAnArrayIntoDecreaseIncreaseFashion can = new ConvertAnArrayIntoDecreaseIncreaseFashion();
         int arr[] = {0,6,9,13,10,-1,8,2,4,14,-5};
         can.convert(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
         System.out.println();
         int arr1[] = {0,6,9,13,10,-1,8,2,4,14,-5};
         can.convert1(arr1);
-        for(int i=0; i < arr1.length; i++){
-            System.out.print(arr1[i] + " ");
+        for (int anArr1 : arr1) {
+            System.out.print(anArr1 + " ");
         }
     }
 

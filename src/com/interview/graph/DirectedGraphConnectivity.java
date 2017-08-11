@@ -5,11 +5,11 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DirectedGraphConnectivity {
+class DirectedGraphConnectivity {
 
-    public boolean scc(Graph<Integer> graph) {
-        Deque<Vertex<Integer>> stack = new ArrayDeque<Vertex<Integer>>();
-        Map<Vertex<Integer>, Boolean> visited = new HashMap<Vertex<Integer>, Boolean>();
+    private boolean scc(Graph<Integer> graph) {
+        Deque<Vertex<Integer>> stack = new ArrayDeque<>();
+        Map<Vertex<Integer>, Boolean> visited = new HashMap<>();
         for (Vertex<Integer> vertex : graph.getAllVertex()) {
             if (visited.containsKey(vertex)) {
                 continue;
@@ -19,8 +19,8 @@ public class DirectedGraphConnectivity {
 
         System.out.println(stack);
         
-        Graph<Integer> reverseGraph = new Graph<Integer>(true);
-        Map<Long, Vertex<Integer>> vertexMap = new HashMap<Long, Vertex<Integer>>();
+        Graph<Integer> reverseGraph = new Graph<>(true);
+        Map<Long, Vertex<Integer>> vertexMap = new HashMap<>();
         for (Edge<Integer> edge : graph.getAllEdges()) {
             reverseGraph.addEdge(edge.getVertex2().getId(), edge.getVertex1()
                     .getId(), edge.getWeight());
@@ -66,7 +66,7 @@ public class DirectedGraphConnectivity {
     }
 
     public static void main(String args[]){
-        Graph<Integer> graph = new Graph<Integer>(true);
+        Graph<Integer> graph = new Graph<>(true);
         graph.addEdge(1, 0);
         graph.addEdge(2,1);
         graph.addEdge(0,2);

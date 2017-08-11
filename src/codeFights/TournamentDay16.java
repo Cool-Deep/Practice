@@ -1,41 +1,44 @@
 package codeFights;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 /**
  * Created by Davit on 15/06/16.
  */
-public class TournamentDay16 {
+class TournamentDay16 {
 
     /*15/06/2016*/
 
-    static int countNeighbouringPairs(String inputString) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int countNeighbouringPairs(String inputString) {
+//
+//        int answer = 0;
+//
+//        for (int i = 1; i < inputString.length(); i++) {
+//            if (inputString.charAt(i) == inputString.charAt(i - 1)) {
+//                answer++;
+//            }
+//        }
+//
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int answer = 0;
-
-        for (int i = 1; i < inputString.length(); i++) {
-            if (inputString.charAt(i) == inputString.charAt(i - 1)) {
-                answer++;
-            }
-        }
-
-        return answer;
-    }
-
-    static int swapNeighbouringDigits(int n) {
-
-        int result = 0,
-                tenPower = 1;
-        while (n != 0) {
-            int digit1 = n % 10,
-                    digit2 = ((n - digit1) / 10) % 10;
-            result += tenPower * (10 * digit1 + digit2);
-            n /= 100;
-            tenPower *= 100;
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int swapNeighbouringDigits(int n) {
+//
+//        int result = 0,
+//                tenPower = 1;
+//        while (n != 0) {
+//            int digit1 = n % 10,
+//                    digit2 = ((n - digit1) / 10) % 10;
+//            result += tenPower * (10 * digit1 + digit2);
+//            n /= 100;
+//            tenPower *= 100;
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /*static int ballsDistribution(int colors, int ballsPerColor, int boxSize) {
         ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
@@ -70,68 +73,74 @@ public class TournamentDay16 {
         return answer;
     }*/
 
-    static int ballsDistribution(int colors, int ballsPerColor, int boxSize) {
-        int cur = 0,
-                cap = boxSize,
-                res = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int ballsDistribution(int colors, int ballsPerColor, int boxSize) {
+//        int cur = 0,
+//                cap = boxSize,
+//                res = 0;
+//
+//        for (int i = 0; i < colors; i++) {
+//            int start = cur;
+//            for (int j = 0; j < ballsPerColor; j++) {
+//                cap--;
+//                if (cap == 0) {
+//                    cur++;
+//                    cap = boxSize;
+//                }
+//            }
+//
+//            if (start < cur && cap < boxSize || start + 1 < cur)
+//                res++;
+//        }
+//        return res;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < colors; i++) {
-            int start = cur;
-            for (int j = 0; j < ballsPerColor; j++) {
-                cap--;
-                if (cap == 0) {
-                    cur++;
-                    cap = boxSize;
-                }
-            }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static String simplifyPath(String path) {
+//
+//        String[] parts = path.split("/");
+//        String[] simplified = new String[parts.length];
+//        int length = 0;
+//        for (String part : parts) {
+//            if (part.equals(".") || part.equals("") || part.equals("..")) {
+//                if (part.equals("..") && length > 0) {
+//                    length--;
+//                }
+//                continue;
+//            }
+//            simplified[length] = part;
+//            length++;
+//        }
+//
+//        if (length == 0) {
+//            return "/";
+//        }
+//
+//        StringBuilder result = new StringBuilder();
+//        for (int i = 0; i < length; i++) {
+//            result.append("/" + simplified[i]);
+//        }
+//
+//        return result.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-            if (start < cur && cap < boxSize || start + 1 < cur)
-                res++;
-        }
-        return res;
-    }
-
-    static String simplifyPath(String path) {
-
-        String[] parts = path.split("/");
-        String[] simplified = new String[parts.length];
-        int length = 0;
-        for (String part : parts) {
-            if (part.equals(".") || part.equals("") || part.equals("..")) {
-                if (part.equals("..") && length > 0) {
-                    length--;
-                }
-                continue;
-            }
-            simplified[length] = part;
-            length++;
-        }
-
-        if (length == 0) {
-            return "/";
-        }
-
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < length; i++) {
-            result.append("/" + simplified[i]);
-        }
-
-        return result.toString();
-    }
-
-    static int niceFractions(int n) {
+    private static int niceFractions() {
         class Helper {
             Helper() {
             }
 
-            ArrayList<Integer> toArray(int n) {
-                ArrayList<Integer> num = new ArrayList<>();
-                while (n != 0) {
-                    n /= 10;
-                    num.add(n);
-                }
-                return num;
-            }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//            ArrayList<Integer> toArray(int n) {
+//                ArrayList<Integer> num = new ArrayList<>();
+//                while (n != 0) {
+//                    n /= 10;
+//                    num.add(n);
+//                }
+//                return num;
+//            }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
             boolean isFine(int n1, int n2) {
                 boolean hasZero = false;
@@ -139,8 +148,8 @@ public class TournamentDay16 {
                 ArrayList<Integer> digits2 = new ArrayList<>(5);
 
                 while (n1 != 0) {
-                    for (int i = 0; i < digits.size(); i++) {
-                        if (n1 % 10 == digits.get(i))
+                    for (Integer digit : digits) {
+                        if (n1 % 10 == digit)
                             return false;
                     }
                     if (n1 % 10 == 0)
@@ -150,8 +159,8 @@ public class TournamentDay16 {
                 }
 
                 while (n2 != 0) {
-                    for (int j = 0; j < digits2.size(); j++) {
-                        if (n2 % 10 == digits2.get(j))
+                    for (Integer aDigits2 : digits2) {
+                        if (n2 % 10 == aDigits2)
                             return false;
                     }
                     if (n2 % 10 == 0)
@@ -165,9 +174,9 @@ public class TournamentDay16 {
                 else if (digits2.size() < 4)
                     return false;
 
-                for (int i = 0; i < digits.size(); i++) {
-                    for (int j = 0; j < digits2.size(); j++) {
-                        if (digits.get(i) == digits2.get(j)) {
+                for (Integer digit : digits) {
+                    for (Integer aDigits2 : digits2) {
+                        if (digit == aDigits2) {
                             return false;
                         }
                     }
@@ -178,7 +187,7 @@ public class TournamentDay16 {
         Helper h = new Helper();
         int result = 0;
         for (int i = 12345; i <= 98765; i++) {
-            if (i % n == 0 && h.isFine(i, i / n))
+            if (i % 8 == 0 && h.isFine(i, i / 8))
                 result++;
         }
         return result;
@@ -189,7 +198,7 @@ public class TournamentDay16 {
         // System.out.println(swapNeighbouringDigits(12345678));
         // System.out.println(ballsDistribution(3, 5, 6));
         // System.out.println(ballsDistribution(10, 10, 9));
-        System.out.println(niceFractions(8));
+        System.out.println(niceFractions());
     }
 
 }

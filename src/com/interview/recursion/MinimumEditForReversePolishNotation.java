@@ -3,9 +3,9 @@ package com.interview.recursion;
 /**
  *http://www.careercup.com/question?id=5762415492857856 
  */
-public class MinimumEditForReversePolishNotation {
+class MinimumEditForReversePolishNotation {
 
-    public int minimum(char input[]){
+    private int minimum(char input[]){
         return minimum(input,0,0);
     }
     

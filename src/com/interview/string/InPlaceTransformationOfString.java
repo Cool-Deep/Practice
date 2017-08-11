@@ -3,7 +3,7 @@ package com.interview.string;
 /**
  * http://www.geeksforgeeks.org/an-in-place-algorithm-for-string-transformation/
  */
-public class InPlaceTransformationOfString {
+class InPlaceTransformationOfString {
 
     private void reverse(char []str, int low, int high){
         while(low<high){
@@ -19,32 +19,34 @@ public class InPlaceTransformationOfString {
         str[index2] = temp;
     }
     
-    public void cycleLeaderIteration(char []str,int start,int end){
-        
-        int power = 1;
-        int index = start,new_index;
-        int len = end -start +1;
-        char temp,temp1;
-        while(power < len){
-            index = start+power;
-            new_index = start;
-            temp = str[index];
-            while(new_index != power + start){
-                if(index % 2 == 0){
-                    new_index = (index+start)/2;
-                }else{
-                    new_index = len/2 + (index+start)/2;
-                }
-                temp1 = str[new_index];
-                str[new_index] = temp;
-                temp = temp1;
-                index = new_index;
-            }
-            power *= 3;
-        }
-    }
-    
-    public void inPlaceTransformationImproved(char str[]){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void cycleLeaderIteration(char []str,int start,int end){
+//
+//        int power = 1;
+//        int index = start,new_index;
+//        int len = end -start +1;
+//        char temp,temp1;
+//        while(power < len){
+//            index = start+power;
+//            new_index = start;
+//            temp = str[index];
+//            while(new_index != power + start){
+//                if(index % 2 == 0){
+//                    new_index = (index+start)/2;
+//                }else{
+//                    new_index = len/2 + (index+start)/2;
+//                }
+//                temp1 = str[new_index];
+//                str[new_index] = temp;
+//                temp = temp1;
+//                index = new_index;
+//            }
+//            power *= 3;
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private void inPlaceTransformationImproved(char str[]){
         int low=0;
         int size = str.length;
         while(size > 0){
@@ -79,8 +81,8 @@ public class InPlaceTransformationOfString {
         char str[] = {'a','1','b','2','c','3','d','4','e','5','f','6','g','7','h','8','i','9','j','A','k','B','l','C','m','D'};
         InPlaceTransformationOfString ip = new InPlaceTransformationOfString();
         ip.inPlaceTransformationImproved(str);
-        for(int i=0; i < str.length; i++){
-            System.out.print(str[i]);
+        for (char aStr : str) {
+            System.out.print(aStr);
         }
     }
     

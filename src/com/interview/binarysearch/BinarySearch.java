@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * Regular binary search
  */
-public class BinarySearch {
+class BinarySearch {
 
-    public int search(int input[],int search){
+    private int search(int input[], int search){
         int low = 0;
         int high = input.length-1;
         int mid = 0;

@@ -15,7 +15,7 @@ class NodeRef{
 
 enum Color{
     RED,
-    BLACK
+    // --Commented out by Inspection (8/10/17, 5:13 PM):BLACK
 }
 
 class Node{
@@ -26,7 +26,7 @@ class Node{
     int lis;
     int height;
     int size;
-    Color color;
+    // --Commented out by Inspection (8/10/17, 5:13 PM):private Color color;
     
     public static Node newNode(int data){
         Node n = new Node();
@@ -41,7 +41,7 @@ class Node{
     }
 }
 
-public class BinaryTree {
+class BinaryTree {
     public Node addNode(int data, Node head){
         Node tempHead = head;
         Node n = Node.newNode(data);
@@ -66,11 +66,11 @@ public class BinaryTree {
         return tempHead;
     }
     
-    class IntegerRef{
-        int height;
+    private class IntegerRef{
+        // --Commented out by Inspection (8/10/17, 5:13 PM):int height;
     }
     
-    public int height(Node root){
+    private int height(Node root){
         if(root == null){
             return 0;
         }

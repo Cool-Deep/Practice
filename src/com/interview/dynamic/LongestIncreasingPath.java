@@ -12,9 +12,9 @@ package com.interview.dynamic;
  * Reference
  * https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
  */
-public class LongestIncreasingPath {
+class LongestIncreasingPath {
 
-    public int longestIncreasingPath(int[][] matrix) {
+    private int longestIncreasingPath(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
@@ -31,7 +31,7 @@ public class LongestIncreasingPath {
         return max;
     }
 
-    int dfs(int[][] matrix, int i, int j, int[][] distance, int prev) {
+    private int dfs(int[][] matrix, int i, int j, int[][] distance, int prev) {
         if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[i].length) {
             return 0;
         }

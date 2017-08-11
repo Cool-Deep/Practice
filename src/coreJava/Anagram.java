@@ -1,11 +1,11 @@
 package coreJava;
 
-public class Anagram {
+class Anagram {
 	public static void main(String[] args) {
 		permutation("Malay");
 		System.out.println(AreAnagrams("xyzw", "xyxy"));
 	}
-	public static void permutation(String str) { 
+	private static void permutation(String str) {
 	    permutation("", str); 
 	}
 
@@ -18,7 +18,7 @@ public class Anagram {
 	    }
 	}
 
-	public static Boolean AreAnagrams(String inOne, String inTwo) {
+	private static Boolean AreAnagrams(String inOne, String inTwo) {
 		boolean result = false;
 		if (inOne.length() == inTwo.length()) {
 			int sumOne = 0;

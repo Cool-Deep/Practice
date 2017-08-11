@@ -8,67 +8,70 @@ import java.util.Comparator;
 /**
  * Created by Davit on 20/06/16.
  */
-public class TournamentDay20 {
+class TournamentDay20 {
 
-    static boolean triangleExistence(int[] sides) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean triangleExistence(int[] sides) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class MyComparator implements Comparator<Integer> {
+////            @Override
+////            public int compare(Integer a, Integer b) {
+////                return a - b;
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Comparator<Integer> comparator = new MyComparator();
+//
+//        ArrayList<Integer> sortedSides = new ArrayList<>(Arrays.asList(sides[0], sides[1], sides[2]));
+//        Collections.sort(sortedSides, comparator);
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        class MyComparator implements Comparator<Integer> {
-            @Override
-            public int compare(Integer a, Integer b) {
-                return a - b;
-            }
-        }
-        Comparator<Integer> comparator = new MyComparator();
-
-        ArrayList<Integer> sortedSides = new ArrayList<>(Arrays.asList(sides[0], sides[1], sides[2]));
-        Collections.sort(sortedSides, comparator);
-
-        if (sortedSides.get(0) + sortedSides.get(1) > sortedSides.get(2)) {
-            return true;
-        }
-        return false;
+        return sortedSides.get(0) + sortedSides.get(1) > sortedSides.get(2);
     }
 
-    static int periodicSequence(int S0, int A, int B, int M) {
-        int[] occurrence = new int[M];
-        int currentValue = S0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int periodicSequence(int S0, int A, int B, int M) {
+//        int[] occurrence = new int[M];
+//        int currentValue = S0;
+//
+//        for (int i = 0; i < M; i++) {
+//            occurrence[i] = -1;
+//        }
+//        occurrence[S0] = 0;
+//
+//        for (int i = 1; ; i++) {
+//            currentValue =  (currentValue * A + B) % M ;
+//            if (occurrence[currentValue] != -1) {
+//                return i - occurrence[currentValue];
+//            }
+//            occurrence[currentValue] = i;
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < M; i++) {
-            occurrence[i] = -1;
-        }
-        occurrence[S0] = 0;
-
-        for (int i = 1; ; i++) {
-            currentValue =  (currentValue * A + B) % M ;
-            if (occurrence[currentValue] != -1) {
-                return i - occurrence[currentValue];
-            }
-            occurrence[currentValue] = i;
-        }
-    }
-
-    static String wordAbbreviation2(String a) {
+    private static String wordAbbreviation2() {
         int[] letters = new int[26];
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < 26; i++) {
             letters[i] = 0;
         }
-        for (int i = 0; i < a.length(); i++) {
-            letters[(int) a.charAt(i) - (int) 'a']++;
+        for (int i = 0; i < "abcabc".length(); i++) {
+            letters[(int) "abcabc".charAt(i) - (int) 'a']++;
         }
         for (int i = 0; i < 25; i++) {
             if (letters[i] % 2 == 1) {
-                result += (char) ((int) 'a' + i);
+                result.append((char) ((int) 'a' + i));
             }
             letters[i + 1] += letters[i] / 2;
         }
-        return result;
+        return result.toString();
     }
 
     public static void main(String[] args) {
         // System.out.println(triangleExistence(new int[]{1, 2, 10}));
         // System.out.println(periodicSequence(11, 2, 6, 12));
-        System.out.println(wordAbbreviation2("abcabc"));
+        System.out.println(wordAbbreviation2());
     }
 
 }

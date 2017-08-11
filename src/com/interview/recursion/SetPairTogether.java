@@ -14,9 +14,9 @@ import java.util.Map;
  *
  * http://www.geeksforgeeks.org/minimum-number-of-swaps-required-for-arranging-pairs-adjacent-to-each-other/
  */
-public class SetPairTogether {
+class SetPairTogether {
 
-    public int findMinimumSwaps(int input[], Map<Integer, Integer> pair) {
+    private int findMinimumSwaps(int input[], Map<Integer, Integer> pair) {
         Map<Integer, Integer> index = new HashMap<>();
         for (int i = 0; i < input.length; i++) {
             index.put(input[i], i);
@@ -24,7 +24,7 @@ public class SetPairTogether {
         return findMinimumSwapsUtil(input, pair, index, 0);
     }
 
-    public int findMinimumSwapsUtil(int input[], Map<Integer, Integer> pair, Map<Integer, Integer> index, int current) {
+    private int findMinimumSwapsUtil(int input[], Map<Integer, Integer> pair, Map<Integer, Integer> index, int current) {
         if (current == input.length) {
             return 0;
         }

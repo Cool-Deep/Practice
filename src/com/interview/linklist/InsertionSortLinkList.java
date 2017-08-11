@@ -10,7 +10,7 @@ package com.interview.linklist;
  * reverse sorted
  * negative positive numbers 
  */
-public class InsertionSortLinkList {
+class InsertionSortLinkList {
 
     private Node insert(Node head,Node curr){
         if(head == null){
@@ -32,7 +32,7 @@ public class InsertionSortLinkList {
         return head;
     }
     
-    public Node sort(Node head){
+    private Node sort(Node head){
         Node result = null;
         Node curr = head;
         Node prevCurr = null;

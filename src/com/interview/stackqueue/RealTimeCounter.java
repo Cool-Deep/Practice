@@ -3,12 +3,12 @@ package com.interview.stackqueue;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RealTimeCounter {
+class RealTimeCounter {
 
-    private Queue<Long> secQueue = new LinkedList<Long>();
+    private final Queue<Long> secQueue = new LinkedList<>();
     private long secCount;
     
-    public void add(long currentTimeInMills){
+    private void add(long currentTimeInMills){
         while(secQueue.size() > 0 && currentTimeInMills - 1000 > secQueue.peek()){
             secCount--;
             secQueue.poll();
@@ -18,7 +18,7 @@ public class RealTimeCounter {
         secQueue.offer(currentTimeInMills);
     }
     
-    public long getCallsInLastSec(long currentTimeInMills){
+    private long getCallsInLastSec(long currentTimeInMills){
         while(secQueue.size() > 0 && currentTimeInMills - 1000 > secQueue.peek()){
             secCount--;
             secQueue.poll();

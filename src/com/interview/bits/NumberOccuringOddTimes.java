@@ -6,34 +6,36 @@ package com.interview.bits;
  */
 public class NumberOccuringOddTimes {
 
-    public int oneNumberOccuringOddTimes(int arr[]){
-        int r = 0;
-        for(int i=0; i < arr.length; i++){
-            r = r^arr[i];
-        }
-        return r;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int oneNumberOccuringOddTimes(int arr[]){
+//        int r = 0;
+//        for(int i=0; i < arr.length; i++){
+//            r = r^arr[i];
+//        }
+//        return r;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     class Pair{
         int a;
         int b;
         
     }
     
-    public Pair twoNumbersOccuringOddTimes(int arr[]){
+    private Pair twoNumbersOccuringOddTimes(int arr[]){
         int r = 0;
-        for(int i=0; i < arr.length; i++){
-            r = r^arr[i];
+        for (int anArr1 : arr) {
+            r = r ^ anArr1;
         }
     
         r = r & ~(r-1);
         int r1 = 0;
         int r2 = 0;
-        for(int i=0; i < arr.length; i++){
-            if((r&arr[i]) == 0){
-                r1 = r1^arr[i];
-            }else{
-                r2 = r2^arr[i];
+        for (int anArr : arr) {
+            if ((r & anArr) == 0) {
+                r1 = r1 ^ anArr;
+            } else {
+                r2 = r2 ^ anArr;
             }
         }
         Pair p = new Pair();

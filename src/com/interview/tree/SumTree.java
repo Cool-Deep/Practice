@@ -10,9 +10,9 @@ class Count{
  * A SumTree is a Binary Tree where the value of a node is equal to sum of the nodes present 
  * in its left subtree and right subtree
  */
-public class SumTree {
+class SumTree {
 
-    public boolean isSumTree(Node root){
+    private boolean isSumTree(Node root){
         Count count = new Count();
         return isSumTree(root,count);
     }

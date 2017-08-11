@@ -15,9 +15,9 @@ import java.util.Set;
  * Time complexity is O(n^4)
  * Space complexity is O(n^3)
  */
-public class SymbolExpressionEvaluation {
+class SymbolExpressionEvaluation {
 
-    public boolean evaluateExpression(char input[][], Map<Character, Integer> index, char[] expression, char result) {
+    private boolean evaluateExpression(char input[][], Map<Character, Integer> index, char[] expression, char result) {
         Holder[][] T = new Holder[expression.length][expression.length];
         for (int i = 0; i < T.length; i++) {
             for (int j = 0; j < T.length; j++) {
@@ -64,7 +64,7 @@ public class SymbolExpressionEvaluation {
 }
 
 class Holder {
-    private Set<Character> valueHolder = new HashSet<>();
+    private final Set<Character> valueHolder = new HashSet<>();
     void add(Character ch) {
         valueHolder.add(ch);
     }

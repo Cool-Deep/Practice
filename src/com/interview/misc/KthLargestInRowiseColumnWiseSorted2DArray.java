@@ -6,11 +6,11 @@ import com.interview.graph.BinaryMinHeap;
  * Kth largest in rowwise and column wise sorted array
  * http://www.geeksforgeeks.org/kth-smallest-element-in-a-row-wise-and-column-wise-sorted-2d-array-set-1/
  */
-public class KthLargestInRowiseColumnWiseSorted2DArray {
+class KthLargestInRowiseColumnWiseSorted2DArray {
 
-    public int kthLargest(int input[][],int k){
+    private int kthLargest(int input[][], int k){
         
-        BinaryMinHeap<Integer> minHeap = new BinaryMinHeap<Integer>();
+        BinaryMinHeap<Integer> minHeap = new BinaryMinHeap<>();
         int c = input[0].length;
         int total = input.length * c;
         minHeap.add(input[0][0], 0);

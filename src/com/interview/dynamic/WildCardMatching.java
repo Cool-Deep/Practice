@@ -9,8 +9,8 @@ package com.interview.dynamic;
  * Reference
  * https://leetcode.com/problems/wildcard-matching/
  */
-public class WildCardMatching {
-    public boolean isMatch(String s, String p) {
+class WildCardMatching {
+    private boolean isMatch(String s, String p) {
         char[] str = s.toCharArray();
         char[] pattern = p.toCharArray();
 
@@ -52,12 +52,14 @@ public class WildCardMatching {
     }
 
 
-    /**
-     * Recursive and slow version of wild card matching.
-     */
-    public boolean isMatchRecursive(String s, String p) {
-        return isMatchRecursiveUtil(s.toCharArray(), p.toCharArray(), 0, 0);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Recursive and slow version of wild card matching.
+//     */
+//    public boolean isMatchRecursive(String s, String p) {
+//        return isMatchRecursiveUtil(s.toCharArray(), p.toCharArray(), 0, 0);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private boolean isMatchRecursiveUtil(char[] text, char[] pattern, int pos1, int pos2) {
         if (pos2 == pattern.length) {
@@ -65,11 +67,7 @@ public class WildCardMatching {
         }
 
         if (pattern[pos2] != '*') {
-            if (pos1 < text.length && (text[pos1] == pattern[pos2]) || pattern[pos2] == '?') {
-                return isMatchRecursiveUtil(text, pattern, pos1 + 1, pos2 + 1);
-            } else {
-                return false;
-            }
+            return (pos1 < text.length && (text[pos1] == pattern[pos2]) || pattern[pos2] == '?') && isMatchRecursiveUtil(text, pattern, pos1 + 1, pos2 + 1);
         } else {
             //if we have a***b then skip to the last *
             while (pos2 < pattern.length - 1 && pattern[pos2 + 1] == '*') {

@@ -7,9 +7,9 @@ import java.util.LinkedList;
 /**
  * http://www.geeksforgeeks.org/reverse-a-stack-using-recursion/
  */
-public class ReverseStackUsingRecursion {
+class ReverseStackUsingRecursion {
 
-    public void reverse(Deque<Integer> stack){
+    private void reverse(Deque<Integer> stack){
         if(stack.size() == 0){
             return;
         }
@@ -30,7 +30,7 @@ public class ReverseStackUsingRecursion {
     }
     
     public static void main(String args[]){
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Deque<Integer> stack = new LinkedList<>();
         stack.push(1);
         stack.push(2);
         stack.push(3);

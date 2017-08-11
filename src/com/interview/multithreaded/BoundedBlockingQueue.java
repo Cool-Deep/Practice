@@ -18,7 +18,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 1) If queue is empty poll will wait with timeout till item is available
  * 2) If queue is full offer will wait with timeout till space is available
  */
-public class BoundedBlockingQueue<T> {
+class BoundedBlockingQueue<T> {
 
     private final Object[] items;
     private int takeIndex;
@@ -32,7 +32,7 @@ public class BoundedBlockingQueue<T> {
     /**
      * @param size - Define the size of bounded blocking queue.
      */
-    public BoundedBlockingQueue(int size){
+    private BoundedBlockingQueue(int size){
         items = new Object[size];
         lock = new ReentrantLock();
         notEmpty = lock.newCondition();
@@ -43,7 +43,7 @@ public class BoundedBlockingQueue<T> {
      * Poll an item from queue. If queue is empty wait with timeout till item is available
      * @return Optional<T> depending on if item was polled or queue was empty
      */
-    public Optional<T> poll(long timeout, TimeUnit timeUnit) throws InterruptedException{
+    Optional<T> poll(long timeout, TimeUnit timeUnit) throws InterruptedException{
         long left = timeUnit.toNanos(timeout);
         //acquire the lock on the lock object
         lock.lockInterruptibly();
@@ -78,7 +78,7 @@ public class BoundedBlockingQueue<T> {
      * @return - returns true if item was offered in queue successfully else false.
      * @throws InterruptedException
      */
-    public boolean offer(T t, long timeout, TimeUnit timeUnit) throws InterruptedException{
+    boolean offer(T t, long timeout, TimeUnit timeUnit) throws InterruptedException{
         if(t == null) { 
             throw new IllegalArgumentException();
         }
@@ -129,7 +129,7 @@ public class BoundedBlockingQueue<T> {
         verifyQueueWorks();
     }
     
-    public static void verifyQueueWorks() throws Exception{
+    private static void verifyQueueWorks() throws Exception{
         BoundedBlockingQueue<Integer> queue = new BoundedBlockingQueue<>(30);
         ExecutorService writeExecutors = Executors.newFixedThreadPool(10);
         int TOTAL = 10000;
@@ -157,9 +157,7 @@ public class BoundedBlockingQueue<T> {
                 try {
                     while(true){
                         Optional<Integer> r = queue.poll((long)(Math.random()*1000 + 1), TimeUnit.MILLISECONDS);
-                        if(r.isPresent()) {
-                            result[r.get()].incrementAndGet();
-                        }
+                        r.ifPresent(integer -> result[integer].incrementAndGet());
                     }
                 } catch (InterruptedException e) {
                     System.out.println("Shutting down read thread");

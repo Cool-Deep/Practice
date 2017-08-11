@@ -16,16 +16,16 @@ import java.util.*;
  * References
  * https://github.com/jgrapht/jgrapht/blob/master/jgrapht-core/src/main/java/org/jgrapht/alg/cycle/JohnsonSimpleCycles.java
  */
-public class AllCyclesInDirectedGraphJohnson {
-    Set<Vertex<Integer>> blockedSet;
-    Map<Vertex<Integer>, Set<Vertex<Integer>>> blockedMap;
-    Deque<Vertex<Integer>> stack;
-    List<List<Vertex<Integer>>> allCycles;
+class AllCyclesInDirectedGraphJohnson {
+    private Set<Vertex<Integer>> blockedSet;
+    private Map<Vertex<Integer>, Set<Vertex<Integer>>> blockedMap;
+    private Deque<Vertex<Integer>> stack;
+    private List<List<Vertex<Integer>>> allCycles;
 
     /**
      * Main function to find all cycles
      */
-    public List<List<Vertex<Integer>>> simpleCyles(Graph<Integer> graph) {
+    private List<List<Vertex<Integer>>> simpleCyles(Graph<Integer> graph) {
 
         blockedSet = new HashSet<>();
         blockedMap = new HashMap<>();

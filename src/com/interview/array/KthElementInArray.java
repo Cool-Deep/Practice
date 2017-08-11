@@ -9,7 +9,7 @@ import java.util.Arrays;
  * Sorted array
  * Reverse sorted array
  */
-public class KthElementInArray {
+class KthElementInArray {
     
     public int kthElement(int arr[],int k){
         int low = 0;

@@ -1,17 +1,21 @@
 package codeFights;
 
+import java.util.Arrays;
+
 /**
  * Created by Davit on 24/06/16.
  */
-public class TournamentDay24 {
+class TournamentDay24 {
 
-    private static int[] extractMatrixColumn(int[][] matrix, int column) {
-        int[] result = new int[matrix.length];
-        for (int i = 0; i < matrix.length; i++) {
-            result[i] = matrix[i][column];
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] extractMatrixColumn(int[][] matrix, int column) {
+//        int[] result = new int[matrix.length];
+//        for (int i = 0; i < matrix.length; i++) {
+//            result[i] = matrix[i][column];
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /*private static String negate(String bt1) {
         return bt1.replace("1", "x").replace("-", "1").replace("x", "-");
@@ -63,65 +67,71 @@ public class TournamentDay24 {
     }
 */
 
-    private static String BalancedTernary(int n)
-    {
-        String r = "";
-        do
-            r = "1-01-".charAt(2 + n % 3) + r;
-        while ((n = n / 3 + n % 3 / 2) != 0);
-        return r;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String BalancedTernary(int n)
+//    {
+//        String r = "";
+//        do
+//            r = "1-01-".charAt(2 + n % 3) + r;
+//        while ((n = n / 3 + n % 3 / 2) != 0);
+//        return r;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static boolean isOneSwapEnough(String inputString) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean isOneSwapEnough(String inputString) {
+//
+//        char[][] badPairs = new char[2][];
+//        int badPairsCnt = 0;
+//        for (int i = 0; i < inputString.length() / 2 ; i++) {
+//            char a = inputString.charAt(i);
+//            char b = inputString.charAt(inputString.length() - i - 1);
+//            if (a != b) {
+//                if (badPairsCnt == 2) {
+//                    return false;
+//                }
+//                if (a > b) {
+//                    char t = a;
+//                    a = b;
+//                    b = t;
+//                }
+//                badPairs[badPairsCnt++] = new char[]{a, b};
+//            }
+//        }
+//        if (badPairsCnt == 0) {
+//            return true;
+//        } else if (badPairsCnt == 1) {
+//            if (inputString.length() % 2 == 0) {
+//                return false;
+//            }
+//            char c = inputString.charAt(inputString.length() / 2);
+//            return badPairs[0][0] == c || badPairs[0][1] == c;
+//        } else {
+//            return badPairs[0][0] == badPairs[1][0] && badPairs[0][1] == badPairs[1][1];
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        char[][] badPairs = new char[2][];
-        int badPairsCnt = 0;
-        for (int i = 0; i < inputString.length() / 2 ; i++) {
-            char a = inputString.charAt(i);
-            char b = inputString.charAt(inputString.length() - i - 1);
-            if (a != b) {
-                if (badPairsCnt == 2) {
-                    return false;
-                }
-                if (a > b) {
-                    char t = a;
-                    a = b;
-                    b = t;
-                }
-                badPairs[badPairsCnt++] = new char[]{a, b};
-            }
-        }
-        if (badPairsCnt == 0) {
-            return true;
-        } else if (badPairsCnt == 1) {
-            if (inputString.length() % 2 == 0) {
-                return false;
-            }
-            char c = inputString.charAt(inputString.length() / 2);
-            return badPairs[0][0] == c || badPairs[0][1] == c;
-        } else {
-            return badPairs[0][0] == badPairs[1][0] && badPairs[0][1] == badPairs[1][1];
-        }
-    }
-
-    private static int arrayKthGreatest(int[] inputArray, int k) {
-
-        for (int i = 0; i < k; i++) {
-            int indexOfMaximum = i,
-                    tmp = inputArray[i];
-
-            for (int j = i + 1; j < inputArray.length; j++) {
-                if (inputArray[j] > inputArray[indexOfMaximum]) {
-                    indexOfMaximum = j;
-                }
-            }
-
-            inputArray[i] = inputArray[indexOfMaximum];
-            inputArray[indexOfMaximum] = tmp;
-        }
-
-        return inputArray[k - 1];
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int arrayKthGreatest(int[] inputArray, int k) {
+//
+//        for (int i = 0; i < k; i++) {
+//            int indexOfMaximum = i,
+//                    tmp = inputArray[i];
+//
+//            for (int j = i + 1; j < inputArray.length; j++) {
+//                if (inputArray[j] > inputArray[indexOfMaximum]) {
+//                    indexOfMaximum = j;
+//                }
+//            }
+//
+//            inputArray[i] = inputArray[indexOfMaximum];
+//            inputArray[indexOfMaximum] = tmp;
+//        }
+//
+//        return inputArray[k - 1];
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int gcm(int a, int b) {
         return b == 0 ? a : gcm(b, a % b);
@@ -139,7 +149,7 @@ public class TournamentDay24 {
         // System.out.println(BalancedTernary(-293827361));
         // System.out.println(isOneSwapEnough("abab"));
         // System.out.println(arrayKthGreatest(new int[]{19, 32, 11, 23}, 3));
-        System.out.println(fractionReducing(new int[]{2, 6}));
+        System.out.println(Arrays.toString(fractionReducing(new int[]{2, 6})));
     }
 
 }

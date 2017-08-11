@@ -18,8 +18,8 @@ import java.util.List;
  *
  * https://leetcode.com/problems/best-meeting-point/
  */
-public class BestMeetingPoint {
-    public int minTotalDistance(int[][] grid) {
+class BestMeetingPoint {
+    private int minTotalDistance(int[][] grid) {
         if (grid.length == 0 || grid[0].length == 0) {
             return 0;
         }

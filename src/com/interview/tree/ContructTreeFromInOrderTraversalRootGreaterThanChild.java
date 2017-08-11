@@ -7,9 +7,9 @@ package com.interview.tree;
  * Test cases:
  * One two or more nodes in the tree
  */
-public class ContructTreeFromInOrderTraversalRootGreaterThanChild {
+class ContructTreeFromInOrderTraversalRootGreaterThanChild {
 
-    public Node createTree(int inorder[]){
+    private Node createTree(int inorder[]){
         return createTree(inorder,0,inorder.length-1);
     }
     private Node createTree(int inorder[],int low,int high)

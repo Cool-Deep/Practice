@@ -25,9 +25,9 @@ import java.util.Arrays;
  * http://www.geeksforgeeks.org/dynamic-programming-set-21-box-stacking-problem/
  * http://people.cs.clemson.edu/~bcdean/dp_practice/
  */
-public class BoxStacking {
+class BoxStacking {
 
-    public int maxHeight(Dimension[] input) {
+    private int maxHeight(Dimension[] input) {
         //get all rotations of box dimension.
         //e.g if dimension is 1,2,3 rotations will be 2,1,3  3,2,1  3,1,2  . Here length is always greater
         //or equal to width and we can do that without loss of generality.
@@ -61,9 +61,9 @@ public class BoxStacking {
         //find max in T[] and that will be our max height.
         //Result can also be found using result[] array.
         int max = Integer.MIN_VALUE;
-        for(int i=0; i < T.length; i++){
-            if(T[i] > max){
-                max = T[i];
+        for (int aT : T) {
+            if (aT > max) {
+                max = aT;
             }
         }
         
@@ -74,20 +74,20 @@ public class BoxStacking {
     private void createAllRotation(Dimension[] input,
             Dimension[] allRotationInput) {
         int index = 0;
-        for (int i = 0; i < input.length; i++) {
+        for (Dimension anInput : input) {
             allRotationInput[index++] = Dimension.createDimension(
-                    input[i].height, input[i].length, input[i].width);
+                    anInput.height, anInput.length, anInput.width);
             allRotationInput[index++] = Dimension.createDimension(
-                    input[i].length, input[i].height, input[i].width);
+                    anInput.length, anInput.height, anInput.width);
             allRotationInput[index++] = Dimension.createDimension(
-                    input[i].width, input[i].length, input[i].height);
+                    anInput.width, anInput.length, anInput.height);
 
         }
     }
 
     public static void main(String args[]) {
         BoxStacking bs = new BoxStacking();
-        Dimension input[] = { new Dimension(3, 2, 5), new Dimension(1, 2, 4) };
+        Dimension input[] = { new Dimension(3, 5), new Dimension(1, 4) };
         int maxHeight = bs.maxHeight(input);
         System.out.println("Max height is " + maxHeight);
         assert 11 == maxHeight;
@@ -104,13 +104,13 @@ class Dimension implements Comparable<Dimension> {
     int length;
     int width;
 
-    Dimension(int height, int length, int width) {
+    Dimension(int height, int width) {
         this.height = height;
-        this.length = length;
+        this.length = 2;
         this.width = width;
     }
 
-    Dimension() {
+    private Dimension() {
     }
 
     static Dimension createDimension(int height, int side1, int side2) {

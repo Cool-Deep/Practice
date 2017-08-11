@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-public class PrintAnagramTogether {
+class PrintAnagramTogether {
 
-    public void print(String[] string){
-        Map<String,List<Integer>> invertedIndex = new HashMap<String,List<Integer>>();
+    private void print(String[] string){
+        Map<String,List<Integer>> invertedIndex = new HashMap<>();
         int index = 0;
         for(String str : string){
             char [] charArray = str.toCharArray();
@@ -18,7 +18,7 @@ public class PrintAnagramTogether {
                 List<Integer> pos = invertedIndex.get(newString);
                 pos.add(index);
             }else{
-                List<Integer> pos = new ArrayList<Integer>();
+                List<Integer> pos = new ArrayList<>();
                 pos.add(index);
                 invertedIndex.put(newString, pos);
             }

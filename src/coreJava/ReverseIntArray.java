@@ -1,6 +1,6 @@
 package coreJava;
 
-public class ReverseIntArray {
+class ReverseIntArray {
 	public static void main(String[] args) {
 		int[] array = { 5, 2, 3, 7, 9,0,-6,8,6,4 };
 		 reverse(array);
@@ -10,12 +10,12 @@ public class ReverseIntArray {
 //			array[array.length - 1 - i] = temp;
 //		}
 
-		for (int i = 0; i < array.length; i++) {
-			System.out.println(array[i]);
-		}
+        for (int anArray : array) {
+            System.out.println(anArray);
+        }
 	}
 	
-	public static int[] reverse(int[] data) {
+	private static void reverse(int[] data) {
 	    int left = 0;
 	    int right = data.length - 1;
 	    int count=0;
@@ -29,6 +29,5 @@ public class ReverseIntArray {
 	        count++;
 	    }
 	    System.out.println("Count  "+count);
-	    return data;
-	}
+    }
 }

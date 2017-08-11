@@ -2,6 +2,7 @@ package com.interview.array;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Date 07/20/2015
@@ -11,9 +12,9 @@ import java.util.List;
  * 1 11 21 1211 111221 312211
  * Print nth element of this sequence.
  */
-public class NthElementOfCountNumberSequence {
+class NthElementOfCountNumberSequence {
 
-    public List<Integer> nthElement(int n) {
+    private List<Integer> nthElement(int n) {
         int  i = 1;
         List<Integer> current = new ArrayList<>();
         current.add(1);
@@ -22,7 +23,7 @@ public class NthElementOfCountNumberSequence {
             int count = 1;
             int index = 0;
             for(int j = 1; j < current.size(); j++) {
-                if(current.get(index) == current.get(j)) {
+                if(Objects.equals(current.get(index), current.get(j))) {
                     count++;
                 } else {
                     result.add(count);

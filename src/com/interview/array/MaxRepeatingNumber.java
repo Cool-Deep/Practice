@@ -6,9 +6,9 @@ package com.interview.array;
  * where k is a positive integer and k <= n.
  * Find the maximum repeating number in this array
  */
-public class MaxRepeatingNumber {
+class MaxRepeatingNumber {
 
-    public int maxRepeatingNumber(int arr[], int k){
+    private int maxRepeatingNumber(int arr[], int k){
         int len = k;
         for(int i=0;  i < arr.length; i++){
             arr[arr[i]%len] += len;

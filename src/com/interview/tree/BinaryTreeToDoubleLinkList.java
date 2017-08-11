@@ -3,9 +3,9 @@ package com.interview.tree;
 /**
  * http://www.geeksforgeeks.org/convert-given-binary-tree-doubly-linked-list-set-3/
  */
-public class BinaryTreeToDoubleLinkList {
+class BinaryTreeToDoubleLinkList {
 
-    public void toDoubleLL(Node root){
+    private void toDoubleLL(Node root){
         NodeRef prev = new NodeRef();
         toDoubleLL(root,prev);
     }
@@ -25,7 +25,7 @@ public class BinaryTreeToDoubleLinkList {
         toDoubleLL(root.right,prev);
     }
     
-    public void print(Node root){
+    private void print(Node root){
         Node curr = null;
         while(root != null){
             curr = root;

@@ -12,25 +12,25 @@ package com.interview.array;
  * http://www.geeksforgeeks.org/maximum-product-subarray/
  * https://leetcode.com/problems/maximum-product-subarray/
  */
-public class MaxProductSubarray {
+class MaxProductSubarray {
 
-    public int maxProduct(int[] nums) {
+    private int maxProduct(int[] nums) {
         int min = 1;
         int max = 1;
         int maxSoFar = nums[0];
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > 0) {
-                max = max * nums[i];
-                min = Math.min(min * nums[i], 1);
+        for (int num : nums) {
+            if (num > 0) {
+                max = max * num;
+                min = Math.min(min * num, 1);
                 maxSoFar = Math.max(maxSoFar, max);
-            } else if (nums[i] == 0) {
+            } else if (num == 0) {
                 min = 1;
                 max = 1;
                 maxSoFar = Math.max(maxSoFar, 0);
             } else {
-                int t = max * nums[i];
-                maxSoFar = Math.max(maxSoFar, min * nums[i]);
-                max = Math.max(1, min*nums[i]);
+                int t = max * num;
+                maxSoFar = Math.max(maxSoFar, min * num);
+                max = Math.max(1, min * num);
                 min = t;
             }
         }

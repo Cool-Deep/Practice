@@ -21,12 +21,12 @@ import java.util.Map;
  * http://www.geeksforgeeks.org/dynamic-programming-set-10-0-1-knapsack-problem/
  * https://en.wikipedia.org/wiki/Knapsack_problem
  */
-public class Knapsack01 {
+class Knapsack01 {
 
     /**
      * Solves 0/1 knapsack in bottom up dynamic programming
      */
-    public int bottomUpDP(int val[], int wt[], int W){
+    private int bottomUpDP(int val[], int wt[], int W){
         int K[][] = new int[val.length+1][W+1];
         for(int i=0; i <= val.length; i++){
             for(int j=0; j <= W; j++){
@@ -58,8 +58,7 @@ public class Knapsack01 {
 
             Index index = (Index) o;
 
-            if (remainingWeight != index.remainingWeight) return false;
-            return remainingItems == index.remainingItems;
+            return remainingWeight == index.remainingWeight && remainingItems == index.remainingItems;
 
         }
 
@@ -74,13 +73,13 @@ public class Knapsack01 {
     /**
      * Solves 0/1 knapsack in top down DP
      */
-    public int topDownRecursive(int values[], int weights[], int W) {
+    private int topDownRecursive(int values[], int weights[], int W) {
         //map of key(remainingWeight, remainingCount) to maximumValue they can get.
         Map<Index, Integer> map = new HashMap<>();
         return topDownRecursiveUtil(values, weights, W, values.length, 0, map);
     }
 
-    public int topDownRecursiveUtil(int values[], int weights[], int remainingWeight, int totalItems, int currentItem, Map<Index, Integer> map) {
+    private int topDownRecursiveUtil(int values[], int weights[], int remainingWeight, int totalItems, int currentItem, Map<Index, Integer> map) {
         //if currentItem exceeds total item count or remainingWeight is less than 0 then
         //just return with 0;
         if(currentItem >= totalItems || remainingWeight <= 0) {

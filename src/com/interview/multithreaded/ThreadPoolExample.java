@@ -11,13 +11,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ThreadPoolExample {
+class ThreadPoolExample {
 
-    private static BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(10);
-    public static ExecutorService threadPool =  Executors.newFixedThreadPool(5);
-    public void doWork() throws Exception{
-        CompletionService<String> completionService = new ExecutorCompletionService<String>(threadPool);
-        List<Future<String>> futureList = new ArrayList<Future<String>>();
+    // --Commented out by Inspection (8/10/17, 5:13 PM):private static BlockingQueue<Runnable> queue = new ArrayBlockingQueue<Runnable>(10);
+    private static final ExecutorService threadPool =  Executors.newFixedThreadPool(5);
+    private void doWork() throws Exception{
+        CompletionService<String> completionService = new ExecutorCompletionService<>(threadPool);
+        List<Future<String>> futureList = new ArrayList<>();
         for(int i=0; i < 20; i++){
             futureList.add(completionService.submit(new Count10(i)));
         }

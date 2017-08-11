@@ -9,31 +9,30 @@ package com.interview.string;
  * Runtime complexity - O(m + n) where m is length of text and n is length of pattern
  * Space complexity - O(n)
  */
-public class SubstringSearch {
+class SubstringSearch {
 
-    /**
-     * Slow method of pattern matching
-     */
-    public boolean hasSubstring(char[] text, char[] pattern){
-        int i=0;
-        int j=0;
-        int k = 0;
-        while(i < text.length && j < pattern.length){
-            if(text[i] == pattern[j]){
-                i++;
-                j++;
-            }else{
-                j=0;
-                k++;
-                i = k;
-            }
-        }
-        if(j == pattern.length){
-            return true;
-        }
-        return false;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Slow method of pattern matching
+//     */
+//    public boolean hasSubstring(char[] text, char[] pattern){
+//        int i=0;
+//        int j=0;
+//        int k = 0;
+//        while(i < text.length && j < pattern.length){
+//            if(text[i] == pattern[j]){
+//                i++;
+//                j++;
+//            }else{
+//                j=0;
+//                k++;
+//                i = k;
+//            }
+//        }
+//        return j == pattern.length;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     /**
      * Compute temporary array to maintain size of suffix which is same as prefix
      * Time/space complexity is O(size of pattern)
@@ -61,7 +60,7 @@ public class SubstringSearch {
     /**
      * KMP algorithm of pattern matching.
      */
-    public boolean KMP(char []text, char []pattern){
+    private boolean KMP(char[] text, char[] pattern){
         
         int lps[] = computeTemporaryArray(pattern);
         int i=0;
@@ -78,10 +77,7 @@ public class SubstringSearch {
                 }
             }
         }
-        if(j == pattern.length){
-            return true;
-        }
-        return false;
+        return j == pattern.length;
     }
         
     public static void main(String args[]){

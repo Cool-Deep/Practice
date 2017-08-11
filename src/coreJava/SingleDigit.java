@@ -1,6 +1,6 @@
 package coreJava;
 
-public class SingleDigit {
+class SingleDigit {
 	public static void main(String[] args) {
         int num = 6321;
         int sum = 0;

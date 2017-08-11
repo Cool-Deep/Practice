@@ -13,9 +13,9 @@ import java.util.List;
  *
  * https://leetcode.com/problems/unique-binary-search-trees-ii/
  */
-public class ConstructAllBinaryTreeFromInorderTraversal {
+class ConstructAllBinaryTreeFromInorderTraversal {
 
-    public List<Node> generateTrees(int n) {
+    private List<Node> generateTrees(int n) {
         if (n == 0) {
             return Collections.emptyList();
         }
@@ -45,7 +45,7 @@ public class ConstructAllBinaryTreeFromInorderTraversal {
         return allTrees;
     }
 
-    public void printAllTrees(List<Node> allTrees) {
+    private void printAllTrees(List<Node> allTrees) {
         TreeTraversals tt = new TreeTraversals();
         System.out.println("Total number of trees " + allTrees.size());
         for(Node node : allTrees) {

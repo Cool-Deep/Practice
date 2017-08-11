@@ -2,9 +2,9 @@ package com.interview.recursion;
 
 import java.util.*;
 
-public class Combination {
+class Combination {
 
-   public void combination(char input[]){
+   private void combination(char input[]){
        Map<Character, Integer> countMap = new TreeMap<>();
        for (char ch : input) {
            countMap.compute(ch, (key, val) -> {
@@ -47,7 +47,7 @@ public class Combination {
         System.out.println();
     }
 
-    public void combinationEasy(char[] input) {
+    private void combinationEasy(char[] input) {
         List<Character> r = new ArrayList<>();
         Arrays.sort(input);
         combinationEasy(input, 0, r);

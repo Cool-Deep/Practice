@@ -12,9 +12,9 @@ class IntegerRef{
     int val;
 }
 
-public class AddGreaterValueNodeToEveryNode {
+class AddGreaterValueNodeToEveryNode {
 
-    public void add(Node root,IntegerRef ref){
+    private void add(Node root, IntegerRef ref){
         if(root == null){
             return ;
         }

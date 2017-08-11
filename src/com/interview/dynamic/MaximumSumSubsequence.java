@@ -12,14 +12,12 @@ package com.interview.dynamic;
  * Reference:
  * http://www.geeksforgeeks.org/dynamic-programming-set-14-maximum-sum-increasing-subsequence/
  */
-public class MaximumSumSubsequence {
+class MaximumSumSubsequence {
 
-    public int maxSum(int arr[]){
+    private int maxSum(int arr[]){
         int T[] = new int[arr.length];
 
-        for (int i = 0; i < T.length; i++) {
-            T[i] = arr[i];
-        }
+        System.arraycopy(arr, 0, T, 0, T.length);
 
         for(int i=1; i < T.length; i++){
             for(int j = 0; j < i; j++){

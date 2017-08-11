@@ -5,9 +5,9 @@ package com.interview.bits;
  * http://www.geeksforgeeks.org/binary-representation-of-a-given-number/
  * http://www.geeksforgeeks.org/add-two-numbers-without-using-arithmetic-operators/
  */
-public class AddTwoNumberInBinaryRepresentation {
+class AddTwoNumberInBinaryRepresentation {
 
-    public int add(char[] num1,char[] num2){
+    private int add(char[] num1, char[] num2){
         int index1 = num1.length -1;
         int index2 = num2.length -1;
         int carry = 0;
@@ -39,7 +39,7 @@ public class AddTwoNumberInBinaryRepresentation {
         return result;
     }
     
-    public int addTwoNumbersWithoutArithmeticOperator(int num1,int num2){
+    private int addTwoNumbersWithoutArithmeticOperator(int num1, int num2){
         int carry = 0;
         int result = 0;
         for(int i=0; i <=31; i++){
@@ -56,7 +56,7 @@ public class AddTwoNumberInBinaryRepresentation {
         return result;
     }
     
-    public int addTwoNumbersWithoutArithmeticOperatorFaster(int num1,int num2){
+    private int addTwoNumbersWithoutArithmeticOperatorFaster(int num1, int num2){
         while(num2 != 0){
             int carry = num1 & num2;
             num1 = num1 ^ num2;
@@ -65,7 +65,7 @@ public class AddTwoNumberInBinaryRepresentation {
         return num1;
     }
     
-    public void printResult(int num){
+    private void printResult(int num){
         for(int i= 1<<31; i !=0 ; i = i>>>1){
             if((num & i) > 0){
                 System.out.print("1");

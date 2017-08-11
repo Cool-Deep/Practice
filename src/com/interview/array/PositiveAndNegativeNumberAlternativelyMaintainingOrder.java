@@ -14,9 +14,9 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/rearrange-array-alternating-positive-negative-items-o1-extra-space/
  */
-public class PositiveAndNegativeNumberAlternativelyMaintainingOrder {
+class PositiveAndNegativeNumberAlternativelyMaintainingOrder {
 
-    public void rearrange(int input[]) {
+    private void rearrange(int input[]) {
 
         for (int i = 0; i < input.length; i++) {
             if (i % 2 == 0 && input[i] >= 0) {
@@ -48,9 +48,7 @@ public class PositiveAndNegativeNumberAlternativelyMaintainingOrder {
 
     private void rightRotate(int input[], int start, int end) {
         int t = input[end];
-        for (int i = end; i > start; i--) {
-            input[i] = input[i - 1];
-        }
+        System.arraycopy(input, start, input, start + 1, end - start);
         input[start] = t;
     }
 

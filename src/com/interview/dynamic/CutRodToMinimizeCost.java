@@ -11,10 +11,10 @@ package com.interview.dynamic;
  * start to end. To calculate the value try all markings b/w start to end.
  *
  */
-public class CutRodToMinimizeCost {
+class CutRodToMinimizeCost {
 
 
-    public int cutRodToMinimizeCost(int [] markings, int total) {
+    private int cutRodToMinimizeCost(int[] markings, int total) {
         int T[][] = new int[total+1][total+1];
         for(int i = 0 ; i < T.length; i++) {
             for(int j=0; j < T[i].length ; j++) {

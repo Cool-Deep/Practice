@@ -6,9 +6,9 @@ package com.interview.linklist;
  * odd or even number of k
  * odd or even number of nodes in the list
  */
-public class ReverseKNodes {
+class ReverseKNodes {
 
-    public Node reverse(Node head,int k){
+    private Node reverse(Node head, int k){
         if(head == null){
             return null;
         }

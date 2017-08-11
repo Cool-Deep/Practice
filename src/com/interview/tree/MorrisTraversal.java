@@ -9,9 +9,9 @@ package com.interview.tree;
  * Time complexity O(n)
  * Space complexity O(1)
  */
-public class MorrisTraversal {
+class MorrisTraversal {
 
-    public void inorder(Node root) {
+    private void inorder(Node root) {
         Node current = root;
         while(current != null) {
             //left is null then print the node and go to right
@@ -39,7 +39,7 @@ public class MorrisTraversal {
         }
     }
 
-    public void preorder(Node root) {
+    private void preorder(Node root) {
         Node current = root;
         while (current != null) {
             if(current.left == null) {

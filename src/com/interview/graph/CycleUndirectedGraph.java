@@ -16,9 +16,9 @@ import java.util.Set;
  * Runtime and space complexity for both the techniques is O(v)
  * where v is total number of vertices in the graph.
  */
-public class CycleUndirectedGraph<T> {
+class CycleUndirectedGraph<T> {
 
-    public boolean hasCycleUsingDisjointSets(Graph<T> graph){
+    boolean hasCycleUsingDisjointSets(Graph<T> graph){
         DisjointSet disjointSet = new DisjointSet();
         
         for(Vertex<T> vertex : graph.getAllVertex()){
@@ -36,8 +36,8 @@ public class CycleUndirectedGraph<T> {
         return false;
     }
     
-    public boolean hasCycleDFS(Graph<T> graph){
-        Set<Vertex<T>> visited = new HashSet<Vertex<T>>();
+    boolean hasCycleDFS(Graph<T> graph){
+        Set<Vertex<T>> visited = new HashSet<>();
         for(Vertex<T> vertex : graph.getAllVertex()){
             if(visited.contains(vertex)){
                 continue;
@@ -50,7 +50,7 @@ public class CycleUndirectedGraph<T> {
         return false;
     }
     
-    public boolean hasCycleDFSUtil(Vertex<T> vertex, Set<Vertex<T>> visited,Vertex<T> parent){
+    private boolean hasCycleDFSUtil(Vertex<T> vertex, Set<Vertex<T>> visited, Vertex<T> parent){
         visited.add(vertex);
         for(Vertex<T> adj : vertex.getAdjacentVertexes()){
             if(adj.equals(parent)){
@@ -69,8 +69,8 @@ public class CycleUndirectedGraph<T> {
     
     public static void main(String args[]){
         
-        CycleUndirectedGraph<Integer> cycle = new CycleUndirectedGraph<Integer>();
-        Graph<Integer> graph = new Graph<Integer>(false);
+        CycleUndirectedGraph<Integer> cycle = new CycleUndirectedGraph<>();
+        Graph<Integer> graph = new Graph<>(false);
         
         graph.addEdge(0, 1);
         graph.addEdge(1, 2);

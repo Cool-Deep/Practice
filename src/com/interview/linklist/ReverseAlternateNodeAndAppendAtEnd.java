@@ -5,9 +5,9 @@ package com.interview.linklist;
  * Test case
  * Even and odd number of nodes
  */
-public class ReverseAlternateNodeAndAppendAtEnd {
+class ReverseAlternateNodeAndAppendAtEnd {
 
-    public void act(Node head){
+    private void act(Node head){
         
         Node result = null;
         LinkList ll = new LinkList();

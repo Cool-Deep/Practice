@@ -3,9 +3,9 @@ package com.interview.array;
 /**
  * http://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers-publish/
  */
-public class PositiveAndNegativeNumberAlternatively {
+class PositiveAndNegativeNumberAlternatively {
 
-    public void arrange(int arr[]){
+    private void arrange(int arr[]){
         int startOfPos = segregate(arr);
         
         int startOfNeg = 1;
@@ -41,8 +41,8 @@ public class PositiveAndNegativeNumberAlternatively {
         int arr[] = {-1,-2,-3,-4,-5,1,2,3,4,5};
         PositiveAndNegativeNumberAlternatively pan = new PositiveAndNegativeNumberAlternatively();
         pan.arrange(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i]+ " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
     }
 }

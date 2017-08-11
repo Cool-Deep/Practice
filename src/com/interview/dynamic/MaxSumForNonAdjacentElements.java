@@ -4,12 +4,12 @@ package com.interview.dynamic;
  * http://www.geeksforgeeks.org/maximum-sum-such-that-no-two-elements-are-
  * adjacent/
  */
-public class MaxSumForNonAdjacentElements {
+class MaxSumForNonAdjacentElements {
 
 	/**
 	 * Fast DP solution.
 	 */
-    public int maxSum(int arr[]) {
+    private int maxSum(int arr[]) {
         int excl = 0;
         int incl = arr[0];
         for (int i = 1; i < arr.length; i++) {
@@ -23,7 +23,7 @@ public class MaxSumForNonAdjacentElements {
     /**
      * Recursive slow solution.
      */
-	public int maxSum(int arr[], int index) {
+    private int maxSum(int arr[], int index) {
 		if (index == 0) {
 			return arr[0];
 		} else if (index == 1) {

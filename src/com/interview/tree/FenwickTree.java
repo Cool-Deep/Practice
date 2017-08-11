@@ -19,13 +19,13 @@ package com.interview.tree;
  * https://www.topcoder.com/community/data-science/data-science-tutorials/binary-indexed-trees/
  * http://en.wikipedia.org/wiki/Fenwick_tree
  */
-public class FenwickTree {
+class FenwickTree {
 
     /**
      * Start from index+1 if you updating index in original array. Keep adding this value 
      * for next node till you reach outside range of tree
      */
-    public void updateBinaryIndexedTree(int binaryIndexedTree[], int val, int index){
+    private void updateBinaryIndexedTree(int binaryIndexedTree[], int val, int index){
         while(index < binaryIndexedTree.length){
             binaryIndexedTree[index] += val;
             index = getNext(index);
@@ -36,7 +36,7 @@ public class FenwickTree {
      * Start from index+1 if you want prefix sum 0 to index. Keep adding value
      * till you reach 0
      */
-    public int getSum(int binaryIndexedTree[], int index){
+    private int getSum(int binaryIndexedTree[], int index){
         index = index + 1;
         int sum = 0;
         while(index > 0){
@@ -49,7 +49,7 @@ public class FenwickTree {
     /**
      * Creating tree is like updating Fenwick tree for every value in array
      */
-    public int[] createTree(int input[]){
+    private int[] createTree(int input[]){
         int binaryIndexedTree[] = new int[input.length+1];
         for(int i=1; i <= input.length; i++){
             updateBinaryIndexedTree(binaryIndexedTree, input[i-1], i);

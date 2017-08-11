@@ -12,10 +12,10 @@ import java.util.LinkedList;
  * It is also different from find next higher number on right side which can
  * be found by keeping AVL tree and finding ceiling.
  */
-public class LargerElementOnRight {
+class LargerElementOnRight {
 
-    public int[] larger(int input[]){
-        Deque<Integer> stack = new LinkedList<Integer>();
+    private int[] larger(int input[]){
+        Deque<Integer> stack = new LinkedList<>();
         int result[] = new int[input.length];
         for(int i=0; i < result.length; i++){
             result[i] = -1;
@@ -41,10 +41,10 @@ public class LargerElementOnRight {
         LargerElementOnRight leo = new LargerElementOnRight();
         int input[] = {4,2,-8,6,0,-3,-1,1,9};
         int result[] = leo.larger(input);
-        for(int i=0; i < result.length; i++){
-            if(result[i] != -1){
-                System.out.print(input[result[i]] + " ");
-            }else{
+        for (int aResult : result) {
+            if (aResult != -1) {
+                System.out.print(input[aResult] + " ");
+            } else {
                 System.out.print("NIL ");
             }
         }

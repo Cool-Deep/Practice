@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DivideNumbersInEqualGroupWithClosestSum {
+class DivideNumbersInEqualGroupWithClosestSum {
 
-    public void divide(int arr[],List<Integer> list1, List<Integer> list2){
+    private void divide(int arr[], List<Integer> list1, List<Integer> list2){
         Arrays.sort(arr);
         int len = arr.length;
         int sum1 = 0;
@@ -31,8 +31,8 @@ public class DivideNumbersInEqualGroupWithClosestSum {
     }
     
     public static void main(String args[]){
-        List<Integer> list1 = new ArrayList<Integer>();
-        List<Integer> list2 = new ArrayList<Integer>();
+        List<Integer> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
         int arr[] = {15,14,13,1,3,2,};
         int arr1[] = {23, 45, 34, 12,11, 98, 99, 4, 189, 1,7,19,105, 201};
         

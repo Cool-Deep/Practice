@@ -1,8 +1,8 @@
 package com.interview.bits;
 
-public class ByteAsStorage {
+class ByteAsStorage {
 
-    void useByteAsBoolean(boolean[] visited){
+    private void useByteAsBoolean(boolean[] visited){
         byte[] bytes = new byte[(int)(Math.ceil(visited.length*1.0/8))];
         for(int i=0; i < visited.length; i++){
             int row = i/8;

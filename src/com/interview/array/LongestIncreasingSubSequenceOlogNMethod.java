@@ -1,7 +1,5 @@
 package com.interview.array;
 
-import java.util.Arrays;
-
 /**
  * Date 08/01/2015
  * @author Tushar Roy
@@ -12,7 +10,7 @@ import java.util.Arrays;
  * http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
  * http://www.geeksforgeeks.org/construction-of-longest-monotonically-increasing-subsequence-n-log-n/
  */
-public class LongestIncreasingSubSequenceOlogNMethod {
+class LongestIncreasingSubSequenceOlogNMethod {
 
     /**
      * Returns index in T for ceiling of s
@@ -34,7 +32,7 @@ public class LongestIncreasingSubSequenceOlogNMethod {
         return -1;
     }
     
-    public int longestIncreasingSubSequence(int input[]){
+    private int longestIncreasingSubSequence(int input[]){
         int T[] = new int[input.length];
         int R[] = new int[input.length];
         for(int i=0; i < R.length ; i++) {

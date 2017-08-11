@@ -12,7 +12,7 @@ package com.interview.array;
  * Reference
  * https://leetcode.com/problems/maximum-gap/
  */
-public class MaximumGap {
+class MaximumGap {
 
     class Bucket {
         int low ;
@@ -30,16 +30,16 @@ public class MaximumGap {
         }
     }
 
-    public int maximumGap(int[] input) {
+    private int maximumGap(int[] input) {
         if (input == null || input.length < 2) {
             return 0;
         }
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
-        for (int i = 0; i < input.length; i++) {
-            min = Math.min(min, input[i]);
-            max = Math.max(max, input[i]);
+        for (int anInput1 : input) {
+            min = Math.min(min, anInput1);
+            max = Math.max(max, anInput1);
         }
 
         int gap = (int) Math.ceil((double) (max - min) / (input.length - 1));
@@ -50,21 +50,21 @@ public class MaximumGap {
             buckets[i] = new Bucket();
         }
 
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] == max || input[i] == min) {
+        for (int anInput : input) {
+            if (anInput == max || anInput == min) {
                 continue;
             }
-            buckets[(input[i] - min) / gap].update(input[i]);
+            buckets[(anInput - min) / gap].update(anInput);
         }
 
         int prev = min;
         int maxGap = 0;
-        for (int i = 0; i < buckets.length; i++) {
-            if (!buckets[i].isSet) {
+        for (Bucket bucket : buckets) {
+            if (!bucket.isSet) {
                 continue;
             }
-            maxGap = Math.max(maxGap, buckets[i].low - prev);
-            prev = buckets[i].high;
+            maxGap = Math.max(maxGap, bucket.low - prev);
+            prev = bucket.high;
         }
 
         return Math.max(maxGap, max - prev);

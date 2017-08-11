@@ -1,10 +1,8 @@
 package coreJava;
 
-import com.interview.string.RemoveConsecutiveDuplicate;
+class Consecutive {
 
-public class Consecutive {
-
-	public int removeDuplicates(char input[], int t){
+	private int removeDuplicates(char input[], int t){
 		
 		int output = 0;
 		char prev_char= 0;

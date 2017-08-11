@@ -11,16 +11,16 @@ import java.util.LinkedList;
  * Its like building a fibonaaci series but instead of looking back 2 you have to 
  * look back k elements
  */
-public class NumberOfCombinationsForStairs {
+class NumberOfCombinationsForStairs {
 
     /**
      * Assumption is k is always greater than or equal to 2
      */
-    public int numberOfWays(int n,int k){
+    private int numberOfWays(int n, int k){
         if(k < 2){
             throw new IllegalArgumentException();
         }
-        LinkedList<Integer> queue = new LinkedList<Integer>();
+        LinkedList<Integer> queue = new LinkedList<>();
         queue.add(1);
         queue.add(2);
         int count=0;

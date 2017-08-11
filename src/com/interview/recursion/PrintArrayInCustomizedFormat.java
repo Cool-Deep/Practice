@@ -6,11 +6,11 @@ import java.util.Map;
 /**
  * http://www.geeksforgeeks.org/custom-tree-problem/
  */
-public class PrintArrayInCustomizedFormat {
+class PrintArrayInCustomizedFormat {
 
-    void print(char str[][]){
-        Map<Character,Boolean> visited = new HashMap<Character,Boolean>();
-        Map<Character,Boolean> alreadyPrinted = new HashMap<Character,Boolean>();
+    private void print(char str[][]){
+        Map<Character,Boolean> visited = new HashMap<>();
+        Map<Character,Boolean> alreadyPrinted = new HashMap<>();
         for(int i=0 ; i < str.length; i++){
             if(!visited.containsKey(str[i][0]) || !visited.get(str[i][0])){
                 

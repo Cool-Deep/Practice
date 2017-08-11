@@ -6,9 +6,9 @@ package com.interview.dynamic;
  * This solution assumes that 1,2,1 is different from 2,1,1 which is different from 1,1 2
  * so total 3 ways are possible
  */
-public class DiceThrowWays {
+class DiceThrowWays {
 
-    public int numberOfWays(int n, int f, int k){
+    private int numberOfWays(int n, int f, int k){
         
         int T[][] = new int[n+1][k+1];
         T[0][0] = 1;

@@ -6,17 +6,17 @@ package com.interview.dynamic;
  *what happens if total can't be formed with given values
  *what if numbers are 0 or negative
  */
-public class NumberOfWaysToScorePoints {
+class NumberOfWaysToScorePoints {
 
     //in this version to make 3 - 1,2 is same as 2,1.
     //This is similar to coin changing problem
-    public int version1(int score[],int total){
+    private int version1(int score[], int total){
         int T[] = new int[total+1];
         T[0] = 1;
-        for(int i=0; i < score.length; i++){
-            for(int j=1; j <= total; j++){
-                if(score[i] <= j){
-                    T[j] += T[j-score[i]];
+        for (int aScore : score) {
+            for (int j = 1; j <= total; j++) {
+                if (aScore <= j) {
+                    T[j] += T[j - aScore];
                 }
             }
         }
@@ -25,13 +25,13 @@ public class NumberOfWaysToScorePoints {
     
     //in this version to make 3 - 1,2 and 2,1 are counted different.
     //This is same as fibo series only that fibo series looks at last 2 numbers and here we look back k values
-    public int version2(int score[],int total){
+    private int version2(int score[], int total){
         int T[] = new int[total+1];
         T[0] = 1;
         for(int i=1; i <= total ; i++){
-            for(int j=0; j < score.length; j++){
-                if(score[j] <= i){
-                    T[i] += T[i-score[j]];
+            for (int aScore : score) {
+                if (aScore <= i) {
+                    T[i] += T[i - aScore];
                 }
             }
         }

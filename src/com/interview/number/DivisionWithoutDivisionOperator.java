@@ -7,27 +7,31 @@ public class DivisionWithoutDivisionOperator {
         int quotient;
     }
 
-    public Pair divide(int number, int divisor) {
-        int divident = 0;
-        while (number >= divisor) {
-            number -= divisor;
-            divident++;
-        }
-        Pair p = new Pair();
-        p.quotient = divident;
-        p.remainder = number;
-        return p;
-    }
-    
-    public int divideRec(int number, int divisor){
-        if(number < divisor){
-            return 0;
-        }
-        
-        return divideRec(number-divisor, divisor) + 1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public Pair divide(int number, int divisor) {
+//        int divident = 0;
+//        while (number >= divisor) {
+//            number -= divisor;
+//            divident++;
+//        }
+//        Pair p = new Pair();
+//        p.quotient = divident;
+//        p.remainder = number;
+//        return p;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    public Pair efficientDivide(int divident, int divisor) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private int divideRec(int number, int divisor){
+//        if(number < divisor){
+//            return 0;
+//        }
+//
+//        return divideRec(number-divisor, divisor) + 1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private Pair efficientDivide(int divident, int divisor) {
         int quotient = 1;
         int currentDivisor = divisor;
         int currentDivident = divident;
@@ -51,7 +55,7 @@ public class DivisionWithoutDivisionOperator {
         return p;
     }
 
-    public int efficientDivideRec(int divident, int divisor){
+    private int efficientDivideRec(int divident, int divisor){
         if(divisor > divident){
             return 0;
         }

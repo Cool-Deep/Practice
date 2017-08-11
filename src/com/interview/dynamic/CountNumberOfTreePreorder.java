@@ -18,9 +18,9 @@ package com.interview.dynamic;
  * count(0)*count(3) + count(1)*count(2) + count(2)*count(1) + count(3)*count(0)
  * which is a catalan number
  */
-public class CountNumberOfTreePreorder {
+class CountNumberOfTreePreorder {
 
-    public int count(int num){
+    private int count(int num){
         if(num == 0){
             return 0;
         }
@@ -37,7 +37,7 @@ public class CountNumberOfTreePreorder {
         return T[num];
     }
     
-    public int countRec(int num){
+    private int countRec(int num){
         if(num == 0 || num ==1){
             return 1;
         }

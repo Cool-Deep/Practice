@@ -6,9 +6,9 @@ package com.interview.number;
  * till 625. Then we divide 625 with 25 and that takes care of numbers with 2
  * 5s. We keep doing this till divisor becomes greater than number.
  */
-public class Trailing0sinFactorial {
+class Trailing0sinFactorial {
 
-    public int trailing0s(int num){
+    private int trailing0s(int num){
         int pow = 5;
         int count = 0;
         while(pow <= num){

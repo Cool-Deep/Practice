@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 
-public class Folders {
-    public static Collection<String> folderNames(String xml, char startingLetter) throws Exception {
+class Folders {
+    private static Collection<String> folderNames(String xml, char startingLetter) {
         
-    	ArrayList<String> selectedFolders = new ArrayList<String>();
+    	ArrayList<String> selectedFolders = new ArrayList<>();
     	
     	String preStr = "<folder name=\"";
         int preStrLen = preStr.length();
@@ -16,7 +16,7 @@ public class Folders {
         int postStrLen = postStr.length();
         String postStr2 = "\" />";
         
-        while(xml.length() != 0 && xml.indexOf(preStr) != -1){
+        while(xml.length() != 0 && xml.contains(preStr)){
 
         	int startIndex = xml.indexOf(preStr);
         	int endIndex = xml.indexOf(postStr);

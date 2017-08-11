@@ -2,9 +2,9 @@ package coreJava;
 
 import java.util.Arrays;
 
-public class Anagram1 {
+class Anagram1 {
 
-	static void isAnagram(String s1, String s2){
+	private static void isAnagram(String s1, String s2){
 		Boolean status = true;
 		
 		String copyofs1 = s1.replaceAll("\\s", "");

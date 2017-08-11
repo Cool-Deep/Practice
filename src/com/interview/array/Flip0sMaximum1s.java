@@ -12,9 +12,9 @@ package com.interview.array;
  *
  * http://www.geeksforgeeks.org/find-zeroes-to-be-flipped-so-that-number-of-consecutive-1s-is-maximized/
  */
-public class Flip0sMaximum1s {
+class Flip0sMaximum1s {
 
-    public int flip0sToMaximizeConsecutive1s(int input[], int flipsAllowed) {
+    private int flip0sToMaximizeConsecutive1s(int input[], int flipsAllowed) {
 
         int windowStart = 0;
         int countZero = 0;

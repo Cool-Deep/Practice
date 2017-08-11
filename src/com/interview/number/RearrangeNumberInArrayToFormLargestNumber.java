@@ -9,9 +9,9 @@ import java.util.Comparator;
  * 
  * https://leetcode.com/problems/largest-number/
  */
-public class RearrangeNumberInArrayToFormLargestNumber {
+class RearrangeNumberInArrayToFormLargestNumber {
 
-    public String largestNumber(int[] nums) {
+    private String largestNumber(int[] nums) {
         Integer[] nums1 = new Integer[nums.length];
         int i = 0;
         for (int n : nums) {
@@ -20,7 +20,7 @@ public class RearrangeNumberInArrayToFormLargestNumber {
 
         IntegerComparator comparator = new IntegerComparator();
         Arrays.sort(nums1, comparator);
-        StringBuffer buff = new StringBuffer();
+        StringBuilder buff = new StringBuilder();
 
         //handle 0s in the front by removing them.
         for (i = 0; i < nums1.length; i++) {

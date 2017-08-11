@@ -3,6 +3,7 @@ package coreJava;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 //Consider a rat in a maze. There is only one entry and one exit. 
 
@@ -10,25 +11,25 @@ import java.util.List;
 //Find a path from the entry to the exit.
 
 
-public class MazeSolver {
+class MazeSolver {
 
-	public static final String WALL_CHAR = "#";
-	public static final String FREE_CHAR = " ";
-	public static final String PATH_CHAR = "*";
-	public static final String START_CHAR = "S";
-	public static final String FINISH_CHAR = "F";
+	private static final String WALL_CHAR = "#";
+	// --Commented out by Inspection (8/10/17, 5:13 PM):public static final String FREE_CHAR = " ";
+	private static final String PATH_CHAR = "*";
+	private static final String START_CHAR = "S";
+	private static final String FINISH_CHAR = "F";
 
-	public static Point startPoint = null;
-	public static Point endPoint = null;
-	public static String[][] maze = null;
-	static List<String> sol =new ArrayList<String>();
+	private static Point startPoint = null;
+	private static Point endPoint = null;
+	private static String[][] maze = null;
+	private static final List<String> sol = new ArrayList<>();
 	public static void main(String[] args) {
 		new MazeSolver();
 		Collections.reverse(sol);
 		System.out.println(sol);
 	}
 
-	public MazeSolver() {
+	private MazeSolver() {
 		maze = createMaze();
 
 		printMaze();
@@ -50,12 +51,12 @@ public class MazeSolver {
 	}
 
 	private void printMaze() {
-		for (int i = 0; i < maze.length; i++) {
-			for (int j = 0; j < maze[i].length; j++) {
-				System.out.print(maze[i][j]);
-			}
-			System.out.println();
-		}
+        for (String[] aMaze : maze) {
+            for (int j = 0; j < aMaze.length; j++) {
+                System.out.print(aMaze[j]);
+            }
+            System.out.println();
+        }
 	}
 
 	private boolean findRoute(Point workingPoint) {
@@ -68,12 +69,12 @@ public class MazeSolver {
 		}
 
 		// Check if current working point is not a wall or already visited
-		if (maze[workingPoint.x][workingPoint.y] == WALL_CHAR || maze[workingPoint.x][workingPoint.y] == PATH_CHAR) {
+		if (Objects.equals(maze[workingPoint.x][workingPoint.y], WALL_CHAR) || Objects.equals(maze[workingPoint.x][workingPoint.y], PATH_CHAR)) {
 			return false;
 		}
 
 		// Check if we reached the end point.
-		if (maze[workingPoint.x][workingPoint.y] == FINISH_CHAR) {
+		if (Objects.equals(maze[workingPoint.x][workingPoint.y], FINISH_CHAR)) {
 			return true;
 		}
 
@@ -113,7 +114,7 @@ public class MazeSolver {
 	private Point getXAndYOf(String[][] maze, String choice) {
 		for (int i = 0; i < maze.length; i++) {
 			for (int j = 0; j < maze[i].length; j++) {
-				if (maze[i][j] == choice) {
+				if (Objects.equals(maze[i][j], choice)) {
 					return new Point(i, j);
 				}
 			}
@@ -122,7 +123,7 @@ public class MazeSolver {
 	}
 
 	// Function to create Maze
-	public String[][] createMaze() {
+    private String[][] createMaze() {
 		String maze[][] = { { "#", "#", "#", "#", "#", "#", "#"},
 							{ "#", "#", "S", " ", " ", " ", "#"},
 							{ "#", "#", "#", " ", "#", " ", "#"},
@@ -139,8 +140,8 @@ public class MazeSolver {
  * Class to store x and y coordinate of each cell in maze
  */
 class Point {
-	public int x;
-	public int y;
+	public final int x;
+	public final int y;
 
 	public Point(int x, int y) {
 		this.x = x;

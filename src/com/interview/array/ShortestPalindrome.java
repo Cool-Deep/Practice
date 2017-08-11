@@ -15,12 +15,12 @@ package com.interview.array;
  *
  * https://leetcode.com/problems/shortest-palindrome/
  */
-public class ShortestPalindrome {
-    public String shortestPalindrome(String s) {
+class ShortestPalindrome {
+    private String shortestPalindrome(String s) {
         char[] input = createInput(s);
         int val = kmp(input);
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         int remaining = s.length() - val;
         int i = s.length() - 1;
         while (remaining > 0) {

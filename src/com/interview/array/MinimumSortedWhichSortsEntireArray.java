@@ -3,9 +3,9 @@ package com.interview.array;
 /**
  *http://www.geeksforgeeks.org/minimum-length-unsorted-subarray-sorting-which-makes-the-complete-array-sorted/
  */
-public class MinimumSortedWhichSortsEntireArray {
+class MinimumSortedWhichSortsEntireArray {
 
-    public int minLength(int arr[]){
+    private int minLength(int arr[]){
         int  i=0;
         while(i < arr.length -1 && arr[i] < arr[i+1]){
             i++;

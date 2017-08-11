@@ -5,10 +5,9 @@ import java.util.Queue;
 
 class ThreadPool {
 
-    public Thread run(Runnable runnable) {
+    public void run(Runnable runnable) {
         Thread t = new Thread(runnable);
         t.start();
-        return t;
     }
 }
 
@@ -19,17 +18,17 @@ class ThreadPool {
  * You can also update maxSize in between which will change number of threads executing
  * http://tutorials.jenkov.com/java-concurrency/thread-pools.html
  */
-public class ThreadPoolImpl {
+class ThreadPoolImpl {
 
     private int maxSize = 0;
-    ThreadPool threadPool;
+    private final ThreadPool threadPool;
 
-    public ThreadPoolImpl(int size, ThreadPool threadPool) {
+    private ThreadPoolImpl(int size, ThreadPool threadPool) {
         maxSize = size;
         this.threadPool = threadPool;
     }
     
-    public void setMax(int size){
+    private void setMax(int size){
         System.out.print("Setting max size " + size);
         if(maxSize == 0){
             maxSize = size;
@@ -40,11 +39,11 @@ public class ThreadPoolImpl {
     }
 
     private int currentSize = 0;
-    private Queue<Runnable> waitingThreads = new LinkedList<Runnable>();
+    private final Queue<Runnable> waitingThreads = new LinkedList<>();
     private boolean isExecuting = false;
-    private Object monitor = new Object();
+    private final Object monitor = new Object();
 
-    public void run(Runnable thread) {
+    private void run(Runnable thread) {
         synchronized (monitor) {
             waitingThreads.offer(thread);
             execute();
@@ -96,7 +95,7 @@ public class ThreadPoolImpl {
     }
 
     class RunnableThreads implements Runnable {
-        private Runnable r;
+        private final Runnable r;
 
         RunnableThreads(Runnable r) {
             this.r = r;
@@ -129,7 +128,7 @@ public class ThreadPoolImpl {
 }
 
 class MyRunnable implements Runnable{
-    int index = 0;
+    private int index = 0;
     MyRunnable(int index){
         this.index =index;
     }

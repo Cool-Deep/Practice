@@ -8,9 +8,11 @@ import java.util.HashMap;
 /**
  * Created by Davit on 28/07/16.
  */
-public class TournamentDay46 {
+class TournamentDay46 {
+
 
     private static int knightLikeChessPiece(int n, int m) {
+
 
         class Helper {
             void dfs(int x, int y, int a, int b,
@@ -28,7 +30,7 @@ public class TournamentDay46 {
                 }
             }
         }
-        ;
+
 
         Helper h = new Helper();
 
@@ -36,7 +38,8 @@ public class TournamentDay46 {
         for (int a = 1; a < Math.min(n, m); a++) {
             for (int b = a; b < Math.max(n, m); b++) {
                 boolean[][] visited = new boolean[n][m];
-                h.dfs(0, 0, a, b, n, m, visited);
+               h.dfs(0, 0, a, b, n, m, visited);
+
                 if (visited[n - 1][m - 1]) {
                     result++;
                 }
@@ -44,6 +47,7 @@ public class TournamentDay46 {
         }
         return result;
     }
+
 
     private static boolean latinLettersSearchRegExp(String input) {
 
@@ -76,6 +80,7 @@ public class TournamentDay46 {
 
     private static int dfsConnectedComponents(final boolean[][] matrix) {
 
+
         class Helper {
             void dfs(int currentVertex, boolean[] visited) {
                 visited[currentVertex] = true;
@@ -86,6 +91,7 @@ public class TournamentDay46 {
                 }
             }
         }
+
         Helper h = new Helper();
 
         boolean[] visited = new boolean[matrix.length];
@@ -94,6 +100,7 @@ public class TournamentDay46 {
         for (int startVertex = 0; startVertex < matrix.length; startVertex++) {
             if (!visited[startVertex]) {
                 h.dfs(startVertex, visited);
+
                 componentsCount++;
             }
         }
@@ -101,6 +108,7 @@ public class TournamentDay46 {
         return componentsCount;
     }
 
+ 
     private static int arrayChange(int[] inputArray) {
         int lastElem = inputArray[0];
         int step = 0;
@@ -114,7 +122,9 @@ public class TournamentDay46 {
 
         return step;
     }
+ 
 
+ 
     private static int arrayChange2(int[] inputArray) {
         int r = 0;
         for (int i = 1; i < inputArray.length; i++) {
@@ -125,7 +135,9 @@ public class TournamentDay46 {
         }
         return r;
     }
+ 
 
+ 
     private static int permutationShift(int[] permutation) {
         int minShift = 0,
                 maxShift = 0;
@@ -139,8 +151,10 @@ public class TournamentDay46 {
         }
         return maxShift - minShift;
     }
+ 
 
 
+ 
     private static int[] alternatingSums(int[] a) {
         int team1 = 0,
                 team2 = 0;
@@ -153,7 +167,9 @@ public class TournamentDay46 {
         int[] result = {team1, team2};
         return result;
     }
+ 
 
+ 
     private static int[][] create2DArray(int[] lengths) {
 
         int[][] result = new int[lengths.length][];
@@ -167,7 +183,9 @@ public class TournamentDay46 {
 
         return result;
     }
+ 
 
+ 
     private static String removeAdjacent(String s) {
 
         if (s.equals("")) {
@@ -184,7 +202,9 @@ public class TournamentDay46 {
 
         return ans.toString();
     }
+ 
 
+ 
     private static boolean palindromeRearranging(String inputString) {
 
         int[] count = new int[26];
@@ -200,7 +220,9 @@ public class TournamentDay46 {
         }
         return odds % 2 == inputString.length() % 2 && odds < 2;
     }
+ 
 
+ 
     private static boolean isSumOfConsecutive(int n) {
         for (int start = 1; start < n; start++) {
             int number = n,
@@ -215,7 +237,9 @@ public class TournamentDay46 {
         }
         return false;
     }
+ 
 
+ 
     private static int maximumSum(int[] A, int[][] Q) {
 
         int[] sumCount = new int[A.length];
@@ -233,10 +257,13 @@ public class TournamentDay46 {
 
         return answer;
     }
+ 
 
+ 
     private static boolean parallelLines(int[] line1, int[] line2) {
         return line1[0] * line2[1] == line1[1] * line2[0];
     }
+ 
 
     private static boolean isPrime(int n) {
         if (n == 2) return true;
@@ -247,6 +274,7 @@ public class TournamentDay46 {
         return true;
     }
 
+ 
     private static int[] primeFactors2(int n) {
         ArrayList<Integer> res = new ArrayList<>();
         for (int i = 2; i <= n; i++) {
@@ -256,6 +284,7 @@ public class TournamentDay46 {
         }
         return res.stream().mapToInt(i -> i).toArray();
     }
+ 
 
 
     private static boolean contains(double[][] points, int[] test) {
@@ -272,6 +301,7 @@ public class TournamentDay46 {
         return result;
     }
 
+ 
     private static int rectangleRotation(int a, int b) {
         double c = Math.sqrt(a * a + b * b);
         double alpha = Math.asin(a / c);
@@ -300,7 +330,9 @@ public class TournamentDay46 {
 
         return ans;
     }
+ 
 
+ 
     private static int rectangleRotation2(int a, int b) {
         double c = 1.414;
         a = (int) (a / c);
@@ -308,7 +340,9 @@ public class TournamentDay46 {
         c = ~(a ^ b) & 1;
         return (int) (2 * a * b + a + b + c);
     }
+ 
 
+ 
     private static boolean isInformationConsistent(int[][] evidences) {
 
         for (int j = 0; j < evidences[0].length; j++) {
@@ -332,20 +366,25 @@ public class TournamentDay46 {
 
         return true;
     }
+ 
 
+ 
     // http://www.geeksforgeeks.org/a-pancake-sorting-question/
     private static boolean reverseToSort(int[] inputArray) {
         return true;
     }
+ 
 
+ 
     private static ArrayList<String> generatePalindromes(String charactersSet) {
 
         class Helper {
             int N;
             char[] palindrome;
             int[] letterCnt;
-            ArrayList<String> result = new ArrayList<>();
+            final ArrayList<String> result = new ArrayList<>();
 
+ 
             Helper(String charactersSet) {
                 N = charactersSet.length();
                 palindrome = new char[N];
@@ -363,6 +402,7 @@ public class TournamentDay46 {
                     }
                 }
             }
+ 
 
             void generate(int idx) {
                 if (idx >= (N) / 2) {
@@ -377,6 +417,7 @@ public class TournamentDay46 {
                         generate(idx + 1);
                         letterCnt[i] += 2;
                     }
+ 
                 }
             }
         }
@@ -386,6 +427,7 @@ public class TournamentDay46 {
         return h.result;
     }
 
+ 
     private static int specificSum(int p, int q) {
         int result = 0;
         int apbqValue = 1;
@@ -416,7 +458,9 @@ public class TournamentDay46 {
 
         return result;
     }
+ 
 
+ 
     private static int sumUpNumbers(String inputString) {
 
         int answer = 0,
@@ -434,7 +478,9 @@ public class TournamentDay46 {
 
         return answer;
     }
+ 
 
+ 
     private static int binaryPower(int n, int k) {
 
         if (k == 0) {
@@ -445,11 +491,15 @@ public class TournamentDay46 {
         }
         return binaryPower(n, k - 1) * n;
     }
+ 
 
+ 
     private static String replaceAllDigitsRegExp(String input) {
         return input.replaceAll("\\d", "#");
     }
+ 
 
+ 
     private static int countTowers(int n, int m, int height) {
 
         int[][] dp = new int[height][1 << n * m];
@@ -474,7 +524,9 @@ public class TournamentDay46 {
         }
         return result;
     }
+ 
 
+ 
     private static int countPathsThroughCell(int n, int m, int x, int y) {
   /*
    * Array dp is used to store dynamic programming values.
@@ -491,7 +543,9 @@ public class TournamentDay46 {
 
         return dp[x][y] * dp[n - 1 - x][m - 1 - y];
     }
+ 
 
+ 
     private static String swapCase(String text) {
 
         char[] chars = text.toCharArray();
@@ -506,7 +560,9 @@ public class TournamentDay46 {
         return new String(chars);
 
     }
+ 
 
+ 
     private static ArrayList<Integer> splitByValue(int k,
                                                    ArrayList<Integer> elements) {
         ArrayList<Integer> result = new ArrayList<>();
@@ -522,13 +578,15 @@ public class TournamentDay46 {
         }
         return result;
     }
+ 
 
+ 
     private static ArrayList<Integer> domainAuction(String[] websites) {
         ArrayList<String> domains = new ArrayList<>();
         HashMap<String, Integer> domainCount = new HashMap<>();
         for (String website : websites) {
             int i = 0;
-            while (!website.substring(i, i + 3).equals("://")) {
+            while (!website.substring(i, i + 3).equals(":")) {
                 i++;
             }
             i += 3;
@@ -557,7 +615,9 @@ public class TournamentDay46 {
         }
         return counts;
     }
+ 
 
+ 
     private static int[] verticesDegrees(boolean[][] matrix) {
         int[] ans = new int[matrix.length];
         for (int i = 0; i < matrix.length; i++)
@@ -566,6 +626,7 @@ public class TournamentDay46 {
 
         return ans;
     }
+ 
 
     private static boolean lucky(int s, int n) {
         int result = 0;
@@ -582,6 +643,7 @@ public class TournamentDay46 {
         return result == 0;
     }
 
+ 
     private static int countLuckyNumbers(int n) {
         int ans = 0;
         for (int i = (int) Math.pow(10, n - 1); i <= (int) Math.pow(10, n) - 1; i++)
@@ -590,23 +652,24 @@ public class TournamentDay46 {
         return ans;
     }
 
-    private static int countWays(int n, int k) {
+
+    private static int countWays() {
 
         ArrayList<ArrayList<Integer>> c_nk = new ArrayList<>();
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i <= 5; i++) {
             c_nk.add(new ArrayList<Integer>());
-            for (int j = 0; j <= k; j++) {
+            for (int j = 0; j <= 2; j++) {
                 c_nk.get(i).add(0);
             }
         }
         c_nk.get(0).set(0, 1);
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 5; i++) {
             ArrayList<Integer> cur = c_nk.get(i);
             ArrayList<Integer> next = c_nk.get(i + 1);
-            for (int j = 0; j <= k; j++) {
-                if (i + 1 <= n) {
+            for (int j = 0; j <= 2; j++) {
+                if (i + 1 <= 5) {
                     next.set(j, next.get(j) + cur.get(j));
-                    if (j + 1 <= k) {
+                    if (j + 1 <= 2) {
                         next.set(j + 1, next.get(j + 1) + cur.get(j));
                     }
                 }
@@ -616,6 +679,7 @@ public class TournamentDay46 {
         return c_nk.get(c_nk.size() - 1).get(c_nk.get(c_nk.size() - 1).size() - 1);
     }
 
+ 
     private static int[] mergeKArrays(int[][] arrays) {
         ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < arrays.length; i++) {
@@ -625,29 +689,30 @@ public class TournamentDay46 {
         Collections.sort(arr);
         return arr.stream().mapToInt(i -> i).toArray();
     }
+ 
 
 
     public static void main(String[] args) {
-        // System.out.println(knightLikeChessPiece(3, 3));
-        // System.out.println(knightLikeChessPiece(7, 2));
-        // System.out.println(findHeapPredicate(new int[]{-2, -2, -2, -2, -2}));
-        // System.out.println(arrayChange(new int[]{1, 1, 1}));
-        // System.out.println(palindromeRearranging("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc"));
-        // System.out.println(parallelLines(new int[]{1, -1, 0}, new int[]{1, 1, 0}));
-        // System.out.println(rectangleRotation2(6, 4));
-        // System.out.println(isInformationConsistent(new int[][]{{ 0, 1, 0, 1}, {-1, 1, 0, 0}, {-1, 0, 0, 1}}));
-        // System.out.println(isInformationConsistent(new int[][]{{1, -1, 0, 1}, {1, -1, 0, -1}}));
-        // System.out.println(isInformationConsistent(new int[][]{{0, 0, -1}, {-1, 1, -1}, {-1, 1, 0}, {0, 1, 0}}));
-        // System.out.println(generatePalindromes("ababb"));
-        // System.out.println(countTowers(2, 1, 2));
-        // System.out.println(countTowers(2, 5, 1));
-        /*System.out.println(domainAuction(new String[]{"http://codefights.com",
-                "https://uk.domainmaster.com",
-                "https://uk.domainmaster.com/websites/website-builder",
-                "https://in.domainmaster.com"}));*/
-        // System.out.println(Arrays.toString(verticesDegrees(new boolean[][]{{false, true, true}, {true, true, true}, {true, true, false}})));
-        // System.out.println(countLuckyNumbers(2));
-        System.out.println(countWays(5, 2));
+         System.out.println(knightLikeChessPiece(3, 3));
+         System.out.println(knightLikeChessPiece(7, 2));
+         System.out.println(findHeapPredicate(new int[]{-2, -2, -2, -2, -2}));
+         System.out.println(arrayChange(new int[]{1, 1, 1}));
+         System.out.println(palindromeRearranging("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc"));
+         System.out.println(parallelLines(new int[]{1, -1, 0}, new int[]{1, 1, 0}));
+         System.out.println(rectangleRotation2(6, 4));
+         System.out.println(isInformationConsistent(new int[][]{{ 0, 1, 0, 1}, {-1, 1, 0, 0}, {-1, 0, 0, 1}}));
+         System.out.println(isInformationConsistent(new int[][]{{1, -1, 0, 1}, {1, -1, 0, -1}}));
+         System.out.println(isInformationConsistent(new int[][]{{0, 0, -1}, {-1, 1, -1}, {-1, 1, 0}, {0, 1, 0}}));
+         System.out.println(generatePalindromes("ababb"));
+         System.out.println(countTowers(2, 1, 2));
+         System.out.println(countTowers(2, 5, 1));
+        /*System.out.println(domainAuction(new String[]{"http:codefights.com",
+                "https:uk.domainmaster.com",
+                "https:uk.domainmaster.com/websites/website-builder",
+                "https:in.domainmaster.com"}));*/
+         System.out.println(Arrays.toString(verticesDegrees(new boolean[][]{{false, true, true}, {true, true, true}, {true, true, false}})));
+         System.out.println(countLuckyNumbers(2));
+        System.out.println(countWays());
     }
 
 }

@@ -9,9 +9,9 @@ package com.interview.bits;
  * Power of 2 number
  * Regular numbers
  */
-public class SquareOfNumber {
+class SquareOfNumber {
 
-    public int square(int n){
+    private int square(int n){
         if(n < 0){
             n = -n;
         }
@@ -31,7 +31,7 @@ public class SquareOfNumber {
         return result + n;
     }
     
-    public int fastSquare(int n){
+    private int fastSquare(int n){
         return fastSquareRec(n, n);
     }
     /**

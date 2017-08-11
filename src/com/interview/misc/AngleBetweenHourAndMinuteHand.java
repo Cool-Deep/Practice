@@ -3,9 +3,9 @@ package com.interview.misc;
 /**
  * Find small angle between hour and minute hand in analog clock
  */
-public class AngleBetweenHourAndMinuteHand {
+class AngleBetweenHourAndMinuteHand {
 
-    public double angle(int hour, int min){
+    private double angle(int hour, int min){
         double hourAngle = (hour%12)*360/12 + ((double)min/60)*(360/12);
         double minAngle = min*360/60;
         

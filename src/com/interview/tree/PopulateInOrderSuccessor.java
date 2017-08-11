@@ -3,7 +3,7 @@ package com.interview.tree;
 /**
  * http://www.geeksforgeeks.org/populate-inorder-successor-for-all-nodes/
  */
-public class PopulateInOrderSuccessor {
+class PopulateInOrderSuccessor {
 
     private void populate(Node root, NodeRef nodeRef){
         if(root == null){
@@ -15,12 +15,12 @@ public class PopulateInOrderSuccessor {
         populate(root.left,nodeRef);
     }
     
-    public void populate(Node root){
+    private void populate(Node root){
         NodeRef nodeRef = new NodeRef();
         populate(root,nodeRef);
     }
     
-    public void print(Node root){
+    private void print(Node root){
         if(root == null){
             return;
         }

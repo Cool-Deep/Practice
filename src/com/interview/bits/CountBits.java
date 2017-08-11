@@ -3,12 +3,12 @@ package com.interview.bits;
 /**
  * http://www.geeksforgeeks.org/count-set-bits-in-an-integer/
  */
-public class CountBits {
+class CountBits {
 
-    public CountBits(){
+    private CountBits(){
         preCalculate();
     }
-    public int countBits(int num){
+    private int countBits(int num){
         int count=0;
         while(num > 0){
             num &= num-1;
@@ -17,15 +17,15 @@ public class CountBits {
         return count;
     }
     
-    private int count[] = new int[256];
+    private final int[] count = new int[256];
     
-    void preCalculate(){
+    private void preCalculate(){
         for(int i=0; i < 256; i++){
             count[i] = countBits(i);
         }
     }
     
-    public int countBitsFaster(int num){
+    private int countBitsFaster(int num){
         //get 8 bits at a time and check count from count array
         int total = 0;
         int mask = (1<<8) - 1;
@@ -37,7 +37,7 @@ public class CountBits {
     }
     
     //http://bits.stephan-brumme.com/countBits.html
-    public int countBitsEvenFaster(int x){
+    private int countBitsEvenFaster(int x){
         // count bits of each 2-bit chunk
         x = x - ((x >> 1) & 0x55555555);
         // count bits of each 4-bit chunk

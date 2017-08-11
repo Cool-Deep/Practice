@@ -5,9 +5,9 @@ import java.util.*;
 /**
  * Created by Davit on 31/05/16.
  */
-public class TournamentDay2 {
+class TournamentDay2 {
 
-    static int findSquareSide(int[] x, int[] y) {
+    private static int findSquareSide(int[] x, int[] y) {
 
         class Helper {
             int sqr(int x) {
@@ -33,103 +33,115 @@ public class TournamentDay2 {
         return answer;
     }
 
-    String longestWord(String text) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    String longestWord(String text) {
+//
+//        char[] chars = text.toCharArray();
+//        String answer = "";
+//        StringBuilder current = new StringBuilder();
+//
+//        for (int i = 0; i < chars.length; i++) {
+//            if ('a' <= chars[i] && chars[i] <= 'z'
+//                    || 'A' <= chars[i] && chars[i] <= 'Z') {
+//                current.append(chars[i]);
+//                if (current.length() > answer.length()) {
+//                    answer = current.toString();
+//                }
+//            } else {
+//                current = new StringBuilder();
+//            }
+//        }
+//
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        char[] chars = text.toCharArray();
-        String answer = "";
-        StringBuilder current = new StringBuilder();
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int[] mixedFractionToImproper(int[] A) {
+//        return new int[]{A[0] * A[2] + A[1], A[2]};
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < chars.length; i++) {
-            if ('a' <= chars[i] && chars[i] <= 'z'
-                    || 'A' <= chars[i] && chars[i] <= 'Z') {
-                current.append(chars[i]);
-                if (current.length() > answer.length()) {
-                    answer = current.toString();
-                }
-            } else {
-                current = new StringBuilder();
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int divisorsPairs(int[] sequence) {
+//        int result = 0;
+//
+//        for (int i = 0; i < sequence.length; i++) {
+//            for (int j = i + 1; j < sequence.length; j++) {
+//                if (sequence[i] % sequence[j] == 0 || sequence[j] % sequence[i] == 0) {
+//                    result++;
+//                }
+//            }
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return answer;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int digitDistanceNumber(int n) {
+//
+//        int result = 0;
+//        int lastDigit = n % 10;
+//        int tenPower = 1;
+//
+//        n /= 10;
+//
+//        while (n != 0) {
+//            result += tenPower * Math.abs(n % 10 - lastDigit);
+//            tenPower *= 10;
+//            lastDigit = n % 10;
+//            n /= 10;
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int[] mixedFractionToImproper(int[] A) {
-        return new int[]{A[0] * A[2] + A[1], A[2]};
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int differentSubstrings(String inputString) {
+//        char[] chars = inputString.toCharArray();
+//        HashMap<String, Integer> hashMap = new HashMap<>();
+//        for (int i = 0; i < chars.length; i++) {
+//            //hashMap.put(String.valueOf(chars[i]), 1);
+//            String tmp = "";// = String.valueOf(chars[i]);
+//            for (int j = i; j < chars.length; j++) {
+//                //hashMap.put(String.valueOf(chars[j]), 1);
+//                tmp = tmp + String.valueOf(chars[j]);
+//                hashMap.put(tmp, 1);
+//            }
+//        }
+//        System.out.println(hashMap);
+//        return hashMap.size();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int divisorsPairs(int[] sequence) {
-        int result = 0;
-
-        for (int i = 0; i < sequence.length; i++) {
-            for (int j = i + 1; j < sequence.length; j++) {
-                if (sequence[i] % sequence[j] == 0 || sequence[j] % sequence[i] == 0) {
-                    result++;
-                }
-            }
-        }
-
-        return result;
-    }
-
-    static int digitDistanceNumber(int n) {
-
-        int result = 0;
-        int lastDigit = n % 10;
-        int tenPower = 1;
-
-        n /= 10;
-
-        while (n != 0) {
-            result += tenPower * Math.abs(n % 10 - lastDigit);
-            tenPower *= 10;
-            lastDigit = n % 10;
-            n /= 10;
-        }
-
-        return result;
-    }
-
-    static int differentSubstrings(String inputString) {
-        char[] chars = inputString.toCharArray();
-        HashMap<String, Integer> hashMap = new HashMap<>();
-        for (int i = 0; i < chars.length; i++) {
-            //hashMap.put(String.valueOf(chars[i]), 1);
-            String tmp = "";// = String.valueOf(chars[i]);
-            for (int j = i; j < chars.length; j++) {
-                //hashMap.put(String.valueOf(chars[j]), 1);
-                tmp = tmp + String.valueOf(chars[j]);
-                hashMap.put(tmp, 1);
-            }
-        }
-        System.out.println(hashMap);
-        return hashMap.size();
-    }
-
-    static int segmentsIntersection(int[] left, int[] right) {
-
-        /*
-        Set<Integer> s1 = new HashSet<Integer>(Arrays.asList(array1));
-        Set<Integer> s2 = new HashSet<Integer>(Arrays.asList(array2));
-        s1.retainAll(s2);
-        */
-        ArrayList<ArrayList<Integer>> hashSet = new ArrayList<>();
-        for (int i = 0; i < left.length; i++) {
-            ArrayList<Integer> tmp = new ArrayList<>();
-            for (int j = left[i]; j < right[i]; j++) {
-                tmp.add(j);
-            }
-            hashSet.add(tmp);
-        }
-
-        Set<Integer> s1 = new HashSet<Integer>(hashSet.get(0));
-        for (int i = 1; i < hashSet.size(); i++) {
-            Set<Integer> s2 = new HashSet<Integer>(hashSet.get(i));
-            s1.retainAll(s2);
-        }
-
-        return s1.size();
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int segmentsIntersection(int[] left, int[] right) {
+//
+//        /*
+//        Set<Integer> s1 = new HashSet<Integer>(Arrays.asList(array1));
+//        Set<Integer> s2 = new HashSet<Integer>(Arrays.asList(array2));
+//        s1.retainAll(s2);
+//        */
+//        ArrayList<ArrayList<Integer>> hashSet = new ArrayList<>();
+//        for (int i = 0; i < left.length; i++) {
+//            ArrayList<Integer> tmp = new ArrayList<>();
+//            for (int j = left[i]; j < right[i]; j++) {
+//                tmp.add(j);
+//            }
+//            hashSet.add(tmp);
+//        }
+//
+//        Set<Integer> s1 = new HashSet<Integer>(hashSet.get(0));
+//        for (int i = 1; i < hashSet.size(); i++) {
+//            Set<Integer> s2 = new HashSet<Integer>(hashSet.get(i));
+//            s1.retainAll(s2);
+//        }
+//
+//        return s1.size();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String[] args) {
         System.out.println(findSquareSide(new int[]{0, 1, 0, 1}, new int[] {0, 1, 1, 0}));

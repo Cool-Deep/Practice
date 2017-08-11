@@ -12,7 +12,7 @@ import java.util.Map;
  * The idea is that to calculate for i all you have to do is add up i-1 values of all the neighbors.
  * e.g for i =2 and at 0 you need find i=1s of all neighbors including 0 and add them up.
  */
-public class PhoneDialNumberOfCombinationOfSizeK {
+class PhoneDialNumberOfCombinationOfSizeK {
 
 	/**
 	 * -1 in the input means don't use that position
@@ -21,21 +21,21 @@ public class PhoneDialNumberOfCombinationOfSizeK {
 	 * @param input
 	 * @return
 	 */
-	public int numberOfCombination(int k, int input[][]) {
+    private int numberOfCombination(int k, int input[][]) {
 		if (input == null || input.length == 0) {
 			throw new IllegalArgumentException();
 		}
-		Map<Integer, Integer> t = new HashMap<Integer, Integer>();
-		Map<Integer, Integer> t1 = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> t = new HashMap<>();
+		Map<Integer, Integer> t1 = new HashMap<>();
 
-		for (int i = 0; i < input.length; i++) {
-			for (int j = 0; j < input[i].length; j++) {
-				if (input[i][j] < 0) {
-					continue;
-				}
-				t1.put(input[i][j], 1);
-			}
-		}
+        for (int[] anInput : input) {
+            for (int j = 0; j < anInput.length; j++) {
+                if (anInput[j] < 0) {
+                    continue;
+                }
+                t1.put(anInput[j], 1);
+            }
+        }
 
 		for (int x = 1; x < k; x++) {
 			for (int i = 0; i < input.length; i++) {

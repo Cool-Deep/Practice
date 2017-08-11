@@ -15,12 +15,12 @@ import java.util.*;
  * https://en.wikipedia.org/wiki/Prim%27s_algorithm
  * CLRS book
  */
-public class PrimMST {
+class PrimMST {
 
     /**
      * Main method of Prim's algorithm.
      */
-    public List<Edge<Integer>> primMST(Graph<Integer> graph){
+    private List<Edge<Integer>> primMST(Graph<Integer> graph){
 
         //binary heap + map data structure
         BinaryMinHeap<Vertex<Integer>> minHeap = new BinaryMinHeap<>();

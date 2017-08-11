@@ -9,18 +9,20 @@ class Index{
  * empty array
  * 1,2 or more elements in the array
  */
-public class ConstructBSTFromPreOrderArray {
+class ConstructBSTFromPreOrderArray {
 
-    public Node toBST(int preorder[]){
+    private Node toBST(int preorder[]){
         Index index = new Index();
         return toBST(preorder,Integer.MIN_VALUE,Integer.MAX_VALUE,index);
     }
     
-    //stack based version
-    public Node toBSTIterative(int preorder[]){
-        return null;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    //stack based version
+//    public Node toBSTIterative(int preorder[]){
+//        return null;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     private Node toBST(int preorder[],int min, int max,Index index){
         if(index.index >= preorder.length){
             return null;

@@ -13,9 +13,9 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/convert-array-into-zig-zag-fashion/
  */
-public class ZigZagArrangement {
+class ZigZagArrangement {
 
-    public void rearrange(int input[]) {
+    private void rearrange(int input[]) {
         boolean isLess = true;
         for (int i = 0; i < input.length - 1; i++) {
             if(isLess) {

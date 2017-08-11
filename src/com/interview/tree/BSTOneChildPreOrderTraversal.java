@@ -3,9 +3,9 @@ package com.interview.tree;
 /**
  * http://www.geeksforgeeks.org/check-if-each-internal-node-of-a-bst-has-exactly-one-child/
  */
-public class BSTOneChildPreOrderTraversal {
+class BSTOneChildPreOrderTraversal {
 
-    public boolean isBST(int input[]){
+    private boolean isBST(int input[]){
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
         for(int i = 0; i < input.length-1; i++){
@@ -19,11 +19,7 @@ public class BSTOneChildPreOrderTraversal {
                 return false;
             }
         }
-        if(input[input.length-1] < max && input[input.length-1] > min){
-            return true;
-        }else{
-            return false;
-        }
+        return input[input.length - 1] < max && input[input.length - 1] > min;
     }
     
     public static void main(String args[]){

@@ -6,9 +6,9 @@ import java.util.List;
 /**
  * http://www.geeksforgeeks.org/find-all-possible-interpretations/
  */
-public class InterpretationOfArray {
+class InterpretationOfArray {
 
-    public void interpret(int arr[]){
+    private void interpret(int arr[]){
         char t[][] = new char[arr.length][2];
         for(int i=0; i < arr.length; i++){
             for(int j=0; j < 2; j++){
@@ -21,7 +21,7 @@ public class InterpretationOfArray {
                 t[i][l-1] = getRepresentation(i == j ? arr[i] : arr[i]*10 +arr[j]);
             }
         }
-        List<Character> result = new ArrayList<Character>();
+        List<Character> result = new ArrayList<>();
         interpret(arr.length,0,result,t);
     }
     
@@ -45,8 +45,8 @@ public class InterpretationOfArray {
     }
     
     private void print(List<Character> result){
-        for(int i=0; i < result.size(); i++){
-            System.out.print(result.get(i) + " ");
+        for (Character aResult : result) {
+            System.out.print(aResult + " ");
         }
         System.out.println();
     }

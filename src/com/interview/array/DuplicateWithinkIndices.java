@@ -7,10 +7,10 @@ import java.util.Set;
  * Write a function that determines whether a array contains duplicate 
  * characters within k indices of each other
  */
-public class DuplicateWithinkIndices {
+class DuplicateWithinkIndices {
 
-    public boolean duplicate(int arr[],int k){
-        Set<Integer> visited = new HashSet<Integer>();
+    private boolean duplicate(int arr[], int k){
+        Set<Integer> visited = new HashSet<>();
         for(int i=0; i < arr.length; i++){
             if(visited.contains(arr[i])){
                 return true;

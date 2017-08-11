@@ -15,11 +15,11 @@ import java.util.List;
  *
  * https://leetcode.com/problems/insert-interval/
  */
-public class InsertInterval {
+class InsertInterval {
 
     public static class Interval {
-        int start;
-        int end;
+        final int start;
+        final int end;
 
         @Override
         public String toString() {
@@ -37,48 +37,50 @@ public class InsertInterval {
         int high;
     }
 
-    public List<Interval> insertBinarySearchBased(List<Interval> intervals, Interval newInterval) {
-        if (intervals.size() == 0) {
-            return Collections.singletonList(newInterval);
-        }
-
-        if (newInterval.start > intervals.get(intervals.size() - 1).end) {
-            intervals.add(newInterval);
-            return intervals;
-        }
-
-        if (newInterval.end < intervals.get(0).start) {
-            intervals.add(0, newInterval);
-            return intervals;
-        }
-
-        BinarySearchResult bsr1 = search(intervals, newInterval.start);
-        BinarySearchResult bsr2 = search(intervals, newInterval.end);
-
-        System.out.println(bsr1.low + " " + bsr1.high);
-        System.out.println(bsr2.low + " " + bsr2.high);
-
-        List<Interval> result = new ArrayList<>();
-        int low1 = bsr1.low == bsr1.high ? bsr1.low - 1 : bsr1.low;
-        for (int i = 0; i <= low1; i++) {
-            result.add(intervals.get(i));
-        }
-
-        if (bsr1.low == bsr1.high && bsr2.low == bsr2.high) {
-            result.add(new Interval(intervals.get(bsr1.low).start, intervals.get(bsr2.high).end));
-        } else if (bsr1.low != bsr1.high && bsr2.low == bsr2.high) {
-            result.add(new Interval(newInterval.start, intervals.get(bsr2.high).end));
-        } else if (bsr1.low == bsr1.high && bsr2.low != bsr2.high) {
-            result.add(new Interval(intervals.get(bsr1.low).start, newInterval.end));
-        } else {
-            result.add(newInterval);
-        }
-        int high = bsr2.low == bsr2.high ? bsr2.high + 1 : bsr2.high;
-        for (int i = high; i < intervals.size(); i++) {
-            result.add(intervals.get(i));
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public List<Interval> insertBinarySearchBased(List<Interval> intervals, Interval newInterval) {
+//        if (intervals.size() == 0) {
+//            return Collections.singletonList(newInterval);
+//        }
+//
+//        if (newInterval.start > intervals.get(intervals.size() - 1).end) {
+//            intervals.add(newInterval);
+//            return intervals;
+//        }
+//
+//        if (newInterval.end < intervals.get(0).start) {
+//            intervals.add(0, newInterval);
+//            return intervals;
+//        }
+//
+//        BinarySearchResult bsr1 = search(intervals, newInterval.start);
+//        BinarySearchResult bsr2 = search(intervals, newInterval.end);
+//
+//        System.out.println(bsr1.low + " " + bsr1.high);
+//        System.out.println(bsr2.low + " " + bsr2.high);
+//
+//        List<Interval> result = new ArrayList<>();
+//        int low1 = bsr1.low == bsr1.high ? bsr1.low - 1 : bsr1.low;
+//        for (int i = 0; i <= low1; i++) {
+//            result.add(intervals.get(i));
+//        }
+//
+//        if (bsr1.low == bsr1.high && bsr2.low == bsr2.high) {
+//            result.add(new Interval(intervals.get(bsr1.low).start, intervals.get(bsr2.high).end));
+//        } else if (bsr1.low != bsr1.high && bsr2.low == bsr2.high) {
+//            result.add(new Interval(newInterval.start, intervals.get(bsr2.high).end));
+//        } else if (bsr1.low == bsr1.high && bsr2.low != bsr2.high) {
+//            result.add(new Interval(intervals.get(bsr1.low).start, newInterval.end));
+//        } else {
+//            result.add(newInterval);
+//        }
+//        int high = bsr2.low == bsr2.high ? bsr2.high + 1 : bsr2.high;
+//        for (int i = high; i < intervals.size(); i++) {
+//            result.add(intervals.get(i));
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private BinarySearchResult search(List<Interval> intervals, int val) {
         int start = 0;
@@ -117,7 +119,7 @@ public class InsertInterval {
     }
 
 
-    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+    private List<Interval> insert(List<Interval> intervals, Interval newInterval) {
         List<Interval> result = new LinkedList<>();
         int i = 0;
         while (i < intervals.size() && intervals.get(i).end < newInterval.start)

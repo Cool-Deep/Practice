@@ -10,7 +10,7 @@ package com.interview.linklist;
  * fully sorted
  * reverse sorted
  */
-public class MergeSortLinkList {
+class MergeSortLinkList {
 
     public Node sort(Node head, boolean isAscending){
 

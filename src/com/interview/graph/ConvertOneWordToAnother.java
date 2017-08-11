@@ -12,13 +12,13 @@ import java.util.Set;
  * Given two words of equal length in dictionary convert one word to another one letter at a time
  * in such a way that all intermediate words are int the dictionary
  */
-public class ConvertOneWordToAnother {
+class ConvertOneWordToAnother {
 
-    public void convert(String word1, String word2, Set<String> dict) {
+    private void convert(String word1, String word2, Set<String> dict) {
 
-        Set<String> visited = new HashSet<String>();
-        Queue<String> queue = new LinkedList<String>();
-        Map<String, String> parentMap = new HashMap<String, String>();
+        Set<String> visited = new HashSet<>();
+        Queue<String> queue = new LinkedList<>();
+        Map<String, String> parentMap = new HashMap<>();
         queue.add(word1);
         visited.add(word1);
         while (queue.size() != 0) {
@@ -47,17 +47,16 @@ public class ConvertOneWordToAnother {
 
     }
 
-    public String replace(String newWord, int pos, char ch) {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append(newWord.substring(0, pos));
-        buffer.append(ch);
-        buffer.append(newWord.substring(pos+1,newWord.length()));
-        return buffer.toString();
+    private String replace(String newWord, int pos, char ch) {
+        String buffer = newWord.substring(0, pos) +
+                ch +
+                newWord.substring(pos + 1, newWord.length());
+        return buffer;
     }
 
     
     public static void main(String args[]){
-        Set<String> dictionary = new HashSet<String>();
+        Set<String> dictionary = new HashSet<>();
         dictionary.add("cat");
         dictionary.add("pat");
         dictionary.add("pit");

@@ -21,8 +21,8 @@ import java.util.Map;
  */
 public class BinaryMinHeap<T> {
 
-    private List<Node> allNodes = new ArrayList<>();
-    private Map<T,Integer> nodePosition = new HashMap<>();
+    private final List<Node> allNodes = new ArrayList<>();
+    private final Map<T,Integer> nodePosition = new HashMap<>();
         
     public class Node {
         int weight;
@@ -63,12 +63,14 @@ public class BinaryMinHeap<T> {
         }
     }
 
-    /**
-     * Get the heap min without extracting the key
-     */
-    public T min(){
-        return allNodes.get(0).key;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Get the heap min without extracting the key
+//     */
+//    public T min(){
+//        return allNodes.get(0).key;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /**
      * Checks with heap is empty or not
@@ -177,14 +179,14 @@ public class BinaryMinHeap<T> {
         nodePosition.put(data2, pos2);
     }
     
-    public void printHeap(){
+    void printHeap(){
         for(Node n : allNodes){
             System.out.println(n.weight + " " + n.key);
         }
     }
     
     public static void main(String args[]){
-        BinaryMinHeap<String> heap = new BinaryMinHeap<String>();
+        BinaryMinHeap<String> heap = new BinaryMinHeap<>();
         heap.add(3, "Tushar");
         heap.add(4, "Ani");
         heap.add(8, "Vijay");

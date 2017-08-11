@@ -8,9 +8,9 @@ import java.util.StringTokenizer;
  * -99.01E-2 -> -.9901
  * 845.67E2  -> 84567.0 
  */
-public class FloatPointConversion {
+class FloatPointConversion {
     
-    public double convert(String input){
+    private double convert(String input){
         boolean isNeg = false;
         if(input.startsWith("-")){
             isNeg = true;

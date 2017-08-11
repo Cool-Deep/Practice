@@ -13,7 +13,7 @@ import java.util.LinkedList;
  * http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/
  * http://www.geeksforgeeks.org/iterative-preorder-traversal/
  */
-public class TreeTraversals {
+class TreeTraversals {
 
     public void inOrder(Node root){
         if(root == null){
@@ -42,43 +42,47 @@ public class TreeTraversals {
         System.out.print(root.data + " ");
     }
 
-    public void inorderItr(Node root){
-        Deque<Node> stack = new LinkedList<Node>();
-        Node node = root;
-        while(true){
-            if(node != null){
-                stack.addFirst(node);
-                node = node.left;
-            }
-            else{
-                if(stack.isEmpty()){
-                    break;
-                }
-                node = stack.pollFirst();
-                System.out.println(node.data);
-                node = node.right;
-            }
-        }
-    }
-    
-    public void preOrderItr(Node root){
-        Deque<Node> stack = new LinkedList<Node>();
-        stack.addFirst(root);
-        while(!stack.isEmpty()){
-            root = stack.pollFirst();
-            System.out.print(root.data + " ");
-            if(root.right != null){
-                stack.addFirst(root.right);
-            }
-            if(root.left!= null){
-                stack.addFirst(root.left);
-            }
-        }
-    }
-    
-    public void postOrderItr(Node root){
-        Deque<Node> stack1 = new LinkedList<Node>();
-        Deque<Node> stack2 = new LinkedList<Node>();
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void inorderItr(Node root){
+//        Deque<Node> stack = new LinkedList<Node>();
+//        Node node = root;
+//        while(true){
+//            if(node != null){
+//                stack.addFirst(node);
+//                node = node.left;
+//            }
+//            else{
+//                if(stack.isEmpty()){
+//                    break;
+//                }
+//                node = stack.pollFirst();
+//                System.out.println(node.data);
+//                node = node.right;
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void preOrderItr(Node root){
+//        Deque<Node> stack = new LinkedList<Node>();
+//        stack.addFirst(root);
+//        while(!stack.isEmpty()){
+//            root = stack.pollFirst();
+//            System.out.print(root.data + " ");
+//            if(root.right != null){
+//                stack.addFirst(root.right);
+//            }
+//            if(root.left!= null){
+//                stack.addFirst(root.left);
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private void postOrderItr(Node root){
+        Deque<Node> stack1 = new LinkedList<>();
+        Deque<Node> stack2 = new LinkedList<>();
         stack1.addFirst(root);
         while(!stack1.isEmpty()){
             root = stack1.pollFirst();
@@ -95,7 +99,7 @@ public class TreeTraversals {
         }
     }
     
-    public void postOrderItrOneStack(Node root){
+    private void postOrderItrOneStack(Node root){
         Node current = root;
         Deque<Node> stack = new LinkedList<>();
         while(current != null || !stack.isEmpty()){

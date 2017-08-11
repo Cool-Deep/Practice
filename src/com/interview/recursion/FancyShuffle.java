@@ -15,20 +15,20 @@ import java.util.Map.Entry;
  * duplicates away from each other.
  *
  */
-public class FancyShuffle {
+class FancyShuffle {
 
-	public char[] shuffle(char input[]){
+	private char[] shuffle(char input[]){
 		char result[] = new char[input.length];
 		
 		//create a map of character to its frequency.
-		Map<Character, Integer> map = new HashMap<Character,Integer>();
-		for(int i=0; i < input.length; i++){
-			Integer count  = map.putIfAbsent(input[i], 1);
-			if(count != null) {
-				count++;
-				map.put(input[i], count);
-			}
-		}
+		Map<Character, Integer> map = new HashMap<>();
+        for (char anInput : input) {
+            Integer count = map.putIfAbsent(anInput, 1);
+            if (count != null) {
+                count++;
+                map.put(anInput, count);
+            }
+        }
 		char newInput[] = new char[map.size()];
 		int freq[] = new int[map.size()];
 		

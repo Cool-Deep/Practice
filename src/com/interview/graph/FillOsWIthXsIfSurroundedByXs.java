@@ -10,9 +10,9 @@ package com.interview.graph;
  * Reference
  * https://leetcode.com/problems/surrounded-regions/
  */
-public class FillOsWIthXsIfSurroundedByXs {
+class FillOsWIthXsIfSurroundedByXs {
 
-    public void solve(char[][] board) {
+    private void solve(char[][] board) {
         if (board.length == 0 || board[0].length == 0) {
             return;
         }

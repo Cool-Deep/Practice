@@ -19,7 +19,7 @@ public class TripletInArray {
         }
     }
 
-    public Triplet findTriplet(int input[], int sum) {
+    private Triplet findTriplet(int input[], int sum) {
         Arrays.sort(input);
         for (int i = 0; i < input.length - 2; i++) {
 
@@ -44,42 +44,44 @@ public class TripletInArray {
         return null;
     }
 
-    /**
-     * https://leetcode.com/problems/3sum/
-     */
-    public List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
-        List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (i != 0 && nums[i] == nums[i-1]) {
-                continue;
-            }
-            int start = i + 1;
-            int end = nums.length - 1;
-            while (start < end) {
-                if (nums[i] + nums[start] + nums[end] == 0) {
-                    List<Integer> r = new ArrayList<>();
-                    r.add(nums[i]);
-                    r.add(nums[start]);
-                    r.add(nums[end]);
-                    result.add(r);
-                    start++;
-                    end--;
-                    while(start < nums.length && nums[start] == nums[start - 1]) {
-                        start++;
-                    }
-                    while(end >= 0 && nums[end] == nums[end+1]) {
-                        end--;
-                    }
-                } else if (nums[i] + nums[start] + nums[end] < 0) {
-                    start++;
-                } else {
-                    end--;
-                }
-            }
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * https://leetcode.com/problems/3sum/
+//     */
+//    public List<List<Integer>> threeSum(int[] nums) {
+//        Arrays.sort(nums);
+//        List<List<Integer>> result = new ArrayList<>();
+//        for (int i = 0; i < nums.length - 2; i++) {
+//            if (i != 0 && nums[i] == nums[i-1]) {
+//                continue;
+//            }
+//            int start = i + 1;
+//            int end = nums.length - 1;
+//            while (start < end) {
+//                if (nums[i] + nums[start] + nums[end] == 0) {
+//                    List<Integer> r = new ArrayList<>();
+//                    r.add(nums[i]);
+//                    r.add(nums[start]);
+//                    r.add(nums[end]);
+//                    result.add(r);
+//                    start++;
+//                    end--;
+//                    while(start < nums.length && nums[start] == nums[start - 1]) {
+//                        start++;
+//                    }
+//                    while(end >= 0 && nums[end] == nums[end+1]) {
+//                        end--;
+//                    }
+//                } else if (nums[i] + nums[start] + nums[end] < 0) {
+//                    start++;
+//                } else {
+//                    end--;
+//                }
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String args[]){
         TripletInArray tip = new TripletInArray();

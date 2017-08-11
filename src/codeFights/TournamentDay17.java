@@ -7,40 +7,44 @@ import java.util.Stack;
 /**
  * Created by Davit on 16/06/16.
  */
-public class TournamentDay17 {
+class TournamentDay17 {
 
-    static String wordAbbreviation(String a) {
-        int[] countLetters = new int[26];
-        String result = new String();
-        for (int i = 0; i < 26; i++) {
-            countLetters[i] = 0;
-        }
-        for (int i = 0; i < a.length(); i++) {
-            countLetters[(int) a.charAt(i) - (int) 'a']++;
-        }
-        for (int i = 0; i < 25; i++) {
-            if (countLetters[i] % 2 == 1) {
-                result += (char) ((int) 'a' + i);
-            }
-            countLetters[i + 1] += countLetters[i] / 2;
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static String wordAbbreviation(String a) {
+//        int[] countLetters = new int[26];
+//        String result = new String();
+//        for (int i = 0; i < 26; i++) {
+//            countLetters[i] = 0;
+//        }
+//        for (int i = 0; i < a.length(); i++) {
+//            countLetters[(int) a.charAt(i) - (int) 'a']++;
+//        }
+//        for (int i = 0; i < 25; i++) {
+//            if (countLetters[i] % 2 == 1) {
+//                result += (char) ((int) 'a' + i);
+//            }
+//            countLetters[i + 1] += countLetters[i] / 2;
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int waterTubes(int[] water, int[] flowPerMinute) {
-        int result = 0;
-
-        for (int i = 0; i < water.length; i++) {
-            int minutes = water[i] / flowPerMinute[i];
-            if (water[i] % flowPerMinute[i] != 0) {
-                minutes++;
-            }
-            if (result < minutes) {
-                result = minutes;
-            }
-        }
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int waterTubes(int[] water, int[] flowPerMinute) {
+//        int result = 0;
+//
+//        for (int i = 0; i < water.length; i++) {
+//            int minutes = water[i] / flowPerMinute[i];
+//            if (water[i] % flowPerMinute[i] != 0) {
+//                minutes++;
+//            }
+//            if (result < minutes) {
+//                result = minutes;
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /*static int sign(int a) {
         if (a == 0) return 0;
@@ -93,76 +97,84 @@ public class TournamentDay17 {
         return res;
     }*/
 
-    static int zigzag(int[] a) {
-        ArrayList<ArrayList<Integer>> zigzags = new ArrayList<>();
-        ArrayList<Integer> a0 = new ArrayList<>();
-        a0.add(a[0]);
-        zigzags.add(a0);
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int zigzag(int[] a) {
+//        ArrayList<ArrayList<Integer>> zigzags = new ArrayList<>();
+//        ArrayList<Integer> a0 = new ArrayList<>();
+//        a0.add(a[0]);
+//        zigzags.add(a0);
+//
+//        for (int i = 1; i < a.length; i++) {
+//            if ((i == a.length - 1 && a[i] != a[i - 1])
+//                    || (a[i] > a[i - 1] && a[i] > a[i + 1])
+//                    || (a[i] < a[i - 1] && a[i] < a[i + 1])) {
+//                zigzags.get(zigzags.size() - 1).add(a[i]);
+//            } else {
+//                if (i != a.length - 1)
+//                    zigzags.get(zigzags.size() - 1).add(a[i]);
+//                ArrayList<Integer> ai = new ArrayList<>();
+//                ai.add(a[i]);
+//                zigzags.add(ai);
+//            }
+//        }
+//
+//        int result = 0;
+//        for (ArrayList<Integer> arr : zigzags) {
+//            if (arr.size() > result)
+//                result = arr.size();
+//        }
+//        return result;//zigzags.Max(m = > m.Count());
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 1; i < a.length; i++) {
-            if ((i == a.length - 1 && a[i] != a[i - 1])
-                    || (a[i] > a[i - 1] && a[i] > a[i + 1])
-                    || (a[i] < a[i - 1] && a[i] < a[i + 1])) {
-                zigzags.get(zigzags.size() - 1).add(a[i]);
-            } else {
-                if (i != a.length - 1)
-                    zigzags.get(zigzags.size() - 1).add(a[i]);
-                ArrayList<Integer> ai = new ArrayList<>();
-                ai.add(a[i]);
-                zigzags.add(ai);
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static String fancyRide(int l, double[] fares) {
+//        String[] cars = {"UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV"};
+//        String answer = "";
+//        for (int i = 0; i < 5; i++) {
+//            if (fares[i] * l <= 20) {
+//                answer = cars[i];
+//            }
+//        }
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int result = 0;
-        for (ArrayList<Integer> arr : zigzags) {
-            if (arr.size() > result)
-                result = arr.size();
-        }
-        return result;//zigzags.Max(m = > m.Count());
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static String longestDigitsPrefix(String inputString) {
+//        StringBuilder result = new StringBuilder();
+//        for (int i = 0; i < inputString.length(); i++) {
+//            if (inputString.charAt(i) >= '0' && inputString.charAt(i) <= '9') {
+//                result.append(inputString.charAt(i));
+//            } else {
+//                break;
+//            }
+//        }
+//        return result.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static String fancyRide(int l, double[] fares) {
-        String[] cars = {"UberX", "UberXL", "UberPlus", "UberBlack", "UberSUV"};
-        String answer = "";
-        for (int i = 0; i < 5; i++) {
-            if (fares[i] * l <= 20) {
-                answer = cars[i];
-            }
-        }
-        return answer;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean regularBracketSequence2(String s) {
+//        Stack<Character> q = new Stack<>();
+//        char ch;
+//        for (int i = 0; i < s.length(); i++) {
+//            ch = s.charAt(i);
+//            if (ch == '(' || ch == '[') {
+//                q.push(ch);
+//            } else if (ch == ')' && !q.empty() && q.peek() == '(') {
+//                q.pop();
+//            } else if (ch == ']' && !q.empty() && q.peek() == '[') {
+//                q.pop();
+//            } else {
+//                return false;
+//            }
+//        }
+//        return q.size() == 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static String longestDigitsPrefix(String inputString) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < inputString.length(); i++) {
-            if (inputString.charAt(i) >= '0' && inputString.charAt(i) <= '9') {
-                result.append(inputString.charAt(i));
-            } else {
-                break;
-            }
-        }
-        return result.toString();
-    }
-
-    static boolean regularBracketSequence2(String s) {
-        Stack<Character> q = new Stack<>();
-        char ch;
-        for (int i = 0; i < s.length(); i++) {
-            ch = s.charAt(i);
-            if (ch == '(' || ch == '[') {
-                q.push(ch);
-            } else if (ch == ')' && !q.empty() && q.peek() == '(') {
-                q.pop();
-            } else if (ch == ']' && !q.empty() && q.peek() == '[') {
-                q.pop();
-            } else {
-                return false;
-            }
-        }
-        return q.size() == 0;
-    }
-
-    static int[] maxSumSegments(int[] inputArray) {
+    private static int[] maxSumSegments(int[] inputArray) {
 
         int[] result = new int[inputArray.length];
         for (int i = 1; i <= inputArray.length; i++) {
@@ -184,41 +196,47 @@ public class TournamentDay17 {
         return result;
     }
 
-    static int oddNumbersBeforeZero(int[] sequence) {
-        int count = 0;
-        for (int i = 0; i < sequence.length; i++) {
-            if (sequence[i] == 0)
-                return count;
-            if (sequence[i] % 2 != 0)
-                count++;
-        }
-        return count;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int oddNumbersBeforeZero(int[] sequence) {
+//        int count = 0;
+//        for (int i = 0; i < sequence.length; i++) {
+//            if (sequence[i] == 0)
+//                return count;
+//            if (sequence[i] % 2 != 0)
+//                count++;
+//        }
+//        return count;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int axisAlignedCirclesBoundingBox(int[] x, int[] y, int[] r) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int axisAlignedCirclesBoundingBox(int[] x, int[] y, int[] r) {
+//
+//        int minX = x[0] - r[0],
+//                maxX = x[0] + r[0],
+//                minY = y[0] - r[0],
+//                maxY = y[0] + r[0];
+//
+//        for (int i = 1; i < x.length; i++) {
+//            minX = Math.min(x[i] - r[i], minX);
+//            maxX = Math.max(x[i] + r[i], maxX);
+//            minY = Math.min(y[i] - r[i], minY);
+//            maxY = Math.max(y[i] + r[i], maxY);
+//        }
+//
+//        return (maxX - minX) * (maxY - minY);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int minX = x[0] - r[0],
-                maxX = x[0] + r[0],
-                minY = y[0] - r[0],
-                maxY = y[0] + r[0];
-
-        for (int i = 1; i < x.length; i++) {
-            minX = Math.min(x[i] - r[i], minX);
-            maxX = Math.max(x[i] + r[i], maxX);
-            minY = Math.min(y[i] - r[i], minY);
-            maxY = Math.max(y[i] + r[i], maxY);
-        }
-
-        return (maxX - minX) * (maxY - minY);
-    }
-
-    static int otherElementPosition(int x, int[] arr, int l, int h) {
-        for (int i = l; i < Math.min(h + 1, arr.length); i++) {
-            if (x != arr[i])
-                return i;
-        }
-        return -1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int otherElementPosition(int x, int[] arr, int l, int h) {
+//        for (int i = l; i < Math.min(h + 1, arr.length); i++) {
+//            if (x != arr[i])
+//                return i;
+//        }
+//        return -1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 
     /*static int arrayEqualization(int[] a, int k) {
@@ -275,23 +293,25 @@ public class TournamentDay17 {
 
     }*/
 
-    private static int arrayEqualization(int[] a, int k) {
-
-        int maxMoves = Integer.MAX_VALUE;
-
-        for (int i = 1; i <= a.length; i++) {
-            int moves = 0;
-            for (int j = 0; j < a.length; j++) {
-                if (a[j] == i) continue;
-
-                j += k - 1;
-                moves++;
-            }
-            maxMoves = Math.min(maxMoves, moves);
-        }
-
-        return maxMoves;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int arrayEqualization(int[] a, int k) {
+//
+//        int maxMoves = Integer.MAX_VALUE;
+//
+//        for (int i = 1; i <= a.length; i++) {
+//            int moves = 0;
+//            for (int j = 0; j < a.length; j++) {
+//                if (a[j] == i) continue;
+//
+//                j += k - 1;
+//                moves++;
+//            }
+//            maxMoves = Math.min(maxMoves, moves);
+//        }
+//
+//        return maxMoves;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 
 

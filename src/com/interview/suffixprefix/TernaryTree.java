@@ -3,7 +3,7 @@ package com.interview.suffixprefix;
 /**
  * http://www.geeksforgeeks.org/ternary-search-tree/
  */
-public class TernaryTree {
+class TernaryTree {
 
     private Node root = null;
     
@@ -13,12 +13,12 @@ public class TernaryTree {
         Node left, right, eq;
     }
     
-    public void insert(String data){
+    private void insert(String data){
         Node root = insert(this.root,data,0);
         this.root = root;
     }
     
-    public boolean search(String data){
+    private boolean search(String data){
         return search(root,data,0);
     }
     

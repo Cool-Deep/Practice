@@ -1,10 +1,9 @@
 package coreJava;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.IntSummaryStatistics;
 
-public class arr {
+class arr {
 	public static void main(String[] args) {
 		int[] tab = { 12, 1, 21, 8 };
 		

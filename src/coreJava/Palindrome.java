@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 class Palindrome {
 	// My Method to check
-	public static boolean isPal(String s) { // if length is 0 or 1 then String
+	private static boolean isPal(String s) { // if length is 0 or 1 then String
 											// is palindrome
 		if (s.length() == 0 || s.length() == 1)
 			return true;

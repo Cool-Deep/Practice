@@ -1,7 +1,7 @@
 package coreJava;
 
-public class ArmstrongNumber {
-	static void checkArmstrongNumber(int number) {
+class ArmstrongNumber {
+	private static void checkArmstrongNumber(int number) {
 		int copyOfNumber = number;
 
 		int noOfDigits = String.valueOf(number).length();

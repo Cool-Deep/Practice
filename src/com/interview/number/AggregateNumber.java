@@ -4,10 +4,10 @@ package com.interview.number;
  * Number such that 11 + 11 = 22, 11 +22 = 33, 22 +33 = 55
  * so 1111223355 is aggregate number
  */
-public class AggregateNumber {
+class AggregateNumber {
 
     //assumption is that numbers in array are single digit non-negative number(0..9)
-    public boolean isAggregate(int[] number){
+    private boolean isAggregate(int[] number){
         if(number.length < 3){
             return false;
         }

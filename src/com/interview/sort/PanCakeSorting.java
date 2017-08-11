@@ -14,9 +14,9 @@ package com.interview.sort;
  * 5 1 2 3 4 flip(0,i) -> 4 3 2 1 5
  * 4 3 2 1 5 flip(0,i-1) -> 1 2 3 4 5
  */
-public class PanCakeSorting {
+class PanCakeSorting {
 
-    public void sort(int arr[]){
+    private void sort(int arr[]){
         for(int i=arr.length-1; i >= 0 ; i--){
             int pos = findMax(arr,i);
             flip(arr,pos);
@@ -50,8 +50,8 @@ public class PanCakeSorting {
         int arr[] = {9,2,7,11,3,6,1,10,8};
         PanCakeSorting pcs = new PanCakeSorting();
         pcs.sort(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
     }
 }

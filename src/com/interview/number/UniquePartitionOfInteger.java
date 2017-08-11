@@ -8,10 +8,10 @@ import java.util.List;
  * Test cases:
  * 0 or negative number
  */
-public class UniquePartitionOfInteger {
+class UniquePartitionOfInteger {
 
-    public void partition(int n){
-        List<Integer> result = new ArrayList<Integer>();
+    private void partition(int n){
+        List<Integer> result = new ArrayList<>();
         partition(n,n,result);
     }
     

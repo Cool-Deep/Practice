@@ -6,9 +6,9 @@ package com.interview.number;
  * Division by 0
  * Negative numbers
  */
-public class RussianPeasantMultiplication {
+class RussianPeasantMultiplication {
 
-    public int multiply(int a,int b){
+    private int multiply(int a, int b){
         int res = 0;
         while(b > 0){
             if(b % 2 != 0){

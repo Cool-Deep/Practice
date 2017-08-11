@@ -1,6 +1,6 @@
 package com.interview.array;
 
-public class StableMarriageProblem {
+class StableMarriageProblem {
 
     private boolean checkIfNewIsBetter(int priority[][], int bride,
             int currentGroom, int suitor) {
@@ -15,7 +15,7 @@ public class StableMarriageProblem {
         return false;
     }
 
-    public int[] findPair(int[][] priority) {
+    private int[] findPair(int[][] priority) {
         int pair = priority[0].length;
         int groomToBride[] = new int[pair];
         int brideToGroom[] = new int[pair];

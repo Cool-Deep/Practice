@@ -5,75 +5,79 @@ import java.util.Arrays;
 /**
  * Created by Davit on 13/07/16.
  */
-public class TournamentDay37 {
+class TournamentDay37 {
 
-    private static int[][] neighboringCells(int[][] matrix) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[][] neighboringCells(int[][] matrix) {
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[0].length; j++) {
+//                if (i > 0) {
+//                    matrix[i][j]++;
+//                }
+//                if (j > 0) {
+//                    matrix[i][j]++;
+//                }
+//                if (i + 1 < matrix.length) {
+//                    matrix[i][j]++;
+//                }
+//                if (j + 1 < matrix[0].length) {
+//                    matrix[i][j]++;
+//                }
+//            }
+//        }
+//        return matrix;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                if (i > 0) {
-                    matrix[i][j]++;
-                }
-                if (j > 0) {
-                    matrix[i][j]++;
-                }
-                if (i + 1 < matrix.length) {
-                    matrix[i][j]++;
-                }
-                if (j + 1 < matrix[0].length) {
-                    matrix[i][j]++;
-                }
-            }
-        }
-        return matrix;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean validTime(String time) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            int charToInt(char symbol) {
+////                return symbol - '0';
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        int hours = h.charToInt(time.charAt(0)) * 10 + h.charToInt(time.charAt(1)),
+//                minutes = h.charToInt(time.charAt(3)) * 10 + h.charToInt(time.charAt(4));
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+        return hours < 24 && minutes < 60;
     }
 
-    private static boolean validTime(String time) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] maximalAllowableSubarrays(int[] inputArray, int maxSum) {
+//        for (int i = 0; i < inputArray.length; i++) {
+//            int sum = inputArray[i];
+//            for (int j = i + 1; j < inputArray.length; j++) {
+//                sum += inputArray[j];
+//                if (sum > maxSum) {
+//                    inputArray[i] = j - 1;
+//                    break;
+//                }
+//            }
+//            if (sum <= maxSum)
+//                inputArray[i] = inputArray.length - 1;
+//        }
+//
+//        return inputArray;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        class Helper {
-            int charToInt(char symbol) {
-                return symbol - '0';
-            }
-        }
-        Helper h = new Helper();
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean arithmeticExpression(int A, int B, int C) {
+//
+//        return A + B == C || A * B == C || B * C == A || A - B == C;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int hours = h.charToInt(time.charAt(0)) * 10 + h.charToInt(time.charAt(1)),
-                minutes = h.charToInt(time.charAt(3)) * 10 + h.charToInt(time.charAt(4));
-
-        if (hours < 24 && minutes < 60) {
-            return true;
-        }
-        return false;
-    }
-
-    private static int[] maximalAllowableSubarrays(int[] inputArray, int maxSum) {
-        for (int i = 0; i < inputArray.length; i++) {
-            int sum = inputArray[i];
-            for (int j = i + 1; j < inputArray.length; j++) {
-                sum += inputArray[j];
-                if (sum > maxSum) {
-                    inputArray[i] = j - 1;
-                    break;
-                }
-            }
-            if (sum <= maxSum)
-                inputArray[i] = inputArray.length - 1;
-        }
-
-        return inputArray;
-    }
-
-    private static boolean arithmeticExpression(int A, int B, int C) {
-
-        if (A + B == C || A * B == C || B * C == A || A - B == C) {
-            return true;
-        }
-        return false;
-    }
-
-    private static int[] zFunctionNaive(String s) {
-        int[] Z = new int[s.length()];
-        int n = s.length();
+    private static int[] zFunctionNaive() {
+        int[] Z = new int["acacbab".length()];
+        int n = "acacbab".length();
         int L, R, k;
 
         // [L,R] make a window which matches with prefix of s
@@ -89,7 +93,7 @@ public class TournamentDay37 {
                 // for "ababab" and i = 1, the value of R
                 // remains 0 and Z[i] becomes 0. For string
                 // "aaaaaa" and i = 1, Z[i] and R become 5
-                while (R < n && s.charAt(R - L) == s.charAt(R))
+                while (R < n && "acacbab".charAt(R - L) == "acacbab".charAt(R))
                     R++;
                 Z[i] = R - L;
                 R--;
@@ -110,7 +114,7 @@ public class TournamentDay37 {
                 else {
                     //  else start from R  and check manually
                     L = i;
-                    while (R < n && s.charAt(R - L) == s.charAt(R))
+                    while (R < n && "acacbab".charAt(R - L) == "acacbab".charAt(R))
                         R++;
                     Z[i] = R - L;
                     R--;
@@ -125,7 +129,7 @@ public class TournamentDay37 {
         // System.out.println(neighboringCells(new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}));
         // System.out.println(validTime("03:58"));
         // System.out.println(Arrays.toString(maximalAllowableSubarrays(new int[]{2, 3, 0, 1, 2}, 4)));
-        System.out.println(Arrays.toString(zFunctionNaive("acacbab")));
+        System.out.println(Arrays.toString(zFunctionNaive()));
     }
 
 }

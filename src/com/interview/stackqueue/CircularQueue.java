@@ -1,16 +1,16 @@
 package com.interview.stackqueue;
 
-public class CircularQueue<T> {
+class CircularQueue<T> {
 
-    private int QUEUE_LENGTH;
+    private final int QUEUE_LENGTH;
     private T data[] = null;
-    public CircularQueue(int size){
+    private CircularQueue(int size){
         this.QUEUE_LENGTH = size;
         data = (T [])new Object[QUEUE_LENGTH];
     }
     private int top=-1;
     private int end = -1;
-    public void offer(T t){
+    void offer(T t){
         if(top == -1){
             data[0] = t;
             top =0;
@@ -23,15 +23,17 @@ public class CircularQueue<T> {
         }
     }
     
-    public T top(){
-        if(top == -1){
-            throw new IllegalArgumentException();
-        }else{
-            return data[top];
-        }
-    }
-    
-    public T poll(){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public T top(){
+//        if(top == -1){
+//            throw new IllegalArgumentException();
+//        }else{
+//            return data[top];
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    T poll(){
         if(top == -1){
             throw new IllegalArgumentException();
         }else if(top == end){
@@ -47,22 +49,16 @@ public class CircularQueue<T> {
         }
         
     }
-    public boolean isEmpty(){
-        if(top == -1){
-            return true;
-        }
-        return false;
+    boolean isEmpty(){
+        return top == -1;
     }
     
-    public boolean isFull(){
-        if(top == (end + 1)% QUEUE_LENGTH){
-            return true;
-        }
-        return false;
+    boolean isFull(){
+        return top == (end + 1) % QUEUE_LENGTH;
     }
     
     public static void main(String args[]){
-        CircularQueue<Integer> circularQueue = new CircularQueue<Integer>(5);
+        CircularQueue<Integer> circularQueue = new CircularQueue<>(5);
         circularQueue.offer(1);
         circularQueue.offer(2);
         circularQueue.offer(3);

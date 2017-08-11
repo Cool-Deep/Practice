@@ -1,77 +1,85 @@
 package codeFights;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Davit on 12/06/16.
  */
-public class TournamentDay13 {
+class TournamentDay13 {
 
-    static int squaresSumMinimization(int[] A) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int squaresSumMinimization(int[] A) {
+//
+//        int indexOfMinimum = -1,
+//                minimalSum = -1;
+//
+//        for (int x = A[0]; x <= A[A.length - 1]; x++) {
+//            int sum = 0;
+//            for (int j = 0; j < A.length; j++) {
+//                sum += (A[j] - x) * (A[j] - x);
+//            }
+//            if (sum < minimalSum || indexOfMinimum == -1) {
+//                minimalSum = sum;
+//                indexOfMinimum = x;
+//            }
+//        }
+//
+//        return indexOfMinimum;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int indexOfMinimum = -1,
-                minimalSum = -1;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int[] alternatingSums(int[] a) {
+//        int sum1 = 0, sum2 = 0;
+//        for (int i = 0; i < a.length; i++) {
+//            if (i % 2 == 0) {
+//                sum1 += a[i];
+//            } else {
+//                sum2 += a[i];
+//            }
+//        }
+//        return new int[]{sum1, sum2};
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int x = A[0]; x <= A[A.length - 1]; x++) {
-            int sum = 0;
-            for (int j = 0; j < A.length; j++) {
-                sum += (A[j] - x) * (A[j] - x);
-            }
-            if (sum < minimalSum || indexOfMinimum == -1) {
-                minimalSum = sum;
-                indexOfMinimum = x;
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int numberReverse(int input) {
+//
+//        int reversed = 0;
+//        while (input != 0) {
+//            reversed = reversed * 10 + input % 10;
+//            input /= 10;
+//        }
+//        return reversed;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return indexOfMinimum;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int binarySearch(int[] inputArray, int searchElement) {
+//
+//        int minIndex = 0;
+//        int maxIndex = inputArray.length - 1;
+//        int currentIndex = 0;
+//        int currentElement;
+//
+//        while (minIndex <= maxIndex) {
+//            currentIndex = (minIndex + maxIndex) / 2;
+//            currentElement = inputArray[currentIndex];
+//
+//            if (currentElement < searchElement) {
+//                minIndex = currentIndex + 1;
+//            } else if (currentElement > searchElement) {
+//                maxIndex = currentIndex - 1;
+//            } else {
+//                return currentIndex;
+//            }
+//        }
+//
+//        return -1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int[] alternatingSums(int[] a) {
-        int sum1 = 0, sum2 = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (i % 2 == 0) {
-                sum1 += a[i];
-            } else {
-                sum2 += a[i];
-            }
-        }
-        return new int[]{sum1, sum2};
-    }
-
-    static int numberReverse(int input) {
-
-        int reversed = 0;
-        while (input != 0) {
-            reversed = reversed * 10 + input % 10;
-            input /= 10;
-        }
-        return reversed;
-    }
-
-    static int binarySearch(int[] inputArray, int searchElement) {
-
-        int minIndex = 0;
-        int maxIndex = inputArray.length - 1;
-        int currentIndex = 0;
-        int currentElement;
-
-        while (minIndex <= maxIndex) {
-            currentIndex = (minIndex + maxIndex) / 2;
-            currentElement = inputArray[currentIndex];
-
-            if (currentElement < searchElement) {
-                minIndex = currentIndex + 1;
-            } else if (currentElement > searchElement) {
-                maxIndex = currentIndex - 1;
-            } else {
-                return currentIndex;
-            }
-        }
-
-        return -1;
-    }
-
-    static int[] arrayComplexElementsProduct(int[] real, int[] imag) {
+    private static int[] arrayComplexElementsProduct(int[] real, int[] imag) {
         class Helper {
             Helper() {
             }
@@ -95,7 +103,7 @@ public class TournamentDay13 {
         // System.out.println(alternatingSums(new int[]{50, 60, 60, 45, 70}));
         // System.out.println(binarySearch(new int[]{1, 2, 3, 4}, 3));
         // System.out.println(arrayComplexElementsProduct(new int[]{1, 2}, new int[]{1, 3}));
-        System.out.println(arrayComplexElementsProduct(new int[]{1, 2, 3}, new int[]{0, 0, 0}));
+        System.out.println(Arrays.toString(arrayComplexElementsProduct(new int[]{1, 2, 3}, new int[]{0, 0, 0})));
     }
 
 }

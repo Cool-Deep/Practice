@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-11-egg-dropping-puzzle/
  */
-public class EggDropping {
+class EggDropping {
 
-    public int calculate(int eggs, int floors){
+    private int calculate(int eggs, int floors){
         
         int T[][] = new int[eggs+1][floors+1];
         int c =0;
@@ -27,23 +27,25 @@ public class EggDropping {
         return T[eggs][floors];
     }
     
-    public int calculateRecursive(int eggs, int floors){
-        if(eggs == 1){
-            return floors;
-        }
-        if(floors == 0){
-            return 0;
-        }
-        int min = 1000;
-        for(int i=1; i <= floors; i++){
-            int val = 1 + Math.max(calculateRecursive(eggs-1, i-1),calculateRecursive(eggs, floors-i));
-            if(val < min){
-                min = val;
-            }
-        }
-        return min;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private int calculateRecursive(int eggs, int floors){
+//        if(eggs == 1){
+//            return floors;
+//        }
+//        if(floors == 0){
+//            return 0;
+//        }
+//        int min = 1000;
+//        for(int i=1; i <= floors; i++){
+//            int val = 1 + Math.max(calculateRecursive(eggs-1, i-1),calculateRecursive(eggs, floors-i));
+//            if(val < min){
+//                min = val;
+//            }
+//        }
+//        return min;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     public static void main(String args[]){
         EggDropping ed = new EggDropping();
         int r = ed.calculate(3,100);

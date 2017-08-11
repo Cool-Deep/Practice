@@ -3,76 +3,87 @@ package codeFights;
 /**
  * Created by Davit on 17/06/16.
  */
-public class TournamentDay18 {
+class TournamentDay18 {
 
-    static boolean evenDigitsOnly(int n) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean evenDigitsOnly(int n) {
+//
+//        if (n == 0) {
+//            return true;
+//        }
+//        if (n % 2 != 0) {
+//            return false;
+//        }
+//        return evenDigitsOnly(n / 10);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        if (n == 0) {
-            return true;
-        }
-        if (n % 2 != 0) {
-            return false;
-        }
-        return evenDigitsOnly(n / 10);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean shefferStroke(boolean a, boolean b) {
+//        return !a || !b;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static boolean shefferStroke(boolean a, boolean b) {
-        return !a || !b;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int howManySundays(int n, String startDay) {
+//
+//        String[] week = {"Monday", "Tuesday", "Wednesday",
+//                "Thursday", "Friday", "Saturday", "Sunday"};
+//        int startIndex = 0;
+//
+//        for (int i = 0; i < week.length; i++) {
+//            if (week[i].equals(startDay)) {
+//                startIndex = i;
+//                break;
+//            }
+//        }
+//
+//        return (n + startIndex) / week.length;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    static int howManySundays(int n, String startDay) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static String angleType(int measure) {
+//        if (measure > 0 && measure < 90)
+//            return "acute";
+//        else if (measure == 90)
+//            return "rightChild";
+//        else if (measure > 90 && measure < 180)
+//            return "obtuse";
+//        else if (measure == 180 || measure == 0)
+//            return "straight";
+//        return "";
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        String[] week = {"Monday", "Tuesday", "Wednesday",
-                "Thursday", "Friday", "Saturday", "Sunday"};
-        int startIndex = 0;
-
-        for (int i = 0; i < week.length; i++) {
-            if (week[i].equals(startDay)) {
-                startIndex = i;
-                break;
-            }
-        }
-
-        return (n + startIndex) / week.length;
-    }
-
-    static String angleType(int measure) {
-        if (measure > 0 && measure < 90)
-            return "acute";
-        else if (measure == 90)
-            return "rightChild";
-        else if (measure > 90 && measure < 180)
-            return "obtuse";
-        else if (measure == 180 || measure == 0)
-            return "straight";
-        return "";
-    }
-
-    static int maxGCD(int[] sequence) {
-        class Helper {
-            int gcd(int a, int b) {
-                if (b == 0) {
-                    return a;
-                }
-                return gcd(b, a % b);
-            }
-        }
-        ;
-
-        Helper h = new Helper();
-        int bestRes = 0;
-
-        for (int i = 0; i < sequence.length; i++) {
-            int result = sequence[0];
-            if (i == 0) {
-                result = sequence[1];
-            }
-            for (int j = 0; j < sequence.length; j++) {
-                if (i == j) {
-                    continue;
-                }
-                result = h.gcd(result, sequence[j]);
-            }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int maxGCD(int[] sequence) {
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            int gcd(int a, int b) {
+////                if (b == 0) {
+////                    return a;
+////                }
+////                return gcd(b, a % b);
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//
+//        Helper h = new Helper();
+//        int bestRes = 0;
+//
+//        for (int i = 0; i < sequence.length; i++) {
+//            int result = sequence[0];
+//            if (i == 0) {
+//                result = sequence[1];
+//            }
+//            for (int j = 0; j < sequence.length; j++) {
+//                if (i == j) {
+//                    continue;
+//                }
+//                result = h.gcd(result, sequence[j]);
+//            }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
             if (result > bestRes) {
                 bestRes = result;
             }
@@ -81,58 +92,66 @@ public class TournamentDay18 {
         return bestRes;
     }
 
-    static int crossingSum(int[][] matrix, int row, int column) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int crossingSum(int[][] matrix, int row, int column) {
+//
+//        int result = 0;
+//        for (int i = 0; i < matrix.length; i++) {
+//            result += matrix[i][column];
+//        }
+//        for (int i = 0; i < matrix[0].length; i++) {
+//            result += matrix[row][i];
+//        }
+//        result -= matrix[row][column];
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int result = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            result += matrix[i][column];
-        }
-        for (int i = 0; i < matrix[0].length; i++) {
-            result += matrix[row][i];
-        }
-        result -= matrix[row][column];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean arithmeticExpression(int A, int B, int C) {
+//        if (A + B == C)
+//            return true;
+//        else if (A - B == C)
+//            return true;
+//        else if (A / B == C && A % B == 0)
+//            return true;
+//        else if (A * B == C)
+//            return true;
+//        return false;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return result;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int myMaxOfThree(int a, int b, int c) {
+//        if (a > b) {
+//            if (a > c) {
+//                return a;
+//            }
+//            return c;
+//        }
+//        if (b > a && b > c) {
+//            return b;
+//        }
+//        return c;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private static String replaceFirstDigitRegExp() {
+        return "There are 12 points".replaceFirst("[0-9]", "#");
     }
 
-    static boolean arithmeticExpression(int A, int B, int C) {
-        if (A + B == C)
-            return true;
-        else if (A - B == C)
-            return true;
-        else if (A / B == C && A % B == 0)
-            return true;
-        else if (A * B == C)
-            return true;
-        return false;
-    }
-
-    static int myMaxOfThree(int a, int b, int c) {
-        if (a > b) {
-            if (a > c) {
-                return a;
-            }
-            return c;
-        }
-        if (b > a && b > c) {
-            return b;
-        }
-        return c;
-    }
-
-    static String replaceFirstDigitRegExp(String input) {
-        return input.replaceFirst("[0-9]", "#");
-    }
-
-    static boolean areIsomorphic(int[][] array1, int[][] array2) {
-        if (array1.length != array2.length)
-            return false;
-        for (int i = 0; i < array1.length; i++) {
-            if (array1[i].length != array2[i].length)
-                return false;
-        }
-        return true;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static boolean areIsomorphic(int[][] array1, int[][] array2) {
+//        if (array1.length != array2.length)
+//            return false;
+//        for (int i = 0; i < array1.length; i++) {
+//            if (array1[i].length != array2[i].length)
+//                return false;
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 
     public static void main(String[] args) {
@@ -145,7 +164,7 @@ public class TournamentDay18 {
         // System.out.println(crossingSum(new int[][]{{1, 1, 1, 1}, {2, 2, 2, 2}, {3, 3, 3, 3}}, 1, 3));
         // System.out.println(arithmeticExpression(2, 3, 5));
         // System.out.println(myMaxOfThree(2, 3, 5));
-        System.out.println(replaceFirstDigitRegExp("There are 12 points"));
+        System.out.println(replaceFirstDigitRegExp());
     }
 
 }

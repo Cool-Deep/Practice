@@ -7,14 +7,14 @@ package com.interview.multiarray;
  * (axis-aligned) rectangle that encloses all black pixels.
  * https://leetcode.com/problems/smallest-rectangle-enclosing-black-pixels/
  */
-public class SmallestRectangleBlackPixel {
-    public int minArea(char[][] image, int x, int y) {
+class SmallestRectangleBlackPixel {
+    private int minArea(char[][] image, int x, int y) {
 
         int m = image.length;
         int n = image[0].length;
 
-        int left = searchColumns(image, 0, y, 0, m -  1, true);
-        int right = searchColumns(image, y, n - 1, 0, m - 1, false);
+        int left = searchColumns(image, 0, y, m -  1, true);
+        int right = searchColumns(image, y, n - 1, m - 1, false);
 
         int top = searchRows(image, 0, x, left, right, true);
         int bottom = searchRows(image, x, m - 1, left, right, false);
@@ -22,10 +22,10 @@ public class SmallestRectangleBlackPixel {
         return (right - left + 1)*(bottom - top + 1);
     }
 
-    private int searchColumns(char[][] image, int i, int j, int top, int bottom, boolean opt) {
+    private int searchColumns(char[][] image, int i, int j, int bottom, boolean opt) {
         int result = 0;
         while (i <= j) {
-            int k = top;
+            int k = 0;
             int mid = (i + j)/2;
             while (k <= bottom && image[k][mid] == '0') {
                 k++;

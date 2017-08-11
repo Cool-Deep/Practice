@@ -1,14 +1,14 @@
 package com.interview.sort;
 
-public class RadixSort {
+class RadixSort {
 
     private void countSort(int arr[],int exp){
         
         int[] count = new int[10];
         int[] output = new int[arr.length];
-        
-        for(int i=0; i < arr.length; i++){
-            count[(arr[i]/exp)%10]++;
+
+        for (int anArr : arr) {
+            count[(anArr / exp) % 10]++;
         }
         
         for(int i=1; i < count.length; i++){
@@ -19,10 +19,8 @@ public class RadixSort {
             output[count[(arr[i]/exp)%10]-1] = arr[i];
             count[(arr[i]/exp)%10]--;
         }
-        
-        for(int i=0; i < arr.length; i++){
-            arr[i] = output[i];
-        }
+
+        System.arraycopy(output, 0, arr, 0, arr.length);
     }
     
     private int max(int arr[]){
@@ -35,7 +33,7 @@ public class RadixSort {
         return max;
     }
     
-    public void radixSort(int arr[]){
+    private void radixSort(int arr[]){
         
         int max = max(arr);
         for(int exp = 1; exp <= max; exp *= 10){
@@ -47,8 +45,8 @@ public class RadixSort {
         int arr[] = {101,10,11,66,94,26,125};
         RadixSort rs = new RadixSort();
         rs.radixSort(arr);
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+        for (int anArr : arr) {
+            System.out.println(anArr);
         }
 
     }

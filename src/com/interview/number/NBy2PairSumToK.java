@@ -5,14 +5,14 @@ package com.interview.number;
  * from given n integers where n is even and each pair's sum is divisible by given k. 
  * Numbers cannot be repeated in the pairs, that means only you can form total n/2 pairs.
  */
-public class NBy2PairSumToK {
+class NBy2PairSumToK {
 
     //assuming input is from 1 to n. If input can contain 0 special logic will be needed
     //to handle that.
-    public boolean pair(int input[],int k){
+    private boolean pair(int input[], int k){
         int count[] = new int[k];
-        for(int i=0; i < input.length; i++){
-            count[input[i]%k]++;
+        for (int anInput : input) {
+            count[anInput % k]++;
         }
         
         if(count[0]%2 != 0){

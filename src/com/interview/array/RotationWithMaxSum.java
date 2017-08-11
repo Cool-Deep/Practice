@@ -11,8 +11,8 @@ package com.interview.array;
  *
  * http://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given-array-allowed/
  */
-public class RotationWithMaxSum {
-    int maxSum(int input[]) {
+class RotationWithMaxSum {
+    private int maxSum(int input[]) {
         int arrSum = 0;
         int rotationSum = 0;
         for (int i =0; i < input.length; i++) {

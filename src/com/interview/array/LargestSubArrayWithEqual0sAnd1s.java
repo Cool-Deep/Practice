@@ -10,9 +10,9 @@ import java.util.Map;
  * Maximum length of 0 1 2 or more
  * 
 */
-public class LargestSubArrayWithEqual0sAnd1s {
+class LargestSubArrayWithEqual0sAnd1s {
 
-    public int equalNumber(int arr[]){
+    private int equalNumber(int arr[]){
 
         int sum[] = new int[arr.length];
         sum[0] = arr[0] == 0? -1 : 1;
@@ -20,7 +20,7 @@ public class LargestSubArrayWithEqual0sAnd1s {
             sum[i] = sum[i-1] + (arr[i] == 0? -1 : 1);
         }
         
-        Map<Integer,Integer> pos = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> pos = new HashMap<>();
         int maxLen = 0;
         int i = 0;
         for(int s : sum){

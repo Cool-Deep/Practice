@@ -3,17 +3,17 @@ package com.interview.recursion;
 /**
  * http://stackoverflow.com/questions/2344496/how-can-i-print-out-all-possible-letter-combinations-a-given-phone-number-can-re
  */
-public class KeyPadPermutation {
+class KeyPadPermutation {
 
-    public void permute(int input[]) {
+    private void permute(int input[]) {
         char result[] = new char[input.length];
         permute(input,0,result);
     }
 
     private void permute(int input[], int pos, char result[]) {
         if (pos == input.length) {
-            for (int i = 0; i < result.length; i++) {
-                System.out.print(result[i]);
+            for (char aResult : result) {
+                System.out.print(aResult);
             }
             System.out.println();
             return;

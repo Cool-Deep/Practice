@@ -12,8 +12,8 @@ import java.util.List;
  *
  * https://leetcode.com/problems/reconstruct-itinerary/
  */
-public class ReconstructItinerary {
-    public List<String> findItinerary(String[][] tickets) {
+class ReconstructItinerary {
+    private List<String> findItinerary(String[][] tickets) {
         List<Itinerary> input = new ArrayList<>();
         for (String[] ticket : tickets) {
             input.add(new Itinerary(ticket[0], ticket[1]));
@@ -25,7 +25,7 @@ public class ReconstructItinerary {
         return output;
     }
 
-    boolean findItineraryUtil(List<Itinerary> input, boolean[] used, String end, List<String> output, int count) {
+    private boolean findItineraryUtil(List<Itinerary> input, boolean[] used, String end, List<String> output, int count) {
         if (count == used.length) {
             output.add(end);
             return true;
@@ -49,8 +49,8 @@ public class ReconstructItinerary {
     }
 
     class Itinerary implements Comparable<Itinerary> {
-        String start;
-        String dest;
+        final String start;
+        final String dest;
         Itinerary(String start, String dest) {
             this.start = start;
             this.dest = dest;

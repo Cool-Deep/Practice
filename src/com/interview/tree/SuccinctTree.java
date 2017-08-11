@@ -16,11 +16,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class SuccinctTree {
 
     public static class Result {
-        List<Integer> binaryRep = new ArrayList<>();
-        List<Integer> actualData = new ArrayList<>();
+        final List<Integer> binaryRep = new ArrayList<>();
+        final List<Integer> actualData = new ArrayList<>();
     }
 
-    public Result encode(Node root) {
+    private Result encode(Node root) {
         Result r = new Result();
         encode(root, r);
         return r;
@@ -38,7 +38,7 @@ public class SuccinctTree {
         encode(root.right, r);
     }
 
-    public Node decode(Result r) {
+    private Node decode(Result r) {
         AtomicInteger x = new AtomicInteger(0);
         AtomicInteger y = new AtomicInteger(0);
         return decode(r, x, y);

@@ -26,9 +26,9 @@ import java.util.Stack;
  * 
  * References : http://www.geeksforgeeks.org/reverse-level-order-traversal/
  */
-public class LevelOrderTraversalInReverse {
+class LevelOrderTraversalInReverse {
 
-    public void reverseLevelOrderTraversal(Node root){
+    private void reverseLevelOrderTraversal(Node root){
         if(root == null){
             return;
         }

@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-24-optimal-binary-search-tree/
  */
-public class OptimalTreeSearch {
+class OptimalTreeSearch {
 
-    public int minCostRec(int input[],int freq[]){
+    private int minCostRec(int input[], int freq[]){
         
         return minCostRec(input,freq,0,input.length-1,1);
     }
@@ -27,7 +27,7 @@ public class OptimalTreeSearch {
         return min;
     }
     
-    public int minCost(int input[], int freq[]){
+    private int minCost(int input[], int freq[]){
         int T[][] = new int[input.length][input.length];
         
         for(int i=0; i < T.length; i++){

@@ -2,20 +2,20 @@ package coreJava;
 
 import java.util.StringTokenizer;
 
-public class ReverseEachWordInString {
+class ReverseEachWordInString {
 	public static void main(String[] args) {
 		
 		System.out.println(reverse("welcome to United state"));
 
 	}
 
-	public static String reverse(String str) {
+	private static String reverse(String str) {
 		if (str == null || str.length() == 1) {
 			return str;
 		}
 
 		StringTokenizer tocken = new StringTokenizer(str, " ", true);
-		StringBuffer sb = new StringBuffer();
+		StringBuilder sb = new StringBuilder();
 
 		char[] charArr;
 		char temp;
@@ -44,8 +44,8 @@ public class ReverseEachWordInString {
 		return sb.toString();
 	}
 
-	public static String capitalizeFirstLetters(String s) {
-		StringBuffer result = new StringBuffer();
+	private static String capitalizeFirstLetters(String s) {
+		StringBuilder result = new StringBuilder();
 		StringTokenizer tokenizer = new StringTokenizer(s, " ", true);
 		while (tokenizer.hasMoreTokens()) {
 			String currToken = tokenizer.nextToken();

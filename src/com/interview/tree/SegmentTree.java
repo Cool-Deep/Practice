@@ -22,9 +22,9 @@ package com.interview.tree;
  * http://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
  * http://www.geeksforgeeks.org/segment-tree-set-1-range-minimum-query/
  */
-public class SegmentTree {
+class SegmentTree {
 
-    public int[] createTree(int input[], Operation operation){
+    private int[] createTree(int input[], Operation operation){
         int height = (int)Math.ceil(Math.log(input.length)/Math.log(2));
         int segmentTree[] = new int[(int)(Math.pow(2, height+1)-1)];
         constructTree(segmentTree,input,0,input.length-1,0, operation);
@@ -42,10 +42,12 @@ public class SegmentTree {
         segmentTree[pos] = operation.perform(segmentTree[2*pos+1], segmentTree[2*pos+2]);
     }
     
-    public int rangeQuery(int []segmentTree,int qlow,int qhigh,int len, Operation operation){
-        return rangeQuery(segmentTree,0,len-1,qlow,qhigh,0, operation);
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int rangeQuery(int []segmentTree,int qlow,int qhigh,int len, Operation operation){
+//        return rangeQuery(segmentTree,0,len-1,qlow,qhigh,0, operation);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     private int rangeQuery(int segmentTree[],int low,int high,int qlow,int qhigh,int pos, Operation operation){
         if(qlow <= low && qhigh >= high){
             return segmentTree[pos];
@@ -58,7 +60,7 @@ public class SegmentTree {
                 rangeQuery(segmentTree,mid+1,high,qlow,qhigh,2*pos+2, operation));
     }
     
-    public void updateValueForSumOperation(int input[],int segmentTree[],int newVal,int index){
+    private void updateValueForSumOperation(int input[], int segmentTree[], int newVal, int index){
         int diff = newVal - input[index];
         input[index] = newVal;
         updateVal(segmentTree,0,input.length-1,diff,index,0);
@@ -83,19 +85,19 @@ public class SegmentTree {
         Operation sumOp = new SumOperation();
         Operation minOp = new MinOperation();
         int result [] = st.createTree(input, sumOp);
-        for(int i=0; i < result.length; i++){
-            System.out.print(result[i] + " ");
+        for (int aResult2 : result) {
+            System.out.print(aResult2 + " ");
         }
         int input1[] = {3,4,2,1,6,-1};
         int result1[] = st.createTree(input1, minOp);
-        for(int i=0; i < result1.length; i++){
-            System.out.print(result1[i] + " ");
+        for (int aResult1 : result1) {
+            System.out.print(aResult1 + " ");
         }
         
         st.updateValueForSumOperation(input, result,0 , 0);
         System.out.println();
-        for(int i=0; i < result.length; i++){
-            System.out.print(result[i] + " ");
+        for (int aResult : result) {
+            System.out.print(aResult + " ");
         }
         
     }

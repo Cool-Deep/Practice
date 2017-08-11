@@ -12,8 +12,8 @@ import java.util.List;
  * Shortest Distance from All Buildings
  * https://leetcode.com/problems/shortest-distance-from-all-buildings/
  */
-public class ShortestDistanceFromAllBuildings {
-    public int shortestDistance(int[][] grid) {
+class ShortestDistanceFromAllBuildings {
+    private int shortestDistance(int[][] grid) {
         int countBuilding = 0;
         List<Point> buildings = new ArrayList<>();
         for (int i = 0; i < grid.length ; i++) {
@@ -87,7 +87,9 @@ public class ShortestDistanceFromAllBuildings {
     }
 
     class Point {
-        int x, y, d;
+        final int x;
+        final int y;
+        final int d;
         Point(int x, int y, int d) {
             this.x = x;
             this.y = y;

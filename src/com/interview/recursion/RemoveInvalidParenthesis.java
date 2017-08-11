@@ -12,9 +12,9 @@ import java.util.*;
  * Reference
  * https://leetcode.com/problems/remove-invalid-parentheses/
  */
-public class RemoveInvalidParenthesis {
+class RemoveInvalidParenthesis {
 
-    public List<String> removeInvalidParentheses(String s) {
+    private List<String> removeInvalidParentheses(String s) {
         Set<String> res = new HashSet<>();
         int rmL = 0, rmR = 0;
         for(int i = 0; i < s.length(); i++) {
@@ -25,10 +25,10 @@ public class RemoveInvalidParenthesis {
             }
         }
         DFS(res, s, 0, rmL, rmR, 0, new StringBuilder());
-        return new ArrayList<String>(res);
+        return new ArrayList<>(res);
     }
 
-    public void DFS(Set<String> res, String s, int i, int rmL, int rmR, int open, StringBuilder sb) {
+    private void DFS(Set<String> res, String s, int i, int rmL, int rmR, int open, StringBuilder sb) {
         if(i == s.length() && rmL == 0 && rmR == 0 && open == 0) {
             res.add(sb.toString());
             return;
@@ -58,6 +58,6 @@ public class RemoveInvalidParenthesis {
         String s = "(r(()()(";
         RemoveInvalidParenthesis rmp = new RemoveInvalidParenthesis();
         List<String> result = rmp.removeInvalidParentheses(s);
-        result.forEach(s1 -> System.out.println(s1));
+        result.forEach(System.out::println);
     }
 }

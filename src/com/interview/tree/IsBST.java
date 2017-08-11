@@ -24,24 +24,21 @@ import java.util.LinkedList;
  * Binary tree which is actually BST
  * Binary tree which is not a BST
  */
-public class IsBST {
+class IsBST {
 
-    public boolean isBST(Node root){
+    private boolean isBST(Node root){
         return isBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
     
-    private boolean isBST(Node root, int min, int max){
-        if(root == null){
+    private boolean isBST(Node root, int min, int max) {
+        if (root == null) {
             return true;
         }
-        if(root.data <= min || root.data > max){
-            return false;
-        }
-        return isBST(root.left, min, root.data) && isBST(root.right, root.data, max);
+        return root.data > min && root.data <= max && isBST(root.left, min, root.data) && isBST(root.right, root.data, max);
     }
 
 
-    public boolean isBSTIterative(Node root) {
+    private boolean isBSTIterative(Node root) {
         if (root == null) {
             return true;
         }

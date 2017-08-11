@@ -36,7 +36,7 @@ public class SubRectangularMatrixWithMaximumSum {
         
     }
     
-    public Result maxSum(int input[][]){
+    private Result maxSum(int input[][]){
         int rows = input.length;
         int cols = input[0].length;
         int temp[] = new int[rows];
@@ -63,9 +63,9 @@ public class SubRectangularMatrixWithMaximumSum {
     }
     
     class KadaneResult{
-        int maxSum;
-        int start;
-        int end;
+        final int maxSum;
+        final int start;
+        final int end;
         public KadaneResult(int maxSum, int start, int end) {
             this.maxSum = maxSum;
             this.start = start;

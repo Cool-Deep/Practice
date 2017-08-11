@@ -8,9 +8,9 @@ import java.util.Arrays;
  * so here we will have {5,8,2,1,7}
  *
  */
-public class PermutationLargerThanGivenArray {
+class PermutationLargerThanGivenArray {
 
-    public int[] findBiggerNumber(int src[],int dest[]){
+    private int[] findBiggerNumber(int src[], int dest[]){
         int result[] = new int[src.length];
         boolean[] used = new boolean[src.length];
         boolean r = findNumber(src, dest, result, 0, used);
@@ -82,8 +82,8 @@ public class PermutationLargerThanGivenArray {
         PermutationLargerThanGivenArray nld = new PermutationLargerThanGivenArray();
         int result[] = nld.findBiggerNumber(src, dest);
         if(result != null){
-            for(int i=0; i < result.length; i++){
-                System.out.print(result[i] + " ");
+            for (int aResult : result) {
+                System.out.print(aResult + " ");
             }
         }else{
             System.out.println("Cant find bigger permutation");

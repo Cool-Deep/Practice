@@ -27,9 +27,9 @@ package com.interview.tree;
  * http://www.careercup.com/question?id=6241652616200192
  *
  */
-public class DegenerateBinaryTreeToSortedLL {
+class DegenerateBinaryTreeToSortedLL {
    
-    public Node degenerate(Node root){
+    private Node degenerate(Node root){
         if(root == null){
             return null;
         }

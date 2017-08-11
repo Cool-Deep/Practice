@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * Exercise 5.2 150 qs
  */
-public class RealNumberToBinary {
+class RealNumberToBinary {
 
-    public void print(double num){
+    private void print(double num){
         if(num > 1 || num < 0){
             System.out.println("ERROR");
             return;

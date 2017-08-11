@@ -9,9 +9,9 @@ import java.util.Arrays;
  * Given a number n, find mth value in permutation of array consisting of [1..n] values.
  * mth is defined by lexicographical order.
  */
-public class MthNumberInNSizeArray {
+class MthNumberInNSizeArray {
 
-    public int[] find(int n, int m) {
+    private int[] find(int n, int m) {
         boolean used[] = new boolean[n];
         int result[] = new int[n];
         find(result, used, 0, n, m);

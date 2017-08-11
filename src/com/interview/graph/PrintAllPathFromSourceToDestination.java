@@ -9,10 +9,10 @@ import java.util.Set;
  * Source or destination vertex does not exist in the graph
  * There is no path between src to dest vertex
  */
-public class PrintAllPathFromSourceToDestination {
+class PrintAllPathFromSourceToDestination {
 
-    public void printPath(Graph<Integer> graph,Vertex<Integer> start, Vertex<Integer> destination){
-        Set<Vertex<Integer>> visited = new LinkedHashSet<Vertex<Integer>>();
+    private void printPath(Graph<Integer> graph, Vertex<Integer> start, Vertex<Integer> destination){
+        Set<Vertex<Integer>> visited = new LinkedHashSet<>();
         printPath(visited,destination,start);
     }
     
@@ -36,7 +36,7 @@ public class PrintAllPathFromSourceToDestination {
     }
     
     public static void main(String args[]){
-        Graph<Integer> graph = new Graph<Integer>(false);
+        Graph<Integer> graph = new Graph<>(false);
         graph.addEdge(1, 2);
         graph.addEdge(1, 3);
         graph.addEdge(2, 4);

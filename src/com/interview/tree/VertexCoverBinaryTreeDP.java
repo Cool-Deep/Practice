@@ -10,9 +10,9 @@ package com.interview.tree;
  * Only right child
  * Tree with only one child at every node
  */
-public class VertexCoverBinaryTreeDP {
+class VertexCoverBinaryTreeDP {
 
-    public int cover(Node root){
+    private int cover(Node root){
         if(root == null){
             return 0;
         }

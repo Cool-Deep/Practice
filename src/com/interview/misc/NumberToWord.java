@@ -6,14 +6,10 @@ package com.interview.misc;
  * Reference
  * https://leetcode.com/problems/integer-to-english-words/
  */
-public class NumberToWord {
+class NumberToWord {
 
-    private static int BILLION = 1000000000;
-    private static int MILLION = 1000000;
-    private static int THOUSAND = 1000;
-    
-    public String numberToWords(int number){
-        StringBuffer buffer = new StringBuffer();
+    private String numberToWords(int number){
+        StringBuilder buffer = new StringBuilder();
         if(number ==0){
             return toString(number).trim();
         }
@@ -21,18 +17,21 @@ public class NumberToWord {
             buffer.append("Minus");
             number = number *-1;
         }
+        int BILLION = 1000000000;
         if (number >= BILLION) {
             int first = number / BILLION;
             number = number % BILLION;
             buffer.append(hundredsPart(first)).append(toString(BILLION));
         }
+        int MILLION = 1000000;
         if(number >= MILLION){
-            int first = number /MILLION;
+            int first = number / MILLION;
             number = number % MILLION;
             buffer.append(hundredsPart(first)).append(toString(MILLION));
         }
+        int THOUSAND = 1000;
         if(number >= THOUSAND){
-            int first = number /THOUSAND;
+            int first = number / THOUSAND;
             number = number % THOUSAND;
             buffer.append(hundredsPart(first)).append(toString(THOUSAND));
         }
@@ -41,14 +40,14 @@ public class NumberToWord {
     }
     
     private String hundredsPart(int number){
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         if(number != 0){
             if(number <= 99){
                 buffer.append(tenthPart(number));
             }else{
                 int first = (number /100);
                 int second = number % 100;
-                buffer.append(toString(first) + toString(100));
+                buffer.append(toString(first)).append(toString(100));
                 if (second != 0){
                     buffer.append(tenthPart(second));
                 }
@@ -60,7 +59,7 @@ public class NumberToWord {
     }
         
     private String tenthPart(int number){
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         if(number != 0){
             if(number <= 19){
                 buffer.append(toString(number));

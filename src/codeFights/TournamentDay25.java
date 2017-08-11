@@ -1,32 +1,34 @@
 package codeFights;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
 
 /**
  * Created by Davit on 26/06/16.
  */
-public class TournamentDay25 {
+class TournamentDay25 {
 
-    private static int magicalWell(int a, int b, int n) {
-        int money = 0;
-        while (n-- != 0) {
-            money += a++ * b++;
-        }
-        return money;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int magicalWell(int a, int b, int n) {
+//        int money = 0;
+//        while (n-- != 0) {
+//            money += a++ * b++;
+//        }
+//        return money;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static double arrayMedian(int[] sequence) {
-        int len = sequence.length;
-        Arrays.sort(sequence);
-
-        if (len % 2 == 0) {
-            return (sequence[len / 2] + sequence[len / 2 - 1]) / 2.0;
-        } else {
-            return sequence[len / 2];
-        }
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static double arrayMedian(int[] sequence) {
+//        int len = sequence.length;
+//        Arrays.sort(sequence);
+//
+//        if (len % 2 == 0) {
+//            return (sequence[len / 2] + sequence[len / 2 - 1]) / 2.0;
+//        } else {
+//            return sequence[len / 2];
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int fact(int n) {
         if (n == 0)
@@ -34,87 +36,99 @@ public class TournamentDay25 {
         return fact(n - 1) * n;
     }
 
-    private static int countWays(int n, int k) {
-        return fact(n) / (fact(k) * fact(n - k));
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int countWays(int n, int k) {
+//        return fact(n) / (fact(k) * fact(n - k));
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static String addDigits(int a, int b, int n) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String addDigits(int a, int b, int n) {
+//
+//        int rem = a % b;
+//
+//        StringBuilder result = new StringBuilder();
+//        result.append(a);
+//
+//        for (int i = 0; i < n; i++) {
+//            int best = -1;
+//            for (int digit = 9; digit >= 0; digit--) {
+//                if ((rem * 10 + digit) % b == 0) {
+//                    best = digit;
+//                    break;
+//                }
+//            }
+//            if (best == -1) {
+//                break;
+//            }
+//            result.append(best);
+//            rem = (rem * 10 + best) % b;
+//        }
+//
+//        return result.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int rem = a % b;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] clockDigitsCount(int[] startTime, int[] finishTime) {
+//        int start = startTime[0] * 60 * 60 + startTime[1] * 60 + startTime[2],
+//                finish = finishTime[0] * 60 * 60 + finishTime[1] * 60 + finishTime[2];
+//
+//        int[] occurences = new int[10];
+//
+//        for (int current = start; current <= finish; current++) {
+//            int[] values = {current % 60,
+//                    (current / 60) % 60,
+//                    current / (60 * 60)};
+//            for (int i = 0; i < values.length; i++) {
+//                occurences[values[i] % 10]++;
+//                occurences[(values[i] / 10) % 10]++;
+//            }
+//        }
+//
+//        return occurences;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        StringBuilder result = new StringBuilder();
-        result.append(a);
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int factorialTrailingZeros(int n) {
+//        int result = 0;
+//        for (int i = 5; i <= n; i += 5) {
+//            int number = i;
+//            while (number % 5 == 0) {
+//                number /= 5;
+//                result++;
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < n; i++) {
-            int best = -1;
-            for (int digit = 9; digit >= 0; digit--) {
-                if ((rem * 10 + digit) % b == 0) {
-                    best = digit;
-                    break;
-                }
-            }
-            if (best == -1) {
-                break;
-            }
-            result.append(best);
-            rem = (rem * 10 + best) % b;
-        }
-
-        return result.toString();
-    }
-
-    private static int[] clockDigitsCount(int[] startTime, int[] finishTime) {
-        int start = startTime[0] * 60 * 60 + startTime[1] * 60 + startTime[2],
-                finish = finishTime[0] * 60 * 60 + finishTime[1] * 60 + finishTime[2];
-
-        int[] occurences = new int[10];
-
-        for (int current = start; current <= finish; current++) {
-            int[] values = {current % 60,
-                    (current / 60) % 60,
-                    current / (60 * 60)};
-            for (int i = 0; i < values.length; i++) {
-                occurences[values[i] % 10]++;
-                occurences[(values[i] / 10) % 10]++;
-            }
-        }
-
-        return occurences;
-    }
-
-    private static int factorialTrailingZeros(int n) {
-        int result = 0;
-        for (int i = 5; i <= n; i += 5) {
-            int number = i;
-            while (number % 5 == 0) {
-                number /= 5;
-                result++;
-            }
-        }
-        return result;
-    }
-
-    private static int stringsConstruction(String A, String B) {
-
-        class Helper {
-            int[] countLetters(String s) {
-                int[] cnt = new int[26];
-                for (int i = 0; i < s.length(); i++) {
-                    cnt[s.charAt(i) - 'a']++;
-                }
-                return cnt;
-            }
-        }
-        Helper h = new Helper();
-
-        int[] cntA = h.countLetters(A);
-        int[] cntB = h.countLetters(B);
-        int best = -1;
-        for (int i = 0; i < 26; i++) {
-            if (cntA[i] == 0) {
-                continue;
-            }
-            int cur = cntB[i] / cntA[i];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int stringsConstruction(String A, String B) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            int[] countLetters(String s) {
+////                int[] cnt = new int[26];
+////                for (int i = 0; i < s.length(); i++) {
+////                    cnt[s.charAt(i) - 'a']++;
+////                }
+////                return cnt;
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        int[] cntA = h.countLetters(A);
+//        int[] cntB = h.countLetters(B);
+//        int best = -1;
+//        for (int i = 0; i < 26; i++) {
+//            if (cntA[i] == 0) {
+//                continue;
+//            }
+//            int cur = cntB[i] / cntA[i];
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
             if (best == -1 || cur < best) {
                 best = cur;
             }

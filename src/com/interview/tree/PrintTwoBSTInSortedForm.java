@@ -13,11 +13,11 @@ import java.util.LinkedList;
  * Elements are mixed
  * All same elements
  */
-public class PrintTwoBSTInSortedForm {
+class PrintTwoBSTInSortedForm {
 
-    public void print(Node root1, Node root2){
-        Deque<Node> s1 = new LinkedList<Node>();
-        Deque<Node> s2 = new LinkedList<Node>();
+    private void print(Node root1, Node root2){
+        Deque<Node> s1 = new LinkedList<>();
+        Deque<Node> s2 = new LinkedList<>();
         
         while(true){
             if(root1 != null){

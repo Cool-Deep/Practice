@@ -4,45 +4,47 @@ package com.interview.array;
  * http://stackoverflow.com/questions/4686823/given-2-sorted-arrays-of-integers-find-the-nth-largest-number-in-sublinear-time
  * http://articles.leetcode.com/2011/01/find-k-th-smallest-element-in-union-of.html
  */
-public class KthLargestInTwoSortedArray {
+class KthLargestInTwoSortedArray {
 
     
-    public int kthLargest1(int arr1[],int arr2[],int low1,int high1,int low2,int high2,int k){
-        int len1 = high1-low1 +1;
-        int len2 = high2 - low2+1;
-        
-        if(len1 == 0){
-            return arr2[low2+k];
-        }
-        if(len2 ==0){
-            return arr1[low1+k];
-        }
-        if(k == 0){
-            return Math.min(arr1[low1], arr2[low2]);
-        }
-        
-     
-        int mid1 = len1*k/(len1 + len2);
-        int mid2 = k - mid1 - 1;
-        
-        mid1 = low1+mid1;
-        mid2 = low2 + mid2;
-        
-        if(arr1[mid1] > arr2[mid2]){
-            k = k - mid2 + low2 -1;
-            high1 = mid1;
-            low2 = mid2 + 1;
-        }else{
-            k = k - mid1 + low1 -1;
-            high2 = mid2;
-            low1 = mid1+1;
-        }
-        return kthLargest(arr1, arr2, low1, high1, low2, high2, k);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int kthLargest1(int arr1[],int arr2[],int low1,int high1,int low2,int high2,int k){
+//        int len1 = high1-low1 +1;
+//        int len2 = high2 - low2+1;
+//
+//        if(len1 == 0){
+//            return arr2[low2+k];
+//        }
+//        if(len2 ==0){
+//            return arr1[low1+k];
+//        }
+//        if(k == 0){
+//            return Math.min(arr1[low1], arr2[low2]);
+//        }
+//
+//
+//        int mid1 = len1*k/(len1 + len2);
+//        int mid2 = k - mid1 - 1;
+//
+//        mid1 = low1+mid1;
+//        mid2 = low2 + mid2;
+//
+//        if(arr1[mid1] > arr2[mid2]){
+//            k = k - mid2 + low2 -1;
+//            high1 = mid1;
+//            low2 = mid2 + 1;
+//        }else{
+//            k = k - mid1 + low1 -1;
+//            high2 = mid2;
+//            low1 = mid1+1;
+//        }
+//        return kthLargest(arr1, arr2, low1, high1, low2, high2, k);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     
     
-    public int kthLargest(int input1[],int input2[],int k){
+    private int kthLargest(int input1[], int input2[], int k){
         return kthLargest(input1, input2, 0, input1.length-1, 0, input2.length-1, k);
     }
     

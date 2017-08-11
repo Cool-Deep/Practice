@@ -1,7 +1,5 @@
 package com.interview.dynamic;
 
-import java.util.List;
-
 /**
  * Date 07/07/2014
  * @author Tushar Roy
@@ -15,26 +13,28 @@ import java.util.List;
  * http://www.geeksforgeeks.org/dynamic-programming-set-5-edit-distance/
  * https://en.wikipedia.org/wiki/Edit_distance
  */
-public class EditDistance {
+class EditDistance {
 
-    /**
-     * Uses recursion to find minimum edits
-     */
-    public int recEditDistance(char[]  str1, char str2[], int len1,int len2){
-        
-        if(len1 == str1.length){
-            return str2.length - len2;
-        }
-        if(len2 == str2.length){
-            return str1.length - len1;
-        }
-        return min(recEditDistance(str1, str2, len1 + 1, len2 + 1) + str1[len1] == str2[len2] ? 0 : 1, recEditDistance(str1, str2, len1, len2 + 1) + 1, recEditDistance(str1, str2, len1 + 1, len2) + 1);
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Uses recursion to find minimum edits
+//     */
+//    private int recEditDistance(char[] str1, char str2[], int len1, int len2){
+//
+//        if(len1 == str1.length){
+//            return str2.length - len2;
+//        }
+//        if(len2 == str2.length){
+//            return str1.length - len1;
+//        }
+//        return min(recEditDistance(str1, str2, len1 + 1, len2 + 1) + str1[len1] == str2[len2] ? 0 : 1, recEditDistance(str1, str2, len1, len2 + 1) + 1, recEditDistance(str1, str2, len1 + 1, len2) + 1);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     /**
      * Uses bottom up DP to find the edit distance
      */
-    public int dynamicEditDistance(char[] str1, char[] str2){
+    private int dynamicEditDistance(char[] str1, char[] str2){
         int temp[][] = new int[str1.length+1][str2.length+1];
         
         for(int i=0; i < temp[0].length; i++){
@@ -62,7 +62,7 @@ public class EditDistance {
     /**
      * Prints the actual edits which needs to be done.
      */
-    public void printActualEdits(int T[][], char[] str1, char[] str2) {
+    private void printActualEdits(int T[][], char[] str1, char[] str2) {
         int i = T.length - 1;
         int j = T[0].length - 1;
         while(true) {

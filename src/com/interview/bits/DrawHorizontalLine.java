@@ -3,24 +3,26 @@ package com.interview.bits;
 /**
  * Exercise 5.8 150qs 
  */
-public class DrawHorizontalLine {
+class DrawHorizontalLine {
 
-    public void draw(byte[] screen, int width, int x1, int x2,int y){
-        int pos1 = y*width + x1;
-        int pos2 = y*width + x2;
-        
-        int start = pos1;
-        while(start <= pos2){
-            int row = start/8;
-            int col = start%8;
-            
-            screen[row] = (byte)(screen[row] | 1<<col);
-            start++;
-        }
-        printScreen(screen,width);
-    }
-    
-    public void drawFaster(byte[] screen,int width,int x1,int x2,int y){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void draw(byte[] screen, int width, int x1, int x2,int y){
+//        int pos1 = y*width + x1;
+//        int pos2 = y*width + x2;
+//
+//        int start = pos1;
+//        while(start <= pos2){
+//            int row = start/8;
+//            int col = start%8;
+//
+//            screen[row] = (byte)(screen[row] | 1<<col);
+//            start++;
+//        }
+//        printScreen(screen,width);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private void drawFaster(byte[] screen, int width, int x1, int x2, int y){
         int pos1 = y*width + x1;
         int pos2 = y*width + x2;
         

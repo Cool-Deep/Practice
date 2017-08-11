@@ -11,11 +11,11 @@ package com.interview.binarysearch;
  * 4) smallest element at left side
  * 5) smallest element at right side
  */
-public class CircularBinarySearch {
+class CircularBinarySearch {
 
     //if mid is greater than both ends than result is low of two ends else move in direction
     //where either mid-1 or mid+1 is less
-    public int search(int arr[]) {
+    private int search(int arr[]) {
         int low = 0;
         int high = arr.length - 1;
         int mid = 0;

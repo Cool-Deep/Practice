@@ -7,9 +7,9 @@ package com.interview.number;
  * k or n are negative
  * k greater than n
  */
-public class BinomialCoefficient {
+class BinomialCoefficient {
 
-    public int calculate(int n, int k){
+    private int calculate(int n, int k){
         if(k > n-k){
             k = n-k;
         }

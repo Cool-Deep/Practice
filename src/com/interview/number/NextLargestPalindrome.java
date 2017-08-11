@@ -3,9 +3,9 @@ package com.interview.number;
 /**
  http://www.geeksforgeeks.org/given-a-number-find-next-smallest-palindrome-larger-than-this-number/
  */
-public class NextLargestPalindrome {
+class NextLargestPalindrome {
 
-    public void nextPalindrome(int num[]){
+    private void nextPalindrome(int num[]){
         
         int mid = num.length/2;
         
@@ -51,9 +51,9 @@ public class NextLargestPalindrome {
         }
     }
     
-    public void printArray(int num[]){
-        for(int i=0; i < num.length; i++){
-            System.out.print(num[i] + " ");
+    private void printArray(int num[]){
+        for (int aNum : num) {
+            System.out.print(aNum + " ");
         }
     }
     

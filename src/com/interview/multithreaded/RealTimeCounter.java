@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicLongArray;
 public class RealTimeCounter {
 
     private final static int GRANULARITY = 300;
-    private AtomicLongArray counter = new AtomicLongArray(GRANULARITY);
+    private final AtomicLongArray counter = new AtomicLongArray(GRANULARITY);
     private volatile int pos = 0;
     
     private RealTimeCounter(){
@@ -38,18 +38,20 @@ public class RealTimeCounter {
     
     private static volatile RealTimeCounter INSTANCE;
     
-    public static RealTimeCounter getInstance(){
-        if(INSTANCE == null){
-            synchronized (RealTimeCounter.class) {
-                if(INSTANCE == null){
-                    INSTANCE = new RealTimeCounter();
-                }
-            }
-        }
-        return INSTANCE;
-    }
-    
-    public long getTotalEvents(){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public static RealTimeCounter getInstance(){
+//        if(INSTANCE == null){
+//            synchronized (RealTimeCounter.class) {
+//                if(INSTANCE == null){
+//                    INSTANCE = new RealTimeCounter();
+//                }
+//            }
+//        }
+//        return INSTANCE;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private long getTotalEvents(){
         int total = 0;
         for(int i=0; i < GRANULARITY; i++){
             total += counter.get(i);
@@ -57,7 +59,7 @@ public class RealTimeCounter {
         return total;
     }
     
-    public void addEvent(){
+    private void addEvent(){
         counter.getAndIncrement(pos);
     }
     

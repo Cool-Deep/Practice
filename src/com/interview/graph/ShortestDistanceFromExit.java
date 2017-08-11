@@ -10,8 +10,8 @@ enum Cell{
 }
 
 class Point{
-	int x;
-	int y;
+	final int x;
+	final int y;
 	Point(int x, int y){
 		this.x = x;
 		this.y = y;
@@ -33,9 +33,9 @@ class Point{
  * Time complexity is O(number of exit * m * n);
  *
  */
-public class ShortestDistanceFromExit {
+class ShortestDistanceFromExit {
 
-	public int[][] findShortest(Cell input[][]){
+	private int[][] findShortest(Cell input[][]){
 		int distance[][] = new int[input.length][input[0].length];
 		for(int i=0; i < input.length; i++){
 			for(int j=0; j < input[0].length; j++){
@@ -95,12 +95,12 @@ public class ShortestDistanceFromExit {
 						  {Cell.SPACE, Cell.GUARD, Cell.BLOCK, Cell.SPACE}
 						 };		
 		int result[][] = sdg.findShortest(input);
-		for(int i=0; i < result.length; i++) {
-			for(int j=0; j < result[0].length; j++){
-				System.out.print(result[i][j] + " ");
-			}
-			System.out.println();
-		}
+        for (int[] aResult : result) {
+            for (int j = 0; j < result[0].length; j++) {
+                System.out.print(aResult[j] + " ");
+            }
+            System.out.println();
+        }
 		
 	}
 	

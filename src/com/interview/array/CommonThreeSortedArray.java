@@ -13,9 +13,9 @@ import java.util.List;
  *
  * http://www.geeksforgeeks.org/find-common-elements-three-sorted-arrays/
  */
-public class CommonThreeSortedArray {
+class CommonThreeSortedArray {
 
-    public List<Integer> commonElements(int input1[], int input2[], int input3[]) {
+    private List<Integer> commonElements(int input1[], int input2[], int input3[]) {
         int i = 0;
         int j = 0;
         int k = 0;

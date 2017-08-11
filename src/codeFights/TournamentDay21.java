@@ -3,39 +3,41 @@ package codeFights;
 /**
  * Created by Davit on 21/06/16.
  */
-public class TournamentDay21 {
+class TournamentDay21 {
 
-    static int depositProfit(int deposit, int rate, int threshold) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    static int depositProfit(int deposit, int rate, int threshold) {
+//
+//        int[] fraction = new int[2];
+//        fraction[0] = deposit;
+//        fraction[1] = 1;
+//        int year = 0;
+//
+//        while (fraction[0] > threshold) {
+//            fraction[0] *= 100 + rate;
+//            fraction[1] *= 100;
+//            year++;
+//        }
+//
+//        return year;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int[] fraction = new int[2];
-        fraction[0] = deposit;
-        fraction[1] = 1;
-        int year = 0;
-
-        while (fraction[0] > threshold) {
-            fraction[0] *= 100 + rate;
-            fraction[1] *= 100;
-            year++;
-        }
-
-        return year;
-    }
-
-    static int visitsOnCircularRoad(int N, int[] visitsOrder) {
+    private static int visitsOnCircularRoad(int[] visitsOrder) {
 
         int current = 1,
                 res = 0;
-        for (int i = 0; i < visitsOrder.length; i++) {
-            res += Math.min(Math.abs(visitsOrder[i] - current),
-                    N - Math.abs(visitsOrder[i] - current));
-            current = visitsOrder[i];
+        for (int aVisitsOrder : visitsOrder) {
+            res += Math.min(Math.abs(aVisitsOrder - current),
+                    4 - Math.abs(aVisitsOrder - current));
+            current = aVisitsOrder;
         }
         return res;
     }
 
     public static void main(String[] args) {
         // System.out.println(depositProfit(100, 10, 130));
-        System.out.println(visitsOnCircularRoad(4, new int[]{1, 3, 2, 3, 1}));
+        System.out.println(visitsOnCircularRoad(new int[]{1, 3, 2, 3, 1}));
     }
 
 }

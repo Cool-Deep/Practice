@@ -8,10 +8,10 @@ import java.util.LinkedList;
  * Test case
  * 0,1 or more elements in the array
  */
-public class IterativeQuickSort {
+class IterativeQuickSort {
 
-    public void sort(int arr[]){
-        Deque<Integer> stack = new LinkedList<Integer>();
+    private void sort(int arr[]){
+        Deque<Integer> stack = new LinkedList<>();
         int l = 0;
         int h = arr.length-1;
         stack.offerFirst(l);
@@ -64,8 +64,8 @@ public class IterativeQuickSort {
         int arr[] = {3,2,8,0,11,-1,-5,4,32,-60,44};
         IterativeQuickSort iqs = new IterativeQuickSort();
         iqs.sort(arr);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
     }
 }

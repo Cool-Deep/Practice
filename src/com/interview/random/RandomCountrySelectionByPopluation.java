@@ -1,8 +1,8 @@
 package com.interview.random;
 
-public class RandomCountrySelectionByPopluation {
+class RandomCountrySelectionByPopluation {
 
-	public int getRandom(int []arr){
+	private int getRandom(int[] arr){
 		int sum[] = new int[arr.length];
 		sum[0] = arr[0];
 		int n = arr[0];

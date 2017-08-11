@@ -4,13 +4,11 @@ package com.interview.random;
  * Reservoir Sampling
  * 150qs 18.3
  */
-public class SelectMRandomNumbersInStream {
+class SelectMRandomNumbersInStream {
 
-	public int[] selectRandom(int arr[],int m){
+	private int[] selectRandom(int arr[], int m){
 		int result[] = new int[m];
-		for(int i=0; i < m ;i++){
-			result[i] = arr[i];
-		}
+        System.arraycopy(arr, 0, result, 0, m);
 		
 		for(int i=m ; i < arr.length; i++){
 			int random = (int)(Math.random()*i) + 1;
@@ -25,8 +23,8 @@ public class SelectMRandomNumbersInStream {
 		SelectMRandomNumbersInStream srn = new SelectMRandomNumbersInStream();
 		int arr[] = {1,2,3,4,5,6,7,8,9,10,11,12,13};
 		int result[] = srn.selectRandom(arr, 5);
-		for(int i=0; i < result.length; i++){
-			System.out.print(result[i] + " ");
-		}
+        for (int aResult : result) {
+            System.out.print(aResult + " ");
+        }
 	}
 }

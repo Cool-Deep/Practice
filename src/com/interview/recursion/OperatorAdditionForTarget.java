@@ -11,8 +11,8 @@ import java.util.List;
  *
  * https://leetcode.com/problems/expression-add-operators/
  */
-public class OperatorAdditionForTarget {
-    public List<String> addOperators(String num, int target) {
+class OperatorAdditionForTarget {
+    private List<String> addOperators(String num, int target) {
         if (num.length() == 0) {
             return new ArrayList<>();
         }
@@ -55,6 +55,6 @@ public class OperatorAdditionForTarget {
     public static void main(String args[]) {
         OperatorAdditionForTarget p = new OperatorAdditionForTarget();
         List<String> result = p.addOperators("1234", -1);
-        result.stream().forEach(s -> System.out.println(s));
+        result.forEach(System.out::println);
     }
 }

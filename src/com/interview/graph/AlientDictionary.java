@@ -8,8 +8,8 @@ import java.util.*;
  * lexicographically by the rules of this new language. Derive the order of letters in this language.
  * https://leetcode.com/problems/alien-dictionary/
  */
-public class AlientDictionary {
-    public String alienOrder(String[] words) {
+class AlientDictionary {
+    private String alienOrder(String[] words) {
         Map<Character, Set<Character>> graph = buildGraph(words);
         Deque<Character> stack = new LinkedList<>();
         Set<Character> visited = new HashSet<>();
@@ -21,7 +21,7 @@ public class AlientDictionary {
             }
         }
 
-        StringBuffer buff = new StringBuffer();
+        StringBuilder buff = new StringBuilder();
         while (!stack.isEmpty()) {
             buff.append(stack.pollFirst());
         }
@@ -58,11 +58,7 @@ public class AlientDictionary {
             for (int k = 0; k < Math.min(words[i].length(), nextWord.length()); k++) {
                 if (words[i].charAt(k) != nextWord.charAt((k))) {
                     allCharacters.remove(words[i].charAt(k));
-                    Set<Character> set = graph.get(words[i].charAt(k));
-                    if (set == null) {
-                        set = new HashSet<>();
-                        graph.put(words[i].charAt(k), set);
-                    }
+                    Set<Character> set = graph.computeIfAbsent(words[i].charAt(k), k1 -> new HashSet<>());
                     set.add(nextWord.charAt(k));
                     break;
                 }

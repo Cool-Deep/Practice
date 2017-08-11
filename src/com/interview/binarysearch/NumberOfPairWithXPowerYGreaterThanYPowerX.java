@@ -7,24 +7,24 @@ import java.util.Map;
 /**
  * http://www.geeksforgeeks.org/find-number-pairs-xy-yx/
  */
-public class NumberOfPairWithXPowerYGreaterThanYPowerX {
+class NumberOfPairWithXPowerYGreaterThanYPowerX {
 
-    public int countPairs(int X[],int Y[]){
-        Map<Integer,Integer> hardCoded = new HashMap<Integer,Integer>();
-        for(int i=0; i < Y.length; i++){
-            if(Y[i] < 4){
-                Integer count = hardCoded.get(Y[i]);
-                if(count != null){
-                    hardCoded.put(Y[i], count++);
-                }else{
-                    hardCoded.put(Y[i], 1);
+    private int countPairs(int X[], int Y[]){
+        Map<Integer,Integer> hardCoded = new HashMap<>();
+        for (int aY : Y) {
+            if (aY < 4) {
+                Integer count = hardCoded.get(aY);
+                if (count != null) {
+                    hardCoded.put(aY, count++);
+                } else {
+                    hardCoded.put(aY, 1);
                 }
             }
         }
         Arrays.sort(Y);
         int countPairs = 0;
-        for(int i=0 ; i < X.length; i++){
-            countPairs += count(X[i],Y,hardCoded);
+        for (int aX : X) {
+            countPairs += count(aX, Y, hardCoded);
         }
         return countPairs;
     }
@@ -38,13 +38,13 @@ public class NumberOfPairWithXPowerYGreaterThanYPowerX {
             return upperBound(0,Y);
         }
         int result = Y.length - upperBound(x,Y);
-        result +=  (hardCount.containsKey(1) ? hardCount.get(1) : 0 ) + (hardCount.containsKey(0) ? hardCount.get(0) : 0);
+        result +=  (hardCount.getOrDefault(1, 0)) + (hardCount.getOrDefault(0, 0));
     
         if(x == 2){
-            result -= (hardCount.containsKey(3)  ? hardCount.get(3) : 0);
+            result -= (hardCount.getOrDefault(3, 0));
         }
         if(x == 3){
-            result += (hardCount.containsKey(2)  ? hardCount.get(2) : 0);
+            result += (hardCount.getOrDefault(2, 0));
         }
         return result;
     }

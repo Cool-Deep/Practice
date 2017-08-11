@@ -7,9 +7,9 @@ package com.interview.dynamic;
  * 
  * References : http://leetcode.com/2011/09/regular-expression-matching.html
  */
-public class RegexMatching {
+class RegexMatching {
 
-    public boolean matchRegexRecursive(char[] str, char[] pattern){
+    private boolean matchRegexRecursive(char[] str, char[] pattern){
         return matchRegexRecursive(str,pattern,0,0);
     }
     
@@ -47,7 +47,7 @@ public class RegexMatching {
     /**
      * Dynamic programming technique for regex matching.
      */
-    public boolean matchRegex(char[] text, char[] pattern) {
+    private boolean matchRegex(char[] text, char[] pattern) {
         boolean T[][] = new boolean[text.length + 1][pattern.length + 1];
 
         T[0][0] = true;

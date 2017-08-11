@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * http://www.geeksforgeeks.org/check-for-majority-element-in-a-sorted-array/
  */
-public class FirstOccurrenceOfNumberInSortedArray {
+class FirstOccurrenceOfNumberInSortedArray {
 
-    public int firstOccurrence(int input[], int x){
+    private int firstOccurrence(int input[], int x){
         int low = 0;
         int high = input.length-1;
         

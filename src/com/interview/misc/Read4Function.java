@@ -23,17 +23,17 @@ class Read4 {
     }
 }
 
-public class Read4Function extends Read4{
+class Read4Function extends Read4{
 
     class Queue {
         int start;
         int end;
         int count;
-        char[] data;
-        int size;
-        Queue(int size) {
-            data = new char[size];
-            this.size = size;
+        final char[] data;
+        final int size;
+        Queue() {
+            data = new char[4];
+            this.size = 4;
         }
 
         boolean isEmpty() {
@@ -55,11 +55,11 @@ public class Read4Function extends Read4{
     }
 
     private final Queue queue;
-    public Read4Function() {
-        queue = new Queue(4);
+    private Read4Function() {
+        queue = new Queue();
     }
 
-    public int read(char[] buf, int n) {
+    private int read(char[] buf, int n) {
         int r = 0;
         while (!queue.isEmpty() && r < n) {
             buf[r++] = queue.poll();

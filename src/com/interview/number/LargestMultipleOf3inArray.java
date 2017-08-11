@@ -7,9 +7,9 @@ import java.util.Queue;
 /**
  * http://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/
  */
-public class LargestMultipleOf3inArray {
+class LargestMultipleOf3inArray {
 
-    public void swap(int input[],int i, int j){
+    private void swap(int input[], int i, int j){
         int temp = input[i];
         input[i] = input[j];
         input[j] = temp;
@@ -20,25 +20,25 @@ public class LargestMultipleOf3inArray {
         }
     }
     
-    public int[] largestMultiple(int input[]){
+    private int[] largestMultiple(int input[]){
         Arrays.sort(input);
         int output[];
-        Queue<Integer> q0 = new LinkedList<Integer>();
-        Queue<Integer> q1 = new LinkedList<Integer>();
-        Queue<Integer> q2 = new LinkedList<Integer>();
+        Queue<Integer> q0 = new LinkedList<>();
+        Queue<Integer> q1 = new LinkedList<>();
+        Queue<Integer> q2 = new LinkedList<>();
         
         int sum = 0;
-        for(int i=0; i < input.length; i++){
-            if(input[i] % 3 == 0){
-                q0.add(input[i]);
+        for (int anInput : input) {
+            if (anInput % 3 == 0) {
+                q0.add(anInput);
             }
-            if(input[i] % 3 == 1){
-                q1.add(input[i]);
+            if (anInput % 3 == 1) {
+                q1.add(anInput);
             }
-            if(input[i] % 3 == 2){
-                q2.add(input[i]);
+            if (anInput % 3 == 2) {
+                q2.add(anInput);
             }
-            sum += input[i];
+            sum += anInput;
         }
     
         if(sum % 3 == 0){

@@ -8,9 +8,9 @@ package com.interview.linklist;
  * @author tusroy
  *
  */
-public class MiddleElementOfLinkList {
+class MiddleElementOfLinkList {
 
-    public int middle(Node head){
+    private int middle(Node head){
         if(head == null || head.next == null){
             return head.data;
         }

@@ -15,28 +15,30 @@ package com.interview.linklist;
  * @author tusroy
  *
  */
-public class ShuffleMerge {
+class ShuffleMerge {
 
-    public Node shuffleMergeRecursive(Node head1, Node head2){
-        if(head1 == null){
-            return head2;
-        }
-        
-        if(head2 == null){
-            return head1;
-        }
-        
-        Node recur = null;
-        recur = shuffleMergeRecursive(head1.next, head2.next);
-        
-        head1.next = head2;
-        head2.next = recur;
-        return head1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private Node shuffleMergeRecursive(Node head1, Node head2){
+//        if(head1 == null){
+//            return head2;
+//        }
+//
+//        if(head2 == null){
+//            return head1;
+//        }
+//
+//        Node recur = null;
+//        recur = shuffleMergeRecursive(head1.next, head2.next);
+//
+//        head1.next = head2;
+//        head2.next = recur;
+//        return head1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
     /**
     Size of list 1 is smaller, equal and larger than list 2
     */
-    public Node shuffleMerge(Node head1, Node head2){
+    private Node shuffleMerge(Node head1, Node head2){
         if(head1 == null || head2 == null){
             return head2;
         }

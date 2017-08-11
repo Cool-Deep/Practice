@@ -6,16 +6,14 @@ import java.util.Set;
 /**
  * http://www.geeksforgeeks.org/detect-cycle-in-a-graph/
  */
-public class CycleInDirectedGraph {
+class CycleInDirectedGraph {
 
-    public boolean hasCycle(Graph<Integer> graph) {
+    private boolean hasCycle(Graph<Integer> graph) {
         Set<Vertex<Integer>> whiteSet = new HashSet<>();
         Set<Vertex<Integer>> graySet = new HashSet<>();
         Set<Vertex<Integer>> blackSet = new HashSet<>();
 
-        for (Vertex<Integer> vertex : graph.getAllVertex()) {
-            whiteSet.add(vertex);
-        }
+        whiteSet.addAll(graph.getAllVertex());
 
         while (whiteSet.size() > 0) {
             Vertex<Integer> current = whiteSet.iterator().next();

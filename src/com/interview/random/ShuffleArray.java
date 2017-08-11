@@ -4,9 +4,9 @@ package com.interview.random;
  * Shuffle deck of cards
  * 150 qs 18.2
  */
-public class ShuffleArray {
+class ShuffleArray {
 
-	public void shuffle(int arr[]){
+	private void shuffle(int arr[]){
 		for(int i=arr.length-1; i>=0; i--){
 			int random = (int)(Math.random()*(i+1)) ;
 			System.out.print(random +  " ");
@@ -25,12 +25,12 @@ public class ShuffleArray {
 		ShuffleArray sa = new ShuffleArray();
 		sa.shuffle(arr);
 		System.out.println();
-		for(int i=0; i < arr.length; i++){
-			System.out.print(arr[i] + " ");
-		}
-		
-		for(int i=0; i < arr.length; i++){
-			System.out.println((int)(Math.random()*10) + 1);
-		}
+        for (int anArr1 : arr) {
+            System.out.print(anArr1 + " ");
+        }
+
+        for (int anArr : arr) {
+            System.out.println((int) (Math.random() * 10) + 1);
+        }
 	}
 }

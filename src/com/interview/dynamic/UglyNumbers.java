@@ -12,14 +12,14 @@ import java.util.PriorityQueue;
  * https://leetcode.com/problems/super-ugly-number/
  * http://www.geeksforgeeks.org/ugly-numbers/
  */
-public class UglyNumbers {
+class UglyNumbers {
 
     static class Node implements Comparable<Node> {
-        int inputIndex;
+        final int inputIndex;
         int index;
         int val;
-        Node (int inputIndex, int index, int val) {
-            this.index = index;
+        Node(int inputIndex, int val) {
+            this.index = 0;
             this.val = val;
             this.inputIndex = inputIndex;
         }
@@ -30,11 +30,11 @@ public class UglyNumbers {
         }
     }
 
-    public int nthSuperUglyNumber1(int n, int[] primes) {
+    private int nthSuperUglyNumber1(int n, int[] primes) {
 
         PriorityQueue<Node> pq = new PriorityQueue<>();
         for (int i = 0; i < primes.length; i++) {
-            pq.offer(new Node(i, 0, primes[i]));
+            pq.offer(new Node(i, primes[i]));
         }
         int[] val = new int[n];
         val[0] = 1;
@@ -51,14 +51,14 @@ public class UglyNumbers {
         return val[n - 1];
     }
 
-    int ugly(int n){
-        int arr[] = new int[n];
+    private int ugly(){
+        int arr[] = new int[150];
         int count = 1;
         arr[0] = 1;
         int i2 = 0;
         int i3 = 0;
         int i5 = 0;
-        while(count < n){
+        while(count < 150){
             int minNumber = min(arr[i2] * 2, arr[i3] * 3, arr[i5] * 5);
             if(minNumber == arr[i2]*2){
                 i2++;
@@ -72,7 +72,7 @@ public class UglyNumbers {
             arr[count++] = minNumber;
         }
         
-        return arr[n-1];
+        return arr[150 -1];
     }
     
     private int min(int a,int b, int c){
@@ -82,7 +82,7 @@ public class UglyNumbers {
     
     public static void main(String args[]) {
         UglyNumbers ugly = new UglyNumbers();
-        int result = ugly.ugly(150);
+        int result = ugly.ugly();
         System.out.println(result);
         int[] primes = {2, 3, 7, 11};
         System.out.print(ugly.nthSuperUglyNumber1(17, primes));

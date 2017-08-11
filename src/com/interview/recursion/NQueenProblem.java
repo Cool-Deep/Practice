@@ -2,7 +2,6 @@ package com.interview.recursion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -19,14 +18,15 @@ import java.util.List;
 public class NQueenProblem {
 
     class Position {
-        int row, col;
+        final int row;
+        final int col;
         Position(int row, int col) {
             this.row = row;
             this.col = col;
         }
     }
 
-    public Position[] solveNQueenOneSolution(int n) {
+    private Position[] solveNQueenOneSolution(int n) {
         Position[] positions = new Position[n];
         boolean hasSolution = solveNQueenOneSolutionUtil(n, 0, positions);
         if (hasSolution) {
@@ -62,17 +62,19 @@ public class NQueenProblem {
         return false;
     }
 
-    /*
-     *Solution for https://leetcode.com/problems/n-queens/
-     */
-    public List<List<String>> solveNQueens(int n) {
-        List<List<String>> result = new ArrayList<>();
-        Position[] positions = new Position[n];
-        solve(0, positions, result, n);
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /*
+//     *Solution for https://leetcode.com/problems/n-queens/
+//     */
+//    public List<List<String>> solveNQueens(int n) {
+//        List<List<String>> result = new ArrayList<>();
+//        Position[] positions = new Position[n];
+//        solve(0, positions, result, n);
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    public void solve(int current, Position[] positions, List<List<String>> result, int n) {
+    private void solve(int current, Position[] positions, List<List<String>> result, int n) {
         if (n == current) {
             StringBuffer buff = new StringBuffer();
             List<String> oneResult = new ArrayList<>();

@@ -1,6 +1,6 @@
 package coreJava;
 
-public class TestClass {
+class TestClass {
 
     public static void main(String[] args){
         System.out.println("Test");

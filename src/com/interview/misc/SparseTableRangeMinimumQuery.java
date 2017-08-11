@@ -13,13 +13,13 @@ package com.interview.misc;
  * Reference -
  * https://www.topcoder.com/community/data-science/data-science-tutorials/range-minimum-query-and-lowest-common-ancestor/
  */
-public class SparseTableRangeMinimumQuery {
+class SparseTableRangeMinimumQuery {
 
     private final int[][] sparse;
     private final int n;
     private final int[] input;
 
-    public SparseTableRangeMinimumQuery(int[] input) {
+    private SparseTableRangeMinimumQuery(int[] input) {
         this.input = input;
         this.n = input.length;
         this.sparse = preprocess(input, this.n);
@@ -43,7 +43,7 @@ public class SparseTableRangeMinimumQuery {
         return sparse;
     }
 
-    public int rangeMinimumQuery(int low, int high) {
+    private int rangeMinimumQuery(int low, int high) {
         int l = high - low + 1;
         int k = log2(l);
         if (input[sparse[low][k]] <= input[sparse[low + l - (1<<k)][k]]) {

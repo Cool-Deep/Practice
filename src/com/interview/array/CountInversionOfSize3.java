@@ -8,13 +8,13 @@ package com.interview.array;
  *
  * http://www.geeksforgeeks.org/count-inversions-of-size-three-in-a-give-array/
  */
-public class CountInversionOfSize3 {
+class CountInversionOfSize3 {
 
     /**
      * Time complexity of this method is O(n^2)
      * Space complexity is O(1)
      */
-    public int findInversions(int input[]) {
+    private int findInversions(int input[]) {
         int inversion = 0;
         for (int i = 1; i < input.length - 1 ; i++) {
             int larger = 0;

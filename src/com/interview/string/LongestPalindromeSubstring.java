@@ -13,37 +13,39 @@ package com.interview.string;
  * http://www.akalin.cx/longest-palindrome-linear-time
  * http://tarokuriyama.com/projects/palindrome2.php
  */
-public class LongestPalindromeSubstring {
+class LongestPalindromeSubstring {
 
-    public int longestPalindromeSubstringEasy(char arr[]) {
-
-        int longest_substring = 1;
-        for (int i = 0; i < arr.length; i++) {
-
-            int x, y;
-            int palindrome;
-            x = i;
-            y = i + 1;
-            palindrome = 0;
-            while (x >= 0 && y < arr.length && arr[x] == arr[y]) {
-                x--;
-                y++;
-                palindrome += 2;
-            }
-            longest_substring = Math.max(longest_substring, palindrome);
-            
-            x = i - 1;
-            y = i + 1;
-            palindrome = 1;
-            while (x >= 0 && y < arr.length && arr[x] == arr[y]) {
-                x--;
-                y++;
-                palindrome += 2;
-            }
-            longest_substring = Math.max(longest_substring, palindrome);
-        }
-        return longest_substring;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int longestPalindromeSubstringEasy(char arr[]) {
+//
+//        int longest_substring = 1;
+//        for (int i = 0; i < arr.length; i++) {
+//
+//            int x, y;
+//            int palindrome;
+//            x = i;
+//            y = i + 1;
+//            palindrome = 0;
+//            while (x >= 0 && y < arr.length && arr[x] == arr[y]) {
+//                x--;
+//                y++;
+//                palindrome += 2;
+//            }
+//            longest_substring = Math.max(longest_substring, palindrome);
+//
+//            x = i - 1;
+//            y = i + 1;
+//            palindrome = 1;
+//            while (x >= 0 && y < arr.length && arr[x] == arr[y]) {
+//                x--;
+//                y++;
+//                palindrome += 2;
+//            }
+//            longest_substring = Math.max(longest_substring, palindrome);
+//        }
+//        return longest_substring;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     /**
      * Linear time Manacher's algorithm to find longest palindromic substring.
@@ -57,7 +59,7 @@ public class LongestPalindromeSubstring {
      *
      * To handle even size palindromes replace input string with one containing $ between every input character and in start and end.
      */
-    public int longestPalindromicSubstringLinear(char input[]) {
+    private int longestPalindromicSubstringLinear(char input[]) {
         int index = 0;
         //preprocess the input to convert it into type abc -> $a$b$c$ to handle even length case.
         //Total size will be 2*n + 1 of this new array.
@@ -111,52 +113,54 @@ public class LongestPalindromeSubstring {
 
         //find the max palindrome in T and return it.
         int max = Integer.MIN_VALUE;
-        for(int i = 0; i < T.length; i++) {
+        for (int aT : T) {
             int val;
       /*      if(i%2 == 0) {
                 val = (T[i] -1)/2;
             } else {
                 val = T[i]/2;
             }*/
-            val = T[i]/2;
-            if(max < val) {
+            val = aT / 2;
+            if (max < val) {
                 max = val;
             }
         }
         return max;
     }
 
-    public int longestPalindromeDynamic(char []str){
-        boolean T[][] = new boolean[str.length][str.length];
-        
-        for(int i=0; i < T.length; i++){
-            T[i][i] = true;
-        }
-        
-        int max = 1;
-        for(int l = 2; l <= str.length; l++){
-            int len = 0;
-            for(int i=0; i < str.length-l+1; i++){
-                int j = i + l-1;
-                len = 0;
-                if(l == 2){
-                    if(str[i] == str[j]){
-                        T[i][j] = true;
-                        len = 2;
-                    }
-                }else{
-                    if(str[i] == str[j] && T[i+1][j-1]){
-                        T[i][j] = true;
-                        len = j -i + 1;
-                    }
-                }
-                if(len > max){
-                    max = len;
-                }
-            }
-        }
-        return max;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int longestPalindromeDynamic(char []str){
+//        boolean T[][] = new boolean[str.length][str.length];
+//
+//        for(int i=0; i < T.length; i++){
+//            T[i][i] = true;
+//        }
+//
+//        int max = 1;
+//        for(int l = 2; l <= str.length; l++){
+//            int len = 0;
+//            for(int i=0; i < str.length-l+1; i++){
+//                int j = i + l-1;
+//                len = 0;
+//                if(l == 2){
+//                    if(str[i] == str[j]){
+//                        T[i][j] = true;
+//                        len = 2;
+//                    }
+//                }else{
+//                    if(str[i] == str[j] && T[i+1][j-1]){
+//                        T[i][j] = true;
+//                        len = j -i + 1;
+//                    }
+//                }
+//                if(len > max){
+//                    max = len;
+//                }
+//            }
+//        }
+//        return max;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String args[]) {
         LongestPalindromeSubstring lps = new LongestPalindromeSubstring();

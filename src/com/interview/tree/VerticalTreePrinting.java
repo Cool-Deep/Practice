@@ -8,10 +8,10 @@ import java.util.TreeMap;
 /**
  * http://www.geeksforgeeks.org/print-binary-tree-vertical-order-set-2/
  */
-public class VerticalTreePrinting {
+class VerticalTreePrinting {
 
-    public void printVertical(Node root){
-        Map<Integer,List<Node>> map = new TreeMap<Integer,List<Node>>();
+    private void printVertical(Node root){
+        Map<Integer,List<Node>> map = new TreeMap<>();
         populateMap(root,map,0);
         printLevel(map);
     }
@@ -34,7 +34,7 @@ public class VerticalTreePrinting {
         if(map.containsKey(level)){
             listNodes = map.get(level);
         }else{
-            listNodes = new ArrayList<Node>();
+            listNodes = new ArrayList<>();
             map.put(level, listNodes);
         }
         listNodes.add(root);

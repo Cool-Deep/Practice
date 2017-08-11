@@ -8,9 +8,9 @@ package com.interview.linklist;
  * All nodes with child
  * No nodes with child
  */
-public class FlattenLinkList {
+class FlattenLinkList {
 
-    public void flatten(Node head) {
+    private void flatten(Node head) {
         Node tail = getTail(head);
         while (head != null) {
             if (head.child != null) {

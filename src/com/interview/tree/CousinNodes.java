@@ -10,63 +10,65 @@ import java.util.Queue;
  * root Tree and input with a and b as cousin node Tree and input with a and b
  * not cousin node Tree with input a and b being siblings(not cousin)
  */
-public class CousinNodes {
+class CousinNodes {
 
-    /**
-     * Little more efficient than other method since this guy does not need
-     * another look up to see if parent is same for found nodes.
-     */
-    public boolean areCousins1(Node root, int data1, int data2) {
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
-        int tempLevel = 1;
-        int level = 0;
-        boolean found1 = false;
-        boolean found2 = false;
-        Node parent1 = null;
-        Node parent2 = null;
-        while (!queue.isEmpty()) {
-            while (tempLevel > 0) {
-                root = queue.poll();
-                if (root.left != null) {
-                    if (root.left.data == data1) {
-                        found1 = true;
-                        parent1 = root;
-                    } else if (root.left.data == data2) {
-                        found2 = true;
-                        parent2 = root;
-                    } else {
-                        queue.add(root.left);
-                        level++;
-                    }
-                }
-                if (root.right != null) {
-                    if (root.right.data == data1) {
-                        found1 = true;
-                        parent1 = root;
-                    } else if (root.right.data == data2) {
-                        found2 = true;
-                        parent2 = root;
-                    } else {
-                        queue.add(root.right);
-                        level++;
-                    }
-                }
-                tempLevel--;
-            }
-            if (found1 && found2 && parent1 != parent2) {
-                return true;
-            } else if (found1 || found2) {
-                return false;
-            }
-            tempLevel = level;
-            level = 0;
-        }
-        return false;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    /**
+//     * Little more efficient than other method since this guy does not need
+//     * another look up to see if parent is same for found nodes.
+//     */
+//    public boolean areCousins1(Node root, int data1, int data2) {
+//        Queue<Node> queue = new LinkedList<>();
+//        queue.add(root);
+//        int tempLevel = 1;
+//        int level = 0;
+//        boolean found1 = false;
+//        boolean found2 = false;
+//        Node parent1 = null;
+//        Node parent2 = null;
+//        while (!queue.isEmpty()) {
+//            while (tempLevel > 0) {
+//                root = queue.poll();
+//                if (root.left != null) {
+//                    if (root.left.data == data1) {
+//                        found1 = true;
+//                        parent1 = root;
+//                    } else if (root.left.data == data2) {
+//                        found2 = true;
+//                        parent2 = root;
+//                    } else {
+//                        queue.add(root.left);
+//                        level++;
+//                    }
+//                }
+//                if (root.right != null) {
+//                    if (root.right.data == data1) {
+//                        found1 = true;
+//                        parent1 = root;
+//                    } else if (root.right.data == data2) {
+//                        found2 = true;
+//                        parent2 = root;
+//                    } else {
+//                        queue.add(root.right);
+//                        level++;
+//                    }
+//                }
+//                tempLevel--;
+//            }
+//            if (found1 && found2 && parent1 != parent2) {
+//                return true;
+//            } else if (found1 || found2) {
+//                return false;
+//            }
+//            tempLevel = level;
+//            level = 0;
+//        }
+//        return false;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    public boolean areCousins(Node root, int a, int b) {
-        Deque<Node> queue = new LinkedList<Node>();
+    private boolean areCousins(Node root, int a, int b) {
+        Deque<Node> queue = new LinkedList<>();
         queue.offerFirst(root);
         int levelSize = 1;
         int tempLevelSize = 1;

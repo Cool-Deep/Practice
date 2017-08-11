@@ -70,7 +70,7 @@ import java.util.List;
  * https://www.cs.helsinki.fi/u/ukkonen/SuffixT1withFigs.pdf
  * https://gist.github.com/axefrog/2373868
  */
-public class SuffixTree {
+class SuffixTree {
 
     public static void main(String args[]){
         SuffixTree st = new SuffixTree("mississippi".toCharArray());
@@ -83,18 +83,16 @@ public class SuffixTree {
     private Active active;
     private int remainingSuffixCount;
     private End end;
-    private char input[];
-    private static char UNIQUE_CHAR = '$';
-    
-    public SuffixTree(char input[]){
+    private final char[] input;
+
+    private SuffixTree(char input[]){
         this.input = new char[input.length+1];
-        for(int i=0; i < input.length; i++){
-            this.input[i] = input[i];
-        }
+        System.arraycopy(input, 0, this.input, 0, input.length);
+        char UNIQUE_CHAR = '$';
         this.input[input.length] = UNIQUE_CHAR;
     }
     
-    public void build(){
+    private void build(){
         root = SuffixNode.createNode(1, new End(0));
         root.index = -1;
         active = new Active(root);
@@ -287,7 +285,7 @@ public class SuffixTree {
     /**
      * Do a DFS traversal of the tree.
      */
-    public void dfsTraversal(){
+    private void dfsTraversal(){
         List<Character> result = new ArrayList<>();
         for(SuffixNode node : root.child){
             dfsTraversal(node, result);
@@ -302,7 +300,7 @@ public class SuffixTree {
             for(int i=root.start; i <= root.end.end; i++){
                 result.add(input[i]);
             }
-            result.stream().forEach(System.out::print);
+            result.forEach(System.out::print);
             System.out.println(" " + root.index);
             for(int i=root.start; i <= root.end.end; i++){
                 result.remove(result.size()-1);
@@ -363,7 +361,7 @@ public class SuffixTree {
         return validate(node, input, index, curr);
     }
     
-    public boolean validate(){
+    private boolean validate(){
         for(int i=0; i < this.input.length; i++){
             if(!validate(this.root, this.input, i, i)){
                 System.out.println("Failed validation");
@@ -380,7 +378,7 @@ class SuffixNode{
     }
     
     private static final int TOTAL = 256;
-    SuffixNode[] child = new SuffixNode[TOTAL];
+    final SuffixNode[] child = new SuffixNode[TOTAL];
     
     int start;
     End end;
@@ -397,11 +395,11 @@ class SuffixNode{
 
     @Override
     public String toString() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         int i=0;
         for(SuffixNode node : child){
             if(node != null){
-                buffer.append((char)i + " ");
+                buffer.append((char) i).append(" ");
             }
             i++;
         }

@@ -12,10 +12,10 @@ import java.util.List;
  * no chain formed
  * chain formed
  */
-public class ChainWordsToFormCircle {
+class ChainWordsToFormCircle {
 
-    public List<String> formCircle(String input[]){
-        List<String> result = new ArrayList<String>();
+    private List<String> formCircle(String input[]){
+        List<String> result = new ArrayList<>();
         //since chain is a circle any point can be the start point of the chain.
         //We make input[0] as start point
         result.add(input[0]);
@@ -31,10 +31,7 @@ public class ChainWordsToFormCircle {
     private boolean formCircle(String input[], List<String> result,boolean used[],char firstChar){
         if(input.length == result.size()){
             String str = result.get(result.size()-1);
-            if(firstChar == str.charAt(str.length()-1)){
-                return true;
-            }
-            return false;
+            return firstChar == str.charAt(str.length() - 1);
         }
         String str = result.get(result.size()-1);
         char lastChar = str.charAt(str.length()-1);

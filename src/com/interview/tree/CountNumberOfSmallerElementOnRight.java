@@ -9,7 +9,7 @@ package com.interview.tree;
  * 0s
  * Sorted or reverse sorted
  */
-public class CountNumberOfSmallerElementOnRight {
+class CountNumberOfSmallerElementOnRight {
     private Node leftRotate(Node root){
         Node newRoot = root.right;
         root.right = root.right.left;
@@ -91,7 +91,7 @@ public class CountNumberOfSmallerElementOnRight {
         return root;
     }
     
-    public int[] count(int input[]){
+    private int[] count(int input[]){
         int count[] = new int[input.length];
         Node root = null;
         for(int i=input.length-1; i >= 0; i--){

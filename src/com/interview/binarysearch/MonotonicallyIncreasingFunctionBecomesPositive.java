@@ -3,13 +3,13 @@ package com.interview.binarysearch;
 /**
  * http://www.geeksforgeeks.org/find-the-point-where-a-function-becomes-negative/
  */
-public class MonotonicallyIncreasingFunctionBecomesPositive {
+class MonotonicallyIncreasingFunctionBecomesPositive {
 
     private int f(int x){
         return x*x - 10*x - 20;
     }
     
-    public int findPoint(){
+    private int findPoint(){
         int i=1;
         while(f(i) <=0 ){
             i = i*2;

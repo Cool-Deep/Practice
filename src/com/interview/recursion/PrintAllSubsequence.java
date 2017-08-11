@@ -9,8 +9,8 @@ package com.interview.recursion;
  * Time complexity is exponential
  * Space complexity is O(n)
  */
-public class PrintAllSubsequence {
-    public void print(int[] input) {
+class PrintAllSubsequence {
+    private void print(int[] input) {
         int[] output = new int[input.length];
         for (int i = 0; i < input.length; i++) {
             output[0] = input[i];

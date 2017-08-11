@@ -15,50 +15,52 @@ class HeadTail{
   Node tail;
 }
 
-public class QuickSortSingleLinkList {
+class QuickSortSingleLinkList {
 
-    public Node quickSort(Node head){
-        if(head == null || head.next == null){
-            return head;
-        }
-        Node smaller = null;
-        Node larger = null;
-        Node pivot = head;
-        Node temp = head.next;
-        pivot.next = null;
-        LinkList ll = new LinkList();
-        while(temp != null){
-            Node next = temp.next;
-            temp.next = null;
-            if(temp.data < pivot.data){
-                smaller = ll.addAtFront(temp, smaller);
-            }else{
-                larger = ll.addAtFront(temp, larger);
-            }
-            temp = next;
-        }
-        
-        smaller = quickSort(smaller);
-        larger = quickSort(larger);
-        
-        Node tail1 = smaller;
-        
-        //this is costly operation which can be prevented by keeping tail.
-        while(tail1 != null && tail1.next != null){
-            tail1 = tail1.next;
-        }
-        
-        if(smaller != null){
-            tail1.next = pivot;
-            pivot.next = larger;
-            return smaller;
-        }else{
-            pivot.next = larger;
-            return pivot;
-        }
-    }
-    
-    public Node quickSortFaster(Node head){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private Node quickSort(Node head){
+//        if(head == null || head.next == null){
+//            return head;
+//        }
+//        Node smaller = null;
+//        Node larger = null;
+//        Node pivot = head;
+//        Node temp = head.next;
+//        pivot.next = null;
+//        LinkList ll = new LinkList();
+//        while(temp != null){
+//            Node next = temp.next;
+//            temp.next = null;
+//            if(temp.data < pivot.data){
+//                smaller = ll.addAtFront(temp, smaller);
+//            }else{
+//                larger = ll.addAtFront(temp, larger);
+//            }
+//            temp = next;
+//        }
+//
+//        smaller = quickSort(smaller);
+//        larger = quickSort(larger);
+//
+//        Node tail1 = smaller;
+//
+//        //this is costly operation which can be prevented by keeping tail.
+//        while(tail1 != null && tail1.next != null){
+//            tail1 = tail1.next;
+//        }
+//
+//        if(smaller != null){
+//            tail1.next = pivot;
+//            pivot.next = larger;
+//            return smaller;
+//        }else{
+//            pivot.next = larger;
+//            return pivot;
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    private Node quickSortFaster(Node head){
         HeadTail result = quickSortUtil(head);
         return result.head;
     }

@@ -21,16 +21,16 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @ThreadSafe
  */
-public class MinMaxKeeper {
+class MinMaxKeeper {
 
-    private AtomicInteger min = new AtomicInteger(Integer.MAX_VALUE);
-    private AtomicInteger max = new AtomicInteger(Integer.MIN_VALUE);
+    private final AtomicInteger min = new AtomicInteger(Integer.MAX_VALUE);
+    private final AtomicInteger max = new AtomicInteger(Integer.MIN_VALUE);
     
     /**
      * Threadsafe way of updating min and max
      * @param value
      */
-    public void updateMinMax(int value){
+    private void updateMinMax(int value){
         //update min
         while(true){
             //if value is greater than whatever is in min just break right away
@@ -59,11 +59,11 @@ public class MinMaxKeeper {
         }
     }
     
-    public int getMin(){
+    private int getMin(){
         return min.get();
     }
     
-    public int getMax(){
+    private int getMax(){
         return max.get();
     }
     
@@ -85,7 +85,7 @@ public class MinMaxKeeper {
 
     static class GenerateRand implements Runnable{
         int index = 0;
-        MinMaxKeeper mmKeeper;
+        final MinMaxKeeper mmKeeper;
         public GenerateRand(MinMaxKeeper mmKeeper, int index) {
             this.index = index;
             this.mmKeeper = mmKeeper;

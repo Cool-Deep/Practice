@@ -3,9 +3,9 @@ package com.interview.bits;
 /*
  * http://www.geeksforgeeks.org/rotate-bits-of-an-integer/
  */
-public class BitRotation {
+class BitRotation {
 
-    public byte rotateLeft(byte num, int d){
+    private byte rotateLeft(byte num, int d){
         return (byte)((num << d) | (num >>> (8-d)));
     }
     

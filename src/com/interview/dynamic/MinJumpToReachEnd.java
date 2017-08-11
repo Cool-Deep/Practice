@@ -20,9 +20,9 @@ import java.util.Arrays;
  * Reference
  * http://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
  */
-public class MinJumpToReachEnd {
+class MinJumpToReachEnd {
 
-    public int minJump(int arr[],int result[]){
+    private int minJump(int arr[], int result[]){
         
         int []jump = new int[arr.length];
         jump[0] = 0;
@@ -47,7 +47,7 @@ public class MinJumpToReachEnd {
     /**
      * https://leetcode.com/problems/jump-game-ii/
      */
-    public int jump(int[] nums) {
+    private int jump(int[] nums) {
         if (nums.length == 1) {
             return 0;
         }

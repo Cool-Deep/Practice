@@ -3,12 +3,12 @@ package com.interview.dynamic;
 /**
  * http://en.wikipedia.org/wiki/Longest_common_substring_problem
  */
-public class LongestCommonSubstring {
+class LongestCommonSubstring {
 
     /**
      * Dynamic way of calculating lcs
      */
-    public int longestCommonSubstring(char str1[], char str2[]){
+    private int longestCommonSubstring(char str1[], char str2[]){
         int T[][] = new int[str1.length+1][str2.length+1];
         
         int max = 0;
@@ -28,7 +28,7 @@ public class LongestCommonSubstring {
     /**
      * Recursive way of calculating lcs
      */
-    public int longestCommonSubstringRec(char str1[], char str2[], int pos1, int pos2, boolean checkEqual){
+    private int longestCommonSubstringRec(char str1[], char str2[], int pos1, int pos2, boolean checkEqual){
         if(pos1 == -1 || pos2 == -1){
             return 0;
         }

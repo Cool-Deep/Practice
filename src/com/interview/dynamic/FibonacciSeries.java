@@ -21,13 +21,13 @@ package com.interview.dynamic;
  * 4) Very high number
  * 
  */
-public class FibonacciSeries {
+class FibonacciSeries {
 
 	 /**
      * DP version where we do not recalculate values but just keep last 2
      * calculate values
      */
-    public int fibonacciSeries(int n){
+     private int fibonacciSeries(int n){
         int n1 = 0, n2 = 1;
         int sum;
 
@@ -48,7 +48,7 @@ public class FibonacciSeries {
      * Recursive and slow version. Recalculates same value over and over again.
      * Chokes for n greater than 60
      */
-    public int fibonacciSeriesRecursive(int n){
+    private int fibonacciSeriesRecursive(int n){
         if(n == 1 || n == 0){
             return n;
         }

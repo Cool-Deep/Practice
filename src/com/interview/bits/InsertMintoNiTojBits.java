@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * Exercise 5.1 150 qs
  */
-public class InsertMintoNiTojBits {
+class InsertMintoNiTojBits {
     
-    public int insert(int M,int N, int i, int j){
+    private int insert(int M, int N, int i, int j){
         int  mask = 1<<(j+1) -1;
         mask = mask<<i;
         mask = ~mask;

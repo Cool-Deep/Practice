@@ -4,9 +4,9 @@ package com.interview.array;
  * https://oj.leetcode.com/problems/trapping-rain-water/
  * https://leetcode.com/problems/trapping-rain-water/
  */
-public class TrappingWater {
+class TrappingWater {
 
-    public int trap(int[] height) {
+    private int trap(int[] height) {
        if(height == null || height.length == 0) {
             return 0;
         }

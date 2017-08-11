@@ -5,15 +5,15 @@ import java.util.Arrays;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-20-maximum-length-chain-of-pairs/
  */
-public class MaximumLengthChainPair {
+class MaximumLengthChainPair {
 
     static class Pair implements Comparable<Pair>{
         public Pair(int a,int b){
             this.a = a;
             this.b = b;
         }
-        int a;
-        int b;
+        final int a;
+        final int b;
         @Override
         public int compareTo(Pair o) {
             if(this.a <= o.a){
@@ -24,7 +24,7 @@ public class MaximumLengthChainPair {
         }
     }
     
-    public int maxLength(Pair[] arr){
+    private int maxLength(Pair[] arr){
         Arrays.sort(arr);
         
         int T[] = new int[arr.length+1];

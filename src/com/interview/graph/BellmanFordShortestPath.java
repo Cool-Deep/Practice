@@ -19,23 +19,20 @@ import java.util.Map;
  * http://www.geeksforgeeks.org/dynamic-programming-set-23-bellman-ford-algorithm/
  */
 
-public class BellmanFordShortestPath {
-
-    //some random big number is treated as infinity. I m not taking INTEGER_MAX as infinity because
-    //doing any addition on that causes integer overflow
-    private static int INFINITY = 10000000;
+class BellmanFordShortestPath {
 
     class NegativeWeightCycleException extends RuntimeException {
     }
     
-    public Map<Vertex<Integer>, Integer> getShortestPath(Graph<Integer> graph,
-            Vertex<Integer> sourceVertex) {
+    private Map<Vertex<Integer>, Integer> getShortestPath(Graph<Integer> graph,
+                                                          Vertex<Integer> sourceVertex) {
 
         Map<Vertex<Integer>, Integer> distance = new HashMap<>();
         Map<Vertex<Integer>, Vertex<Integer>> parent = new HashMap<>();
 
         //set distance of every vertex to be infinity initially
         for(Vertex<Integer> v : graph.getAllVertex()) {
+            int INFINITY = 10000000;
             distance.put(v, INFINITY);
             parent.put(v, null);
         }

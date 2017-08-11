@@ -1,8 +1,6 @@
 package coreJava;
 
-import java.util.ArrayList;
-
-public class ReverseWordInString {
+class ReverseWordInString {
 
 	 public static void main(String args[])
 	    {

@@ -8,9 +8,9 @@ package com.interview.tree;
  * Full tree
  * Complete tree
  */
-public class BoundaryTraversal {
+class BoundaryTraversal {
 
-    public void traversal(Node root){
+    private void traversal(Node root){
         //find starting point for right side
         Node current = root;
         while(current != null){

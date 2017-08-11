@@ -5,11 +5,11 @@ package com.interview.misc;
  * The idea is to get number of days from 00/00/0000 for both the dates and find the
  * difference between them.
  */
-public class DayDifferenceBetweenTwoDates {
+class DayDifferenceBetweenTwoDates {
 
     private static final int days[] = {31,28,31,30,31,30,31,31,30,31,30,31};
     
-    public int diff(int year1,int month1, int day1,int year2, int month2,int day2){
+    private int diff(int year1, int month1, int day1, int year2, int month2, int day2){
         int days1 = year1*365 + day1;
         int days2 = year2*365 + day2;
         
@@ -40,13 +40,10 @@ public class DayDifferenceBetweenTwoDates {
         System.out.println(dd.diff(1945, 3, 7, 2009, 8, 31));
     }
     
-    public boolean isLeapYear(int year){
+    private boolean isLeapYear(int year){
         if(year % 400 == 0){
             return true;
         }
-        if(year % 4 == 0 && year % 100 != 0){
-            return true;
-        }
-        return false;
+        return year % 4 == 0 && year % 100 != 0;
     }
 }

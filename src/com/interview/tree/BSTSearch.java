@@ -22,9 +22,9 @@ package com.interview.tree;
  * 3) Tree with many nodes and key does not exist
  * 4) Tree with many nodes and key exists
  */
-public class BSTSearch {
+class BSTSearch {
     
-    public Node search(Node root, int key){
+    private Node search(Node root, int key){
         if(root == null){
             return null;
         }

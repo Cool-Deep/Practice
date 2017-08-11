@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * http://www.geeksforgeeks.org/search-floor-and-ceil-in-a-sorted-array/
  */
-public class FloorAndCeilingSortedArray {
+class FloorAndCeilingSortedArray {
 
-    public int floor(int input[], int x){
+    private int floor(int input[], int x){
         int low = 0;
         int high = input.length-1;
         while(low <= high){
@@ -21,7 +21,7 @@ public class FloorAndCeilingSortedArray {
         return -1;
     }
 
-    public int ceiling(int input[], int x){
+    private int ceiling(int input[], int x){
         int low = 0;
         int high = input.length-1;
         while(low <= high){

@@ -27,7 +27,7 @@ class Node{
     }
 }
 
-public class LinkList {
+class LinkList {
     
     public Node addNode(int data, Node head, Object... obj){
         Node temp = head;
@@ -70,7 +70,7 @@ public class LinkList {
         return front;
     }
 
-    public Node reverseRecursiveEasy(Node head){
+    private Node reverseRecursiveEasy(Node head){
         if(head == null || head.next == null){
             return head;
         }
@@ -81,28 +81,32 @@ public class LinkList {
         return reversedList;
     }
     
-    public void reverseRecursive(NodeRef headRef){
-        if(headRef.node == null){
-            return;
-        }
-        Node first = headRef.node;
-        Node last = headRef.node.next;
-        if(last == null){
-            return;
-        }
-        NodeRef lastHeadRef = new NodeRef();
-        lastHeadRef.node = last;
-        reverseRecursive(lastHeadRef);
-        first.next.next = first;
-        first.next = null;
-        headRef.node = lastHeadRef.node;
-    }
-    
-    public Node addAtFront(int data, Node head){
-        Node node = Node.newNode(data);
-        return addAtFront(node,head);
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private void reverseRecursive(NodeRef headRef){
+//        if(headRef.node == null){
+//            return;
+//        }
+//        Node first = headRef.node;
+//        Node last = headRef.node.next;
+//        if(last == null){
+//            return;
+//        }
+//        NodeRef lastHeadRef = new NodeRef();
+//        lastHeadRef.node = last;
+//        reverseRecursive(lastHeadRef);
+//        first.next.next = first;
+//        first.next = null;
+//        headRef.node = lastHeadRef.node;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public Node addAtFront(int data, Node head){
+//        Node node = Node.newNode(data);
+//        return addAtFront(node,head);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     public void printList(Node head){
         while(head != null){
             System.out.println(head.data);

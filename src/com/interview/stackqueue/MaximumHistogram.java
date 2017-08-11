@@ -38,7 +38,7 @@ import java.util.LinkedList;
 public class MaximumHistogram {
 
     public int maxHistogram(int input[]){
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Deque<Integer> stack = new LinkedList<>();
         int maxArea = 0;
         int area = 0;
         int i;

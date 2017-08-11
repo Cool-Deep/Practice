@@ -6,171 +6,193 @@ import java.util.Arrays;
 /**
  * Created by Davit on 15/07/16.
  */
-public class TournamentDay39 {
+class TournamentDay39 {
 
-    private static String[] splitAddress(String address) {
-        String protocol = "",
-                domain = "",
-                context = "";
-        String[] result = address.split("://");
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String[] splitAddress(String address) {
+//        String protocol = "",
+//                domain = "",
+//                context = "";
+//        String[] result = address.split("://");
+//
+//        protocol = result[0];
+//        result = result[1].split("\\.com");
+//        domain = result[0];
+//        if (result.length > 1) {
+//            context = result[1].substring(1);
+//            return new String[]{protocol, domain, context};
+//        }
+//        return new String[]{protocol, domain};
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        protocol = result[0];
-        result = result[1].split("\\.com");
-        domain = result[0];
-        if (result.length > 1) {
-            context = result[1].substring(1);
-            return new String[]{protocol, domain, context};
-        }
-        return new String[]{protocol, domain};
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int numberGuessingNaive(int n) {
+//
+//        int[] pay = new int[n + 1];
+//
+//        for (int i = 2; i <= n; i++) {
+//            pay[i] = i;
+//            for (int m = 1; m < i; m++) {
+//                pay[i] = Math.max(pay[i], m);
+//            }
+//        }
+//
+//        return pay[n];
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int numberGuessingNaive(int n) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static ArrayList<Integer> arrayCenter(ArrayList<Integer> A) {
+//
+//        int n = A.size();
+//        int sumA = A.get(0),
+//                minA = A.get(0);
+//        for (int i = 1; i < n; i++) {
+//            sumA += A.get(i);
+//            minA = Math.min(minA, A.get(i));
+//        }
+//
+//        ArrayList<Integer> B = new ArrayList<>();
+//        for (int i = 0; i < n; i++) {
+//            if (Math.abs(n * A.get(i) - sumA) < n * minA) {
+//                B.add(A.get(i));
+//            }
+//        }
+//
+//        return B;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int[] pay = new int[n + 1];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int numberOfOperations(int a, int b) {
+//        int ans = 0;
+//        while (true) {
+//            if (a % b == 0) {
+//                a = a / b;
+//                ans++;
+//            }
+//
+//            if (b % a == 0) {
+//                b = b / a;
+//                ans++;
+//            }
+//
+//            if (a % b != 0 && b % a != 0)
+//                break;
+//        }
+//        return ans;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 2; i <= n; i++) {
-            pay[i] = i;
-            for (int m = 1; m < i; m++) {
-                pay[i] = Math.max(pay[i], m);
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int countDistantPairs(String inputString, int distance) {
+//
+//        int answer = 0;
+//
+//        for (int i = 0; i + distance + 1 < inputString.length(); i++) {
+//            if (inputString.substring(i, i + 1).equals(inputString.substring(i + distance + 1, i + distance + 2))) {
+//                answer++;
+//            }
+//        }
+//
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return pay[n];
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String htmlEndTagByStartTag(String startTag) {
+//
+//        String result = "</";
+//        int position = 1;
+//        while (position < startTag.length() - 1 && startTag.charAt(position) != ' ') {
+//            result += startTag.charAt(position++);
+//        }
+//        result += '>';
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static ArrayList<Integer> arrayCenter(ArrayList<Integer> A) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String integerToStringOfFixedWidth(int number, int width) {
+//
+//        StringBuffer result = new StringBuffer();
+//
+//        for (int i = 0; i < width; i++) {
+//            result.append('0');
+//        }
+//
+//        int position = width - 1;
+//        while (number != 0 && position >= 0) {
+//            result.replace(position, position + 1, Integer.toString(number % 10));
+//            number /= 10;
+//            position--;
+//        }
+//
+//        return result.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int n = A.size();
-        int sumA = A.get(0),
-                minA = A.get(0);
-        for (int i = 1; i < n; i++) {
-            sumA += A.get(i);
-            minA = Math.min(minA, A.get(i));
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isDiagonalMatrix(int[][] matrix) {
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix.length; j++) {
+//                if (matrix[i][j] != 0 && i != j) {
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        ArrayList<Integer> B = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (Math.abs(n * A.get(i) - sumA) < n * minA) {
-                B.add(A.get(i));
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int maxZeros(int n) {
+//        int answer = 0,
+//                maxZeros = 0;
+//        for (int k = 2; k <= n; k++) {
+//            int numZeros = 0,
+//                    value = n;
+//            while (value != 0) {
+//                if (value % k == 0) {
+//                    numZeros++;
+//                }
+//                value /= k;
+//            }
+//            if (numZeros > maxZeros) {
+//                maxZeros = numZeros;
+//                answer = k;
+//            }
+//        }
+//        return answer;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return B;
-    }
-
-    private static int numberOfOperations(int a, int b) {
-        int ans = 0;
-        while (true) {
-            if (a % b == 0) {
-                a = a / b;
-                ans++;
-            }
-
-            if (b % a == 0) {
-                b = b / a;
-                ans++;
-            }
-
-            if (a % b != 0 && b % a != 0)
-                break;
-        }
-        return ans;
-    }
-
-    private static int countDistantPairs(String inputString, int distance) {
-
-        int answer = 0;
-
-        for (int i = 0; i + distance + 1 < inputString.length(); i++) {
-            if (inputString.substring(i, i + 1).equals(inputString.substring(i + distance + 1, i + distance + 2))) {
-                answer++;
-            }
-        }
-
-        return answer;
-    }
-
-    private static String htmlEndTagByStartTag(String startTag) {
-
-        String result = "</";
-        int position = 1;
-        while (position < startTag.length() - 1 && startTag.charAt(position) != ' ') {
-            result += startTag.charAt(position++);
-        }
-        result += '>';
-        return result;
-    }
-
-    private static String integerToStringOfFixedWidth(int number, int width) {
-
-        StringBuffer result = new StringBuffer();
-
-        for (int i = 0; i < width; i++) {
-            result.append('0');
-        }
-
-        int position = width - 1;
-        while (number != 0 && position >= 0) {
-            result.replace(position, position + 1, Integer.toString(number % 10));
-            number /= 10;
-            position--;
-        }
-
-        return result.toString();
-    }
-
-    private static boolean isDiagonalMatrix(int[][] matrix) {
-
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (matrix[i][j] != 0 && i != j) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
-    private static int maxZeros(int n) {
-        int answer = 0,
-                maxZeros = 0;
-        for (int k = 2; k <= n; k++) {
-            int numZeros = 0,
-                    value = n;
-            while (value != 0) {
-                if (value % k == 0) {
-                    numZeros++;
-                }
-                value /= k;
-            }
-            if (numZeros > maxZeros) {
-                maxZeros = numZeros;
-                answer = k;
-            }
-        }
-        return answer;
-    }
-
-    private static int digitsProduct(int product) {
-        class Helper {
-            Helper() {
-            }
-
-            int digitProd(int n) {
-                if (n == 1)
-                    return 1;
-                int product = 1;
-                while (n != 0) {
-                    product *= n % 10;
-                    n /= 10;
-                }
-                return product;
-            }
-        }
-        if (product == 0)
-            return 10;
-        Helper h = new Helper();
-        for (int i = 1; i <= product * product; i++) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int digitsProduct(int product) {
+//        class Helper {
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////            Helper() {
+////            }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//
+//            int digitProd(int n) {
+//                if (n == 1)
+//                    return 1;
+//                int product = 1;
+//                while (n != 0) {
+//                    product *= n % 10;
+//                    n /= 10;
+//                }
+//                return product;
+//            }
+//        }
+//        if (product == 0)
+//            return 10;
+//        Helper h = new Helper();
+//        for (int i = 1; i <= product * product; i++) {
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
             if (h.digitProd(i) == product)
                 return i;
         }
@@ -178,34 +200,38 @@ public class TournamentDay39 {
 
     }
 
-    private static int summaryProficiency(int[] a, int n, int m) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int summaryProficiency(int[] a, int n, int m) {
+//
+//        int result = 0;
+//        for (int i = 0; n > 0; i++) {
+//            if (a[i] >= m) {
+//                result += a[i];
+//                n--;
+//            }
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int result = 0;
-        for (int i = 0; n > 0; i++) {
-            if (a[i] >= m) {
-                result += a[i];
-                n--;
-            }
-        }
-
-        return result;
-    }
-
-    private static int smallestMultiple(int left, int right) {
-
-        for (int candidate = 1; ; candidate++) {
-            boolean correct = true;
-            for (int divisor = left; divisor <= right; divisor++) {
-                if (candidate % divisor != 0) {
-                    correct = false;
-                    break;
-                }
-            }
-            if (correct) {
-                return candidate;
-            }
-        }
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int smallestMultiple(int left, int right) {
+//
+//        for (int candidate = 1; ; candidate++) {
+//            boolean correct = true;
+//            for (int divisor = left; divisor <= right; divisor++) {
+//                if (candidate % divisor != 0) {
+//                    correct = false;
+//                    break;
+//                }
+//            }
+//            if (correct) {
+//                return candidate;
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int countDigitsInNumber(int n) {
         int count = 0;
@@ -216,15 +242,17 @@ public class TournamentDay39 {
         return count;
     }
 
-    private static int pagesNumberingWithInk(int current, int numberOfDigits) {
-        int digitsInCurrent = countDigitsInNumber(current);
-        while (numberOfDigits >= digitsInCurrent) {
-            numberOfDigits -= digitsInCurrent;
-            current++;
-            digitsInCurrent = countDigitsInNumber(current);
-        }
-        return current - 1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int pagesNumberingWithInk(int current, int numberOfDigits) {
+//        int digitsInCurrent = countDigitsInNumber(current);
+//        while (numberOfDigits >= digitsInCurrent) {
+//            numberOfDigits -= digitsInCurrent;
+//            current++;
+//            digitsInCurrent = countDigitsInNumber(current);
+//        }
+//        return current - 1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int minDistance(int dist[], Boolean sptSet[]) {
         // Initialize min value

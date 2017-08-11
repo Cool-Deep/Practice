@@ -9,51 +9,53 @@ import java.util.Set;
  http://www.geeksforgeeks.org/bipartite-graph/
  Includes both DFS and BFS method
  */
-public class BiparteGraph {
+class BiparteGraph {
     
-    public boolean isBiparte(Graph<Integer> graph){
-        
-        Set<Vertex<Integer>> redSet = new HashSet<Vertex<Integer>>();
-        Set<Vertex<Integer>> blueSet = new HashSet<Vertex<Integer>>();
-        
-        Queue<Vertex<Integer>> queue = new LinkedList<Vertex<Integer>>();
-        
-        for(Vertex<Integer> vertex : graph.getAllVertex()){
-            if(!redSet.contains(vertex) && !blueSet.contains(vertex)){
-                queue.add(vertex);
-                redSet.add(vertex);
-                while(!queue.isEmpty()){
-                    vertex = queue.poll();
-                    for(Vertex<Integer> v : vertex.getAdjacentVertexes()){
-                        if(redSet.contains(vertex)){
-                            if(redSet.contains(v)){
-                                return false;
-                            }if(blueSet.contains(v)){
-                                continue;
-                            }
-                            blueSet.add(v);
-                        }
-                        else if(blueSet.contains(vertex)){
-                            if(blueSet.contains(v)){
-                                return false;
-                            }if(redSet.contains(v)){
-                                continue;
-                            }
-                            redSet.add(v);
-                        }
-                        queue.add(v);
-                    }
-                }
-            }
-        }
-        System.out.println(redSet);
-        System.out.println(blueSet);
-        return true;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public boolean isBiparte(Graph<Integer> graph){
+//
+//        Set<Vertex<Integer>> redSet = new HashSet<Vertex<Integer>>();
+//        Set<Vertex<Integer>> blueSet = new HashSet<Vertex<Integer>>();
+//
+//        Queue<Vertex<Integer>> queue = new LinkedList<Vertex<Integer>>();
+//
+//        for(Vertex<Integer> vertex : graph.getAllVertex()){
+//            if(!redSet.contains(vertex) && !blueSet.contains(vertex)){
+//                queue.add(vertex);
+//                redSet.add(vertex);
+//                while(!queue.isEmpty()){
+//                    vertex = queue.poll();
+//                    for(Vertex<Integer> v : vertex.getAdjacentVertexes()){
+//                        if(redSet.contains(vertex)){
+//                            if(redSet.contains(v)){
+//                                return false;
+//                            }if(blueSet.contains(v)){
+//                                continue;
+//                            }
+//                            blueSet.add(v);
+//                        }
+//                        else if(blueSet.contains(vertex)){
+//                            if(blueSet.contains(v)){
+//                                return false;
+//                            }if(redSet.contains(v)){
+//                                continue;
+//                            }
+//                            redSet.add(v);
+//                        }
+//                        queue.add(v);
+//                    }
+//                }
+//            }
+//        }
+//        System.out.println(redSet);
+//        System.out.println(blueSet);
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    public boolean isBiparteDFS(Graph<Integer> graph){
-        Set<Vertex<Integer>> redSet = new HashSet<Vertex<Integer>>();
-        Set<Vertex<Integer>> blueSet = new HashSet<Vertex<Integer>>();
+    private boolean isBiparteDFS(Graph<Integer> graph){
+        Set<Vertex<Integer>> redSet = new HashSet<>();
+        Set<Vertex<Integer>> blueSet = new HashSet<>();
         for(Vertex<Integer> vertex : graph.getAllVertex()){
             if(redSet.contains(vertex) || blueSet.contains(vertex)){
                 continue;
@@ -99,7 +101,7 @@ public class BiparteGraph {
     }
     
     public static void main(String argsp[]){
-        Graph<Integer> graph = new Graph<Integer>(false);
+        Graph<Integer> graph = new Graph<>(false);
         graph.addEdge(1, 2);
         graph.addEdge(2, 5);
         graph.addEdge(1, 3);

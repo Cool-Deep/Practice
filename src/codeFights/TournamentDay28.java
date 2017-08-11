@@ -8,59 +8,65 @@ import java.util.Queue;
 /**
  * Created by Davit on 29/06/16.
  */
-public class TournamentDay28 {
+class TournamentDay28 {
 
-    private static int differentSubstrings(String inputString) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int differentSubstrings(String inputString) {
+//
+//        ArrayList<String> substrings = new ArrayList<>();
+//        int result = 1;
+//
+//        for (int i = 0; i < inputString.length(); i++) {
+//            for (int j = i + 1; j <= inputString.length(); j++) {
+//                substrings.add(inputString.substring(i, j));
+//            }
+//        }
+//        Collections.sort(substrings);
+//        for (int i = 1; i < substrings.size(); i++) {
+//            if (!substrings.get(i).equals(substrings.get(i - 1))) {
+//                result++;
+//            }
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        ArrayList<String> substrings = new ArrayList<>();
-        int result = 1;
-
-        for (int i = 0; i < inputString.length(); i++) {
-            for (int j = i + 1; j <= inputString.length(); j++) {
-                substrings.add(inputString.substring(i, j));
-            }
-        }
-        Collections.sort(substrings);
-        for (int i = 1; i < substrings.size(); i++) {
-            if (!substrings.get(i).equals(substrings.get(i - 1))) {
-                result++;
-            }
-        }
-
-        return result;
-    }
-
-    private static int semiprimeByNumber(int n) {
-
-        class Helper {
-            ArrayList<Integer> generatePrimes(int n) {
-                int current = 2;
-                ArrayList<Integer> primes = new ArrayList<>();
-
-                while (primes.size() < n) {
-                    boolean isPrime = true;
-                    for (int i = 2; i * i <= current; i++) {
-                        if (current % i == 0) {
-                            isPrime = false;
-                            break;
-                        }
-                    }
-                    if (isPrime) {
-                        primes.add(current);
-                    }
-                    current++;
-                }
-                return primes;
-            }
-        }
-        Helper h = new Helper();
-
-        ArrayList<Integer> semiprimes = new ArrayList<>();
-        ArrayList<Integer> primes = h.generatePrimes(n);
-
-        for (int i = 0; i < primes.size(); i++) {
-            for (int j = i; j < primes.size(); j++) {
-                semiprimes.add( primes.get(i) * primes.get(j) );
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int semiprimeByNumber(int n) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            ArrayList<Integer> generatePrimes(int n) {
+////                int current = 2;
+////                ArrayList<Integer> primes = new ArrayList<>();
+////
+////                while (primes.size() < n) {
+////                    boolean isPrime = true;
+////                    for (int i = 2; i * i <= current; i++) {
+////                        if (current % i == 0) {
+////                            isPrime = false;
+////                            break;
+////                        }
+////                    }
+////                    if (isPrime) {
+////                        primes.add(current);
+////                    }
+////                    current++;
+////                }
+////                return primes;
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        ArrayList<Integer> semiprimes = new ArrayList<>();
+//        ArrayList<Integer> primes = h.generatePrimes(n);
+//
+//        for (int i = 0; i < primes.size(); i++) {
+//            for (int j = i; j < primes.size(); j++) {
+//                semiprimes.add( primes.get(i) * primes.get(j) );
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
             }
         }
         Collections.sort(semiprimes);
@@ -68,97 +74,109 @@ public class TournamentDay28 {
         return semiprimes.get(n - 1);
     }
 
-    private static int[] bfsDistancesUnweightedGraph(boolean[][] matrix, int startVertex) {
-        int[] distances = new int[matrix.length];
-        Queue<Integer> queue = new LinkedList<>();
-        int number_of_nodes = matrix[startVertex].length - 1;
-        boolean[] visited = new boolean[number_of_nodes + 1];
-        int i, element;
-        visited[startVertex] = true;
-        queue.add(startVertex);
-        while (!queue.isEmpty()) {
-            distances[startVertex]++;
-            element = queue.remove();
-            i = element;
-            System.out.print(i + "\t");
-            while (i <= number_of_nodes) {
-                if (matrix[element][i] && !visited[i]) {
-                    queue.add(i);
-                    visited[i] = true;
-                }
-                i++;
-            }
-        }
-        return distances;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] bfsDistancesUnweightedGraph(boolean[][] matrix, int startVertex) {
+//        int[] distances = new int[matrix.length];
+//        Queue<Integer> queue = new LinkedList<>();
+//        int number_of_nodes = matrix[startVertex].length - 1;
+//        boolean[] visited = new boolean[number_of_nodes + 1];
+//        int i, element;
+//        visited[startVertex] = true;
+//        queue.add(startVertex);
+//        while (!queue.isEmpty()) {
+//            distances[startVertex]++;
+//            element = queue.remove();
+//            i = element;
+//            System.out.print(i + "\t");
+//            while (i <= number_of_nodes) {
+//                if (matrix[element][i] && !visited[i]) {
+//                    queue.add(i);
+//                    visited[i] = true;
+//                }
+//                i++;
+//            }
+//        }
+//        return distances;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static String mySubstringByLength(String inputString, int start, int length) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String mySubstringByLength(String inputString, int start, int length) {
+//
+//        char[] result = new char[length];
+//        int k = 0;
+//        for (int i = start; i < start + length; i++) {
+//            result[k++] = inputString.charAt(i);
+//        }
+//        return new String(result);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        char[] result = new char[length];
-        int k = 0;
-        for (int i = start; i < start + length; i++) {
-            result[k++] = inputString.charAt(i);
-        }
-        return new String(result);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int circleOfNumbers(int n, int firstNumber) {
+//        return (firstNumber + n / 2) % n;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int circleOfNumbers(int n, int firstNumber) {
-        return (firstNumber + n / 2) % n;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int toAndFroNaive(int a, int b, int t) {
+//        int len = Math.abs(b - a);
+//        t %= (2 * len);
+//        if (t <= len)
+//            return Math.min(a, b) + t;
+//        else {
+//            t -= len;
+//            return b + (a - b) / Math.abs(a - b) * t;
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int toAndFroNaive(int a, int b, int t) {
-        int len = Math.abs(b - a);
-        t %= (2 * len);
-        if (t <= len)
-            return Math.min(a, b) + t;
-        else {
-            t -= len;
-            return b + (a - b) / Math.abs(a - b) * t;
-        }
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String bijectiveBase10(int a) {
+//        ArrayList<Integer> result = new ArrayList<>();
+//        StringBuilder strResult = new StringBuilder();
+//        while (a > 0) {
+//            result.add(a % 10);
+//            a /= 10;
+//        }
+//        for (int i = 0; i < result.size(); i++) {
+//            if (i + 1 < result.size() && result.get(i) <= 0) {
+//                result.set(i, result.get(i) + 10);
+//                result.set(i + 1, result.get(i + 1) - 1);
+//            }
+//        }
+//        for (int i = 0; i < result.size(); i++) {
+//            if (result.get(i) == 10) {
+//                strResult.append('A');
+//            } else if (result.get(i) != 0) {
+//                strResult.append(result.get(i));
+//            }
+//        }
+//        strResult.reverse();
+//        return strResult.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static String bijectiveBase10(int a) {
-        ArrayList<Integer> result = new ArrayList<>();
-        StringBuilder strResult = new StringBuilder();
-        while (a > 0) {
-            result.add(a % 10);
-            a /= 10;
-        }
-        for (int i = 0; i < result.size(); i++) {
-            if (i + 1 < result.size() && result.get(i) <= 0) {
-                result.set(i, result.get(i) + 10);
-                result.set(i + 1, result.get(i + 1) - 1);
-            }
-        }
-        for (int i = 0; i < result.size(); i++) {
-            if (result.get(i) == 10) {
-                strResult.append('A');
-            } else if (result.get(i) != 0) {
-                strResult.append(result.get(i));
-            }
-        }
-        strResult.reverse();
-        return strResult.toString();
-    }
-
-    private static Integer arrayConversion(ArrayList<Integer> inputArray) {
-
-        int operation = 1;
-        while (inputArray.size() > 1) {
-            ArrayList<Integer> newArray = new ArrayList<>();
-            for (int i = 0; i < inputArray.size(); i += 2) {
-                if (operation % 2 == 1) {
-                    newArray.add(inputArray.get(i) + inputArray.get(i + 1));
-                } else {
-                    newArray.add(inputArray.get(i) * inputArray.get(i + 1));
-                }
-            }
-            inputArray = newArray;
-            operation++;
-        }
-
-        return inputArray.get(0);
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static Integer arrayConversion(ArrayList<Integer> inputArray) {
+//
+//        int operation = 1;
+//        while (inputArray.size() > 1) {
+//            ArrayList<Integer> newArray = new ArrayList<>();
+//            for (int i = 0; i < inputArray.size(); i += 2) {
+//                if (operation % 2 == 1) {
+//                    newArray.add(inputArray.get(i) + inputArray.get(i + 1));
+//                } else {
+//                    newArray.add(inputArray.get(i) * inputArray.get(i + 1));
+//                }
+//            }
+//            inputArray = newArray;
+//            operation++;
+//        }
+//
+//        return inputArray.get(0);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static boolean cyclicSequence(int[] sequence) {
         for (int i = 0; i < sequence.length; i++) {

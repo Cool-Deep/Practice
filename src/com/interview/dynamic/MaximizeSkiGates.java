@@ -16,12 +16,12 @@ import java.util.Map;
  * is to either change or not change direction at every gate(provided you have remainingDirectionChanges > 0).
  * Do recursion and apply memoization to make it top down recursive solution.
  */
-public class MaximizeSkiGates {
+class MaximizeSkiGates {
     class Index {
-        int remainingChanges;
-        int current;
-        boolean isRight;
-        int prevItem;
+        final int remainingChanges;
+        final int current;
+        final boolean isRight;
+        final int prevItem;
 
         Index(int remainingChanges, int current, boolean isRight, int prevItem) {
             this.remainingChanges = remainingChanges;
@@ -39,8 +39,7 @@ public class MaximizeSkiGates {
 
             if (remainingChanges != index.remainingChanges) return false;
             if (current != index.current) return false;
-            if (isRight != index.isRight) return false;
-            return prevItem == index.prevItem;
+            return isRight == index.isRight && prevItem == index.prevItem;
 
         }
 
@@ -54,12 +53,12 @@ public class MaximizeSkiGates {
         }
     }
 
-    public int solution(int gates[], int totalDirectionChanges) {
+    private int solution(int gates[], int totalDirectionChanges) {
         Map<Index, Integer> dpMap = new HashMap<>();
         return solution(gates, totalDirectionChanges, 0, false, -1, dpMap);
     }
 
-    public int solution(int gates[], int remainingDirectionChanges, int current, boolean isRight, int prevItem, Map<Index, Integer> dpMap) {
+    private int solution(int gates[], int remainingDirectionChanges, int current, boolean isRight, int prevItem, Map<Index, Integer> dpMap) {
         if(current >= gates.length) {
             return 0;
         }

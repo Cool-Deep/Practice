@@ -1,6 +1,6 @@
 package com.interview.string;
 
-public class CycleLeaderIteration {
+class CycleLeaderIteration {
 
     //assumption that size is going to be 3^k +1 from start to end
     public void iterate(char str[],int start,int end){

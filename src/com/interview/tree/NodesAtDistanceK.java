@@ -8,7 +8,7 @@ package com.interview.tree;
  * dest might/might not exists in the tree
  * root could be null
  */
-public class NodesAtDistanceK {
+class NodesAtDistanceK {
 
     private void findInChild(Node root, int k){
         if(root == null){
@@ -21,7 +21,7 @@ public class NodesAtDistanceK {
         findInChild(root.right, k-1);
     }
     
-    public int printNodes(Node root,int dest, int k){
+    private int printNodes(Node root, int dest, int k){
         if(root == null){
             return -1;
         }

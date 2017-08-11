@@ -8,16 +8,16 @@ import java.util.Stack;
  * http://www.glassdoor.com/Interview/Create-an-iterator-to-traverse-a-binary-tree-When-the-next-function-is-called-on-the-binary-tree-return-the-value-at-the-QTN_674695.htm
  * null tree.
  */
-public class NextInorderSuccessorIterator {
+class NextInorderSuccessorIterator {
 
     private Node root = null;
-    Stack<Node> stack = new Stack<Node>();
-    Set<Node> visited = new HashSet<Node>();
-    NextInorderSuccessorIterator(Node root){
+    private final Stack<Node> stack = new Stack<>();
+    // --Commented out by Inspection (8/10/17, 5:13 PM):Set<Node> visited = new HashSet<Node>();
+    private NextInorderSuccessorIterator(Node root){
         this.root = root;
     }
     
-    public int next(){
+    private int next(){
         Node node = null;
         while(root != null){
             stack.push(root);
@@ -29,11 +29,8 @@ public class NextInorderSuccessorIterator {
         return node.data;
     }
     
-    public boolean hasNext(){
-        if(root != null || stack.size() > 0){
-            return true;
-        }
-        return false;
+    private boolean hasNext(){
+        return root != null || stack.size() > 0;
     }
     
     public static void main(String args[]){

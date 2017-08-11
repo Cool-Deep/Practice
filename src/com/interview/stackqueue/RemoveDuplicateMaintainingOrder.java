@@ -12,8 +12,8 @@ import java.util.*;
  * Reference:
  * https://leetcode.com/problems/remove-duplicate-letters/
  */
-public class RemoveDuplicateMaintainingOrder {
-    public String removeDuplicateLetters(String s) {
+class RemoveDuplicateMaintainingOrder {
+    private String removeDuplicateLetters(String s) {
         Deque<Character> stack = new LinkedList<>();
         Map<Character, Integer> count = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
@@ -42,7 +42,7 @@ public class RemoveDuplicateMaintainingOrder {
             visited.add(ch);
         }
 
-        StringBuffer buff = new StringBuffer();
+        StringBuilder buff = new StringBuilder();
         while (!stack.isEmpty()) {
             buff.append(stack.pollLast());
         }

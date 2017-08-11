@@ -5,17 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoadBalancers {
+class LoadBalancers {
 
-    private List<String> servers = new ArrayList<String>();
-    Map<String,Integer> index = new HashMap<String,Integer>();
+    private final List<String> servers = new ArrayList<>();
+    private final Map<String,Integer> index = new HashMap<>();
     
-    public void addServer(String name){
+    private void addServer(String name){
         servers.add(name);
         index.put(name, servers.size()-1);
     }
     
-    public void removeServer(String name){
+    private void removeServer(String name){
         Integer pos = index.get(name);
         if(pos == null){
             throw new IllegalArgumentException();
@@ -24,7 +24,7 @@ public class LoadBalancers {
         servers.remove(servers.size()-1);
     }
     
-    public String getRandom(){
+    private String getRandom(){
         int r = (int)(Math.random()*1000);
         return servers.get(r%servers.size());
     }

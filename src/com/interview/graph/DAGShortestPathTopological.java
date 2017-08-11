@@ -7,12 +7,12 @@ import java.util.Map;
 /**
 http://www.geeksforgeeks.org/shortest-path-for-directed-acyclic-graphs/
  */
-public class DAGShortestPathTopological<T> {
+class DAGShortestPathTopological<T> {
 
-    public Map<Vertex<T>,Integer> shortestPath(Graph<T> graph,Vertex<T> startVertex){
+    Map<Vertex<T>,Integer> shortestPath(Graph<T> graph, Vertex<T> startVertex){
         
-        Map<Vertex<T>,Integer> distance = new HashMap<Vertex<T>,Integer>();
-        TopologicalSort<T> sort = new TopologicalSort<T>();
+        Map<Vertex<T>,Integer> distance = new HashMap<>();
+        TopologicalSort<T> sort = new TopologicalSort<>();
         Deque<Vertex<T>> deque = sort.topSort(graph);
         distance.put(startVertex, 0);
         while(!deque.isEmpty()){
@@ -28,11 +28,11 @@ public class DAGShortestPathTopological<T> {
     }
     
     private int getDistance( Vertex<T> vertex,Map<Vertex<T>,Integer> distance){
-        return distance.containsKey(vertex) ? distance.get(vertex) : 1000;
+        return distance.getOrDefault(vertex, 1000);
     }
     
     public static void main(String args[]){
-        Graph<Integer> graph = new Graph<Integer>(true);
+        Graph<Integer> graph = new Graph<>(true);
         graph.addEdge(1, 2,4);
         graph.addEdge(2, 3,3);
         graph.addEdge(2, 4,2);
@@ -42,7 +42,7 @@ public class DAGShortestPathTopological<T> {
         graph.addEdge(5, 6,2);
         graph.addEdge(4, 7,3);
 
-        DAGShortestPathTopological<Integer> shortestPath = new DAGShortestPathTopological<Integer>();
+        DAGShortestPathTopological<Integer> shortestPath = new DAGShortestPathTopological<>();
         Map<Vertex<Integer>,Integer> distance = shortestPath.shortestPath(graph, graph.getAllVertex().iterator().next());
         System.out.print(distance);
         

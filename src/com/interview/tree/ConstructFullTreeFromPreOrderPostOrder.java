@@ -8,9 +8,9 @@ package com.interview.tree;
  * Tree with big on left side
  * Tree with big on right side
  */
-public class ConstructFullTreeFromPreOrderPostOrder {
+class ConstructFullTreeFromPreOrderPostOrder {
 
-    public Node constructTree(int preorder[],int postorder[]){
+    private Node constructTree(int preorder[], int postorder[]){
     
         return constructTree(preorder, postorder, 0, postorder.length-2, 0);
         

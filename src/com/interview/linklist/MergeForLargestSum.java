@@ -8,9 +8,9 @@ package com.interview.linklist;
  * Test that chain meets multipe times
  * Test that one chain ends where it meets chain 2
  */
-public class MergeForLargestSum {
+class MergeForLargestSum {
 
-    Node maxChain(Node head1, Node head2){
+    private Node maxChain(Node head1, Node head2){
         if(head1 == null){
             return head2;
         }

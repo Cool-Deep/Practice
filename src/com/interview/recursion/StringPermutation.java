@@ -12,9 +12,9 @@ import java.util.TreeMap;
  * Generate all permutations of string in lexicographically sorted order where repetitions of
  * character is possible in string.
  */
-public class StringPermutation {
+class StringPermutation {
 
-    public List<String> permute(char input[]) {
+    private List<String> permute(char input[]) {
         Map<Character, Integer> countMap = new TreeMap<>();
         for (char ch : input) {
             countMap.compute(ch, (key, val) -> {
@@ -39,7 +39,7 @@ public class StringPermutation {
         return resultList;
     }
 
-    public void permuteUtil(char str[], int count[], char result[], int level, List<String> resultList) {
+    private void permuteUtil(char str[], int count[], char result[], int level, List<String> resultList) {
         if (level == result.length) {
             resultList.add(new String(result));
             return;
@@ -56,15 +56,17 @@ public class StringPermutation {
         }
     }
 
-    private void printArray(char input[]) {
-        for(char ch : input) {
-            System.out.print(ch);
-        }
-        System.out.println();
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private void printArray(char input[]) {
+//        for(char ch : input) {
+//            System.out.print(ch);
+//        }
+//        System.out.println();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String args[]) {
         StringPermutation sp = new StringPermutation();
-        sp.permute("AABC".toCharArray()).forEach(s -> System.out.println(s));
+        sp.permute("AABC".toCharArray()).forEach(System.out::println);
     }
 }

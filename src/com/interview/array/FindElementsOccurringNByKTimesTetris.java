@@ -9,39 +9,39 @@ package com.interview.array;
  * check if occurrence is more than n/k. This is way too much effort to find elements more than
  * n by k even though it saves some space.
  */
-public class FindElementsOccurringNByKTimesTetris {
+class FindElementsOccurringNByKTimesTetris {
 
     public static class Pair{
         public int element;
         public int count;
     }
     
-    public void printElementsOccurringKTimes(int arr[],int k){
+    private void printElementsOccurringKTimes(int arr[], int k){
         Pair[] p = new Pair[k];
         for(int i=0; i < k; i++){
             p[i] = new Pair();
         }
-        for(int i=0; i < arr.length; i++){
-            
-            int j=0;
-            for(j=0; j < k; j++){
-                if(p[j].element == arr[i]){
+        for (int anArr1 : arr) {
+
+            int j = 0;
+            for (j = 0; j < k; j++) {
+                if (p[j].element == anArr1) {
                     p[j].count++;
                     break;
                 }
             }
-            
-            if(j == k){
-                int l=0;
-                for(l =0; l < k ; l++){
-                    if(p[l].count == 0){
-                        p[l].element = arr[i];
+
+            if (j == k) {
+                int l = 0;
+                for (l = 0; l < k; l++) {
+                    if (p[l].count == 0) {
+                        p[l].element = anArr1;
                         p[l].count = 1;
                         break;
                     }
                 }
-                if(l == k){
-                    for(int t =0; t < k ; t++){
+                if (l == k) {
+                    for (int t = 0; t < k; t++) {
                         p[t].count--;
                     }
                 }
@@ -51,8 +51,8 @@ public class FindElementsOccurringNByKTimesTetris {
         for(int i=0; i < k ; i++){
             if(p[i].count > 0){
                 int count =0;
-                for(int j=0; j < arr.length; j++){
-                    if(arr[j] == p[i].element){
+                for (int anArr : arr) {
+                    if (anArr == p[i].element) {
                         count++;
                     }
                 }

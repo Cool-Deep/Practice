@@ -6,14 +6,14 @@ import java.util.List;
 /**
  * https://leetcode.com/problems/permutation-sequence/
  */
-public class GetKthPermutation {
+class GetKthPermutation {
 
-    public String getPermutation(int n, int k) {
+    private String getPermutation(int n, int k) {
         List<Integer> unused = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
             unused.add(i);
         }
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         int fac = factorial(n);
         int d = n;
         while (n > 1) {
@@ -32,8 +32,8 @@ public class GetKthPermutation {
         }
 
         if (n == 1) {
-            for (int i = 0; i < unused.size(); i++) {
-                result.append(unused.get(i));
+            for (Integer anUnused : unused) {
+                result.append(anUnused);
             }
         }
         return result.toString();

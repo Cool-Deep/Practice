@@ -15,7 +15,7 @@ import java.util.List;
  * http://www.geeksforgeeks.org/z-algorithm-linear-time-pattern-searching-algorithm/
  * http://www.utdallas.edu/~besp/demo/John2010/z-algorithm.htm
  */
-public class ZAlgorithm {
+class ZAlgorithm {
 
     private int[] calculateZ(char input[]) {
         int Z[] = new int[input.length];
@@ -51,7 +51,7 @@ public class ZAlgorithm {
     /**
      * Returns list of all indices where pattern is found in text.
      */
-    public List<Integer> matchPattern(char text[], char pattern[]) {
+    private List<Integer> matchPattern(char text[], char pattern[]) {
         char newString[] = new char[text.length + pattern.length + 1];
         int i = 0;
         for(char ch : pattern) {

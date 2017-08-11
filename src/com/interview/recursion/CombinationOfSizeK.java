@@ -3,9 +3,9 @@ package com.interview.recursion;
 /**
  * http://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/
  */
-public class CombinationOfSizeK {
+class CombinationOfSizeK {
 
-    public void combination(int arr[],int k){
+    private void combination(int arr[], int k){
         int result[] = new int[k];
         combinationUtil(arr,k,0,result,0);
     }

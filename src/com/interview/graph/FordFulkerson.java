@@ -19,16 +19,14 @@ import java.util.*;
  * http://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/
  * https://en.wikipedia.org/wiki/Edmonds%E2%80%93Karp_algorithm
  */
-public class FordFulkerson {
+class FordFulkerson {
 
-    public int maxFlow(int capacity[][], int source, int sink){
+    private int maxFlow(int capacity[][], int source, int sink){
 
         //declare and initialize residual capacity as total avaiable capacity initially.
         int residualCapacity[][] = new int[capacity.length][capacity[0].length];
         for (int i = 0; i < capacity.length; i++) {
-            for (int j = 0; j < capacity[0].length; j++) {
-                residualCapacity[i][j] = capacity[i][j];
-            }
+            System.arraycopy(capacity[i], 0, residualCapacity[i], 0, capacity[0].length);
         }
 
         //this is parent map for storing BFS parent

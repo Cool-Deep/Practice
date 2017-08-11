@@ -29,7 +29,7 @@ package com.interview.tree;
  * http://www.geeksforgeeks.org/avl-tree-set-1-insertion/
  * 
  */
-public class AVLTree {
+class AVLTree {
 
     private Node leftRotate(Node root){
         Node newRoot = root.right;
@@ -75,7 +75,7 @@ public class AVLTree {
         return 1 + Math.max((root.left != null ? root.left.size : 0), (root.right != null ? root.right.size : 0));
     }
     
-    public Node insert(Node root, int data){
+    private Node insert(Node root, int data){
         if(root == null){
             return Node.newNode(data);
         }

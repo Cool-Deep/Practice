@@ -21,13 +21,9 @@ package coreJava;
  2
  1 2 4
  */
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
-public class twoDarray {
+class twoDarray {
 
 	public static void main(String... args) {
 

@@ -10,10 +10,10 @@ import java.util.Queue;
  * A node with only left child
  * A node with both left and right child
  */
-public class IsCompleteBinaryTree {
+class IsCompleteBinaryTree {
 
-    public boolean isComplete(Node root){
-        Queue<Node> queue = new LinkedList<Node>();
+    private boolean isComplete(Node root){
+        Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
         boolean foundFirstNonFull = false;
         while(!queue.isEmpty()){

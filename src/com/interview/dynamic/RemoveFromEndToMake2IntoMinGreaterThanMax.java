@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/remove-minimum-elements-either-side-2min-max/
  */
-public class RemoveFromEndToMake2IntoMinGreaterThanMax {
+class RemoveFromEndToMake2IntoMinGreaterThanMax {
 
-    public int removeFromEnd(int input[]){
+    private int removeFromEnd(int input[]){
         return removeFromEnd(input,0,input.length-1);
     }
     
@@ -41,7 +41,7 @@ public class RemoveFromEndToMake2IntoMinGreaterThanMax {
         return max;
     }
     
-    public int removeFromEndDynamic(int input[]){
+    private int removeFromEndDynamic(int input[]){
         int T[][] = new int[input.length][input.length];
         for(int l=1; l <= input.length; l++){
             for(int i=0, j = i + l-1; i < input.length-l+1; i++,j++){

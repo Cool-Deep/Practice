@@ -18,22 +18,25 @@ import java.util.StringTokenizer;
  *
  * https://leetcode.com/problems/simplify-path/
  */
-public class SimplyPath {
+class SimplyPath {
 
-    public String simplifyPath(String path) {
+    private String simplifyPath(String path) {
         Deque<String> stack = new LinkedList<>();
         StringTokenizer token = new StringTokenizer(path, "/");
         while (token.hasMoreTokens()) {
             String tok = token.nextToken();
-            if (tok.equals(".")) {
-                continue;
-            } else if (tok.equals("..")) {
-                stack.pollFirst();
-            } else {
-                stack.offerFirst(tok);
+            switch (tok) {
+                case ".":
+                    break;
+                case "..":
+                    stack.pollFirst();
+                    break;
+                default:
+                    stack.offerFirst(tok);
+                    break;
             }
         }
-        StringBuffer buff = new StringBuffer();
+        StringBuilder buff = new StringBuilder();
         if (stack.isEmpty()) {
             buff.append("/");
         }

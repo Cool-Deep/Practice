@@ -3,15 +3,15 @@ package com.interview.graph;
 /**
  http://www.geeksforgeeks.org/find-number-of-islands/
  */
-public class NumberOfIsland {
+class NumberOfIsland {
 
-    public int numberOfIsland(int[][] graph){
+    private int numberOfIsland(int[][] graph){
         
         boolean[][] visited = new boolean[graph.length][graph.length];
         int count = 0;
         for(int i=0; i < graph.length ; i ++){
             for(int j =0 ; j < graph[i].length ; j++){
-                if(visited[i][j] == false && graph[i][j] == 1) {
+                if(!visited[i][j] && graph[i][j] == 1) {
                     count++;
                     DFS(graph,visited,i,j);
                 }

@@ -19,7 +19,7 @@ class Triplet{
     }
     
 }
-public class KadaneWrapArray {
+class KadaneWrapArray {
 
     public Triplet kadaneWrap(int arr[]){
         Triplet straightKadane = kadane(arr);
@@ -46,7 +46,7 @@ public class KadaneWrapArray {
      * @param arr
      * @return
      */
-    public Triplet kadane(int arr[]){
+    private Triplet kadane(int arr[]){
         int sum =0;
         int cStart = 0;
         int mStart = 0;

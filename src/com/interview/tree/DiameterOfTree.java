@@ -10,9 +10,9 @@ class Height{
  * All left nodes
  * All right nodes
  */
-public class DiameterOfTree {
+class DiameterOfTree {
 
-    public int diameter(Node root){
+    private int diameter(Node root){
         Height height = new Height();
         return diameter(root,height);
     }

@@ -7,11 +7,11 @@ package com.interview.linklist;
  * reverse sorted list
  * 0 1 or more nodes in the list
  */
-public class DeleteNodeWithGreaterValueOnRight {
+class DeleteNodeWithGreaterValueOnRight {
 
     private int maxFound = Integer.MIN_VALUE;
     
-    public Node deleteNodes(Node head){
+    private Node deleteNodes(Node head){
         if(head == null){
             return null;
         }

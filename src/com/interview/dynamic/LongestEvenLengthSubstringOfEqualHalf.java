@@ -7,9 +7,9 @@ package com.interview.dynamic;
  * odd length string
  * 0 length string
  */
-public class LongestEvenLengthSubstringOfEqualHalf {
+class LongestEvenLengthSubstringOfEqualHalf {
     
-    public int findMaxLength(int input[]){
+    private int findMaxLength(int input[]){
         assert input != null;
         int T[][] = new int[input.length][input.length];
         

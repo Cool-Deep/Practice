@@ -3,9 +3,9 @@ package com.interview.string;
 /**
  * https://leetcode.com/discuss/questions/oj/multiply-strings
  */
-public class MultiplyStrings {
+class MultiplyStrings {
 
-    public String multiply(String num1, String num2) {
+    private String multiply(String num1, String num2) {
         String output = multiply(num1, num2, 0, num1.length() - 1, 0, num2.length() - 1);
         return output;
     }
@@ -50,7 +50,7 @@ public class MultiplyStrings {
             return "0";
         }
         int carry = 0;
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuffer = new StringBuilder();
         for (int i = larger.length() - 1; i >= 0; i--) {
             int r1 = larger.charAt(i) - '0';
             int r = r1 * r2 + carry;
@@ -64,18 +64,18 @@ public class MultiplyStrings {
     }
 
     private String append0s(String v1, int count ) {
-        StringBuffer buff = new StringBuffer(v1);
+        StringBuilder buff = new StringBuilder(v1);
         for (int i = 0; i < count; i++) {
             buff.append("0");
         }
         return buff.toString();
     }
 
-    public String add(char[] num1,char[] num2){
+    private String add(char[] num1, char[] num2){
         int index1 = num1.length -1;
         int index2 = num2.length -1;
         int carry = 0;
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         while(index1 >= 0 && index2 >= 0){
             int r1 = num1[index1] - '0';
             int r2 = num2[index2] - '0';

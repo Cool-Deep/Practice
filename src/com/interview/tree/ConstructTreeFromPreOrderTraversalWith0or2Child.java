@@ -9,9 +9,9 @@ package com.interview.tree;
 class PreIndex{
     int index;
 }
-public class ConstructTreeFromPreOrderTraversalWith0or2Child {
+class ConstructTreeFromPreOrderTraversalWith0or2Child {
 
-    public Node createTree(int pre[],char val[]){
+    private Node createTree(int pre[], char val[]){
         PreIndex pi = new PreIndex();
         pi.index = 0;
         return createTree(pre, val,pi);

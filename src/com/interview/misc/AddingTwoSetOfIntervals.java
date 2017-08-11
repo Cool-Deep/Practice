@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class AddingTwoSetOfIntervals {
+class AddingTwoSetOfIntervals {
 
     public static class Pair implements Comparable<Pair>{
-        int low;
+        final int low;
         int high;
         Pair(int low,int high){
             this.low = low;
@@ -27,11 +27,11 @@ public class AddingTwoSetOfIntervals {
         }
     }
     
-    public List<Pair> combineInterval(Pair[] arr1, Pair[] arr2){
+    private List<Pair> combineInterval(Pair[] arr1, Pair[] arr2){
         Arrays.sort(arr1);
         Arrays.sort(arr2);
         
-        List<Pair> result = new ArrayList<Pair>();
+        List<Pair> result = new ArrayList<>();
         int i=0;
         int j=0;
         Pair current = new Pair(Integer.MIN_VALUE,Integer.MIN_VALUE+1);

@@ -3,14 +3,14 @@ package com.interview.number;
 /**
  * Babylonian method for calculating square root
  */
-public class SquareRoot {
+class SquareRoot {
 
-    double findRoot(int num){
+    private double findRoot(){
         double start =0;
-        double end = num;
+        double end = 144;
         while(Math.abs(start - end) > 0.01){
             end = (start + end)/2;
-            start = num/end;
+            start = 144 /end;
         }
         
         return end;
@@ -18,6 +18,6 @@ public class SquareRoot {
     
     public static void main(String args[]){
         SquareRoot sr = new SquareRoot();
-        System.out.println(sr.findRoot(144));
+        System.out.println(sr.findRoot());
     }
 }

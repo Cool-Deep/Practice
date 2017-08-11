@@ -14,9 +14,9 @@ package com.interview.dynamic;
  * References
  * http://www.geeksforgeeks.org/dynamic-programming-set-12-longest-palindromic-subsequence/
  */
-public class LongestPalindromicSubsequence {
+class LongestPalindromicSubsequence {
 
-    public int calculate1(char []str){
+    private int calculate1(char[] str){
         int T[][] = new int[str.length][str.length];
         for(int i=0; i < str.length; i++){
             T[i][i] = 1;
@@ -37,7 +37,7 @@ public class LongestPalindromicSubsequence {
     }
 
 
-    public int calculateRecursive(char str[],int start,int len){
+    private int calculateRecursive(char str[], int start, int len){
         if(len == 1){
             return 1;
         }

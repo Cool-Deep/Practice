@@ -14,9 +14,9 @@ import java.util.Arrays;
  * https://leetcode.com/problems/wiggle-sort/
  * https://leetcode.com/problems/wiggle-sort-ii/
  */
-public class WiggleSort {
+class WiggleSort {
 
-    public void wiggleSort(int[] arr) {
+    private void wiggleSort(int[] arr) {
         if (arr.length == 0) {
             return;
         }
@@ -41,16 +41,18 @@ public class WiggleSort {
         }
     }
 
-    //in this version we are looking for nums[0] <= nums[1] >= nums[2] <= nums[3] and so on.
-    public void wiggleSort1(int[] nums) {
-        for (int i=1; i<nums.length; i++) {
-            int a = nums[i-1];
-            if ((i%2 == 1) == (a > nums[i])) {
-                nums[i-1] = nums[i];
-                nums[i] = a;
-            }
-        }
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    //in this version we are looking for nums[0] <= nums[1] >= nums[2] <= nums[3] and so on.
+//    public void wiggleSort1(int[] nums) {
+//        for (int i=1; i<nums.length; i++) {
+//            int a = nums[i-1];
+//            if ((i%2 == 1) == (a > nums[i])) {
+//                nums[i-1] = nums[i];
+//                nums[i] = a;
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private int next(int index, int n) {
         return (2*index + 1) % (n | 1);

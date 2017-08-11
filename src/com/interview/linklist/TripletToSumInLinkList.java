@@ -9,9 +9,9 @@ package com.interview.linklist;
  * 0 sum
  * positive sum
  */
-public class TripletToSumInLinkList {
+class TripletToSumInLinkList {
 
-    public void printTriplet(Node head1, Node head2, Node head3,int sum){
+    private void printTriplet(Node head1, Node head2, Node head3, int sum){
         if(head1 == null || head2 == null || head3 == null){
             return;
         }

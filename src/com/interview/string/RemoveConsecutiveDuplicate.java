@@ -11,9 +11,9 @@ package com.interview.string;
  * all duplicates
  * duplicates at certain different places
  */
-public class RemoveConsecutiveDuplicate {
+class RemoveConsecutiveDuplicate {
 
-    public int removeDuplicates(char input[]){
+    private int removeDuplicates(char input[]){
         int slow = 0;
         int fast = 0;
         int index = 0;

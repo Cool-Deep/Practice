@@ -13,9 +13,9 @@ import java.util.Map;
  * Graph is dense
  * Graph is sparse
  */
-public class CloneDirectedGraph<T> {
+class CloneDirectedGraph<T> {
 
-    public Graph<T> clone(Graph<T> graph){
+    Graph<T> clone(Graph<T> graph){
         if(graph == null){
             return null;
         }
@@ -25,7 +25,7 @@ public class CloneDirectedGraph<T> {
         if(graph.getAllVertex().size() == 0){
             throw new IllegalArgumentException("No vertex in the graph");
         }
-        Map<Vertex<T>,Vertex<T>> cloneMap = new HashMap<Vertex<T>,Vertex<T>>();
+        Map<Vertex<T>,Vertex<T>> cloneMap = new HashMap<>();
         for(Vertex<T> vertex : graph.getAllVertex()){
             clone(vertex,cloneMap);
         }
@@ -41,7 +41,7 @@ public class CloneDirectedGraph<T> {
         if(cloneMap.containsKey(origVertex)){
             cloneVertex = cloneMap.get(origVertex);
         }else{
-            cloneVertex = new Vertex<T>(origVertex.getId()*10);
+            cloneVertex = new Vertex<>(origVertex.getId() * 10);
             cloneMap.put(origVertex, cloneVertex);
         }
         for(Edge<T> edge : origVertex.getEdges()){
@@ -58,18 +58,18 @@ public class CloneDirectedGraph<T> {
     private void updateMap(Map<Vertex<T>,Vertex<T>> cloneMap, Vertex<T> cloneVertex, Vertex<T> adjVertex, Edge<T> edge){
         if(cloneMap.containsKey(adjVertex)){
             Vertex<T> adjVertexClone = cloneMap.get(adjVertex);
-            Edge<T> newEdge = new Edge<T>(cloneVertex, adjVertexClone, edge.isDirected(), edge.getWeight());
+            Edge<T> newEdge = new Edge<>(cloneVertex, adjVertexClone, edge.isDirected(), edge.getWeight());
             cloneVertex.addAdjacentVertex(newEdge, adjVertexClone);
         }else{
-            Vertex<T> adjVertexClone = new Vertex<T>(adjVertex.getId());
+            Vertex<T> adjVertexClone = new Vertex<>(adjVertex.getId());
             cloneMap.put(adjVertex, adjVertexClone);
-            Edge<T> newEdge = new Edge<T>(cloneVertex, adjVertexClone, edge.isDirected(), edge.getWeight());
+            Edge<T> newEdge = new Edge<>(cloneVertex, adjVertexClone, edge.isDirected(), edge.getWeight());
             cloneVertex.addAdjacentVertex(newEdge, adjVertexClone);
         }
     }
     
     public static void main(String args[]){
-        Graph<Integer> graph = new Graph<Integer>(true);
+        Graph<Integer> graph = new Graph<>(true);
         graph.addEdge(0, 3);
         graph.addEdge(0, 2);
         graph.addEdge(0, 4);

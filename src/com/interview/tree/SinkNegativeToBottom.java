@@ -3,9 +3,9 @@ package com.interview.tree;
 /**
  * http://www.careercup.com/question?id=5344154741637120
  */
-public class SinkNegativeToBottom {
+class SinkNegativeToBottom {
 
-    public void sinkZero(Node root) {
+    private void sinkZero(Node root) {
         if (root == null) {
             return;
         }

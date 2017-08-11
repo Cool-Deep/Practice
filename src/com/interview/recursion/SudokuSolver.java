@@ -1,7 +1,5 @@
 package com.interview.recursion;
 
-import java.util.Arrays;
-
 /**
  * Date 03/24/2016
  * @author Tushar Roy
@@ -10,9 +8,9 @@ import java.util.Arrays;
  *
  * https://leetcode.com/problems/sudoku-solver/
  */
-public class SudokuSolver {
+class SudokuSolver {
 
-    public void solveSudoku(char[][] input) {
+    private void solveSudoku(char[][] input) {
         boolean[][] horizontal = new boolean[9][9];
         boolean[][] vertical = new boolean[9][9];
         boolean[][] box = new boolean[9][9];
@@ -45,7 +43,7 @@ public class SudokuSolver {
 
         for (int val = 1; val <= 9; val++) {
             int index = 3*(row/3) + col/3;
-            if (horizontal[row][val - 1] == false && vertical[col][val - 1] == false && box[index][val - 1] == false) {
+            if (!horizontal[row][val - 1] && !vertical[col][val - 1] && !box[index][val - 1]) {
                 horizontal[row][val - 1] = true;
                 vertical[col][val - 1] = true;
                 box[index][val - 1] = true;
@@ -82,9 +80,9 @@ public class SudokuSolver {
         input[8] = "...2759..".toCharArray();
 
         ss.solveSudoku(input);
-        for (int i = 0; i < input.length; i++) {
+        for (char[] anInput : input) {
             for (int j = 0; j < input.length; j++) {
-                System.out.print(input[i][j] + " ");
+                System.out.print(anInput[j] + " ");
             }
             System.out.println();
         }

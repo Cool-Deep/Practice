@@ -6,7 +6,7 @@ import java.util.Comparator;
 /**
  http://www.geeksforgeeks.org/suffix-array-set-1-introduction/
  */
-public class SuffixArray {
+class SuffixArray {
 
     public static class SuffixSort implements Comparator<Integer>{
         
@@ -34,7 +34,7 @@ public class SuffixArray {
         }
     }
     
-    public Integer[] createSuffixArray(char str[]){
+    private Integer[] createSuffixArray(char str[]){
     
         SuffixSort sort = new SuffixSort(str);
         Integer suffix[] = new Integer[str.length];
@@ -60,7 +60,7 @@ public class SuffixArray {
         return str[pos] < subString[i] ? -1 : 1;  
     }
     
-    public int subStringSearch(char str[],char subString[], Integer suffix[]){
+    private int subStringSearch(char str[], char subString[], Integer suffix[]){
         int low =0;
         int high = suffix.length-1;
         while(low <= high){

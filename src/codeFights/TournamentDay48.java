@@ -5,142 +5,155 @@ import java.util.*;
 /**
  * Created by Davit on 30/07/16.
  */
-public class TournamentDay48 {
+class TournamentDay48 {
 
-    // TODO BUGFIX
-    private static int countVisibleTowerPairs(int[] position, int[] height) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    // TODO BUGFIX
+//    private static int countVisibleTowerPairs(int[] position, int[] height) {
+//
+//        int result = 0;
+//
+//        for (int i = 0; i < position.length; i++) {
+//            for (int j = i + 1; j < position.length; j++) {
+//                int A = height[j] - height[i],
+//                        B = position[i] - position[j],
+//                        C = -A * position[i] - B * height[i];
+//                boolean visible = true;
+//
+//                int leftBound = Math.min(position[i], position[j]);
+//                int rightBound = Math.max(position[i], position[j]);
+//                for (int k = 0; k < position.length; k++) {
+//                    if (leftBound < position[k] &&
+//                            (A * position[k] + B * height[k] + C) * C < 0) {
+//                        visible = false;
+//                    }
+//                }
+//
+//                if (visible) {
+//                    result++;
+//                }
+//            }
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int result = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isInsideTheCircle(int xa, int ya, int xc, int yc, int rc) {
+//        int dist = (xa - xc) * (xa - xc) + (ya - yc) * (ya - yc);
+//        rc *= rc;
+//        return dist < rc;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < position.length; i++) {
-            for (int j = i + 1; j < position.length; j++) {
-                int A = height[j] - height[i],
-                        B = position[i] - position[j],
-                        C = -A * position[i] - B * height[i];
-                boolean visible = true;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int countInversionsNaive(int[] inputArray) {
+//
+//        int result = 0;
+//
+//        for (int i = 0; i < inputArray.length; i++) {
+//            for (int j = i + 1; j < inputArray.length; j++) {
+//                if (inputArray[i] > inputArray[j]) {
+//                    result++;
+//                }
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-                int leftBound = Math.min(position[i], position[j]);
-                int rightBound = Math.max(position[i], position[j]);
-                for (int k = 0; k < position.length; k++) {
-                    if (leftBound < position[k] &&
-                            (A * position[k] + B * height[k] + C) * C < 0) {
-                        visible = false;
-                    }
-                }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int growingPlant(int upSpeed, int downSpeed, int desiredHeight) {
+//
+//        int currentHeight = 0,
+//                dayIndex = 1;
+//
+//        while (currentHeight + upSpeed < desiredHeight) {
+//            currentHeight += upSpeed - downSpeed;
+//            dayIndex++;
+//        }
+//
+//        return dayIndex;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-                if (visible) {
-                    result++;
-                }
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int cubeVolume(int n) {
+//        return n * n * n;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static ArrayList<Integer> mergeKArrays(int[][] arrays) {
+//        int[] firstUnused = new int[arrays.length];
+//        ArrayList<Integer> result = new ArrayList<>();
+//        int n = 0;
+//        for (int i = 0; i < arrays.length; i++) {
+//            n += arrays[i].length;
+//        }
+//        for (int i = 0; i < n; i++) {
+//            int minIndex = -1,
+//                    minValue = 0;
+//            for (int j = 0; j < arrays.length; j++) {
+//                if (firstUnused[j] < arrays[j].length) {
+//                    if (minIndex == -1 || minValue > arrays[j][firstUnused[j]]) {
+//                        minIndex = j;
+//                        minValue = arrays[j][firstUnused[j]];
+//                    }
+//                }
+//            }
+//            result.add(minValue);
+//            firstUnused[minIndex]++;
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static boolean isInsideTheCircle(int xa, int ya, int xc, int yc, int rc) {
-        int dist = (xa - xc) * (xa - xc) + (ya - yc) * (ya - yc);
-        rc *= rc;
-        if (dist < rc) {
-            return true;
-        }
-        return false;
-    }
-
-    private static int countInversionsNaive(int[] inputArray) {
-
-        int result = 0;
-
-        for (int i = 0; i < inputArray.length; i++) {
-            for (int j = i + 1; j < inputArray.length; j++) {
-                if (inputArray[i] > inputArray[j]) {
-                    result++;
-                }
-            }
-        }
-        return result;
-    }
-
-    private static int growingPlant(int upSpeed, int downSpeed, int desiredHeight) {
-
-        int currentHeight = 0,
-                dayIndex = 1;
-
-        while (currentHeight + upSpeed < desiredHeight) {
-            currentHeight += upSpeed - downSpeed;
-            dayIndex++;
-        }
-
-        return dayIndex;
-    }
-
-    private static int cubeVolume(int n) {
-        return n * n * n;
-    }
-
-    private static ArrayList<Integer> mergeKArrays(int[][] arrays) {
-        int[] firstUnused = new int[arrays.length];
-        ArrayList<Integer> result = new ArrayList<>();
-        int n = 0;
-        for (int i = 0; i < arrays.length; i++) {
-            n += arrays[i].length;
-        }
-        for (int i = 0; i < n; i++) {
-            int minIndex = -1,
-                    minValue = 0;
-            for (int j = 0; j < arrays.length; j++) {
-                if (firstUnused[j] < arrays[j].length) {
-                    if (minIndex == -1 || minValue > arrays[j][firstUnused[j]]) {
-                        minIndex = j;
-                        minValue = arrays[j][firstUnused[j]];
-                    }
-                }
-            }
-            result.add(minValue);
-            firstUnused[minIndex]++;
-        }
-        return result;
-    }
-
-    private static int threeGlasses(int[] cap) {
-
-        final boolean[][][] was = new boolean[cap[0] + 1][cap[1] + 1][cap[2] + 1];
-        final Set<Integer> wasCnt = new HashSet<>();
-        final LinkedList<int[]> queue = new LinkedList<>();
-
-        class Helper {
-
-            int[] copy(int[] a) {
-                return new int[]{a[0], a[1], a[2]};
-            }
-
-            void tryAdd(int[] a) {
-                if (!was[a[0]][a[1]][a[2]]) {
-                    was[a[0]][a[1]][a[2]] = true;
-                    wasCnt.add(a[0] + a[1] + a[2]);
-                    queue.addLast(a);
-                }
-            }
-        }
-        Helper h = new Helper();
-
-        h.tryAdd(h.copy(cap));
-        while (!queue.isEmpty()) {
-            int[] cur = queue.pollFirst();
-            for (int i = 0; i < 3; i++) {
-                int[] next = h.copy(cur);
-                next[i] = 0;
-                h.tryAdd(next);
-
-                for (int j = 0; j < 3; j++) {
-                    if (i != j && cur[i] + cur[j] > cap[j]) {
-                        next = h.copy(cur);
-                        next[i] -= cap[j] - cur[j];
-                        next[j] = cap[j];
-                        h.tryAdd(next);
-                    } else if (i != j) {
-                        next = h.copy(cur);
-                        next[j] += next[i];
-                        next[i] = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int threeGlasses(int[] cap) {
+//
+//        final boolean[][][] was = new boolean[cap[0] + 1][cap[1] + 1][cap[2] + 1];
+//        final Set<Integer> wasCnt = new HashSet<>();
+//        final LinkedList<int[]> queue = new LinkedList<>();
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////
+////            int[] copy(int[] a) {
+////                return new int[]{a[0], a[1], a[2]};
+////            }
+////
+////            void tryAdd(int[] a) {
+////                if (!was[a[0]][a[1]][a[2]]) {
+////                    was[a[0]][a[1]][a[2]] = true;
+////                    wasCnt.add(a[0] + a[1] + a[2]);
+////                    queue.addLast(a);
+////                }
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+//        Helper h = new Helper();
+//
+//        h.tryAdd(h.copy(cap));
+//        while (!queue.isEmpty()) {
+//            int[] cur = queue.pollFirst();
+//            for (int i = 0; i < 3; i++) {
+//                int[] next = h.copy(cur);
+//                next[i] = 0;
+//                h.tryAdd(next);
+//
+//                for (int j = 0; j < 3; j++) {
+//                    if (i != j && cur[i] + cur[j] > cap[j]) {
+//                        next = h.copy(cur);
+//                        next[i] -= cap[j] - cur[j];
+//                        next[j] = cap[j];
+//                        h.tryAdd(next);
+//                    } else if (i != j) {
+//                        next = h.copy(cur);
+//                        next[j] += next[i];
+//                        next[i] = 0;
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
                         h.tryAdd(next);
                     }
                 }
@@ -150,185 +163,206 @@ public class TournamentDay48 {
         return wasCnt.size() - 1;
     }
 
-    private static int maxDivisor(int left, int right, int divisor) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int maxDivisor(int left, int right, int divisor) {
+//
+//        for (int i = right; i >= left; i--) {
+//            if (i % divisor == 0) {
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = right; i >= left; i--) {
-            if (i % divisor == 0) {
-                return i;
-            }
-        }
-        return -1;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isGeometricProgression(int[] sequence) {
+//        int prog = sequence[1] / sequence[0];
+//        for (int i = 2; i < sequence.length; i++) {
+//            if (sequence[i] / sequence[i - 1] != prog || sequence[i] % sequence[i - 1] != 0)
+//                return false;
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static boolean isGeometricProgression(int[] sequence) {
-        int prog = sequence[1] / sequence[0];
-        for (int i = 2; i < sequence.length; i++) {
-            if (sequence[i] / sequence[i - 1] != prog || sequence[i] % sequence[i - 1] != 0)
-                return false;
-        }
-        return true;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int chipMoving(int[][] grid) {
+//
+//        final int MAX_COST = (int) 1e7;
+//
+//        int n = grid.length,
+//                m = grid[0].length;
+//
+//        int[][][] dp = new int[n][m][2];
+//
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                for (int k = 0; k < 2; k++) {
+//                    dp[i][j][k] = MAX_COST;
+//                }
+//            }
+//        }
+//
+//        dp[0][0][0] = 0;
+//        dp[0][0][1] = 0;
+//
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                if (i < n - 1) {
+//                    dp[i + 1][j][0] = Math.min(Math.min(dp[i + 1][j][0],
+//                            dp[i][j][0] + grid[i + 1][j]),
+//                            dp[i][j][1] + grid[i + 1][j] + 10);
+//                }
+//                if (j < m - 1) {
+//                    dp[i][j + 1][1] = Math.min(Math.min(dp[i][j + 1][1],
+//                            dp[i][j][1] + grid[i][j + 1]),
+//                            dp[i][j][0] + grid[i][j + 1] + 10);
+//                }
+//            }
+//        }
+//
+//        return Math.min(dp[n - 1][m - 1][0], dp[n - 1][m - 1][1]);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int chipMoving(int[][] grid) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean pairOfShoes(int[][] shoes) {
+//        ArrayList<Integer> leftShoes = new ArrayList<>();
+//        ArrayList<Integer> rightShoes = new ArrayList<>();
+//        for (int i = 0; i < shoes.length; i++) {
+//            if (shoes[i][0] == 0) {
+//                leftShoes.add(shoes[i][1]);
+//            } else {
+//                rightShoes.add(shoes[i][1]);
+//            }
+//        }
+//        Collections.sort(leftShoes);
+//        Collections.sort(rightShoes);
+//        if (leftShoes.size() != rightShoes.size()) {
+//            return false;
+//        }
+//        for (int i = 1; i < leftShoes.size(); i++) {
+//            if (leftShoes.get(i) != rightShoes.get(i)) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        final int MAX_COST = (int) 1e7;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int sequenceElement(int[] a, int n) {
+//
+//        final int MOD = (int) 1e5;
+//        List<Integer> seq = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            seq.add(a[i]);
+//        }
+//
+//        int lastFive = a[0] * (int) 1e4 + a[1] * (int) 1e3 +
+//                a[2] * (int) 1e2 + a[3] * 10 + a[4];
+//        Map<Integer, Integer> was = new HashMap<>();
+//        was.put(lastFive, 4);
+//
+//        for (int i = 5; ; i++) {
+//            seq.add((seq.get(i - 1) + seq.get(i - 2) +
+//                    seq.get(i - 3) + seq.get(i - 4) + seq.get(i - 5)) % 10);
+//            lastFive = (lastFive * 10 + seq.get(i)) % MOD;
+//            if (was.containsKey(lastFive)) {
+//                int last = was.get(lastFive);
+//                return seq.get(n % (i - last));
+//            } else {
+//                was.put(lastFive, i);
+//            }
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int n = grid.length,
-                m = grid[0].length;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isPangram(String sentence) {
+//        boolean[] found = new boolean[26];
+//        boolean result = true;
+//        for (int i = 0; i < sentence.length(); i++) {
+//            int code = (int) sentence.charAt(i);
+//            if ((int) 'A' <= code && code <= (int) 'Z') {
+//                code += -'A' + 'a';
+//            }
+//            if ((int) 'a' <= code && code <= (int) 'z') {
+//                found[code - (int) 'a'] = true;
+//            }
+//        }
+//
+//        for (int i = 0; i < 26; i++) {
+//            if (!found[i]) {
+//                result = false;
+//            }
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int[][][] dp = new int[n][m][2];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int eulersTotientFunction(int n) {
+//        int tot = n; //this will be the totient at the end of the sample
+//        for (int p = 2; p * p <= n; p++) {
+//            if (n % p == 0) {
+//                tot /= p;
+//                tot *= (p - 1);
+//                while (n % p == 0)
+//                    n /= p;
+//            }
+//        }
+//        if (n > 1) { // now n is the largest prime divisor
+//            tot /= n;
+//            tot *= (n - 1);
+//        }
+//        return tot;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                for (int k = 0; k < 2; k++) {
-                    dp[i][j][k] = MAX_COST;
-                }
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean alphabetSubstring(String s) {
+//
+//        for (int i = 1; i < s.length(); i++) {
+//            if (s.charAt(i) != s.charAt(i - 1) + 1) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        dp[0][0][0] = 0;
-        dp[0][0][1] = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int arrayElementsProduct(int[] inputArray) {
+//
+//        int result = inputArray[0];
+//
+//        for (int i = 1; i < inputArray.length; i++) {
+//            result *= inputArray[i];
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (i < n - 1) {
-                    dp[i + 1][j][0] = Math.min(Math.min(dp[i + 1][j][0],
-                            dp[i][j][0] + grid[i + 1][j]),
-                            dp[i][j][1] + grid[i + 1][j] + 10);
-                }
-                if (j < m - 1) {
-                    dp[i][j + 1][1] = Math.min(Math.min(dp[i][j + 1][1],
-                            dp[i][j][1] + grid[i][j + 1]),
-                            dp[i][j][0] + grid[i][j + 1] + 10);
-                }
-            }
-        }
-
-        return Math.min(dp[n - 1][m - 1][0], dp[n - 1][m - 1][1]);
-    }
-
-    private static boolean pairOfShoes(int[][] shoes) {
-        ArrayList<Integer> leftShoes = new ArrayList<>();
-        ArrayList<Integer> rightShoes = new ArrayList<>();
-        for (int i = 0; i < shoes.length; i++) {
-            if (shoes[i][0] == 0) {
-                leftShoes.add(shoes[i][1]);
-            } else {
-                rightShoes.add(shoes[i][1]);
-            }
-        }
-        Collections.sort(leftShoes);
-        Collections.sort(rightShoes);
-        if (leftShoes.size() != rightShoes.size()) {
-            return false;
-        }
-        for (int i = 1; i < leftShoes.size(); i++) {
-            if (leftShoes.get(i) != rightShoes.get(i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static int sequenceElement(int[] a, int n) {
-
-        final int MOD = (int) 1e5;
-        List<Integer> seq = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            seq.add(a[i]);
-        }
-
-        int lastFive = a[0] * (int) 1e4 + a[1] * (int) 1e3 +
-                a[2] * (int) 1e2 + a[3] * 10 + a[4];
-        Map<Integer, Integer> was = new HashMap<>();
-        was.put(lastFive, 4);
-
-        for (int i = 5; ; i++) {
-            seq.add((seq.get(i - 1) + seq.get(i - 2) +
-                    seq.get(i - 3) + seq.get(i - 4) + seq.get(i - 5)) % 10);
-            lastFive = (lastFive * 10 + seq.get(i)) % MOD;
-            if (was.containsKey(lastFive)) {
-                int last = was.get(lastFive);
-                return seq.get(n % (i - last));
-            } else {
-                was.put(lastFive, i);
-            }
-        }
-    }
-
-    private static boolean isPangram(String sentence) {
-        boolean[] found = new boolean[26];
-        boolean result = true;
-        for (int i = 0; i < sentence.length(); i++) {
-            int code = (int) sentence.charAt(i);
-            if ((int) 'A' <= code && code <= (int) 'Z') {
-                code += -'A' + 'a';
-            }
-            if ((int) 'a' <= code && code <= (int) 'z') {
-                found[code - (int) 'a'] = true;
-            }
-        }
-
-        for (int i = 0; i < 26; i++) {
-            if (!found[i]) {
-                result = false;
-            }
-        }
-
-        return result;
-    }
-
-    private static int eulersTotientFunction(int n) {
-        int tot = n; //this will be the totient at the end of the sample
-        for (int p = 2; p * p <= n; p++) {
-            if (n % p == 0) {
-                tot /= p;
-                tot *= (p - 1);
-                while (n % p == 0)
-                    n /= p;
-            }
-        }
-        if (n > 1) { // now n is the largest prime divisor
-            tot /= n;
-            tot *= (n - 1);
-        }
-        return tot;
-    }
-
-    private static boolean alphabetSubstring(String s) {
-
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) != s.charAt(i - 1) + 1) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static int arrayElementsProduct(int[] inputArray) {
-
-        int result = inputArray[0];
-
-        for (int i = 1; i < inputArray.length; i++) {
-            result *= inputArray[i];
-        }
-        return result;
-    }
-
-    private static int balancedBinaryTreeDiameter(int n) {
-
-        class Helper {
-            int maxDepth(int n) {
-                if (n == 0) {
-                    return 0;
-                }
-                if (n == 1) {
-                    return 1;
-                }
-                return maxDepth(n / 2) + 1;
-            }
-        }
-        ;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int balancedBinaryTreeDiameter(int n) {
+//
+//// --Commented out by Inspection START (8/10/17, 5:13 PM):
+////        class Helper {
+////            int maxDepth(int n) {
+////                if (n == 0) {
+////                    return 0;
+////                }
+////                if (n == 1) {
+////                    return 1;
+////                }
+////                return maxDepth(n / 2) + 1;
+////            }
+////        }
+//// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
         Helper h = new Helper();
 
@@ -336,80 +370,87 @@ public class TournamentDay48 {
                 + h.maxDepth(n / 2);
     }
 
-    private static int divisorsSubset(int[] subset, int n) {
-        int c = 0;
-        for (int i = 1; i <= n; i++) {
-            boolean ch = true;
-            for (int aSubset : subset) {
-                if (i % aSubset != 0)
-                    ch = false;
-            }
-            if (ch) c++;
-        }
-        return c;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int divisorsSubset(int[] subset, int n) {
+//        int c = 0;
+//        for (int i = 1; i <= n; i++) {
+//            boolean ch = true;
+//            for (int aSubset : subset) {
+//                if (i % aSubset != 0)
+//                    ch = false;
+//            }
+//            if (ch) c++;
+//        }
+//        return c;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int eulersTotientFunction2(int n) {
-        int divisor = 2,
-                result = n;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int eulersTotientFunction2(int n) {
+//        int divisor = 2,
+//                result = n;
+//
+//        while (divisor * divisor <= n) {
+//            if (n % divisor == 0) {
+//                while (n % divisor == 0) {
+//                    n /= divisor;
+//                }
+//                result -= result / divisor;
+//            }
+//            divisor++;
+//        }
+//        if (n > 1) {
+//            result -= result / n;
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        while (divisor * divisor <= n) {
-            if (n % divisor == 0) {
-                while (n % divisor == 0) {
-                    n /= divisor;
-                }
-                result -= result / divisor;
-            }
-            divisor++;
-        }
-        if (n > 1) {
-            result -= result / n;
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int maxDigit(int n) {
+//        int max = n % 10;
+//        n /= 10;
+//        while (n != 0) {
+//            int digit = n % 10;
+//            if (max < digit)
+//                max = digit;
+//            n /= 10;
+//        }
+//
+//        return max;
+//
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String formatString(String inputString) {
+//
+//        StringBuilder formattedString = new StringBuilder();
+//        for (int i = 0; i < inputString.length(); i++) {
+//            if (inputString.charAt(i) == ' ') {
+//                if (formattedString.length() > 0
+//                        && formattedString.charAt(formattedString.length() - 1) != ' ') {
+//                    formattedString.append(inputString.charAt(i));
+//                }
+//            } else {
+//                formattedString.append(inputString.charAt(i));
+//            }
+//        }
+//        if (formattedString.charAt(formattedString.length() - 1) == ' ') {
+//            formattedString.deleteCharAt(formattedString.length() - 1);
+//        }
+//
+//        return formattedString.toString();
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int maxDigit(int n) {
-        int max = n % 10;
-        n /= 10;
-        while (n != 0) {
-            int digit = n % 10;
-            if (max < digit)
-                max = digit;
-            n /= 10;
-        }
-
-        return max;
-
-    }
-
-    private static String formatString(String inputString) {
-
-        StringBuilder formattedString = new StringBuilder();
-        for (int i = 0; i < inputString.length(); i++) {
-            if (inputString.charAt(i) == ' ') {
-                if (formattedString.length() > 0
-                        && formattedString.charAt(formattedString.length() - 1) != ' ') {
-                    formattedString.append(inputString.charAt(i));
-                }
-            } else {
-                formattedString.append(inputString.charAt(i));
-            }
-        }
-        if (formattedString.charAt(formattedString.length() - 1) == ' ') {
-            formattedString.deleteCharAt(formattedString.length() - 1);
-        }
-
-        return formattedString.toString();
-    }
-
-    private static boolean ortogonalLines(int[] line1, int[] line2) {
-
-        if (line1[0] * line2[0] + line1[1] * line2[1] == 0) {
-            return true;
-        }
-        return false;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean ortogonalLines(int[] line1, int[] line2) {
+//
+//        return line1[0] * line2[0] + line1[1] * line2[1] == 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int countLuckyNumbers(int n) {
 
@@ -439,51 +480,59 @@ public class TournamentDay48 {
         return result;
     }
 
-    private static int[] improperFractionToMixed(int[] A) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] improperFractionToMixed(int[] A) {
+//
+//        int[] B = {A[0] / A[1], 0, 0};
+//        B[1] = A[0] - A[1] * B[0];
+//        B[2] = A[1];
+//
+//        return B;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int[] B = {A[0] / A[1], 0, 0};
-        B[1] = A[0] - A[1] * B[0];
-        B[2] = A[1];
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static char lastDigitRegExp(String inputString) {
+//
+//        for (int i = inputString.length() - 1; i >= 0; i--) {
+//            if ('0' <= inputString.charAt(i) && inputString.charAt(i) <= '9')
+//                return inputString.charAt(i);
+//        }
+//
+//        return ' ';
+//
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return B;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int differentDigitsNumberSearch(int[] inputArray) {
+//
+//        for (int i = 0; i < inputArray.length; i++) {
+//            int cur = inputArray[i];
+//            boolean[] was = new boolean[10];
+//            boolean ok = true;
+//            while (cur > 0) {
+//                if (was[cur % 10]) {
+//                    ok = false;
+//                    break;
+//                }
+//                was[cur % 10] = true;
+//                cur /= 10;
+//            }
+//            if (ok) {
+//                return inputArray[i];
+//            }
+//        }
+//
+//        return -1;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static char lastDigitRegExp(String inputString) {
-
-        for (int i = inputString.length() - 1; i >= 0; i--) {
-            if ('0' <= inputString.charAt(i) && inputString.charAt(i) <= '9')
-                return inputString.charAt(i);
-        }
-
-        return ' ';
-
-    }
-
-    private static int differentDigitsNumberSearch(int[] inputArray) {
-
-        for (int i = 0; i < inputArray.length; i++) {
-            int cur = inputArray[i];
-            boolean[] was = new boolean[10];
-            boolean ok = true;
-            while (cur > 0) {
-                if (was[cur % 10]) {
-                    ok = false;
-                    break;
-                }
-                was[cur % 10] = true;
-                cur /= 10;
-            }
-            if (ok) {
-                return inputArray[i];
-            }
-        }
-
-        return -1;
-    }
-
-    private static boolean pointInLine(int[] point, int[] line) {
-        return line[0] * point[0] + line[1] * point[1] + line[2] == 0;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean pointInLine(int[] point, int[] line) {
+//        return line[0] * point[0] + line[1] * point[1] + line[2] == 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String[] args) {
         // System.out.println(mergeKArrays(new int[][]{{1, 3, 5}, {2, 3}, {2, 3, 5, 8}}));

@@ -1,6 +1,6 @@
 package com.interview.string;
 
-public class RunLengthEncoding {
+class RunLengthEncoding {
 
     private int updateCounter(char[] result, int current, int counter){
     
@@ -20,7 +20,7 @@ public class RunLengthEncoding {
         return current;
     }
     
-    public int encoding(char[] str,char[] result){
+    private int encoding(char[] str, char[] result){
 
         char pickedChar = str[0];
         int current =0;

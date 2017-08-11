@@ -1,8 +1,8 @@
 package coreJava;
 
 class Person extends Collection {
-	String name;
-	int age;
+	private String name;
+	private int age;
 
 	public Person(String name, int age) {
 		this.name = name;
@@ -13,17 +13,21 @@ class Person extends Collection {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 	public int getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public void setAge(int age) {
+//		this.age = age;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 	@Override
 	public boolean equals(Object obj) {

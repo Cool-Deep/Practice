@@ -2,7 +2,7 @@ package coreJava;
 
 import java.util.Scanner;
 
-public class Square {
+class Square {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter Number");
@@ -10,25 +10,24 @@ public class Square {
 
 	}
 
-	private static boolean powerOfTwo(int number) {
-		int square = 1;
-		while (number >= square) {
-			if (number == square) {
-				return true;
-			}
-			square = square * 2;
-		}
-		return false;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	private static boolean powerOfTwo(int number) {
+//		int square = 1;
+//		while (number >= square) {
+//			if (number == square) {
+//				return true;
+//			}
+//			square = square * 2;
+//		}
+//		return false;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 	private static boolean isPowerOfTwo(int number) {
 		if (number < 0) {
 			throw new IllegalArgumentException("number: " + number);
 		}
-		if ((number & -number) == number) {
-			return true;
-		}
-		return false;
-	}
+        return (number & -number) == number;
+    }
 
 }

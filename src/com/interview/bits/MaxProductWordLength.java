@@ -15,7 +15,7 @@ import java.util.Arrays;
  *
  * https://leetcode.com/problems/maximum-product-of-word-lengths/
  */
-public class MaxProductWordLength {
+class MaxProductWordLength {
     public int maxProduct(String[] words) {
         int max = 0;
 

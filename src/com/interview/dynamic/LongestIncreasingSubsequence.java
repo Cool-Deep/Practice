@@ -20,12 +20,12 @@ package com.interview.dynamic;
  * http://en.wikipedia.org/wiki/Longest_increasing_subsequence
  * http://www.geeksforgeeks.org/dynamic-programming-set-3-longest-increasing-subsequence/
  */
-public class LongestIncreasingSubsequence {
+class LongestIncreasingSubsequence {
 
     /**
      * DP way of solving LIS
      */
-    public int longestSubsequenceWithActualSolution(int arr[]){
+    private int longestSubsequenceWithActualSolution(int arr[]){
         int T[] = new int[arr.length];
         int actualSolution[] = new int[arr.length];
         for(int i=0; i < arr.length; i++){
@@ -69,7 +69,7 @@ public class LongestIncreasingSubsequence {
     /**
      * Recursive way of solving LIS
      */
-    public int longestSubsequenceRecursive(int arr[]){
+    private int longestSubsequenceRecursive(int arr[]){
         int maxLen = 0;
         for(int i=0; i < arr.length-1; i++){
             int len = longestSubsequenceRecursive(arr,i+1,arr[i]);

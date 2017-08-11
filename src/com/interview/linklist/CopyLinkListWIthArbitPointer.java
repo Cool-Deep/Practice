@@ -15,14 +15,14 @@ package com.interview.linklist;
 public class CopyLinkListWIthArbitPointer {
 
     static class RandomListNode {
-        int label;
+        final int label;
         RandomListNode next, random;
         RandomListNode(int x) { this.label = x; }
     }
 
-    public RandomListNode copyRandomList(RandomListNode head) {
+    private void copyRandomList(RandomListNode head) {
         if (head == null) {
-            return null;
+            return;
         }
 
         RandomListNode current = head;
@@ -53,7 +53,6 @@ public class CopyLinkListWIthArbitPointer {
             current = current.next;
         }
 
-        return dummy.next;
     }
 
     public static void main(String args[]){

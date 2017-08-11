@@ -14,7 +14,7 @@ public class NPotGold {
             return first + " " + second + " " + pick;
         }
     }
-    public Pair[][] findMoves(int pots[]){
+    private Pair[][] findMoves(int pots[]){
         
         Pair[][] moves = new Pair[pots.length][pots.length];
         
@@ -48,11 +48,11 @@ public class NPotGold {
         return moves;
     }
     //prints the sequence of values and indexes
-    public void printSequence(int pots[], Pair moves[][]){
+    private void printSequence(int pots[], Pair moves[][]){
         int i = 0;
         int j = pots.length - 1;
         int step;
-        for (int k = 0; k < pots.length; k++) {
+        for (int pot : pots) {
             step = moves[i][j].pick;
             //this is the value of pick and its index
             System.out.print("value: " + pots[step] + " " + "index: " + step + " ");
@@ -67,9 +67,9 @@ public class NPotGold {
         NPotGold npg = new NPotGold();
         int pots[] = {3,1,5,6,2,9,3};
         Pair[][] moves = npg.findMoves(pots);
-        for(int i=0; i < moves.length; i++){
-            for(int j=0; j < moves[i].length; j++){
-                System.out.print(moves[i][j] + "  ");
+        for (Pair[] move : moves) {
+            for (int j = 0; j < move.length; j++) {
+                System.out.print(move[j] + "  ");
             }
             System.out.print("\n");
         }

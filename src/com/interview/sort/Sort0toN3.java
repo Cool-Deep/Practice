@@ -3,9 +3,9 @@ package com.interview.sort;
 /**
  * http://www.geeksforgeeks.org/sort-n-numbers-range-0-n2-1-linear-time/
  */
-public class Sort0toN3 {
+class Sort0toN3 {
 
-    public void sort(int arr[],int n){
+    private void sort(int arr[], int n){
         
         sort(arr,n,1);
         sort(arr,n,n);
@@ -14,8 +14,8 @@ public class Sort0toN3 {
     
     private void sort(int arr[],int n, int exp){
         int count[] = new int[n];
-        for(int i=0; i < arr.length;i++){
-            count[(arr[i]/exp)%n]++;
+        for (int anArr : arr) {
+            count[(anArr / exp) % n]++;
         }
         
         for(int i=1; i < arr.length; i++){
@@ -28,17 +28,15 @@ public class Sort0toN3 {
             output[count[(arr[i]/exp)%n]-1] = arr[i];
             count[(arr[i]/exp)%n]--;
         }
-        for(int i=0; i < arr.length; i++){
-            arr[i] = output[i];
-        }
+        System.arraycopy(output, 0, arr, 0, arr.length);
     }
     
     public static void main(String args[]){
         int arr[] = {100,2,124,18,36};
         Sort0toN3 sn = new Sort0toN3();
         sn.sort(arr,arr.length);
-        for(int i=0; i < arr.length; i++){
-            System.out.print(arr[i] + " ");
+        for (int anArr : arr) {
+            System.out.print(anArr + " ");
         }
     }
     

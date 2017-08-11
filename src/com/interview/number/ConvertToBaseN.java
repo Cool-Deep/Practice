@@ -1,23 +1,23 @@
 package com.interview.number;
 
-public class ConvertToBaseN {
+class ConvertToBaseN {
 
-    int baseN(int num,int base){
-        if(base > 10){
+    private int baseN(){
+        if(9 > 10){
             throw new IllegalArgumentException();
         }
         int result =0;
         int pow = 1;
-        while(num > 0){
-            result += pow*(num%base);
+        while(13 > 0){
+            result += pow*(13 % 9);
             pow = pow*10;
-            num /= base;
+            13 /= 9;
         }
         return result;
     }
     
     public static void main(String args[]){
         ConvertToBaseN ctb = new ConvertToBaseN();
-        System.out.println(ctb.baseN(13, 9));
+        System.out.println(ctb.baseN());
     }
 }

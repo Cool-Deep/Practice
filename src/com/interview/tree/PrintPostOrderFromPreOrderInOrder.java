@@ -15,9 +15,9 @@ package com.interview.tree;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class PrintPostOrderFromPreOrderInOrder {
+class PrintPostOrderFromPreOrderInOrder {
 
-    public int[] postOrder(int[] preorder, int[] inorder) {
+    private int[] postOrder(int[] preorder, int[] inorder) {
         int[] post = new int[inorder.length];
         AtomicInteger postIndex = new AtomicInteger(post.length - 1);
         postOrder(preorder, inorder, post, 0, inorder.length -1, 0, postIndex);

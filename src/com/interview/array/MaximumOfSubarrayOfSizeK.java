@@ -11,10 +11,10 @@ package com.interview.array;
 import java.util.Deque;
 import java.util.LinkedList;
 
-public class MaximumOfSubarrayOfSizeK {
+class MaximumOfSubarrayOfSizeK {
 
-    public int[] maxSubArray(int input[], int k) {
-        Deque<Integer> queue = new LinkedList<Integer>();
+    private int[] maxSubArray(int input[], int k) {
+        Deque<Integer> queue = new LinkedList<>();
         int max[] = new int[input.length - k + 1];
         int maxVal = Integer.MIN_VALUE;
         //first find max of first k values and make it 0th element of max array

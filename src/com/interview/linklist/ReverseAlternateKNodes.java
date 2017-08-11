@@ -7,9 +7,9 @@ package com.interview.linklist;
  * number of nodes are even odd
  * k is less than or equal to 1.
  */
-public class ReverseAlternateKNodes {
+class ReverseAlternateKNodes {
 
-    public Node reverse(Node head,int k,boolean reverse){
+    private Node reverse(Node head, int k, boolean reverse){
         if(k <= 1){
             return head;
         }

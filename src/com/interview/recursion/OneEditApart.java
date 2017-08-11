@@ -11,9 +11,9 @@ package com.interview.recursion;
  * Reference
  * https://leetcode.com/problems/one-edit-distance/
  */
-public class OneEditApart {
+class OneEditApart {
 
-    public boolean isOneEditDistance(String s, String t) {
+    private boolean isOneEditDistance(String s, String t) {
         String larger, smaller;
         if (s.length() < t.length()) {
             larger = t;

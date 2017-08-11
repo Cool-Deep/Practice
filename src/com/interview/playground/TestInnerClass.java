@@ -5,18 +5,18 @@ import java.util.Random;
 /**
  * Created by tushar_v_roy on 5/18/16.
  */
-public class TestInnerClass {
+class TestInnerClass {
 
-    int t = 20;
-    Random random;
-    public Okay test() {
+    // --Commented out by Inspection (8/10/17, 5:13 PM):int t = 20;
+    private Random random;
+    private Okay test() {
         final int r = 10;
         return
                  random::nextInt;
 
     }
 
-    public void test1() {
+    private void test1() {
         random = new Random();
         Okay o1 = test();
         System.out.print(o1.next());

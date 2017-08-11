@@ -1,6 +1,6 @@
 package com.interview.linklist;
 
-public class DoubleLinkList {
+class DoubleLinkList {
 
     public Node addNode(Node head,int data){
         if(head == null){
@@ -27,7 +27,7 @@ public class DoubleLinkList {
         return newNode;
     }
     
-    public void print(Node head){
+    private void print(Node head){
         while(head != null){
             System.out.print(head.data + " ");
             head = head.next;

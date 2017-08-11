@@ -5,9 +5,9 @@ import java.util.Arrays;
 /**
  * http://www.geeksforgeeks.org/count-pairs-difference-equal-k/
  */
-public class CountNDistinctPairsWithDifferenceK {
+class CountNDistinctPairsWithDifferenceK {
 
-    public int count(int arr[],int k){
+    private int count(int arr[], int k){
         Arrays.sort(arr);
         int count = 0;
         for(int i=0; i < arr.length; i++){

@@ -7,139 +7,155 @@ import java.util.Collections;
 /**
  * Created by Davit on 10/07/16.
  */
-public class TournamentDay34 {
+class TournamentDay34 {
 
-    private static int[] arrayPreviousLess(int[] items) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] arrayPreviousLess(int[] items) {
+//
+//        int[] result = new int[items.length];
+//        for (int i = 0; i < items.length; i++) {
+//            int substitute = -1;
+//            for (int j = 0; j < i; j++) {
+//                if (items[j] < items[i]) {
+//                    substitute = items[j];
+//                }
+//            }
+//            result[i] = substitute;
+//        }
+//
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int[] result = new int[items.length];
-        for (int i = 0; i < items.length; i++) {
-            int substitute = -1;
-            for (int j = 0; j < i; j++) {
-                if (items[j] < items[i]) {
-                    substitute = items[j];
-                }
-            }
-            result[i] = substitute;
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean isIPv4Address(String inputString) {
+//
+//        int currentNumber = 0;
+//        boolean emptyField = true;
+//        int countNumbers = 0;
+//
+//        inputString += '.';
+//
+//        for (int i = 0; i < inputString.length(); i++) {
+//            if (inputString.charAt(i) == '.') {
+//                if (emptyField) {
+//                    return false;
+//                }
+//                countNumbers++;
+//                currentNumber = 0;
+//                emptyField = true;
+//            } else {
+//                int digit = inputString.charAt(i) - '0';
+//                if (digit < 0 || digit > 9) {
+//                    return false;
+//                }
+//                emptyField = false;
+//                currentNumber = currentNumber * 10 + digit;
+//                if (currentNumber > 255) {
+//                    return false;
+//                }
+//            }
+//        }
+//        return countNumbers == 4;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return result;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[][] matrixMultiplication(int[][] matrix1, int[][] matrix2) {
+//
+//        int[][] result = new int[matrix1.length][matrix2[0].length];
+//        for (int i = 0; i < matrix1.length; i++) {
+//            for (int j = 0; j < matrix2[0].length; j++) {
+//                result[i][j] = 0;
+//                for (int k = 0; k < matrix1[0].length; k++) {
+//                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+//                }
+//            }
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static boolean isIPv4Address(String inputString) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int minimalNumberOfCoins(int[] coins, int price) {
+//
+//        int result = 0;
+//
+//        for (int i = coins.length - 1; i >= 0; i--) {
+//            result += price / coins[i];
+//            price %= coins[i];
+//        }
+//
+//        if (price != 0) {
+//            return -1;
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int currentNumber = 0;
-        boolean emptyField = true;
-        int countNumbers = 0;
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int extraNumber(int A, int B, int C) {
+//
+//        if (A == B) {
+//            return C;
+//        }
+//        if (B != C) {
+//            return B;
+//        }
+//        return A;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        inputString += '.';
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int countLineColorings(int points, int colors) {
+//        int result = colors;
+//        for (int i = 1; i < points; i++) {
+//            result *= (colors - 1);
+//        }
+//        return result;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        for (int i = 0; i < inputString.length(); i++) {
-            if (inputString.charAt(i) == '.') {
-                if (emptyField) {
-                    return false;
-                }
-                countNumbers++;
-                currentNumber = 0;
-                emptyField = true;
-            } else {
-                int digit = inputString.charAt(i) - '0';
-                if (digit < 0 || digit > 9) {
-                    return false;
-                }
-                emptyField = false;
-                currentNumber = currentNumber * 10 + digit;
-                if (currentNumber > 255) {
-                    return false;
-                }
-            }
-        }
-        return countNumbers == 4;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int sumOfCoprimes(int m) {
+//
+//        int ans = 0;
+//        for (int p = 2; p <= m; p++) {
+//            int a = p;
+//            int b = m;
+//            while (a > 0) {
+//                int tmp = b % a;
+//                b = a;
+//                a = tmp;
+//            }
+//
+//            if (b == 1) {
+//                ans += p;
+//            }
+//        }
+//
+//        return ans;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int[][] matrixMultiplication(int[][] matrix1, int[][] matrix2) {
-
-        int[][] result = new int[matrix1.length][matrix2[0].length];
-        for (int i = 0; i < matrix1.length; i++) {
-            for (int j = 0; j < matrix2[0].length; j++) {
-                result[i][j] = 0;
-                for (int k = 0; k < matrix1[0].length; k++) {
-                    result[i][j] += matrix1[i][k] * matrix2[k][j];
-                }
-            }
-        }
-        return result;
-    }
-
-    private static int minimalNumberOfCoins(int[] coins, int price) {
-
-        int result = 0;
-
-        for (int i = coins.length - 1; i >= 0; i--) {
-            result += price / coins[i];
-            price %= coins[i];
-        }
-
-        if (price != 0) {
-            return -1;
-        }
-        return result;
-    }
-
-    private static int extraNumber(int A, int B, int C) {
-
-        if (A == B) {
-            return C;
-        }
-        if (B != C) {
-            return B;
-        }
-        return A;
-    }
-
-    private static int countLineColorings(int points, int colors) {
-        int result = colors;
-        for (int i = 1; i < points; i++) {
-            result *= (colors - 1);
-        }
-        return result;
-    }
-
-    private static int sumOfCoprimes(int m) {
-
-        int ans = 0;
-        for (int p = 2; p <= m; p++) {
-            int a = p;
-            int b = m;
-            while (a > 0) {
-                int tmp = b % a;
-                b = a;
-                a = tmp;
-            }
-
-            if (b == 1) {
-                ans += p;
-            }
-        }
-
-        return ans;
-    }
-
-    private static int[] suffixSums(int[] A) {
-
-        ArrayList<Integer> B = new ArrayList<>();
-        B.add(A[A.length - 1]);
-        for (int i = A.length - 2; i >= 0; i--) {
-            B.add(B.get(B.size() - 1) + A[i]);
-        }
-        Collections.reverse(B);
-
-        int[] res = new int[B.size()];
-        for (int i = 0; i < res.length; i++) {
-            res[i] = B.get(i);
-        }
-
-        return res;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int[] suffixSums(int[] A) {
+//
+//        ArrayList<Integer> B = new ArrayList<>();
+//        B.add(A[A.length - 1]);
+//        for (int i = A.length - 2; i >= 0; i--) {
+//            B.add(B.get(B.size() - 1) + A[i]);
+//        }
+//        Collections.reverse(B);
+//
+//        int[] res = new int[B.size()];
+//        for (int i = 0; i < res.length; i++) {
+//            res[i] = B.get(i);
+//        }
+//
+//        return res;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static int[] easyAssignmentProblem(int[][] skills) {
         int ma = Math.max(skills[0][0], skills[0][1]);
@@ -159,9 +175,11 @@ public class TournamentDay34 {
         return v.stream().mapToInt(i -> i).toArray();
     }
 
-    private static boolean pepEight2(String line) {
-        return line.length() <= 79;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static boolean pepEight2(String line) {
+//        return line.length() <= 79;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     public static void main(String[] args) {
         // System.out.println(Arrays.toString(arrayPreviousLess(new int[]{3, 5, 2, 4, 5})));

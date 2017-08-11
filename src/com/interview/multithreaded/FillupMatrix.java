@@ -24,18 +24,18 @@ import java.util.concurrent.atomic.AtomicLong;
  * 2) Try with multiple threads and big matrix size.
  *
  */
-public class FillupMatrix {
+class FillupMatrix {
 
-    private boolean matrix[][];
-    private int size;
-    private AtomicLong pos;
-    public FillupMatrix(int size){
+    private final boolean[][] matrix;
+    private final int size;
+    private final AtomicLong pos;
+    private FillupMatrix(int size){
         matrix = new boolean[size][size];
         this.size = size;
         pos = new AtomicLong(-1);
     }
     
-    public void updateMatrix(){
+    private void updateMatrix(){
         long pos = next();
         updateMatrix(pos);
     }
@@ -52,7 +52,7 @@ public class FillupMatrix {
         return val;
     }
     
-    public boolean getVal(int x, int y){
+    private boolean getVal(int x, int y){
         return matrix[x][y];
     }
     
@@ -61,7 +61,7 @@ public class FillupMatrix {
         FillupMatrix fum = new FillupMatrix(size);
         ExecutorService executor = Executors.newFixedThreadPool(10);
         for(int i=0; i < size*size ; i++){
-            executor.execute(() -> fum.updateMatrix());
+            executor.execute(fum::updateMatrix);
         }
         
         executor.shutdown();

@@ -9,9 +9,9 @@ package com.interview.linklist;
  * palindrome list
  * non palindrom list
  */
-public class LinkListIsPalindrome {
+class LinkListIsPalindrome {
 
-    public boolean isPalindrome(NodeRef head,Node end){
+    private boolean isPalindrome(NodeRef head, Node end){
         if(end == null){
             return true;
         }

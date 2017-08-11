@@ -3,10 +3,10 @@ package coreJava;
 /**
 * Main class- to test HashMap functionality.
 */
-public class HashMapCustomApp {
+class HashMapCustomApp {
     
    public static void main(String[] args) {
-          HashMapCustom<Integer, Integer> hashMapCustom = new HashMapCustom<Integer, Integer>();
+          HashMapCustom<Integer, Integer> hashMapCustom = new HashMapCustom<>();
           hashMapCustom.put(21, 12);
           hashMapCustom.put(25, 121);
           hashMapCustom.put(30, 151);

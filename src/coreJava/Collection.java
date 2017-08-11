@@ -1,9 +1,8 @@
 package coreJava;
 
-import java.util.Collections;
 import java.util.HashSet;
 
-public class Collection {
+class Collection {
 	public static void main(String[] args) {
 		HashSet<Person> set = new HashSet<>();
 		

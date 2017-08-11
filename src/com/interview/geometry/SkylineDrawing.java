@@ -15,7 +15,7 @@ import java.util.*;
  * https://leetcode.com/problems/the-skyline-problem/
  * https://leetcode.com/discuss/67091/once-for-all-explanation-with-clean-java-code-nlog-time-space
  */
-public class SkylineDrawing {
+class SkylineDrawing {
 
     /**
      * Represents either start or end of building
@@ -40,7 +40,7 @@ public class SkylineDrawing {
         }
      }
 
-    public List<int[]> getSkyline(int[][] buildings) {
+    private List<int[]> getSkyline(int[][] buildings) {
 
         //for all start and end of building put them into List of BuildingPoint
         BuildingPoint[] buildingPoints = new BuildingPoint[buildings.length*2];

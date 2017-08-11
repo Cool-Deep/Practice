@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * Exercise 5.6 150 qs
  */
-public class SwapOddEvenBits {
+class SwapOddEvenBits {
 
-    public int swap(int num){
+    private int swap(int num){
         int mask1 = 0xAAAAAAAA;
         int mask2 = 0x55555555;
         return (num << 1 & mask1) | ( num >> 1 & mask2);

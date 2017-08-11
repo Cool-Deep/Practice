@@ -3,8 +3,8 @@ package coreJava;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Merge2Array {
-	static int[] arrayC = new int[12];
+class Merge2Array {
+	private static final int[] arrayC = new int[12];
 
 	public static void main(String[] args) {
 		int[] arrayA = { 23, 47, 81, 95, 100 };
@@ -17,8 +17,8 @@ public class Merge2Array {
 		}
 	}
 
-	public static void merge(int[] trendyBusinesses, int sizeA,
-			int[] favoriteBusinesses, int sizeB) {
+	private static void merge(int[] trendyBusinesses, int sizeA,
+                              int[] favoriteBusinesses, int sizeB) {
 		int index1 = 0;
 		int index2 = 0;
 		int index3 = 0;
@@ -45,28 +45,30 @@ public class Merge2Array {
 		// Arrays.sort(arrayC);
 	}
 
-	public static void merge(List<Integer> trendyBusinesses,
-			List<Integer> favoriteBusinesses) {
-		int index1 = 0;
-		int index2 = 0;
-		int index3 = 0;
-		int count = 0;
-		List<Integer> result = new ArrayList<Integer>();
-		while (index1 < trendyBusinesses.size()
-				&& index2 < favoriteBusinesses.size()) {
-			if (trendyBusinesses.get(index1) < favoriteBusinesses.get(index2)) {
-				result.add(trendyBusinesses.get(index1++));
-			} else {
-				result.add(favoriteBusinesses.get(index2++));
-			}
-		}
-
-		while (index1 < trendyBusinesses.size()) {
-			result.add(trendyBusinesses.get(index1++));
-		}
-
-		while (index2 < favoriteBusinesses.size()) {
-			result.add(favoriteBusinesses.get(index2++));
-		}
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public static void merge(List<Integer> trendyBusinesses,
+//			List<Integer> favoriteBusinesses) {
+//		int index1 = 0;
+//		int index2 = 0;
+//		int index3 = 0;
+//		int count = 0;
+//		List<Integer> result = new ArrayList<Integer>();
+//		while (index1 < trendyBusinesses.size()
+//				&& index2 < favoriteBusinesses.size()) {
+//			if (trendyBusinesses.get(index1) < favoriteBusinesses.get(index2)) {
+//				result.add(trendyBusinesses.get(index1++));
+//			} else {
+//				result.add(favoriteBusinesses.get(index2++));
+//			}
+//		}
+//
+//		while (index1 < trendyBusinesses.size()) {
+//			result.add(trendyBusinesses.get(index1++));
+//		}
+//
+//		while (index2 < favoriteBusinesses.size()) {
+//			result.add(favoriteBusinesses.get(index2++));
+//		}
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 }

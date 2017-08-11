@@ -3,9 +3,9 @@ package com.interview.array;
 /**
  * Created by tushar_v_roy on 3/10/16.
  */
-public class SelfCrossing {
+class SelfCrossing {
 
-    public boolean isSelfCrossing(int[] x) {
+    private boolean isSelfCrossing(int[] x) {
         if (x.length < 4) {
             return false;
         }

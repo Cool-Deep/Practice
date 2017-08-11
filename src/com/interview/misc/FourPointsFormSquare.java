@@ -11,9 +11,9 @@ class Cordinate{
  * Less than or more than 4 points in input
  * Points could be in any quadrants e.it neg and pos allowed
  */
-public class FourPointsFormSquare {
+class FourPointsFormSquare {
 
-    public boolean isSquare(Cordinate[] cordinates){
+    private boolean isSquare(Cordinate[] cordinates){
         Cordinate startPoint = cordinates[0];
         int a1 = distanceSquare(startPoint, cordinates[1]);
         int a2 = distanceSquare(startPoint, cordinates[2]);
@@ -22,13 +22,10 @@ public class FourPointsFormSquare {
         
         if(a1 == a2){ //then 0,3 is diagonal
             return compare(cordinates[3],cordinates[1],cordinates[2],a1,a3);
-        }else if(a1 == a3){
-            return compare(cordinates[2],cordinates[1],cordinates[3],a1,a2);
-        }else if(a2 == a3){
-            return compare(cordinates[1],cordinates[2],cordinates[3],a2,a1);
-        }else{
-            return false;
-        }
+        }else if (a1 == a3) {
+            return compare(cordinates[2], cordinates[1], cordinates[3], a1, a2);
+        } else
+            return a2 == a3 && compare(cordinates[1], cordinates[2], cordinates[3], a2, a1);
     }
     
     private boolean compare(Cordinate startPoint, Cordinate point1, Cordinate point2,int len, int diag){
@@ -37,10 +34,7 @@ public class FourPointsFormSquare {
         }
         int a1 = distanceSquare(startPoint,point1);
         int a2 = distanceSquare(startPoint,point2);
-        if(a1 != len || a2 != len){
-            return false;
-        }
-        return true;
+        return a1 == len && a2 == len;
     }
     
     private int distanceSquare(Cordinate c1, Cordinate c2){

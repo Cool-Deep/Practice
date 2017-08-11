@@ -3,7 +3,7 @@ package codeFights;
 /**
  * Created by Davit on 31/07/16.
  */
-public class TournamentDay49 {
+class TournamentDay49 {
 
     private static int points(String s) {
         if (s.equals("love"))
@@ -15,8 +15,8 @@ public class TournamentDay49 {
         return 3;
     }
 
-    private static int tennisGamePoints(String score) {
-        String[] v = score.split("-");
+    private static int tennisGamePoints() {
+        String[] v = "15-40".split("-");
         String a = v[0];
         String b = v[1];
         if (b.equals("all")) {
@@ -25,15 +25,15 @@ public class TournamentDay49 {
         return points(a) + points(b);
     }
 
-    private static int penaltyShots(int shots, int[] score) {
-        if (shots >= 5) {
+    private static int penaltyShots(int[] score) {
+        if (2 >= 5) {
             if (score[0] != score[1])
                 return 0;
             return 2;
         }
         for (int i = 1; i <= 10; i++) {
             int A = (i + 1) / 2, B = i - A;
-            int AA = shots + A, BB = shots + B;
+            int AA = 2 + A, BB = 2 + B;
             if (score[0] + A > score[1] + (5 - BB)) {
                 return i;
             }
@@ -70,54 +70,54 @@ public class TournamentDay49 {
         return reversed;
     }
 
-    private static int logicalOrder(String current, String first, String second) {
-        current = reverse(current);
-        first = reverse(first);
-        second = reverse(second);
+    private static int logicalOrder() {
+        "fullb" = reverse("fullb");
+        "filea" = reverse("filea");
+        "filew" = reverse("filew");
         int r = 0;
-        while (!first.isEmpty() && first.charAt(first.length() - 1) == second.charAt(second.length() - 1)) {
-            if (current.charAt(current.length() - 1) != first.charAt(first.length() - 1)) r++;
-            current = current.substring(0, current.length() - 2);
-            second = second.substring(0, second.length() - 2);
-            first = first.substring(0, first.length() - 2);
+        while (!"filea".isEmpty() && "filea".charAt("filea".length() - 1) == "filew".charAt("filew".length() - 1)) {
+            if ("fullb".charAt("fullb".length() - 1) != "filea".charAt("filea".length() - 1)) r++;
+            "fullb" = "fullb".substring(0, "fullb".length() - 2);
+            "filew" = "filew".substring(0, "filew".length() - 2);
+            "filea" = "filea".substring(0, "filea".length() - 2);
         }
-        current = reverse(current);
-        first = reverse(first);
-        second = reverse(second);
+        "fullb" = reverse("fullb");
+        "filea" = reverse("filea");
+        "filew" = reverse("filew");
         int res = 10000;
         //cout << first << " " << second << " " << current << endl;
-        if (first.compareTo(current) < 0 && current.compareTo(second) < 0) return r;
-        if (first.charAt(0) + 1 < second.charAt(0)) {
+        if ("filea".compareTo("fullb") < 0 && "fullb".compareTo("filew") < 0) return r;
+        if ("filea".charAt(0) + 1 < "filew".charAt(0)) {
             return 1 + r;
         }
-        for (int i = 0; i < current.length(); ++i) {
-            String tmp = current;
+        for (int i = 0; i < "fullb".length(); ++i) {
+            String tmp = "fullb";
             int now = 0;
             for (int a = 0; a < i; ++a) {
-                if (tmp.charAt(a) != first.charAt(a)) {
+                if (tmp.charAt(a) != "filea".charAt(a)) {
                     now++;
-                    tmp.toCharArray()[a] = first.charAt(a);
+                    tmp.toCharArray()[a] = "filea".charAt(a);
                 }
             }
-            if (tmp.compareTo(first) > 0 && tmp.compareTo(second) < 0) res = Math.min(res, now);
+            if (tmp.compareTo("filea") > 0 && tmp.compareTo("filew") < 0) res = Math.min(res, now);
             for (char c = 'a'; c <= 'z'; ++c) {
                 tmp.toCharArray()[i] = c;
-                if (tmp.compareTo(first) > 0 && tmp.compareTo(second) < 0) res = Math.min(res, now + 1);
+                if (tmp.compareTo("filea") > 0 && tmp.compareTo("filew") < 0) res = Math.min(res, now + 1);
             }
         }
-        for (int i = 0; i < current.length(); ++i) {
-            String tmp = current;
+        for (int i = 0; i < "fullb".length(); ++i) {
+            String tmp = "fullb";
             int now = 0;
             for (int a = 0; a < i; ++a) {
-                if (tmp.charAt(a) != second.charAt(a)) {
+                if (tmp.charAt(a) != "filew".charAt(a)) {
                     now++;
-                    tmp.toCharArray()[a] = second.charAt(a);
+                    tmp.toCharArray()[a] = "filew".charAt(a);
                 }
             }
-            if (tmp.compareTo(first) > 0 && tmp.compareTo(second) < 0) res = Math.min(res, now);
+            if (tmp.compareTo("filea") > 0 && tmp.compareTo("filew") < 0) res = Math.min(res, now);
             for (char c = 'a'; c <= 'z'; ++c) {
                 tmp.toCharArray()[i] = c;
-                if (tmp.compareTo(first) > 0 && tmp.compareTo(second) < 0) res = Math.min(res, now + 1);
+                if (tmp.compareTo("filea") > 0 && tmp.compareTo("filew") < 0) res = Math.min(res, now + 1);
             }
         }
 
@@ -139,7 +139,7 @@ public class TournamentDay49 {
         return n;
     }
 
-    private static int aquariumFish(int[] w, int[][][] f, int t) {
+    private static int aquariumFish(int[] w, int[][][] f) {
         /*
         def aquariumFish(w, f, t):
     a = []
@@ -193,19 +193,19 @@ public class TournamentDay49 {
     }
 
     public static void main(String[] args) {
-        System.out.println(tennisGamePoints("15-40"));
-        System.out.println(penaltyShots(2, new int[]{1, 2}));
+        System.out.println(tennisGamePoints());
+        System.out.println(penaltyShots(new int[]{1, 2}));
         System.out.println(topTeamsTable(new String[][]{{"Canada", "Sweden", "Czech", "Finland"},
                 {"Canada", "Sweden", "Slovakia", "Czech"},
                 {"Canada", "Sweden", "Czech", "Slovakia"},
                 {"Sweden", "Canada", "Czech", "Finland"},
                 {"Sweden", "Czech", "Slovakia", "Canada"}}));
-        System.out.println(logicalOrder("fullb", "filea", "filew"));
+        System.out.println(logicalOrder());
         System.out.println(cropCircles(new int[][]{{-2, 0}, {9, 4}}, new int[][]{{0, 0, 4}, {-2, 0, 1}, {1, 1, 1}, {9, 1, 4}}));
         System.out.println(aquariumFish(new int[]{2, 3, 2, 1}, new int[][][]{{{1, 2}, {-1, 0}},
                 {{1, 0}, {-3, 1}},
                 {{-1, 2}, {1, 0}},
-                {{0, 1}, {2, -4}}}, 5));
+                {{0, 1}, {2, -4}}}));
     }
 
 }

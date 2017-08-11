@@ -20,9 +20,9 @@ package com.interview.number;
  * Reference
  * http://www.geeksforgeeks.org/factorial-large-number/
  */
-public class FactorialOfLargeNumber {
+class FactorialOfLargeNumber {
 
-    public int calculate(int result[], int n){
+    private int calculate(int result[], int n){
         assert n >= 0;
         result[0] = 1;
         int size = 1;

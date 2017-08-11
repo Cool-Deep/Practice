@@ -13,7 +13,7 @@ public class SubarrayWithGivenSum {
             return start + " " + end;
         }
     }
-    public Pair findSubArray(int input[],int sum){
+    private Pair findSubArray(int input[], int sum){
         int currentSum = 0;
         Pair p = new Pair();
         p.start = 0;

@@ -11,18 +11,18 @@ import java.util.PriorityQueue;
  * 
  * https://leetcode.com/problems/find-median-from-data-stream/
  */
-public class MedianFinder {
+class MedianFinder {
 
-    PriorityQueue<Integer> minPq = new PriorityQueue<>();
-    PriorityQueue<Integer> maxPq = new PriorityQueue<>();
+    private PriorityQueue<Integer> minPq = new PriorityQueue<>();
+    private PriorityQueue<Integer> maxPq = new PriorityQueue<>();
 
-    public MedianFinder() {
+    private MedianFinder() {
         minPq = new PriorityQueue<>();
         maxPq = new PriorityQueue<>(20, Collections.reverseOrder());
     }
 
     // Adds a number into the data structure.
-    public void addNum(int num) {
+    private void addNum(int num) {
         if (maxPq.size() == 0) {
             maxPq.add(num);
             return;
@@ -46,7 +46,7 @@ public class MedianFinder {
         }
     }
     // Returns the median of current data stream
-    public double findMedian() {
+    private double findMedian() {
         if (minPq.size() == maxPq.size()) {
             return ((double)minPq.peek() + (double)maxPq.peek())/2;
         } else {

@@ -1,19 +1,16 @@
 package com.interview.array;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-
 /**
  * http://www.geeksforgeeks.org/given-an-array-arr-find-the-maximum-j-i-such-that-arrj-arri/
  */
-public class MaximumIminusJSuchThatAiGTAj {
+class MaximumIminusJSuchThatAiGTAj {
 
-    class Node{
-        int index;
-        int size;
+    private class Node{
+        // --Commented out by Inspection (8/10/17, 5:13 PM):int index;
+        // --Commented out by Inspection (8/10/17, 5:13 PM):int size;
     }
     
-    public int maximumGeeks(int input[]){
+    private int maximumGeeks(int input[]){
         int lhs[] = new int[input.length];
         int rhs[] = new int[input.length];
         lhs[0] = 0;

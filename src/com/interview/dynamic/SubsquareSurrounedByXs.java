@@ -27,13 +27,13 @@ package com.interview.dynamic;
  * Matrix entirely made up of Os
  * Matrix with Xs and Os but maximum subsquare is length 1
  */
-public class SubsquareSurrounedByXs {
+class SubsquareSurrounedByXs {
 
     class Cell{
         int ver;
         int hori;
     }
-    public int findSubSquare(char input[][]){
+    private int findSubSquare(char input[][]){
         Cell T[][] = new Cell[input.length][input[0].length];
         for(int i=0; i < T.length; i++){
             for(int j=0; j < T[0].length; j++){
@@ -61,9 +61,9 @@ public class SubsquareSurrounedByXs {
                 }
             }
         }
-        for(int i=0; i < T.length; i++){
-            for(int j=0; j < T[0].length; j++){
-                System.out.print(T[i][j].ver + "," + T[i][j].hori+ "  ");
+        for (Cell[] aT : T) {
+            for (int j = 0; j < T[0].length; j++) {
+                System.out.print(aT[j].ver + "," + aT[j].hori + "  ");
             }
             System.out.println();
         }

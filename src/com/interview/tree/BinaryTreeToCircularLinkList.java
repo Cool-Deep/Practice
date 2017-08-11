@@ -6,9 +6,9 @@ package com.interview.tree;
  * Null tree
  * 
  */
-public class BinaryTreeToCircularLinkList {
+class BinaryTreeToCircularLinkList {
 
-    public Node convert(Node root){
+    private Node convert(Node root){
         if(root == null){
             return null;
         }

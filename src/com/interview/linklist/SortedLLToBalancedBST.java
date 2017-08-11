@@ -6,9 +6,9 @@ package com.interview.linklist;
  * empty list
  * 0 1 or more node lists
  */
-public class SortedLLToBalancedBST {
+class SortedLLToBalancedBST {
 
-    public Node toBalancedBST(Node head){
+    private Node toBalancedBST(Node head){
         LinkList ll = new LinkList();
         int size = ll.size(head);
         NodeRef headRef = new NodeRef();
@@ -29,7 +29,7 @@ public class SortedLLToBalancedBST {
         return head;
     }
     
-    public void printTreeInOrder(Node head){
+    private void printTreeInOrder(Node head){
         if(head == null){
             return;
         }
@@ -38,7 +38,7 @@ public class SortedLLToBalancedBST {
         printTreeInOrder(head.next);
     }
     
-    public void printTreePreOrder(Node head){
+    private void printTreePreOrder(Node head){
         if(head == null){
             return;
         }

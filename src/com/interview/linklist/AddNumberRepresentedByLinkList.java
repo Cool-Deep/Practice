@@ -8,7 +8,7 @@ package com.interview.linklist;
  * Add with carry in main
  * Add with carry in remaining
  */
-public class AddNumberRepresentedByLinkList {
+class AddNumberRepresentedByLinkList {
 
     private int carry = 0;
     
@@ -36,7 +36,7 @@ public class AddNumberRepresentedByLinkList {
         }
     }
     
-    public Node add(Node head1, Node head2){
+    private Node add(Node head1, Node head2){
         if(head1 == null || head2 == null){
             throw new IllegalArgumentException();
         }

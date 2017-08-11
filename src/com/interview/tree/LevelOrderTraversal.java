@@ -15,14 +15,14 @@ import java.util.Queue;
  * Full tree
  * complete tree
  */
-public class LevelOrderTraversal {
+class LevelOrderTraversal {
 
     public void levelOrder(Node root){
         if(root == null){
             System.out.println("Please enter a valid tree!");
             return;
         }
-        Queue<Node> queue = new LinkedList<Node>();
+        Queue<Node> queue = new LinkedList<>();
         queue.offer(root);
         System.out.println();
         while(queue.size() > 0){

@@ -16,8 +16,8 @@ import java.util.Deque;
  * We see that S[i] on day i can be easily computed if we know the closest day preceding i, such that the price is greater than on that day than the price on day i. If such a day exists, let’s call it h(i), otherwise, we define h(i) = -1.
  * The span is now computed as S[i] = i – h(i). See the following diagram.
  */
-public class StockSpanProblem {
-    public static int[] stockSpan(int[] prices){
+class StockSpanProblem {
+    private static int[] stockSpan(int[] prices){
         Deque<Integer> stack = new ArrayDeque<>();
         int[] stockSpan = new int[prices.length];
         stockSpan[0] = 1;

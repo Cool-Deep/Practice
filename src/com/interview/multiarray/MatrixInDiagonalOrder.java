@@ -3,9 +3,9 @@ package com.interview.multiarray;
 /**
  * http://www.geeksforgeeks.org/print-matrix-diagonally/
  */
-public class MatrixInDiagonalOrder {
+class MatrixInDiagonalOrder {
 
-	public void printMatrix(int [][]matrix){
+	private void printMatrix(int[][] matrix){
 		for(int i=0; i < matrix.length; i++){
 			int start =i;
 			int end =0;

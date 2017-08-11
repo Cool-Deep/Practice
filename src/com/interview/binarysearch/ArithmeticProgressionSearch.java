@@ -3,9 +3,9 @@ package com.interview.binarysearch;
 /**
  * http://www.careercup.com/question?id=4798365246160896
  */
-public class ArithmeticProgressionSearch {
+class ArithmeticProgressionSearch {
 
-    public int search(int input[]){
+    private int search(int input[]){
         int low =0;
         int high = input.length-1;
         int ap = (input[high] - input[low])/(input.length);

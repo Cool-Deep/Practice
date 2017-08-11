@@ -22,9 +22,9 @@ import java.util.List;
  * Reference
  * https://leetcode.com/problems/combination-sum/
  */
-public class PrintSumCombination {
+class PrintSumCombination {
 
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    private List<List<Integer>> combinationSum(int[] candidates, int target) {
         if (candidates.length == 0) {
             return new ArrayList<>();
         }

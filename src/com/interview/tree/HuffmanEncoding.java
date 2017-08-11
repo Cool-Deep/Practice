@@ -29,11 +29,11 @@ class HuffmanNodeComparator implements Comparator<HuffmanNode>{
     
 }
 
-public class HuffmanEncoding {
+class HuffmanEncoding {
 
-    public Map<Character,String> huffman(char[] input, int freq[]){
+    private Map<Character,String> huffman(char[] input, int freq[]){
         HuffmanNodeComparator comparator = new HuffmanNodeComparator();
-        PriorityQueue<HuffmanNode> heap = new PriorityQueue<HuffmanNode>(input.length,comparator);
+        PriorityQueue<HuffmanNode> heap = new PriorityQueue<>(input.length, comparator);
         for(int i=0; i < input.length; i++){
             HuffmanNode node = new HuffmanNode();
             node.freq = freq[i];
@@ -51,14 +51,14 @@ public class HuffmanEncoding {
             heap.offer(node);
         }
         
-        Map<Character,String> map = new HashMap<Character,String>();
+        Map<Character,String> map = new HashMap<>();
         StringBuffer buff = new StringBuffer();
         createCode(heap.poll(),map,buff);
         return map;
         
     }
     
-    public void createCode(HuffmanNode node,Map<Character,String> map,StringBuffer buff){
+    private void createCode(HuffmanNode node, Map<Character, String> map, StringBuffer buff){
         if(node == null){
             return;
         }

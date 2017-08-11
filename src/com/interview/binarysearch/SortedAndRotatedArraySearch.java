@@ -4,9 +4,9 @@ package com.interview.binarysearch;
  * http://www.geeksforgeeks.org/search-an-element-in-a-sorted-and-pivoted-array/
  * This does not works if there are duplicates in the array.
  */
-public class SortedAndRotatedArraySearch {
+class SortedAndRotatedArraySearch {
 
-    public int search(int arr[],int search){
+    private int search(int arr[], int search){
         
         int low =0;
         int high = arr.length-1;

@@ -31,9 +31,9 @@ package com.interview.dynamic;
  * References:
  * http://www.geeksforgeeks.org/dynamic-programming-set-18-word-wrap/
  */
-public class TextJustification {
+class TextJustification {
 
-    public String justify(String words[], int width) {
+    private String justify(String words[], int width) {
         
         int cost[][] = new int[words.length][words.length];
         
@@ -86,7 +86,7 @@ public class TextJustification {
         do{
             j = result[i];
             for(int k=i; k < j; k++){
-                builder.append(words[k] + " ");
+                builder.append(words[k]).append(" ");
             }
             builder.append("\n");
             i = j;

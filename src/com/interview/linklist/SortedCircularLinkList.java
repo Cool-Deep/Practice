@@ -9,9 +9,9 @@ package com.interview.linklist;
  * Insert element just before tail
  * Insert element somewhere between head and tail
  */
-public class SortedCircularLinkList {
+class SortedCircularLinkList {
 
-    public Node add(Node head,int data){
+    private Node add(Node head, int data){
         if(head == null){
             head = Node.newNode(data);
             head.next = head;
@@ -49,7 +49,7 @@ public class SortedCircularLinkList {
         return temp;
     }
     
-    public void printList(Node head){
+    private void printList(Node head){
         if(head == null){
             return;
         }

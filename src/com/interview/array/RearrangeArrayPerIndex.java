@@ -13,9 +13,9 @@ import java.util.Arrays;
  *
  * http://www.geeksforgeeks.org/rearrange-array-arrj-becomes-arri-j/
  */
-public class RearrangeArrayPerIndex {
+class RearrangeArrayPerIndex {
 
-    public void rearrange(int input[]) {
+    private void rearrange(int input[]) {
 
         for (int i = 0; i < input.length; i++) {
             input[i]++;

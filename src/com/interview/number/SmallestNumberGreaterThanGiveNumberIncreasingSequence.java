@@ -10,9 +10,9 @@ package com.interview.number;
  * 9,8,7 -> 1,2,3,4
  * 2,6   -> 2,7
  */
-public class SmallestNumberGreaterThanGiveNumberIncreasingSequence {
+class SmallestNumberGreaterThanGiveNumberIncreasingSequence {
 
-    public int[] getNextInt(int []input){
+    private int[] getNextInt(int[] input){
         int result[] = new int[input.length];
         boolean flag = getNextInt(input,result,0);
         if(flag){

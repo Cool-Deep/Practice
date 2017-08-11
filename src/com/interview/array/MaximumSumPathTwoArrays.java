@@ -13,9 +13,9 @@ package com.interview.array;
  *
  * http://www.geeksforgeeks.org/maximum-sum-path-across-two-arrays/
  */
-public class MaximumSumPathTwoArrays {
+class MaximumSumPathTwoArrays {
 
-    public int maxSum(int input1[], int input2[]) {
+    private int maxSum(int input1[], int input2[]) {
         int maxSum = 0;
         int i = 0, j = 0;
         int sum1 = 0;

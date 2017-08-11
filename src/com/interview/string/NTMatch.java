@@ -15,9 +15,9 @@ Function should return false if
 3) S = abcabcefg
 4) S = zzxzzyzzx
  */
-public class NTMatch {
+class NTMatch {
 
-    public boolean match(char str[]){
+    private boolean match(char str[]){
         int kmp[] = buildKMP(str);
         int index = kmp[str.length-1];
         //reason end is this rather than index+1 because
@@ -36,11 +36,8 @@ public class NTMatch {
             i = (i+1)%(end+1);
             j++;
         }
-        
-        if(i == 0){
-            return true;
-        }
-        return false;
+
+        return i == 0;
     }
     
     private int[] buildKMP(char str[]){

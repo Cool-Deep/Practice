@@ -1,8 +1,6 @@
 package coreJava;
 
-import java.util.*;
-
-public class GetSingleDigit {
+class GetSingleDigit {
 
 	public static void main(String[] args) {
 
@@ -13,7 +11,7 @@ public class GetSingleDigit {
 		System.out.println(reduceToOneDigit(n1));
 	}
 
-	public static int reduceToOneDigit(int n1) {
+	private static int reduceToOneDigit(int n1) {
 		int result = 1;
 		while (n1 > 9) {
 			while (n1 > 0) {

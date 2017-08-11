@@ -3,9 +3,9 @@ package com.interview.number;
 /**
  * http://www.geeksforgeeks.org/length-of-the-longest-arithmatic-progression-in-a-sorted-array/
  */
-public class ArithemeticProgressionExists {
+class ArithemeticProgressionExists {
 
-    public boolean exists(int input[]){
+    private boolean exists(int input[]){
         
         for(int i=1; i < input.length-1; i++){
             int j = i-1;

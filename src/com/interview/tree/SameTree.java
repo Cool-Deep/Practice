@@ -14,19 +14,14 @@ package com.interview.tree;
  * 
  * Time complexity is O(n)
  */
-public class SameTree {
+class SameTree {
 
-    public boolean sameTree(Node root1, Node root2){
-        if(root1 == null && root2 == null){
+    private boolean sameTree(Node root1, Node root2) {
+        if (root1 == null && root2 == null) {
             return true;
         }
-        if(root1 == null || root2 == null){
-            return false;
-        }
-        
-        return root1.data == root2.data && 
-                sameTree(root1.left, root2.left) &&
-                sameTree(root1.right, root2.right);
+        return root1 != null && root2 != null && root1.data == root2.data && sameTree(root1.left, root2.left) && sameTree(root1.right, root2.right);
+
     }
     
     public static void main(String args[]){

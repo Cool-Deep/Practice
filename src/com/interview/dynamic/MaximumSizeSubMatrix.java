@@ -3,24 +3,22 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/maximum-size-sub-matrix-with-all-1s-in-a-binary-matrix/
  */
-public class MaximumSizeSubMatrix {
+class MaximumSizeSubMatrix {
 
     private int min(int a,int b, int c){
         int l = Math.min(a, b);
         return Math.min(l, c);
     }
     
-    public int maxSize(int arr[][]){
+    private int maxSize(int arr[][]){
         
         int result[][] = new int[arr.length][arr[0].length];
         
         for(int i=0; i < arr.length; i++){
             result[i][0] = arr[i][0];
         }
-        
-        for(int i=0; i < arr[0].length; i++){
-            result[0][i] = arr[0][i];
-        }
+
+        System.arraycopy(arr[0], 0, result[0], 0, arr[0].length);
         
         int max = 1;
         for(int i=1; i < arr.length; i++){

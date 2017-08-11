@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-36-cut-a-rope-to-maximize-product/
  */
-public class MaximumProductCutting {
+class MaximumProductCutting {
 
-    public int maxProduct(int num){
+    private int maxProduct(int num){
         int T[] = new int[num+1];
         T[0] = 1;
         for(int i=1; i <= num; i++){

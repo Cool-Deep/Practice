@@ -7,9 +7,9 @@ package com.interview.misc;
  * First 2 digits better be between 0 and 23
  * Last 2 digits of number better be between 0 to 59
  */
-public class DifferenceBetweenTwoTime {
+class DifferenceBetweenTwoTime {
 
-    public int diff(int time1, int time2){
+    private int diff(int time1, int time2){
         if(time2 < time1){
             throw new IllegalArgumentException();
         }

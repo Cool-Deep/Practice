@@ -11,7 +11,7 @@ package com.interview.tree;
  * Full tree
  * complete tree
  */
-public class ConstructTreeFromInOrderPreOrder {
+class ConstructTreeFromInOrderPreOrder {
     
     private int index = 0;
     public Node createTree(int inorder[],int preorder[]){

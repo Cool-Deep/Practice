@@ -2,43 +2,55 @@ package coreJava;
 
 import java.util.*;
 
-public class Employee<E> implements Comparable<Employee>{
+class Employee<E> implements Comparable<Employee>{
 	
 
 	private String empName;
 	private int empId;
 	private int empAge;
 	
-	public String getEmpName() {
-		return empName;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public String getEmpName() {
+//		return empName;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-	public void setEmpName(String empName) {
-		this.empName = empName;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public void setEmpName(String empName) {
+//		this.empName = empName;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-	public int getEmpId() {
-		return empId;
-	}
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public int getEmpId() {
+//		return empId;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-	public void setEmpId(int empId) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public void setEmpId(int empId) {
+//		this.empId = empId;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public int getEmpAge() {
+//		return empAge;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//	public void setEmpAge(int empAge) {
+//		this.empAge = empAge;
+//	}
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+	private Employee(int empId, String empName, int empAge){
 		this.empId = empId;
-	}
-
-	public int getEmpAge() {
-		return empAge;
-	}
-
-	public void setEmpAge(int empAge) {
+		this.empName = empName;
 		this.empAge = empAge;
 	}
-
-	public Employee(int empId, String empName, int empAge){
-		this.empId = empId;
-		this.empName = empName;
-		this.empAge = empAge;
-	}
-	public Employee() {
+	private Employee() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -48,7 +60,7 @@ public class Employee<E> implements Comparable<Employee>{
 	
 	public static void main(String[] args) {
 
-		List<Employee> empList = new ArrayList<Employee>();
+		List<Employee> empList = new ArrayList<>();
 		//Employee[] empArray = new Employee[10];
 	
 		empList.add(new Employee(3, "Nikhil", 29));
@@ -75,7 +87,7 @@ public class Employee<E> implements Comparable<Employee>{
 	}
 	
 	private void sortUsingJava8(List<E> names){
-		Collections.sort(names, (s1,s2) -> ((Comparable<Employee>) s1).compareTo((Employee) s2));
+		names.sort((s1, s2) -> ((Comparable<Employee>) s1).compareTo((Employee) s2));
 		
 	}
 

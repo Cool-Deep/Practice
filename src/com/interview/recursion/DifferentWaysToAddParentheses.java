@@ -5,8 +5,8 @@ import java.util.*;
 /**
  https://leetcode.com/problems/different-ways-to-add-parentheses/
  */
-public class DifferentWaysToAddParentheses {
-    public List<Integer> diffWaysToCompute(String str) {
+class DifferentWaysToAddParentheses {
+    private List<Integer> diffWaysToCompute(String str) {
         List<Integer> operands = new ArrayList<>();
         List<Character> operators = new ArrayList<>();
         int prev = -1;
@@ -58,6 +58,6 @@ public class DifferentWaysToAddParentheses {
     public static void main(String args[]) {
         DifferentWaysToAddParentheses df = new DifferentWaysToAddParentheses();
         List<Integer> result = df.diffWaysToCompute("2*3-4*5");
-        result.forEach(s -> System.out.println(s));
+        result.forEach(System.out::println);
     }
 }

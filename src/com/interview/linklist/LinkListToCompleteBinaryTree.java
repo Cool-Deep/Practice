@@ -8,9 +8,9 @@ import java.util.Queue;
  * Test cases
  * Zero, One or more nodes in link list
  */
-public class LinkListToCompleteBinaryTree {
+class LinkListToCompleteBinaryTree {
 
-    public void convert(Node head){
+    private void convert(Node head){
         if(head == null){
             return;
         }
@@ -36,7 +36,7 @@ public class LinkListToCompleteBinaryTree {
         }
      }
     
-    public void inorder(Node head){
+    private void inorder(Node head){
         if(head == null){
             return;
         }

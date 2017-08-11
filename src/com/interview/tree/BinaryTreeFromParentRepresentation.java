@@ -10,9 +10,9 @@ package com.interview.tree;
  * References:
  * http://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
  */
-public class BinaryTreeFromParentRepresentation {
+class BinaryTreeFromParentRepresentation {
 
-    public Node create(int input[]) {
+    private Node create(int input[]) {
         Node t[] = new Node[input.length];
 
         for(int i = 0; i < input.length; i++) {

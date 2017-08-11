@@ -10,15 +10,15 @@ import java.util.Set;
 /**
  * http://www.geeksforgeeks.org/maximum-bipartite-matching/
  */
-public class MaximumBiparteMatching {
+class MaximumBiparteMatching {
 
-    public int findMaxMatching(Map<Integer,List<Integer>> jobApplications, List<Integer> allJobs){
+    private int findMaxMatching(Map<Integer, List<Integer>> jobApplications, List<Integer> allJobs){
         
-        Map<Integer,Integer> match = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> match = new HashMap<>();
         int maxMatch = 0;
         for(Integer candidate : jobApplications.keySet()){
-            Set<Integer> jobsSeen = new HashSet<Integer>();
-            maxMatch += matchJobs(candidate, jobApplications, match, jobsSeen) ==true ? 1 : 0;
+            Set<Integer> jobsSeen = new HashSet<>();
+            maxMatch += matchJobs(candidate, jobApplications, match, jobsSeen) ? 1 : 0;
         }
         return maxMatch;
     }
@@ -45,29 +45,29 @@ public class MaximumBiparteMatching {
     }
     
     public static void main(String args[]){
-        List<Integer> app0 = new ArrayList<Integer>();
+        List<Integer> app0 = new ArrayList<>();
         app0.add(10);
         app0.add(11);
         app0.add(13);
         
-        List<Integer> app1 = new ArrayList<Integer>();
+        List<Integer> app1 = new ArrayList<>();
         app1.add(10);
         
-        List<Integer> app2 = new ArrayList<Integer>();
+        List<Integer> app2 = new ArrayList<>();
         app2.add(12);
 
-        List<Integer> app3 = new ArrayList<Integer>();
+        List<Integer> app3 = new ArrayList<>();
         app3.add(12);
         app3.add(10);
         app3.add(11);
         
-        Map<Integer,List<Integer>> jobApplications = new HashMap<Integer,List<Integer>>();
+        Map<Integer,List<Integer>> jobApplications = new HashMap<>();
         jobApplications.put(0, app0);
         jobApplications.put(1, app1);
         jobApplications.put(2, app2);
         jobApplications.put(3, app3);
         MaximumBiparteMatching mbm = new MaximumBiparteMatching();
-        List<Integer> allJobs = new ArrayList<Integer>();
+        List<Integer> allJobs = new ArrayList<>();
         allJobs.add(10);
         allJobs.add(11);
         allJobs.add(12);

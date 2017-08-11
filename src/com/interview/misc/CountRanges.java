@@ -18,14 +18,14 @@ import java.util.TreeMap;
  *
  * https://leetcode.com/problems/count-of-range-sum/
  */
-public class CountRanges {
+class CountRanges {
 
-    public int countRangeSum(int[] nums, int lower, int upper) {
+    private int countRangeSum(int[] nums, int lower, int upper) {
         TreeMap<Long, Integer> map = new TreeMap<>();
         Map<Long, Integer> countMap = new HashMap<>();
         long prefixSum[] = new long[nums.length + 1];
-        map.put(0l, 1);
-        countMap.put(0l, 1);
+        map.put(0L, 1);
+        countMap.put(0L, 1);
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
             prefixSum[i+1] = prefixSum[i] + nums[i];

@@ -26,7 +26,7 @@ public class EulerianPathAndCircuit<T> {
             return true;
         }
         
-        Map<Vertex<T>,Boolean> visited = new HashMap<Vertex<T>, Boolean>();
+        Map<Vertex<T>,Boolean> visited = new HashMap<>();
         DFS(startVertex,visited);
         
         for(Vertex<T> testVertex : graph.getAllVertex()){
@@ -47,7 +47,7 @@ public class EulerianPathAndCircuit<T> {
         }
     }
     
-    public Eulerian isEulerian(Graph<T> graph){
+    Eulerian isEulerian(Graph<T> graph){
         
         if(!isConnected(graph)){
             return Eulerian.NOT_EULERIAN;
@@ -70,7 +70,7 @@ public class EulerianPathAndCircuit<T> {
     
     public static void main(String args[]){
         
-        Graph<Integer> graph = new Graph<Integer>(false);
+        Graph<Integer> graph = new Graph<>(false);
         graph.addSingleVertex(1);
         graph.addSingleVertex(2);
         graph.addSingleVertex(3);
@@ -78,7 +78,7 @@ public class EulerianPathAndCircuit<T> {
         graph.addEdge(6, 4);
         graph.addEdge(5,6);
         
-        EulerianPathAndCircuit<Integer> eulerian = new EulerianPathAndCircuit<Integer>();
+        EulerianPathAndCircuit<Integer> eulerian = new EulerianPathAndCircuit<>();
         Eulerian result = eulerian.isEulerian(graph);
         System.out.print(result);
     }

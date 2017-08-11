@@ -6,8 +6,8 @@ package com.interview.tree;
  */
 public class BTree {
     private BTreeNode root = null;
-    private static int T = 2;
-    public void insert(int data){
+    private static final int T = 2;
+    private void insert(int data){
         if(root == null){
             root = BTreeNode.newNode(data);
             return;
@@ -24,22 +24,19 @@ public class BTree {
         }
     }
     
-    public boolean search(int data){
+    private boolean search(int data){
         return search(root,data);
     }
     
-    public boolean search(BTreeNode root, int data){
-        int i =0;
-        while(i < root.n && root.keys[i] < data){
+    private boolean search(BTreeNode root, int data) {
+        int i = 0;
+        while (i < root.n && root.keys[i] < data) {
             i++;
         }
-        if(i < root.n && root.keys[i] == data){
+        if (i < root.n && root.keys[i] == data) {
             return true;
         }
-        if(root.isLeaf){
-            return false;
-        }
-        return search(root.child[i],data);
+        return !root.isLeaf && search(root.child[i], data);
     }
     
     private SplitResult insert(BTreeNode root,int data){
@@ -128,7 +125,7 @@ public class BTree {
         int c;
     }
     
-    public void traverse(){
+    private void traverse(){
         traverse(root);
     }
     
@@ -146,8 +143,8 @@ public class BTree {
     
     static class BTreeNode{
         int n ;
-        BTreeNode[] child = new BTreeNode[2*T];
-        int keys[] = new int[2*T-1];
+        final BTreeNode[] child = new BTreeNode[2*T];
+        final int[] keys = new int[2*T-1];
         boolean isLeaf;
         
         public void insertKey(int data,BTreeNode r1,BTreeNode r2){

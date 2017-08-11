@@ -6,9 +6,9 @@ package com.interview.misc;
  * Not equal length strings
  * String containing anything other than 0 and 1
  */
-public class HammingDistanceBetweenPair {
+class HammingDistanceBetweenPair {
 
-    public int hammingDistance(String input[]){
+    private int hammingDistance(String input[]){
         int size = input[0].length();
         int total = 0;
         for(int i=0; i < size; i++){

@@ -1,6 +1,6 @@
 package coreJava;
 
-public class MainClass {
+class MainClass {
 	public static void main(String[] args) {
 		String s1 = "javaj2eehibernatestruts";
 		String s2 = "strutsj2eehibernatejava";

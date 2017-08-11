@@ -5,7 +5,7 @@ package com.interview.multithreaded;
  */
 class Mutex {
 
-    int val = 0;
+    private int val = 0;
 
     /**
      * Val is stored somewhere. If oldVal is same as val
@@ -34,16 +34,16 @@ class Mutex {
 
 }
 
-public class SpinLockMutex {
+class SpinLockMutex {
 
-    StringBuffer buff = new StringBuffer();
+    private final StringBuffer buff = new StringBuffer();
 
     // some method needs mutex protection
-    public void changeBuffer(String str) {
+    private void changeBuffer(String str) {
         buff.append(str);
     }
 
-    public String getBuffer() {
+    private String getBuffer() {
         return buff.toString();
     }
 

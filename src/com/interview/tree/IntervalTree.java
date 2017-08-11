@@ -27,9 +27,9 @@ class InternalNode {
     }
 }
 
-public class IntervalTree {
+class IntervalTree {
 
-    public InternalNode insert(InternalNode root, int low, int high) {
+    private InternalNode insert(InternalNode root, int low, int high) {
         if(root == null) {
             InternalNode node = new InternalNode();
             node.low = low;
@@ -48,7 +48,7 @@ public class IntervalTree {
         return root;
     }
 
-    public InternalNode isOverlap(InternalNode root, int low, int high) {
+    private InternalNode isOverlap(InternalNode root, int low, int high) {
         if(root == null) {
             return null;
         }

@@ -11,8 +11,8 @@ package com.interview.dynamic;
  *
  * https://leetcode.com/problems/dungeon-game/
  */
-public class DungeonGame {
-    public int calculateMinimumHP(int[][] dungeon) {
+class DungeonGame {
+    private int calculateMinimumHP(int[][] dungeon) {
         if (dungeon.length == 0 || dungeon[0].length == 0) {
             return 0;
         }

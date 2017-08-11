@@ -3,9 +3,9 @@ package com.interview.multiarray;
 /**
  * http://www.geeksforgeeks.org/a-boolean-matrix-question/
  */
-public class Fill2DMatrixWith1 {
+class Fill2DMatrixWith1 {
 
-	public void fill(int input[][]){
+	private void fill(int input[][]){
 		boolean row[] = new boolean[input.length];
 		boolean col[] = new boolean[input[0].length];
 		for(int i=0; i < input.length; i++){
@@ -29,11 +29,11 @@ public class Fill2DMatrixWith1 {
 		int input[][] = {{0,0,1,0,0,0},{0,0,0,0,0,0},{1,0,0,0,0,0}};
 		Fill2DMatrixWith1 fd = new Fill2DMatrixWith1();
 		fd.fill(input);
-		for(int i=0; i < input.length; i++){
-			for(int j=0; j < input[i].length; j++){
-				System.out.print(input[i][j] + " ");
-			}
-			System.out.println();
-		}
+        for (int[] anInput : input) {
+            for (int j = 0; j < anInput.length; j++) {
+                System.out.print(anInput[j] + " ");
+            }
+            System.out.println();
+        }
 	}
 }

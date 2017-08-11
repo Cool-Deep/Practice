@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/find-the-minimum-cost-to-reach-a-destination-where-every-station-is-connected-in-one-direction/
  */
-public class MinimumCostTrainTicket {
+class MinimumCostTrainTicket {
 
-    public int minCost(int ticket[][]){
+    private int minCost(int ticket[][]){
         assert ticket != null && ticket.length > 0 && ticket.length == ticket[0].length;
         int T[] = new int[ticket.length];
         int T1[] = new int[ticket.length];

@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 class Job{
-    int start;
-    int end;
-    int profit;
+    final int start;
+    final int end;
+    final int profit;
     Job(int start,int end,int profit){
         this.start= start;
         this.end = end;
@@ -32,7 +32,7 @@ class FinishTimeComparator implements Comparator<Job>{
  * Given set of jobs with start and end interval and profit, how to maximize profit such that 
  * jobs in subset do not overlap.
  */
-public class WeightedJobSchedulingMaximumProfit {
+class WeightedJobSchedulingMaximumProfit {
 
     /**
      * Sort the jobs by finish time.
@@ -42,7 +42,7 @@ public class WeightedJobSchedulingMaximumProfit {
      * @param jobs
      * @return
      */
-    public int maximum(Job[] jobs){
+    private int maximum(Job[] jobs){
         int T[] = new int[jobs.length];
         FinishTimeComparator comparator = new FinishTimeComparator();
         Arrays.sort(jobs, comparator);

@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-8-matrix-chain-multiplication/
  */
-public class MatrixMultiplicationCost {
+class MatrixMultiplicationCost {
 
-    public int findCost(int arr[]){
+    private int findCost(int arr[]){
         int temp[][] = new int[arr.length][arr.length];
         int q = 0;
         for(int l=2; l < arr.length; l++){

@@ -19,8 +19,8 @@ import java.util.LinkedList;
  * 
  * https://leetcode.com/problems/create-maximum-number/
  */
-public class MaxNumberFromTwoArray {
-    public int[] maxNumber(int[] nums1, int[] nums2, int k) {
+class MaxNumberFromTwoArray {
+    private int[] maxNumber(int[] nums1, int[] nums2, int k) {
 
         int[] result = new int[k];
         //try k from nums1 and k - i from nums2.
@@ -97,16 +97,16 @@ public class MaxNumberFromTwoArray {
     private int[] findMaxNumber(int input[],int k) {
         int remaining = input.length - k;
         Deque<Integer> stack = new LinkedList<>();
-        for (int i = 0; i < input.length; i++) {
-            while(!stack.isEmpty() && remaining > 0) {
-                if (stack.peek() < input[i]) {
+        for (int anInput : input) {
+            while (!stack.isEmpty() && remaining > 0) {
+                if (stack.peek() < anInput) {
                     stack.pollFirst();
                     remaining--;
                 } else {
                     break;
                 }
             }
-            stack.offerFirst(input[i]);
+            stack.offerFirst(anInput);
         }
         int[] result = new int[Math.min(k, input.length)];
         for (int i = 0; i < result.length; i++) {

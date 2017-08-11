@@ -5,10 +5,10 @@ import java.util.Arrays;
 /**
  http://www.geeksforgeeks.org/print-all-possible-paths-from-top-left-to-bottom-right-of-a-mxn-matrix/
  */
-public class PrintAllPathFromTopLeftToBottomRight {
+class PrintAllPathFromTopLeftToBottomRight {
 
 
-    public void print(int arr[][],int row, int col,int result[],int pos){
+    private void print(int arr[][], int row, int col, int result[], int pos){
         if(row == arr.length-1 && col == arr[0].length-1){
             result[pos] = arr[row][col];
             System.out.println(Arrays.toString(result));

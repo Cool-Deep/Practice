@@ -6,13 +6,13 @@ import java.util.List;
 /*
  * http://www.geeksforgeeks.org/tug-of-war/
  */
-public class TugOfWar {
+class TugOfWar {
 
     private int minFoundSoFar = 1000000;
-    public int findMind(int arr[]){
+    private int findMind(int arr[]){
         int total = 0;
-        for(int i=0; i < arr.length; i++){
-            total += arr[i];
+        for (int anArr : arr) {
+            total += anArr;
         }
         List<Integer> result = new ArrayList<>();
         combinationUtil(arr,arr.length/2,0,0,total,0,result);

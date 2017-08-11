@@ -32,12 +32,12 @@ import java.util.Stack;
  * Time complexity is O(n) 
  * Space complexity is O(n)
  */
-public class TreeTraversalInSpiralOrder {
+class TreeTraversalInSpiralOrder {
 
     /**
      * Two stack to print in spiral way
      */
-    public void spiralWithTwoStack(Node root) {
+    private void spiralWithTwoStack(Node root) {
         if (root == null) {
             return;
         }
@@ -72,11 +72,11 @@ public class TreeTraversalInSpiralOrder {
     /**
      * One deque with count method to print tree in spiral order
      */
-    public void spiralWithOneDeque(Node root) {
+    private void spiralWithOneDeque(Node root) {
         if (root == null) {
             return;
         }
-        Deque<Node> deque = new LinkedList<Node>();
+        Deque<Node> deque = new LinkedList<>();
         deque.offerFirst(root);
         int count = 1;
         boolean flip = true;
@@ -116,7 +116,7 @@ public class TreeTraversalInSpiralOrder {
     /**
      * One deque with delimiter to print tree in spiral order
      */
-    public void spiralWithOneDequeDelimiter(Node root)
+    private void spiralWithOneDequeDelimiter(Node root)
     {
         if(root == null){
             return;

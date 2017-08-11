@@ -11,8 +11,8 @@ package com.interview.dynamic;
  *
  * https://leetcode.com/problems/distinct-subsequences/
  */
-public class DistinctSubsequence {
-    public int numDistinct(String s, String t) {
+class DistinctSubsequence {
+    private int numDistinct(String s, String t) {
         if (s.length() == 0 || t.length() == 0) {
             return 0;
         }

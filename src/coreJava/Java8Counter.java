@@ -2,7 +2,7 @@ package coreJava;
 
 import java.util.Scanner;
 
-public class Java8Counter {
+class Java8Counter {
 
 	public static void main(String[] args) {
 

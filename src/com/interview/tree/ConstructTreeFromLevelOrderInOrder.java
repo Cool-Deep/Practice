@@ -10,9 +10,9 @@ package com.interview.tree;
  * e.g 1234 we don't know if it is 12 34 or 1 2 3 4 or what. Maybe use brackets
  * (12)(3)(4) to differentiate between them.
  */
-public class ConstructTreeFromLevelOrderInOrder {
+class ConstructTreeFromLevelOrderInOrder {
 
-    public Node constructTree(int inOrder[], int levelOrder[]){
+    private Node constructTree(int inOrder[], int levelOrder[]){
         return constructTree(inOrder, levelOrder,0,inOrder.length-1);
     }
     

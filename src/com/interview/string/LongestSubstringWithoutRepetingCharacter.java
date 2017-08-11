@@ -8,9 +8,9 @@ import java.util.Set;
  * http://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
-public class LongestSubstringWithoutRepetingCharacter {
+class LongestSubstringWithoutRepetingCharacter {
 
-    public int lengthOfLongestSubstring(String s) {
+    private int lengthOfLongestSubstring(String s) {
         Set<Character> uniqueSet = new HashSet<>();
         int maxSize = 0;
         int start = 0;

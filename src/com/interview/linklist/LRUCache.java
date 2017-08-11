@@ -12,18 +12,18 @@ import java.util.Map;
  * Enter data more than max
  * Delete till cache is empty
  */
-public class LRUCache {
+class LRUCache {
 
     private Node head;
     private Node tail;
-    private Map<Integer,Node> map = new HashMap<Integer,Node>();
+    private final Map<Integer,Node> map = new HashMap<>();
     private int MAX_SIZE = 5;
     private int size = 0;
-    public LRUCache(int size){
+    private LRUCache(int size){
         MAX_SIZE = size;
     }
     
-    public void used(int data){
+    private void used(int data){
         if(containsInCache(data)){
             Node node = map.get(data);
             if(node != head){
@@ -38,7 +38,7 @@ public class LRUCache {
         }
     }
     
-    public void addIntoCache(int data){
+    private void addIntoCache(int data){
         size++;
         if(head == null){
             head = Node.newNode(data);
@@ -59,10 +59,9 @@ public class LRUCache {
         }
         head = newNode;
         map.put(data, newNode);
-        return;
     }
     
-    public void printCache(){
+    private void printCache(){
         Node temp = head;
         while(temp != null){
             System.out.print(temp.data + " ");
@@ -71,12 +70,12 @@ public class LRUCache {
         System.out.println();
     }
     
-    public boolean containsInCache(int data)
+    private boolean containsInCache(int data)
     {
         return map.containsKey(data);
     }
     
-    public void deleteFromCache(int data){
+    private void deleteFromCache(int data){
         Node node = map.get(data);
         if(node == null){
             return;

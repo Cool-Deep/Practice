@@ -9,18 +9,20 @@ import java.util.Set;
  * http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/
  * http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/
  */
-public class GraphTraversal {
+class GraphTraversal {
 
-    public void DFS(Graph<Integer> graph){
-        Set<Long> visited = new HashSet<Long>();
-        for(Vertex<Integer> vertex : graph.getAllVertex()){
-            if(!visited.contains(vertex.getId())){
-                DFSUtil(vertex,visited);
-            }
-        }
-        
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public void DFS(Graph<Integer> graph){
+//        Set<Long> visited = new HashSet<Long>();
+//        for(Vertex<Integer> vertex : graph.getAllVertex()){
+//            if(!visited.contains(vertex.getId())){
+//                DFSUtil(vertex,visited);
+//            }
+//        }
+//
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     private void DFSUtil(Vertex<Integer> v,Set<Long> visited){
         visited.add(v.getId());
         System.out.print(v.getId() + " ");
@@ -30,9 +32,9 @@ public class GraphTraversal {
         }
     }
     
-    public void BFS(Graph<Integer> graph){
-        Set<Long> visited = new HashSet<Long>();
-        Queue<Vertex<Integer>> q = new LinkedList<Vertex<Integer>>();
+    private void BFS(Graph<Integer> graph){
+        Set<Long> visited = new HashSet<>();
+        Queue<Vertex<Integer>> q = new LinkedList<>();
         
         for(Vertex<Integer> vertex: graph.getAllVertex()){
             if(!visited.contains(vertex.getId())){
@@ -56,7 +58,7 @@ public class GraphTraversal {
     
     public static void main(String args[]){
         
-        Graph<Integer> graph = new Graph<Integer>(true);
+        Graph<Integer> graph = new Graph<>(true);
         graph.addEdge(1, 2);
         graph.addEdge(1, 3);
         graph.addEdge(2, 4);

@@ -13,10 +13,10 @@ package com.interview.dynamic;
  * Reference
  * https://leetcode.com/problems/range-sum-query-2d-immutable/
  */
-public class Immutable2DSumRangeQuery {
-    private int[][] T;
+class Immutable2DSumRangeQuery {
+    private final int[][] T;
 
-    public Immutable2DSumRangeQuery(int[][] matrix) {
+    private Immutable2DSumRangeQuery(int[][] matrix) {
         int row = 0;
         int col = 0;
         if (matrix.length != 0) {
@@ -31,7 +31,7 @@ public class Immutable2DSumRangeQuery {
         }
    }
 
-    public int sumQuery(int row1, int col1, int row2, int col2) {
+    private int sumQuery(int row1, int col1, int row2, int col2) {
         row1++;
         col1++;
         row2++;

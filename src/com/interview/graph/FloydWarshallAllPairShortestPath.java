@@ -1,9 +1,7 @@
 package com.interview.graph;
 
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.Map;
 
 /**
  * Date 11/02/2015
@@ -17,7 +15,7 @@ import java.util.Map;
  * References
  * https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
  */
-public class FloydWarshallAllPairShortestPath {
+class FloydWarshallAllPairShortestPath {
 
     class NegativeWeightCycleException extends RuntimeException {
 
@@ -25,7 +23,7 @@ public class FloydWarshallAllPairShortestPath {
 
     private static final int INF = 1000000;
 
-    public int[][] allPairShortestPath(int[][] distanceMatrix) {
+    private int[][] allPairShortestPath(int[][] distanceMatrix) {
         
         int distance[][] = new int[distanceMatrix.length][distanceMatrix.length];
         int path[][] = new int[distanceMatrix.length][distanceMatrix.length];
@@ -68,7 +66,7 @@ public class FloydWarshallAllPairShortestPath {
         return distance;
     }
 
-    public void printPath(int[][] path, int start, int end) {
+    private void printPath(int[][] path, int start, int end) {
         if(start < 0 || end < 0 || start >= path.length || end >= path.length) {
             throw new IllegalArgumentException();
         }
@@ -105,9 +103,9 @@ public class FloydWarshallAllPairShortestPath {
         FloydWarshallAllPairShortestPath shortestPath = new FloydWarshallAllPairShortestPath();
         int[][] distance = shortestPath.allPairShortestPath(graph);
         System.out.println("Minimum Distance matrix");
-        for(int i=0; i < distance.length; i++){
-            for(int j=0; j < distance.length; j++){
-                System.out.print(distance[i][j] + " ");
+        for (int[] aDistance : distance) {
+            for (int j = 0; j < distance.length; j++) {
+                System.out.print(aDistance[j] + " ");
             }
             System.out.println("");
         }

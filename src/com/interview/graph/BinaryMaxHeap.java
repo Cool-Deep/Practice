@@ -3,16 +3,16 @@ package com.interview.graph;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryMaxHeap<T> {
+class BinaryMaxHeap<T> {
 
-    private List<Node> allNodes = new ArrayList<Node>();
+    private final List<Node> allNodes = new ArrayList<>();
 
     class Node {
         int weight;
         T data;
     }
 
-    public void add(int weight,T data) {
+    void add(int weight, T data) {
 
         Node node = new Node();
         node.weight = weight;
@@ -47,53 +47,59 @@ public class BinaryMaxHeap<T> {
         node2.weight = weight;
     }
     
-    public T max(){
-        return allNodes.get(0).data;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public T max(){
+//        return allNodes.get(0).data;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public boolean empty(){
+//        return allNodes.size() == 0;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     
-    public boolean empty(){
-        return allNodes.size() == 0;
-    }
-    
-    
-    public T extractMap(){
-        int size = allNodes.size() -1;
-        T max = allNodes.get(0).data;
-        int lastNodeWeight = allNodes.get(size).weight;
-        allNodes.get(0).weight = lastNodeWeight;
-        allNodes.get(0).data = allNodes.get(size).data;
-        allNodes.remove(size);
-        
-        int currentIndex = 0;
-        size--;
-        while(true){
-            int left = 2*currentIndex + 1;
-            int right = 2*currentIndex + 2;
-            if(left > size){
-                break;
-            }
-            if(right > size){
-                right = left;
-            }
-            int largerIndex = allNodes.get(left).weight >= allNodes.get(right).weight ? left : right;
-            if(allNodes.get(currentIndex).weight < allNodes.get(largerIndex).weight){
-                swap(allNodes.get(currentIndex),allNodes.get(largerIndex));
-                currentIndex = largerIndex;
-            }else{
-                break;
-            }
-        }
-        return max;
-    }
-    
-    public void printHeap(){
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public T extractMap(){
+//        int size = allNodes.size() -1;
+//        T max = allNodes.get(0).data;
+//        int lastNodeWeight = allNodes.get(size).weight;
+//        allNodes.get(0).weight = lastNodeWeight;
+//        allNodes.get(0).data = allNodes.get(size).data;
+//        allNodes.remove(size);
+//
+//        int currentIndex = 0;
+//        size--;
+//        while(true){
+//            int left = 2*currentIndex + 1;
+//            int right = 2*currentIndex + 2;
+//            if(left > size){
+//                break;
+//            }
+//            if(right > size){
+//                right = left;
+//            }
+//            int largerIndex = allNodes.get(left).weight >= allNodes.get(right).weight ? left : right;
+//            if(allNodes.get(currentIndex).weight < allNodes.get(largerIndex).weight){
+//                swap(allNodes.get(currentIndex),allNodes.get(largerIndex));
+//                currentIndex = largerIndex;
+//            }else{
+//                break;
+//            }
+//        }
+//        return max;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
+    void printHeap(){
         for(Node n : allNodes){
             System.out.println(n.weight + " " + n.data);
         }
     }
     
     public static void main(String args[]){
-        BinaryMaxHeap<String> heap = new BinaryMaxHeap<String>();
+        BinaryMaxHeap<String> heap = new BinaryMaxHeap<>();
         heap.add(3, "Tushar");
         heap.add(4, "Ani");
         heap.add(8, "Vijay");

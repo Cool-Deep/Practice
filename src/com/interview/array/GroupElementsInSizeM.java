@@ -13,8 +13,8 @@ import java.util.PriorityQueue;
  * distance from each other
  */
 class Pair{
-    int num;
-    int count;
+    final int num;
+    final int count;
     Pair(int num,int count){
         this.count = count;
         this.num = num;
@@ -34,10 +34,10 @@ class Comparators implements Comparator<Pair>{
     
 }
 
-public class GroupElementsInSizeM {
+class GroupElementsInSizeM {
 
-    public boolean group(int input[],int m){
-        Map<Integer,Integer> count = new HashMap<Integer,Integer>();
+    private boolean group(int input[], int m){
+        Map<Integer,Integer> count = new HashMap<>();
         for(Integer i : input){
             int c = 1;
             if(count.containsKey(i)){
@@ -47,7 +47,7 @@ public class GroupElementsInSizeM {
             count.put(i, c);
         }
         
-        PriorityQueue<Pair> maxHeap = new PriorityQueue<Pair>(count.size(),new Comparators());
+        PriorityQueue<Pair> maxHeap = new PriorityQueue<>(count.size(), new Comparators());
         for(Integer s : count.keySet()){
             int c = count.get(s);
             //if any count is greater than len/m then this arrangement is not possible
@@ -80,8 +80,8 @@ public class GroupElementsInSizeM {
         GroupElementsInSizeM gps = new GroupElementsInSizeM();
         boolean r = gps.group(input1, 3);
         System.out.println(r);
-        for(int i=0; i < input1.length; i++){
-            System.out.println(input1[i]);
+        for (int anInput1 : input1) {
+            System.out.println(anInput1);
         }
     }
 }

@@ -3,9 +3,9 @@ package com.interview.tree;
 /**
  * http://www.geeksforgeeks.org/largest-independent-set-problem/
  */
-public class LargestIndependentSetInTree {
+class LargestIndependentSetInTree {
 
-    public int largestSet(Node root){
+    private int largestSet(Node root){
         if(root == null){
             return 0;
         }

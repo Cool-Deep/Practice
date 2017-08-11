@@ -1,20 +1,20 @@
 package codeFights;
 
-import java.util.ArrayList;
-
 import static java.lang.Math.abs;
 
-public class Main {
+class Main {
 
-    public static double[] fareEstimator(int ride_time, int ride_distance, double[] cost_per_minute, double[] cost_per_mile) {
-        double[] res = new double[cost_per_minute.length];
-        for (int i = 0; i < cost_per_minute.length; i++) {
-            res[i] = ride_time * cost_per_minute[i] + ride_distance * cost_per_mile[i];
-        }
-        return res;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public static double[] fareEstimator(int ride_time, int ride_distance, double[] cost_per_minute, double[] cost_per_mile) {
+//        double[] res = new double[cost_per_minute.length];
+//        for (int i = 0; i < cost_per_minute.length; i++) {
+//            res[i] = ride_time * cost_per_minute[i] + ride_distance * cost_per_mile[i];
+//        }
+//        return res;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    public static double perfectCity(double[] departure, double[] destination) {
+    private static double perfectCity(double[] departure, double[] destination) {
         double boundUPX;
         double boundUPY;
         if (departure[0] == (int) (departure[0])) {

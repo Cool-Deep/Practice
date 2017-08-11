@@ -1,6 +1,6 @@
 package com.interview.string;
 
-public class LexicographicRankInPermutation {
+class LexicographicRankInPermutation {
 
     //you can create a AVL tree to efficiently find total
     //number of smaller characters.
@@ -24,7 +24,7 @@ public class LexicographicRankInPermutation {
         return fact;
     }
     
-    public int rank(char []str){
+    private int rank(char[] str){
         
         int rank =0;
         for(int i=0; i < str.length;i++){

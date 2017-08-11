@@ -10,9 +10,9 @@ package com.interview.linklist;
  * odd size of the list
  * even size of the list
  */
-public class DeleteNAfterMNodes {
+class DeleteNAfterMNodes {
 
-    public void deleteNAfterMNodes(Node head,int m, int n){
+    private void deleteNAfterMNodes(Node head, int m, int n){
         if(head == null){
             return;
         }

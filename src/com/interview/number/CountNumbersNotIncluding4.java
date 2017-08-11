@@ -3,9 +3,9 @@ package com.interview.number;
 /**
  * http://www.geeksforgeeks.org/count-numbers-that-dont-contain-3/
  */
-public class CountNumbersNotIncluding4 {
+class CountNumbersNotIncluding4 {
 
-    public int count(int n){
+    private int count(int n){
         if(n < 4){
             return n;
         }

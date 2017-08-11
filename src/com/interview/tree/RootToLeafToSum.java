@@ -24,9 +24,9 @@ import java.util.List;
  * 
  * Reference http://www.geeksforgeeks.org/root-to-leaf-path-sum-equal-to-a-given-number/
  */
-public class RootToLeafToSum {
+class RootToLeafToSum {
 
-    public boolean printPath(Node root, int sum, List<Node> path){
+    private boolean printPath(Node root, int sum, List<Node> path){
         if(root == null){
             return false;
         }

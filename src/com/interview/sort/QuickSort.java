@@ -1,6 +1,6 @@
 package com.interview.sort;
 
-public class QuickSort {
+class QuickSort {
 
     private void swap(int A[],int i,int j)
     {
@@ -8,31 +8,33 @@ public class QuickSort {
         A[i] = A[j];
         A[j] = temp;
     }
-    private int split(int A[],int low,int high)
-    {
-        int pivot = low;
-        int i = low +1;
-        int j = high;
-        while(i<j)
-        {
-            while(i<=j && A[pivot]>=A[i])
-            {
-                i++;
-            }
-            while(j>=i && A[pivot]<A[j])
-            {
-                j--;
-            }
-            if(i < j && A[i]>A[j])
-            {
-                swap(A,i++,j--);
-            }
-        }
-        if(A[pivot] > A[j]){
-            swap(A,j,pivot);
-        }
-        return j;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private int split(int A[],int low,int high)
+//    {
+//        int pivot = low;
+//        int i = low +1;
+//        int j = high;
+//        while(i<j)
+//        {
+//            while(i<=j && A[pivot]>=A[i])
+//            {
+//                i++;
+//            }
+//            while(j>=i && A[pivot]<A[j])
+//            {
+//                j--;
+//            }
+//            if(i < j && A[i]>A[j])
+//            {
+//                swap(A,i++,j--);
+//            }
+//        }
+//        if(A[pivot] > A[j]){
+//            swap(A,j,pivot);
+//        }
+//        return j;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private int split1(int A[],int low,int high){
         
@@ -59,7 +61,7 @@ public class QuickSort {
         
     }
 
-    public void sort(int A[],int low,int high)
+    private void sort(int A[], int low, int high)
     {
         if(low>=high)
         {

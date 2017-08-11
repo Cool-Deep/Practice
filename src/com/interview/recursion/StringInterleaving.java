@@ -1,15 +1,15 @@
 package com.interview.recursion;
 
-public class StringInterleaving {
+class StringInterleaving {
 
     private void printArray(char[] str){
-        for(int i=0; i < str.length; i++){
-            System.out.print(str[i]);
+        for (char aStr : str) {
+            System.out.print(aStr);
         }
         System.out.println();
     }
     
-    public void interleaving(char[] str1,char[] str2,int len1,int len2,int current, char []result){
+    private void interleaving(char[] str1, char[] str2, int len1, int len2, int current, char[] result){
         
         if(current == result.length){
             printArray(result);

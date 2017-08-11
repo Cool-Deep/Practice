@@ -3,13 +3,13 @@ package com.interview.array;
 /**
  * http://www.geeksforgeeks.org/check-if-array-elements-are-consecutive/
  */
-public class CheckIfArrayElementsAreConsecutive {
+class CheckIfArrayElementsAreConsecutive {
 
-    public boolean areConsecutive(int input[]){
+    private boolean areConsecutive(int input[]){
         int min = Integer.MAX_VALUE;
-        for(int i=0; i < input.length; i++){
-            if(input[i] < min){
-                min = input[i];
+        for (int anInput : input) {
+            if (anInput < min) {
+                min = anInput;
             }
         }
         for(int i=0; i < input.length; i++){

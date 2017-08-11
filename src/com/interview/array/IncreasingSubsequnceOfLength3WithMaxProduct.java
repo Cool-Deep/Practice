@@ -10,9 +10,9 @@ package com.interview.array;
  * Negative numbers
  * 0 in the input
  */
-public class IncreasingSubsequnceOfLength3WithMaxProduct {
+class IncreasingSubsequnceOfLength3WithMaxProduct {
 
-    public int maxProduct(int arr[]){
+    private int maxProduct(int arr[]){
         int RGN[] = new int[arr.length];
         int LGN[] = new int[arr.length];
         RGN[arr.length-1] = arr[arr.length-1];

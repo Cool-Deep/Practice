@@ -11,17 +11,17 @@ package com.interview.linklist;
  */
 
 class Point{
-    int x;
-    int y;
+    final int x;
+    final int y;
     Point(int x, int y){
         this.x = x;
         this.y = y;
     }
 }
 
-public class RemoveMiddleElementsOfLineSegment {
+class RemoveMiddleElementsOfLineSegment {
 
-    public void remove(Node head){
+    private void remove(Node head){
         if(head == null || head.next == null){
             return;
         }

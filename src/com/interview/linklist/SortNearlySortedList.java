@@ -12,9 +12,9 @@ package com.interview.linklist;
  * 3 reverse sorted nodes
  * 4 nodes 2 each sorted among themselves
  */
-public class SortNearlySortedList {
+class SortNearlySortedList {
 
-    public Node sort(Node head){
+    private Node sort(Node head){
         Node result = null;
         Node start = head;
         while(head != null && head.next != null){

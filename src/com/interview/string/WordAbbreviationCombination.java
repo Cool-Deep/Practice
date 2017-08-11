@@ -13,15 +13,15 @@ import java.util.*;
  *
  * https://leetcode.com/problems/generalized-abbreviation/
  */
-public class WordAbbreviationCombination {
+class WordAbbreviationCombination {
 
-    public List<String> generateAbbreviations(String word) {
+    private List<String> generateAbbreviations(String word) {
         List<String> result = new ArrayList<>();
         generateAbbreviationsUtil(word, result, "", 0, 0);
         return result;
     }
 
-    public void generateAbbreviationsUtil(String input, List<String> result, String current, int pos, int count) {
+    private void generateAbbreviationsUtil(String input, List<String> result, String current, int pos, int count) {
         if (input.length() == pos) {
             if (count > 0) {
                 result.add(current + count);
@@ -38,6 +38,6 @@ public class WordAbbreviationCombination {
     public static void main(String args[]) {
         WordAbbreviationCombination ssc = new WordAbbreviationCombination();
         List<String> result = ssc.generateAbbreviations("word");
-        result.forEach(r -> System.out.println(r));
+        result.forEach(System.out::println);
     }
 }

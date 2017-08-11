@@ -27,9 +27,9 @@ import java.util.Set;
  * https://en.wikipedia.org/wiki/Strongly_connected_component
  * http://www.geeksforgeeks.org/strongly-connected-components/
  */
-public class StronglyConnectedComponent {
+class StronglyConnectedComponent {
 
-    public List<Set<Vertex<Integer>>> scc(Graph<Integer> graph) {
+    private List<Set<Vertex<Integer>>> scc(Graph<Integer> graph) {
 
         //it holds vertices by finish time in reverse order.
         Deque<Vertex<Integer>> stack = new ArrayDeque<>();

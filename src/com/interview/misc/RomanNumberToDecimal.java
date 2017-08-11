@@ -8,9 +8,9 @@ package com.interview.misc;
  * http://www.onlineconversion.com/roman_numerals_advanced.htm
  *
  */
-public class RomanNumberToDecimal {
+class RomanNumberToDecimal {
 
-    public String converToRoman(int decimal){
+    private String converToRoman(int decimal){
         StringBuffer buffer = new StringBuffer();
         while(decimal > 0){
             decimal = literal(decimal,buffer);
@@ -18,7 +18,7 @@ public class RomanNumberToDecimal {
         return buffer.toString();
     }
     
-    public int convertToDecimal(char[] roman){
+    private int convertToDecimal(char[] roman){
         int decimal = 0;
         for(int i=0; i < roman.length; ){
             if(i < roman.length-1 && literal(roman[i]) < literal(roman[i+1])){

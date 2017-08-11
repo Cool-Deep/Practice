@@ -14,9 +14,9 @@ import java.util.Set;
  * Time complexity is O(n^5)
  * Space complexity is O(n^3)
  */
-public class ExpressionEvaluation {
+class ExpressionEvaluation {
 
-    public boolean evaluate(char[] expression, int result) {
+    private boolean evaluate(char[] expression, int result) {
         int operands[] = new int[expression.length/2 + 1];
         char operators[] = new char[expression.length/2];
 
@@ -82,7 +82,7 @@ public class ExpressionEvaluation {
         }
     }
     static class Holder {
-        private Set<Integer> valueHolder = new HashSet<>();
+        private final Set<Integer> valueHolder = new HashSet<>();
         void add(Integer ch) {
             valueHolder.add(ch);
         }

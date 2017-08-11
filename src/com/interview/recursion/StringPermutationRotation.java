@@ -1,6 +1,6 @@
 package com.interview.recursion;
 
-public class StringPermutationRotation {
+class StringPermutationRotation {
 
     private void swap(char arr[],int i, int j){
         char temp = arr[i];
@@ -9,13 +9,13 @@ public class StringPermutationRotation {
     }
     
     private void printArray(char str[]){
-        for(int i=0; i< str.length; i++){
-            System.out.print(str[i]);
+        for (char aStr : str) {
+            System.out.print(aStr);
         }
         System.out.print("\n");
     }
     
-    public void permute(char[] str,int pos){
+    private void permute(char[] str, int pos){
         if(pos == str.length){
             printArray(str);
             return;

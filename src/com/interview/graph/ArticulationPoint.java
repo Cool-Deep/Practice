@@ -31,11 +31,11 @@ import java.util.Set;
  * https://en.wikipedia.org/wiki/Biconnected_component
  * http://www.geeksforgeeks.org/articulation-points-or-cut-vertices-in-a-graph/
  */
-public class ArticulationPoint<T> {
+class ArticulationPoint<T> {
 
     private int time;
 
-    public Set<Vertex<T>> findarticulationPoints(Graph<T> graph) {
+    Set<Vertex<T>> findarticulationPoints(Graph<T> graph) {
         time = 0;
         Set<Vertex<T>> visited = new HashSet<>();
         Set<Vertex<T>> articulationPoints = new HashSet<>();
@@ -122,9 +122,9 @@ public class ArticulationPoint<T> {
         graph.addEdge(9, 10);
         graph.addEdge(8, 10);*/
 
-        ArticulationPoint<Integer> ap = new ArticulationPoint<Integer>();
+        ArticulationPoint<Integer> ap = new ArticulationPoint<>();
         Set<Vertex<Integer>> aPoints = ap.findarticulationPoints(graph);
-        aPoints.forEach(point -> System.out.println(point));
+        aPoints.forEach(System.out::println);
     }
     
 }

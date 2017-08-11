@@ -11,9 +11,9 @@ package com.interview.recursion;
  * @author tusroy
  *
  */
-public class AllAdjacentCombination {
+class AllAdjacentCombination {
 
-    public void combination(int input[],int result[],int k,int pos,int r){
+    private void combination(int input[], int result[], int k, int pos, int r){
         
         if(pos == input.length){
             for(int i=0; i < r ; i++){

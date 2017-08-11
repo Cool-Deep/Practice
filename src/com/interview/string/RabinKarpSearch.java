@@ -12,17 +12,17 @@ package com.interview.string;
  * References
  * https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm
  */
-public class RabinKarpSearch {
+class RabinKarpSearch {
 
-    private int prime = 101;
+    private final int prime = 101;
     
-    public int patternSearch(char[] text, char[] pattern){
+    private int patternSearch(char[] text, char[] pattern){
         int m = pattern.length;
         int n = text.length;
         long patternHash = createHash(pattern, m - 1);
         long textHash = createHash(text, m - 1);
         for (int i = 1; i <= n - m + 1; i++) {
-            if(patternHash == textHash && checkEqual(text, i - 1, i + m - 2, pattern, 0, m - 1)) {
+            if(patternHash == textHash && checkEqual(text, i - 1, i + m - 2, pattern, m - 1)) {
                 return i - 1;
             }
             if(i < n - m + 1) {
@@ -47,16 +47,16 @@ public class RabinKarpSearch {
         return hash;
     }
     
-    private boolean checkEqual(char str1[],int start1,int end1, char str2[],int start2,int end2){
-        if(end1 - start1 != end2 - start2) {
+    private boolean checkEqual(char[] str1, int start1, int end1, char[] str2, int end2){
+        if(end1 - start1 != end2 - 0) {
             return false;
         }
-        while(start1 <= end1 && start2 <= end2){
-            if(str1[start1] != str2[start2]){
+        while(start1 <= end1 && 0 <= end2){
+            if(str1[start1] != str2[0]){
                 return false;
             }
             start1++;
-            start2++;
+            0++;
         }
         return true;
     }

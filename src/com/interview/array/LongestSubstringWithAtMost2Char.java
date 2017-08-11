@@ -4,8 +4,8 @@ package com.interview.array;
  * Longest Substring with At Most Two Distinct Characters
  * https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
  */
-public class LongestSubstringWithAtMost2Char {
-    public int lengthOfLongestSubstringTwoDistinct(String s) {
+class LongestSubstringWithAtMost2Char {
+    private int lengthOfLongestSubstringTwoDistinct(String s) {
         int count1 = 0;
         int count2 = 0;
         char c1 = 0;

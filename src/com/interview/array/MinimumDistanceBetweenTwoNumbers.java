@@ -3,9 +3,9 @@ package com.interview.array;
 /**
  * http://www.geeksforgeeks.org/find-the-minimum-distance-between-two-numbers/
  */
-public class MinimumDistanceBetweenTwoNumbers {
+class MinimumDistanceBetweenTwoNumbers {
 
-    public int minDistance(int input[],int x, int y){
+    private int minDistance(int input[], int x, int y){
         int prev = -1;
         int prevFound = -1;
         int min = 10000;

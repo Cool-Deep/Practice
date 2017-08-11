@@ -6,9 +6,9 @@ package com.interview.dynamic;
  * 1,2,3,5,8,13....
  * Look how we assign a[i] value of a[i-1] + b[i-1] and then b[i] becomes a[i]
  */
-public class CountNumberOfBinaryWithoutConsecutive1s {
+class CountNumberOfBinaryWithoutConsecutive1s {
 
-    public int count(int n){
+    private int count(int n){
         int a[] = new int[n];
         int b[] = new int[n];
         
@@ -23,19 +23,21 @@ public class CountNumberOfBinaryWithoutConsecutive1s {
         return a[n-1] + b[n-1];
     }
     
-    public int countSimple(int n){
-        int a = 1;
-        int b = 1;
-        
-        for(int i=1; i < n; i++){
-            int tmp = a;
-        	a = a + b;
-            b = tmp;
-        }
-        
-        return a + b;
-    }
-    
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public int countSimple(int n){
+//        int a = 1;
+//        int b = 1;
+//
+//        for(int i=1; i < n; i++){
+//            int tmp = a;
+//        	a = a + b;
+//            b = tmp;
+//        }
+//
+//        return a + b;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
+
     public static void main(String args[]){
         CountNumberOfBinaryWithoutConsecutive1s cnb = new CountNumberOfBinaryWithoutConsecutive1s();
         System.out.println(cnb.count(5));

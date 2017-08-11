@@ -20,9 +20,9 @@ package com.interview.misc;
  *
  *
  */
-public class CandiesProblem {
+class CandiesProblem {
 
-    public int minCandies(int ratings[]) {
+    private int minCandies(int ratings[]) {
 
         int pointOfChange = 0;
         int totalCandies = 1;

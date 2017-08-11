@@ -17,9 +17,9 @@ package com.interview.tree;
  * 1 node tree
  * multi node tree
  */
-public class SizeOfBinaryTree {
+class SizeOfBinaryTree {
 
-    public int size(Node root){
+    private int size(Node root){
         if(root == null){
             return 0;
         }

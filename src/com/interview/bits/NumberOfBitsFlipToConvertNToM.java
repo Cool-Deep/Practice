@@ -3,9 +3,9 @@ package com.interview.bits;
 /**
  * Exercise 5.5 150 qs
  */
-public class NumberOfBitsFlipToConvertNToM {
+class NumberOfBitsFlipToConvertNToM {
 
-    public int number(int m, int n){
+    private int number(int m, int n){
         int r = n^m;
         int count = 0;
         while(r != 0){

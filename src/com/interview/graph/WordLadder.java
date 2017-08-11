@@ -9,8 +9,8 @@ import java.util.*;
  Each intermediate word must exist in the word list
  * https://leetcode.com/problems/word-ladder-ii/
  */
-public class WordLadder {
-    public List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
+class WordLadder {
+    private List<List<String>> findLadders(String beginWord, String endWord, Set<String> wordList) {
         wordList.add(endWord);
         Set<String> visited = new HashSet<>();
         Deque<String> queue = new LinkedList<>();

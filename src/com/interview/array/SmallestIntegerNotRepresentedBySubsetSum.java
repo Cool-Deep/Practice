@@ -11,13 +11,13 @@ package com.interview.array;
  *
  * http://www.geeksforgeeks.org/find-smallest-value-represented-sum-subset-given-array/
  */
-public class SmallestIntegerNotRepresentedBySubsetSum {
+class SmallestIntegerNotRepresentedBySubsetSum {
 
-    public int findSmallestInteger(int input[]) {
+    private int findSmallestInteger(int input[]) {
         int result = 1;
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] <= result) {
-                result += input[i];
+        for (int anInput : input) {
+            if (anInput <= result) {
+                result += anInput;
             } else {
                 break;
             }
@@ -28,7 +28,7 @@ public class SmallestIntegerNotRepresentedBySubsetSum {
     /**
      * Leetcode variation https://leetcode.com/problems/patching-array/
      */
-    public int minPatches(int[] nums, int n) {
+    private int minPatches(int[] nums, int n) {
         int patch = 0;
         long t = 1;
         int i = 0;

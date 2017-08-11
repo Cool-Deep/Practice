@@ -25,9 +25,9 @@ package com.interview.multiarray;
  * http://stackoverflow.com/questions/726756/print-two-dimensional-array-in-spiral-order
  * http://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/
  */
-public class SpiralPrinting {
+class SpiralPrinting {
 
-    public void print(int matrix[][]) {
+    private void print(int matrix[][]) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return;
         }

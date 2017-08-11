@@ -3,9 +3,9 @@ package com.interview.regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class MultiSpaceReplacement {
+class MultiSpaceReplacement {
 
-    public void replace(String str){
+    private void replace(String str){
         Pattern pattern = Pattern.compile("^ +|  +| +$");
         Matcher matcher = pattern.matcher(str);
         System.out.println(matcher.replaceAll(""));

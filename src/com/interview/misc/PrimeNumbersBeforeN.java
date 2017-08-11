@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * All prime numbers before n
  */
-public class PrimeNumbersBeforeN {
+class PrimeNumbersBeforeN {
 
-    public List<Integer> primeNumbers(int n){
-        List<Integer> result = new ArrayList<Integer>();
+    private List<Integer> primeNumbers(int n){
+        List<Integer> result = new ArrayList<>();
         result.add(2);
         boolean flag = false;
         for(int i=3; i < n; i+=2){

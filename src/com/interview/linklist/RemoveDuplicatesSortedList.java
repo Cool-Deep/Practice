@@ -9,9 +9,9 @@ package com.interview.linklist;
  * Duplicates only at the end
  * 0 1 or more nodes in the list
  */
-public class RemoveDuplicatesSortedList {
+class RemoveDuplicatesSortedList {
 
-    public void removeDuplicates(Node head){
+    private void removeDuplicates(Node head){
         if(head == null){
             return;
         }

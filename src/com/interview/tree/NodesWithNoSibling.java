@@ -10,9 +10,9 @@ package com.interview.tree;
  * All right side tree
  * Regular mix tree
  */
-public class NodesWithNoSibling {
+class NodesWithNoSibling {
 
-    public void printNodes(Node root){
+    private void printNodes(Node root){
         if(root == null){
             return;
         }

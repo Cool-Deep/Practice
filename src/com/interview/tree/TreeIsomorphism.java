@@ -7,22 +7,14 @@ package com.interview.tree;
  * Exact mirror
  * Some nodes flipped
  */
-public class TreeIsomorphism {
+class TreeIsomorphism {
 
-    public boolean areIsomorphicTrees(Node root1, Node root2) {
+    private boolean areIsomorphicTrees(Node root1, Node root2) {
         if (root1 == null && root2 == null) {
             return true;
         }
-        
-        if(root1 == null || root2 == null){
-            return false;
-        }
 
-        return root1.data == root2.data
-                && ((areIsomorphicTrees(root1.left, root2.left) && areIsomorphicTrees(
-                        root1.right, root2.right)) || (areIsomorphicTrees(
-                        root1.left, root2.right) && areIsomorphicTrees(
-                        root1.right, root2.left)));
+        return root1 != null && root2 != null && root1.data == root2.data && ((areIsomorphicTrees(root1.left, root2.left) && areIsomorphicTrees(root1.right, root2.right)) || (areIsomorphicTrees(root1.left, root2.right) && areIsomorphicTrees(root1.right, root2.left)));
 
     }
     

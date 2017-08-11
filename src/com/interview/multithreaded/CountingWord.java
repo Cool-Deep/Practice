@@ -26,11 +26,11 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  *@Threadsafe
  */
-public class CountingWord {
+class CountingWord {
 
-    private ConcurrentMap<String, AtomicLong> map = new ConcurrentHashMap<>();
+    private final ConcurrentMap<String, AtomicLong> map = new ConcurrentHashMap<>();
    
-    public void addWord(String word){
+    private void addWord(String word){
         AtomicLong l = map.get(word);
         if(l == null){
             l = new AtomicLong(1);
@@ -43,7 +43,7 @@ public class CountingWord {
         }
     }
     
-    public long getCount(String word){
+    private long getCount(String word){
         AtomicLong l = map.get(word);
         if(l != null){
             return l.longValue();

@@ -14,17 +14,17 @@ import java.util.List;
  *
  * https://leetcode.com/problems/count-of-smaller-numbers-after-self/
  */
-public class CountSmallerOnRight {
+class CountSmallerOnRight {
     static class NumberIndex {
-        int val;
-        int index;
+        final int val;
+        final int index;
         NumberIndex(int val, int index) {
             this.val = val;
             this.index = index;
         }
     }
 
-    public List<Integer> countSmaller(int[] nums) {
+    private List<Integer> countSmaller(int[] nums) {
         if (nums.length == 0) {
             return new ArrayList<>();
         }

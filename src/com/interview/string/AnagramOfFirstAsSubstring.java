@@ -13,17 +13,17 @@ import java.util.Map;
  * Another idea is to keep a sorted linklist of string in comparison. Whenever a new character
  * is to be added remove last character from linklist and add this new one.
  */
-public class AnagramOfFirstAsSubstring {
+class AnagramOfFirstAsSubstring {
 
-    public boolean isSubString(char str1[], char str2[]) {
+    private boolean isSubString(char str1[], char str2[]) {
         int index = 0;
         int curLen = 0;
-        Map<Character, Integer> count = new HashMap<Character, Integer>();
-        for (int i = 0; i < str1.length; i++) {
-            incrementCount(str1[i], count);
+        Map<Character, Integer> count = new HashMap<>();
+        for (char aStr1 : str1) {
+            incrementCount(aStr1, count);
         }
-        Map<Character, Integer> currentCount = new HashMap<Character, Integer>();
-        Map<Character, Integer> pos = new HashMap<Character, Integer>();
+        Map<Character, Integer> currentCount = new HashMap<>();
+        Map<Character, Integer> pos = new HashMap<>();
         while (index < str2.length) {
             if (containsAndUpdate(currentCount, count, str2[index], pos, index)) {
                 index++;

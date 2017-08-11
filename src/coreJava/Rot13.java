@@ -1,6 +1,6 @@
 package coreJava;
 
-public class Rot13 {
+class Rot13 {
 
 
 	public static void main(String[] args) {

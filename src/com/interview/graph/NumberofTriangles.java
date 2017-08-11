@@ -10,10 +10,10 @@ import java.util.Map;
  * If there is a cycle check if my parent is neighbor of the the node 
  * which caused it to be a cycle.
  */
-public class NumberofTriangles {
+class NumberofTriangles {
 
-    public int countTriangles(Graph<Integer> graph){
-        Map<Vertex<Integer>,Boolean> visited = new HashMap<Vertex<Integer>,Boolean>();
+    private int countTriangles(Graph<Integer> graph){
+        Map<Vertex<Integer>,Boolean> visited = new HashMap<>();
         int count =0;
         for(Vertex<Integer> vertex : graph.getAllVertex()){
             count += DFS(vertex,visited,null);
@@ -21,7 +21,7 @@ public class NumberofTriangles {
         return count;
     }
     
-    public int DFS(Vertex<Integer> vertex, Map<Vertex<Integer>,Boolean> visited,Vertex<Integer> parent){
+    private int DFS(Vertex<Integer> vertex, Map<Vertex<Integer>, Boolean> visited, Vertex<Integer> parent){
         
         if(visited.containsKey(vertex)){
             return 0;
@@ -51,7 +51,7 @@ public class NumberofTriangles {
     }
     
     public static void main(String args[]){
-        Graph<Integer> graph = new Graph<Integer>(false);
+        Graph<Integer> graph = new Graph<>(false);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(1, 2);

@@ -6,69 +6,77 @@ import java.util.Scanner;
 /**
  * Created by Davit on 11/07/16.
  */
-public class TournamentDay35 {
+class TournamentDay35 {
 
-    private static int arrayMinimumAboveBound(int[] inputArray, int bound) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int arrayMinimumAboveBound(int[] inputArray, int bound) {
+//
+//        int best = Integer.MAX_VALUE;
+//        for (int anInputArray : inputArray) {
+//            if (anInputArray > bound &&
+//                    (anInputArray < best)) {
+//                best = anInputArray;
+//            }
+//        }
+//
+//        return best;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        int best = Integer.MAX_VALUE;
-        for (int anInputArray : inputArray) {
-            if (anInputArray > bound &&
-                    (anInputArray < best)) {
-                best = anInputArray;
-            }
-        }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int rounders(int n) {
+//        int p = 10;
+//        while (n > p) {
+//            if ((n % p) / (p / 10) < 5)
+//                n = (n / p) * p;
+//            else
+//                n = (n / p + 1) * p;
+//            p *= 10;
+//        }
+//        return n;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        return best;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static String[] isDivisibleBy6(String inputString) {
+//
+//        int digitSum = 0;
+//        char leftBound = '0',
+//                rightBound = '9';
+//        ArrayList<String> answer = new ArrayList<>();
+//        char[] mask = inputString.toCharArray();
+//        int asteriskPos = -1;
+//
+//        for (int i = 0; i < mask.length; i++) {
+//            if (leftBound <= mask[i] &&
+//                    mask[i] <= rightBound) {
+//                digitSum += mask[i] - leftBound;
+//            } else {
+//                asteriskPos = i;
+//            }
+//        }
+//
+//        for (int i = 0; i < 10; i++) {
+//            if ((digitSum + i) % 3 == 0) {
+//                mask[asteriskPos] = (char) (leftBound + i);
+//                if ((mask[mask.length - 1] - leftBound) % 2 == 0) {
+//                    answer.add(String.valueOf(mask));
+//                }
+//            }
+//        }
+//
+//        return answer.toArray(new String[0]);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static int rounders(int n) {
-        int p = 10;
-        while (n > p) {
-            if ((n % p) / (p / 10) < 5)
-                n = (n / p) * p;
-            else
-                n = (n / p + 1) * p;
-            p *= 10;
-        }
-        return n;
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static int sumOfCubes(int n) {
+//        int k = (n * (n + 1)) / 2;
+//        return k * k;
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-    private static String[] isDivisibleBy6(String inputString) {
-
-        int digitSum = 0;
-        char leftBound = '0',
-                rightBound = '9';
-        ArrayList<String> answer = new ArrayList<>();
-        char[] mask = inputString.toCharArray();
-        int asteriskPos = -1;
-
-        for (int i = 0; i < mask.length; i++) {
-            if (leftBound <= mask[i] &&
-                    mask[i] <= rightBound) {
-                digitSum += mask[i] - leftBound;
-            } else {
-                asteriskPos = i;
-            }
-        }
-
-        for (int i = 0; i < 10; i++) {
-            if ((digitSum + i) % 3 == 0) {
-                mask[asteriskPos] = (char) (leftBound + i);
-                if ((mask[mask.length - 1] - leftBound) % 2 == 0) {
-                    answer.add(String.valueOf(mask));
-                }
-            }
-        }
-
-        return answer.toArray(new String[0]);
-    }
-
-    private static int sumOfCubes(int n) {
-        int k = (n * (n + 1)) / 2;
-        return k * k;
-    }
-
-    private static int countPathsThroughCell(int n, int m, int x, int y) {
+    private static int countPathsThroughCell() {
 
         /*// Create a 2D table to store results of subproblems
         int[][] count = new int[m][n];
@@ -101,18 +109,18 @@ public class TournamentDay35 {
      * Array dp is used to store dynamic programming values.
      */
         int r = 0;
-        if (x == 0) {
+        if (1 == 0) {
             r++;
-        } else if (y == 0) {
+        } else if (1 == 0) {
             r++;
         } else {
-            r += x + y;
+            r += 1 + 1;
         }
 
-        if (x == n - 1 || y == m - 1) {
+        if (1 == 3 - 1 || 1 == 3 - 1) {
             return r;
         } else {
-            r *= (n - x + m - y - 2);
+            r *= (3 - 1 + 3 - 1 - 2);
             return r;
         }
     }
@@ -121,36 +129,40 @@ public class TournamentDay35 {
         // System.out.println(arrayMinimumAboveBound(new int[]{1, 3, 5, 4, 2, 6}, 3));
         // System.out.println(rounders(15));
         // System.out.println(sumOfCubes(3));
-        System.out.println(countPathsThroughCell(3, 3, 1, 1));
+        System.out.println(countPathsThroughCell());
     }
 
-    private static void test(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int i = scan.nextInt();
-        scan.nextLine();
-        double d = scan.nextDouble();
-        scan.nextLine();
-        String s = scan.nextLine();
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static void test(String[] args) {
+//        Scanner scan = new Scanner(System.in);
+//        int i = scan.nextInt();
+//        scan.nextLine();
+//        double d = scan.nextDouble();
+//        scan.nextLine();
+//        String s = scan.nextLine();
+//
+//        // Write your code here.
+//
+//        System.out.println("String: " + s);
+//        System.out.println("Double: " + d);
+//        System.out.println("Int: " + i);
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        // Write your code here.
-
-        System.out.println("String: " + s);
-        System.out.println("Double: " + d);
-        System.out.println("Int: " + i);
-    }
-
-    private static void test2(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("================================");
-        for (int i = 0; i < 3; i++) {
-            String s1 = sc.next();
-            int x = sc.nextInt();
-            //Complete this line
-            System.out.printf("%-15s%03d", s1, x);
-            System.out.println();
-        }
-        System.out.println("================================");
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    private static void test2(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("================================");
+//        for (int i = 0; i < 3; i++) {
+//            String s1 = sc.next();
+//            int x = sc.nextInt();
+//            //Complete this line
+//            System.out.printf("%-15s%03d", s1, x);
+//            System.out.println();
+//        }
+//        System.out.println("================================");
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
     private static void print(int a, int b, int n) {
         int sum = 0;
@@ -162,45 +174,49 @@ public class TournamentDay35 {
         System.out.println();
     }
 
-    public static void test3(String[] args) {
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public static void test3(String[] args) {
+//
+//        Scanner sc = new Scanner(System.in);
+//        int t = sc.nextInt();
+//        int[][] input = new int[t][3];
+//        for (int i = 0; i < t; i++) {
+//            input[i][0] = sc.nextInt();
+//            input[i][1] = sc.nextInt();
+//            input[i][2] = sc.nextInt();
+//            // System.out.println(i + " ; " + input[i][0] + " ; " + input[i][1] + " ; " + input[i][2]);
+//        }
+//
+//        for (int i = 0; i < t; i++) {
+//            print(input[i][0], input[i][1], input[i][2]);
+//        }
+//
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        int[][] input = new int[t][3];
-        for (int i = 0; i < t; i++) {
-            input[i][0] = sc.nextInt();
-            input[i][1] = sc.nextInt();
-            input[i][2] = sc.nextInt();
-            // System.out.println(i + " ; " + input[i][0] + " ; " + input[i][1] + " ; " + input[i][2]);
-        }
-
-        for (int i = 0; i < t; i++) {
-            print(input[i][0], input[i][1], input[i][2]);
-        }
-
-    }
-
-    public static void test4(String[] argh) {
-
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-
-        for (int i = 0; i < t; i++) {
-
-            try {
-                long x = sc.nextLong();
-                System.out.println(x + " can be fitted in:");
-                if (x >= -128 && x <= 127) System.out.println("* byte");
-                //Complete the code
-                if (x >= -128 && x <= 127) System.out.println("* byte");
-                if (x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1) System.out.println("* short");
-                if (x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1) System.out.println("* int");
-                if (x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1) System.out.println("* long");
-            } catch (Exception e) {
-                System.out.println(sc.next() + " can't be fitted anywhere.");
-            }
-
-        }
-    }
+// --Commented out by Inspection START (8/10/17, 5:13 PM):
+//    public static void test4(String[] argh) {
+//
+//        Scanner sc = new Scanner(System.in);
+//        int t = sc.nextInt();
+//
+//        for (int i = 0; i < t; i++) {
+//
+//            try {
+//                long x = sc.nextLong();
+//                System.out.println(x + " can be fitted in:");
+//                if (x >= -128 && x <= 127) System.out.println("* byte");
+//                //Complete the code
+//                if (x >= -128 && x <= 127) System.out.println("* byte");
+//                if (x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1) System.out.println("* short");
+//                if (x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1) System.out.println("* int");
+//                if (x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1) System.out.println("* long");
+//            } catch (Exception e) {
+//                System.out.println(sc.next() + " can't be fitted anywhere.");
+//            }
+//
+//        }
+//    }
+// --Commented out by Inspection STOP (8/10/17, 5:13 PM)
 
 }

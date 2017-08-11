@@ -3,9 +3,9 @@ package com.interview.multiarray;
 /**
  * Find the length of the longest chain of consecutive integers in an unsorted 2D square array (non-diagonal)
  */
-public class LongestConsecutiveIntegerInUnsorted2DArray {
+class LongestConsecutiveIntegerInUnsorted2DArray {
 
-	public int longestConsecutiveInteger(int input[][]){
+	private int longestConsecutiveInteger(int input[][]){
 	
 		boolean visited[][] = new boolean[input.length][input[0].length];
 		int max = 1;

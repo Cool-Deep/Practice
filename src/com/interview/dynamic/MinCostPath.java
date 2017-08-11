@@ -3,9 +3,9 @@ package com.interview.dynamic;
 /**
  * http://www.geeksforgeeks.org/dynamic-programming-set-6-min-cost-path/
  */
-public class MinCostPath {
+class MinCostPath {
 
-    public int minCost(int [][]cost,int m,int n){
+    private int minCost(int[][] cost, int m, int n){
         
         int temp[][] = new int[m+1][n+1];
         int sum = 0;
@@ -27,11 +27,11 @@ public class MinCostPath {
         return temp[m][n];
     }
     
-    public int minCostRec(int cost[][], int m, int n){
+    private int minCostRec(int cost[][], int m, int n){
         return minCostRec(cost, m, n, 0 , 0);
     }
     
-    public int minCostRec(int cost[][], int m, int n, int x, int y){
+    private int minCostRec(int cost[][], int m, int n, int x, int y){
         if(x > m || y > n){
             return Integer.MAX_VALUE;
         }

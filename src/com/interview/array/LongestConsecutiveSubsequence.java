@@ -15,16 +15,16 @@ import java.util.Map;
  * Reference
  * https://leetcode.com/problems/longest-consecutive-sequence/
  */
-public class LongestConsecutiveSubsequence {
-    public int longestConsecutive(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+class LongestConsecutiveSubsequence {
+    private int longestConsecutive(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
         int result = 1;
         for (int i : nums) {
             if (map.containsKey(i)) {
                 continue;
             }
-            int left = map.containsKey(i - 1) ? map.get(i - 1) : 0;
-            int right = map.containsKey(i + 1) ? map.get(i + 1) : 0;
+            int left = map.getOrDefault(i - 1, 0);
+            int right = map.getOrDefault(i + 1, 0);
 
             int sum = left + right + 1;
             map.put(i, sum);

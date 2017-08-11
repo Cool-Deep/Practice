@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * http://www.geeksforgeeks.org/sort-elements-by-frequency/
  */
-public class SortArrayByFrequence {
+class SortArrayByFrequence {
 
     class SortNode{
         int count;
@@ -35,8 +35,8 @@ public class SortArrayByFrequence {
         
     }
     
-    public void sortByFrequence(Integer arr[]){
-        Map<Integer,SortNode> countMap = new HashMap<Integer,SortNode>();
+    private void sortByFrequence(Integer arr[]){
+        Map<Integer,SortNode> countMap = new HashMap<>();
         int index = 0;
         for(int a : arr){
             if(countMap.containsKey(a)){
