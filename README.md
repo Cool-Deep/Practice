@@ -1,2 +1,2 @@
 # Practice
-Uploading private project
+Uploading private project.
