@@ -4,7 +4,7 @@ Uploading private project.
 [Codecov][0] Java Maven Example
 ===============================
 
-1. Add `cobertura-maven-plugin` plugin to your pom.xml file, [see here](https://github.com/codecov/example-java-maven/blob/master/pom.xml#L47-L58)
+1. Add `cobertura-maven-plugin` plugin to your pom.xml file, [see here](https://github.com/malaypatel/Practice/blob/master/pom.xml#32-43)
 1. Call `mvn cobertura:cobertura` during your CI tests, [see here](https://github.com/codecov/example-java-maven/blob/master/.travis.yml#L4)
 1. Call `bash <(curl -s https://codecov.io/bash)` at the end of your CI build, [see here](https://github.com/codecov/example-java-maven/blob/master/.travis.yml#L7)
   - Using Travis CI, CircleCI or AppVeyor **AND** the repository is public? **You're done!** No token needed.
