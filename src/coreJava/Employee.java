@@ -61,13 +61,13 @@ public class Employee<E> implements Comparable<Employee>{
 		empList.add(new Employee(9, "Mitul", 26));
 		empList.add(new Employee(10, "Niklo", 25));
 		empList.add(new Employee(1, "Malay", 24));
-//		Collections.sort(empList);
-//		for(Employee emp:empList) {
-//			System.out.println(emp.getEmpName());
-//		}
-//		empList.forEach(System.out::println);
-//		
-//		empList.stream().map(Employee::getEmpAge).forEach(System.out::println);
+		Collections.sort(empList);
+		for(Employee emp:empList) {
+			System.out.println(emp.getEmpName());
+		}
+		empList.forEach(System.out::println);
+
+		empList.stream().map(Employee::getEmpName).forEach(System.out::println);
 		
 		Employee emp = new Employee();
 		emp.sortUsingJava8(empList);
