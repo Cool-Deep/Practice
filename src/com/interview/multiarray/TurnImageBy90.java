@@ -31,7 +31,7 @@ public class TurnImageBy90 {
 	
 	public static void main(String args[]){
 		
-		int mat[][] = {{1,2,3,4,20},{5,6,7,8,30},{9,10,11,12,40},{13,14,15,16,50},{21,22,23,24,25}};
+		int mat[][] = {{1,2,3},{4,5,6},{7,8,9}};
 		TurnImageBy90 ti = new TurnImageBy90();
 		ti.turnImage(mat);
 		ti.print(mat);
